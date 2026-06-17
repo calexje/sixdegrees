@@ -28,11 +28,16 @@ const insert = db.prepare(`
 `);
 
 for (const row of rows) {
-    insert.run(
-        row.player,
-        row.club,
-        row.season
-    );
+    if(!row.player) {throw new Error (`Invalid player in row ${JSON.stringify(row)}`)}
+    if(!row.club) {throw new Error (`Invalid club in row ${JSON.stringify(row)}`)}
+    if(!row.season.match(/^\d{4}-\d{2}$/)) {throw new Error (`Invalid season in row ${JSON.stringify(row)}`)}
+    if(row.player && row.club && row.season.match(/^\d{4}-\d{2}$/)) {
+        insert.run(
+            row.player,
+            row.club,
+            row.season
+        );
+    }
 }
 
 console.log(`Imported ${rows.length} rows`);

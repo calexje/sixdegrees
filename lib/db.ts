@@ -8,7 +8,7 @@ export type Appearance = {
 
 const db = new Database("database/football.db");
 
-export function getPlayerClubSeasons(player: string) {
+export function getPlayerFromClubSeasons(player: string) {
   return db
     .prepare(`
       SELECT club, season
@@ -18,7 +18,7 @@ export function getPlayerClubSeasons(player: string) {
     .all(player);
 }
 
-export function getPlayersForClubSeason(
+export function getClubSeasonFromPlayers(
   club: string,
   season: string
 ) {
