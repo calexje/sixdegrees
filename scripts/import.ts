@@ -7,6 +7,7 @@ const db = new Database("database/football.db");
 
 db.exec(`
 DROP TABLE IF EXISTS appearances;
+
 CREATE TABLE appearances (
     player_id TEXT,
     player_name TEXT,
@@ -23,19 +24,22 @@ const insert = db.prepare(`
 `);
 
 async function main() {
-    const tx = db.transaction((rows) => {
-        for (const r of rows) insert.run(r);
-    });
-
     for (const competitionId of COMPETITIONS) {
-        const data = JSON.parse(
-            await fs.readFile(`data/${competitionId}.json`, "utf8")
-        );
+        const filePath = `data/${competitionId}.json`;
 
-        console.log(`Importing ${competitionId}`);
+        console.log(`Reading ${filePath}`);
+
+        const raw = await fs.readFile(filePath, "utf8");
+        const data = JSON.parse(raw);
 
         for (const season of Object.keys(data)) {
-            for (const club of data[season].clubs) {
+            const seasonData = data[season];
+
+            if (!seasonData || !seasonData.clubs) continue;
+
+            console.log(`Importing ${competitionId} season ${season}`);
+
+            for (const club of seasonData.clubs) {
                 for (const player of club.players) {
                     insert.run(
                         player.id,
