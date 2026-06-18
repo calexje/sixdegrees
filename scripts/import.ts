@@ -1,43 +1,55 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 const Database = require("better-sqlite3");
-const { parse } = require("csv-parse/sync");
+
+const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","ES2","IT2","L2","FR2"];
 
 const db = new Database("database/football.db");
 
 db.exec(`
 DROP TABLE IF EXISTS appearances;
-
 CREATE TABLE appearances (
-    player TEXT NOT NULL,
-    club TEXT NOT NULL,
-    season TEXT NOT NULL
+    player_id TEXT,
+    player_name TEXT,
+    club_id TEXT,
+    club_name TEXT,
+    season TEXT
 );
 `);
 
-const csv = fs.readFileSync("data/appearances.csv", "utf8");
-
-const rows = parse(csv, {
-    columns: true,
-    skip_empty_lines: true,
-});
-
 const insert = db.prepare(`
     INSERT INTO appearances
-    (player, club, season)
-    VALUES (?, ?, ?)
+    (player_id, player_name, club_id, club_name, season)
+    VALUES (?, ?, ?, ?, ?)
 `);
 
-for (const row of rows) {
-    if(!row.player) {throw new Error (`Invalid player in row ${JSON.stringify(row)}`)}
-    if(!row.club) {throw new Error (`Invalid club in row ${JSON.stringify(row)}`)}
-    if(!row.season.match(/^\d{4}-\d{2}$/)) {throw new Error (`Invalid season in row ${JSON.stringify(row)}`)}
-    if(row.player && row.club && row.season.match(/^\d{4}-\d{2}$/)) {
-        insert.run(
-            row.player,
-            row.club,
-            row.season
+async function main() {
+    const tx = db.transaction((rows) => {
+        for (const r of rows) insert.run(r);
+    });
+
+    for (const competitionId of COMPETITIONS) {
+        const data = JSON.parse(
+            await fs.readFile(`data/${competitionId}.json`, "utf8")
         );
+
+        console.log(`Importing ${competitionId}`);
+
+        for (const season of Object.keys(data)) {
+            for (const club of data[season].clubs) {
+                for (const player of club.players) {
+                    insert.run(
+                        player.id,
+                        player.name,
+                        club.id,
+                        club.name,
+                        season
+                    );
+                }
+            }
+        }
     }
+
+    console.log("Done");
 }
 
-console.log(`Imported ${rows.length} rows`);
+main().catch(console.error);
