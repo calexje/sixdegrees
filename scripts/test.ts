@@ -1,13 +1,8 @@
-import Database from "better-sqlite3";
+import { getClubSeasonFromPlayers } from "../lib/db";
 
-const db = new Database("database/football.db");
-
-const rows = db
-  .prepare(`
-    SELECT *
-    FROM appearances
-    WHERE player = ?
-  `)
-  .all("Ryan Giggs");
-
-console.log(rows);
+console.log(
+  getClubSeasonFromPlayers(
+    "Manchester United",
+    "2013-14"
+  )
+);

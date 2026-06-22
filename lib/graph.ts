@@ -91,3 +91,50 @@ export function findShortestPath(
 
   return null;
 }
+
+export function randomPath(
+  graph: Graph,
+  start: string,
+  moves: number,
+  rng: () => number
+): string[] | null {
+  const path = [start];
+
+  const visited = new Set<string>();
+  visited.add(start);
+
+  let current = start;
+  let playerMoves = 0;
+
+  while (playerMoves < moves) {
+    const neighbours = Array.from(
+      graph.get(current) ?? []
+    ).filter(
+      (node) => !visited.has(node)
+    );
+
+    if (neighbours.length === 0) {
+      return null;
+    }
+
+  const next =
+  neighbours[
+    Math.floor(
+      rng() *
+        neighbours.length
+    )
+  ];
+
+    path.push(next);
+    visited.add(next);
+    current = next;
+
+    if (
+      next.startsWith("player:")
+    ) {
+      playerMoves++;
+    }
+  }
+
+  return path;
+}
