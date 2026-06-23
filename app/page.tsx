@@ -3,16 +3,22 @@ import Footer from "@/components/footer";
 import Game from "@/components/game";
 import { getPuzzle } from "@/lib/puzzle";
 
-async function main() {
-  console.log(await getPuzzle());
-  console.log(await getPuzzle());
-  console.log(await getPuzzle());
-}
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    mode?: string;
+  }>;
+}) {
+  const params = await searchParams;
 
+  const mode =
+    params.mode === "practice" ||
+    params.mode === "challenge"
+      ? params.mode
+      : "daily";
 
-export default async function Home() {
-  const puzzle = await getPuzzle();
-main();
+  const puzzle = await getPuzzle(mode);
   return (
     <>
       <Header />
@@ -49,6 +55,7 @@ main();
               <Game
                 origin={puzzle.origin}
                 target={puzzle.target}
+                solutionDistance={puzzle.solutionDistance}
               />
             </div>
           </section>

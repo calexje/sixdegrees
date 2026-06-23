@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 
 type Props = {
-  origin: string;
-  target: string;
+    origin: string;
+    target: string;
+    solutionDistance: number;
 };
 
 type ClubSeason = {
@@ -32,6 +33,7 @@ type Option = PathNode;
 export default function Game({
   origin,
   target,
+  solutionDistance
 }: Props) {
   const [path, setPath] = useState<PathNode[]>([
     {
@@ -42,9 +44,14 @@ export default function Game({
 
   const [query, setQuery] = useState("");
   const [options, setOptions] = useState<Option[]>([]);
-  const [showHint, setShowHint] = useState(false);
+  const [hintLevel, setHintLevel] = useState(0);
   const [targetCareer, setTargetCareer] =
     useState<ClubSeason[]>([]);
+
+  const mostRecentClub =
+  targetCareer.length > 0
+    ? targetCareer[0]
+    : null;
   const [showWinModal, setShowWinModal] =
     useState(false);
 
@@ -178,7 +185,7 @@ const filteredOptions = options.filter((option) => {
 });
 
   const currentGame =
-    `${origin} and ${target}`;
+    `${origin} and ${target} (${solutionDistance} moves apart)`;
 
   const moveCount = path.length - 1;
 
@@ -189,8 +196,7 @@ const filteredOptions = options.filter((option) => {
 
   // TODO: real values
   const puzzleNumber = 1;
-  const solutionDistance = 0;
-
+  
   const extraMoves =
     moveCount - solutionDistance;
 
@@ -284,34 +290,64 @@ const filteredOptions = options.filter((option) => {
           <h4 className="text-sm mb-4">
             {currentGame}
           </h4>
-
-          <button
+            <button
             onClick={() =>
-              setShowHint(!showHint)
+                setHintLevel(
+                Math.min(hintLevel + 1, 3)
+                )
             }
-            className="border rounded px-3 py-1 text-sm mb-4"
-          >
+            className="border rounded px-3 py-1 text-sm"
+            >
             💡 Hint
-          </button>
+            </button>
+<div className="mt-4 space-y-2">
+  {hintLevel >= 1 &&
+    mostRecentClub && (
+      <div className="text-sm">
+        <strong>
+          Most Recent Club:
+        </strong>{" "}
+        {mostRecentClub.club}
+        {" "}
+        (
+        {mostRecentClub.season}
+        )
+      </div>
+    )}
 
-          {showHint && (
-            <div className="border rounded p-3 mb-4 text-sm">
-              <p className="font-bold mb-2">
-                Target Career
-              </p>
+  {hintLevel >= 2 && (
+    <div className="text-sm">
+      <strong>
+        Shortest Solution:
+      </strong>{" "}
+      {solutionDistance}
+      {" "}
+      moves
+    </div>
+  )}
 
-              <ul>
-                {targetCareer.map(
-                  (club, i) => (
-                    <li key={i}>
-                      {club.club} (
-                      {club.season})
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-          )}
+  {hintLevel >= 3 && (
+    <div className="text-sm">
+      <strong>
+        Full Career:
+      </strong>
+
+      <ul className="mt-2">
+        {targetCareer.map(
+          (career, i) => (
+            <li key={i}>
+              {career.club}
+              {" "}
+              (
+              {career.season}
+              )
+            </li>
+          )
+        )}
+      </ul>
+    </div>
+  )}
+</div>
 
           <h3 className="text-xl font-bold mb-4">
             Path ({moveCountLabel})

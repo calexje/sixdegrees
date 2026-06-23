@@ -1,14 +1,20 @@
 import { NextResponse } from "next/server";
 import { getPuzzle } from "@/lib/puzzle";
 
+type Mode = "daily" | "practice";
+
+function isMode(value: string | null): value is Mode {
+  return value === "daily" || value === "practice";
+}
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
 
-  const date =
-    searchParams.get("date") ??
-    undefined;
+  const raw = searchParams.get("date");
 
-  const puzzle = await getPuzzle(date);
+  const mode: Mode | undefined = isMode(raw) ? raw : undefined;
+
+  const puzzle = await getPuzzle(mode);
 
   return NextResponse.json(puzzle);
 }

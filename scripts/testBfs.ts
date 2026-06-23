@@ -10,5 +10,3 @@ const path = findShortestPath(
   "player:Andriy Shevchenko",
   "player:Rio Ngumoha"
 );
-
-console.log(path);

@@ -1,56 +1,70 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import Game from "@/components/game";
+import { getPuzzle } from "@/lib/puzzle";
 
-type Puzzle = {
-  origin: string;
-  target: string;
-};
-
-export default function PracticePage() {
-  const [puzzle, setPuzzle] = useState<Puzzle | null>(null);
-  const [date, setDate] = useState<string>("");
-
-  useEffect(() => {
-    async function load() {
-      const url =
-        date.length > 0
-          ? `/api/practice?date=${date}`
-          : "/api/practice";
-
-      const res = await fetch(url);
-      const data = await res.json();
-
-      setPuzzle(data);
-    }
-
-    load();
-  }, [date]);
-
+export default async function Home() {
+  const puzzle = await getPuzzle();
   return (
-    <div className="max-w-5xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">
-        Practice Mode
-      </h1>
+    <>
+      <Header />
 
-      <p className="mb-4 text-sm text-gray-500">
-        Try any daily puzzle by date or generate a random one.
-      </p>
+      <main className="max-w-7xl mx-auto px-4 py-8">
 
-      <input
-        type="date"
-        className="border p-2 mb-6"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
+        <div className="grid grid-cols-12 gap-8">
 
-      {puzzle && (
-        <Game
-          origin={puzzle.origin}
-          target={puzzle.target}
-        />
-      )}
-    </div>
+          <aside className="hidden xl:block col-span-2">
+            <div
+              className="
+                border
+                rounded-lg
+                p-4
+                text-center
+                text-sm
+                text-gray-500
+              "
+            >
+              Advertisement
+            </div>
+          </aside>
+
+          <section className="col-span-12 xl:col-span-8">
+            <div
+              className="
+                bg-white
+                dark:bg-zinc-900
+                rounded-xl
+                shadow-xl
+                p-8
+              "
+            >
+              <Game
+                origin={puzzle.origin}
+                target={puzzle.target}
+              />
+            </div>
+          </section>
+
+          <aside className="hidden xl:block col-span-2">
+            <div
+              className="
+                border
+                rounded-lg
+                p-4
+                text-center
+                text-sm
+                text-gray-500
+              "
+            >
+              Advertisement
+            </div>
+          </aside>
+
+        </div>
+
+      </main>
+
+      <Footer />
+    </>
   );
 }
