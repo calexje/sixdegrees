@@ -1,9 +1,14 @@
 const fs = require("fs/promises");
 const Database = require("better-sqlite3");
 
-const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","ES2","IT2","L2","FR2"];
+const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","PO1","ES2","IT2","L2","FR2","PO2"];
 
-const db = new Database("database/football.db");
+const db = new Database("../database/football.db");
+
+db.exec(`
+PRAGMA journal_mode = WAL;
+PRAGMA synchronous = OFF;
+`);
 
 db.exec(`
 DROP TABLE IF EXISTS appearances;
@@ -23,37 +28,62 @@ const insert = db.prepare(`
     VALUES (?, ?, ?, ?, ?)
 `);
 
+const importSeason = db.transaction((data : any) => {
+    for (const club of data.clubs) {
+        for (const player of club.players) {
+            insert.run(
+                player.id,
+                player.name,
+                club.id,
+                club.name,
+                data.season
+            );
+        }
+    }
+});
+
+function createIndexes() {
+    console.log("Creating indexes...");
+
+    db.exec(`
+    CREATE INDEX idx_player_id
+    ON appearances(player_id);
+
+    CREATE INDEX idx_club_season
+    ON appearances(club_id, season);
+
+    CREATE INDEX idx_player_name
+    ON appearances(player_name);
+    `);
+
+    console.log("Done");
+}
+
 async function main() {
     for (const competitionId of COMPETITIONS) {
-        const filePath = `data/${competitionId}.json`;
+        for (let year = 2025; year >= 1990; year--) {
+            const filePath = `data/${competitionId}-${year}.json`;
 
-        console.log(`Reading ${filePath}`);
+            console.log(`Reading ${filePath}`);
 
-        const raw = await fs.readFile(filePath, "utf8");
-        const data = JSON.parse(raw);
+            try {
+                const raw = await fs.readFile(filePath, "utf8");
+                const data = JSON.parse(raw);
 
-        for (const season of Object.keys(data)) {
-            const seasonData = data[season];
+                importSeason(data);
 
-            if (!seasonData || !seasonData.clubs) continue;
-
-            console.log(`Importing ${competitionId} season ${season}`);
-
-            for (const club of seasonData.clubs) {
-                for (const player of club.players) {
-                    insert.run(
-                        player.id,
-                        player.name,
-                        club.id,
-                        club.name,
-                        season
-                    );
+            } catch (err: any) {
+                if (err.code === "ENOENT") {
+                    continue;
                 }
+
+                throw err;
             }
         }
     }
 
-    console.log("Done");
+    createIndexes();
+    db.close();
 }
 
 main().catch(console.error);

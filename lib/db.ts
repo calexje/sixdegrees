@@ -1,8 +1,8 @@
 import Database from "better-sqlite3";
 
 export type Appearance = {
-  player: string;
-  club: string;
+  player_name: string;
+  club_name: string;
   season: string;
 };
 
@@ -11,9 +11,9 @@ const db = new Database("database/football.db");
 export function getPlayerFromClubSeasons(player: string) {
   return db
     .prepare(`
-      SELECT club, season
+      SELECT club_name AS club, season
       FROM appearances
-      WHERE player = ?
+      WHERE player_name = ?
     `)
     .all(player);
 }
@@ -24,9 +24,9 @@ export function getClubSeasonFromPlayers(
 ) {
   return db
     .prepare(`
-      SELECT player
+      SELECT player_name AS player
       FROM appearances
-      WHERE club = ?
+      WHERE club_name = ?
       AND season = ?
     `)
     .all(club, season);
@@ -35,7 +35,7 @@ export function getClubSeasonFromPlayers(
 export function getAllAppearances(): Appearance[] {
   return db
     .prepare(`
-      SELECT player, club, season
+      SELECT player_name, club_name, season
       FROM appearances
     `)
     .all() as Appearance[];

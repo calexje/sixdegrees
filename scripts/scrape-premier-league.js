@@ -1,18 +1,21 @@
 const fs = require("fs/promises");
 
 const COMPETITIONS = [
-    "GB1",
-    "ES1",
+    //"GB1",
+    "ES1"/*,
     "IT1",
     "L1",
-    "FR1",
+    //"FR1",
+    "PO1",
+    "GB2",
     "ES2",
     "IT2",
     "L2",
-    "FR2"
+    "FR2",
+    "PO2"*/
 ];
 
-const START_SEASON = 2025;
+const START_SEASON = 2012 //2025;
 
 const BASE_URL = "https://transfermarkt-api.fly.dev";
 
@@ -20,7 +23,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetchJson(url, retries = 3) {
+async function fetchJson(url, retries = 5) {
     for (let attempt = 1; attempt <= retries; attempt++) {
         try {
             const response = await fetch(url, {
@@ -75,6 +78,12 @@ async function getClubs(competitionId, seasonId) {
 
     const data = await fetchJson(url);
 
+    if (data.detail?.includes("Not Found")) {
+        const err = new Error("Competition season not found");
+        err.status = 404;
+        throw err;
+    }
+
     return data.clubs || [];
 }
 
@@ -87,34 +96,31 @@ async function getPlayers(clubId, seasonId) {
     return data.players || [];
 }
 
-async function saveCompetitionIndex(
-    competitionId,
-    output
-) {
-    await fs.writeFile(
-        `data/${competitionId}.json`,
-        JSON.stringify(output, null, 2)
-    );
-}
-
 async function processCompetition(
     competitionId
 ) {
     console.log(
         `\n========== ${competitionId} ==========`
     );
-
-    const output = {};
-
     for (
         let season = START_SEASON;
-        season >= 1900;
+        season >= 1990;
         season--
     ) {
         console.log(
             `\nSeason ${season}`
         );
+        try {
+            await fs.access(
+                `data/${competitionId}-${season}.json`
+            );
 
+            console.log(
+                `Skipping ${competitionId}-${season}, already exists`
+            );
+
+            continue;
+        } catch {}
         let clubs;
 
         try {
@@ -145,7 +151,8 @@ async function processCompetition(
             clubs: []
         };
 
-        for (const club of clubs) {
+        for (let i = 0; i < clubs.length; i++) {
+            const club = clubs[i];
             try {
                 const players =
                     await getPlayers(
@@ -156,13 +163,17 @@ async function processCompetition(
                 seasonData.clubs.push({
                     id: club.id,
                     name: club.name,
-                    players: players.map(
-                        player => ({
-                            id: player.id,
-                            name: player.name
-                        })
-                    )
+                    players: players.map(player => ({
+                        id: player.id,
+                        name: player.name
+                    }))
                 });
+
+                await fs.writeFile(
+                    `data/${competitionId}-${season}.json`,
+                    JSON.stringify(seasonData, null, 2)
+                );
+                process.stdout.write(`\r[${i + 1}/${clubs.length}] ${club.name.padEnd(25)} - ${competitionId}-${season}`);
             } catch (err) {
                 console.error(
                     `    Failed players for ${club.name}`,
@@ -172,23 +183,7 @@ async function processCompetition(
 
             await sleep(250);
         }
-
-        output[season] = seasonData;
-
-        await fs.writeFile(
-            `data/${competitionId}-${season}.json`,
-            JSON.stringify(
-                seasonData,
-                null,
-                2
-            )
-        );
-
-        await saveCompetitionIndex(
-            competitionId,
-            output
-        );
-
+        process.stdout.write("\n");
         console.log(
             `Saved ${competitionId}-${season}.json`
         );

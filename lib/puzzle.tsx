@@ -14,13 +14,9 @@ function seededRandom(seed: string) {
 
   return function () {
     h += 0x6d2b79f5;
-
     let t = h;
-
     t = Math.imul(t ^ (t >>> 15), t | 1);
-
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
@@ -70,7 +66,6 @@ function generatePracticePuzzle() {
           Math.random() * players.length
         )
       ];
-
     const path = randomPath(
       graph,
       startNode,
@@ -83,7 +78,7 @@ function generatePracticePuzzle() {
     }
 
     return {
-      origin: startNode.replace(
+        origin: startNode.replace(
         "player:",
         ""
       ),
@@ -132,7 +127,6 @@ export type PuzzleMode = "daily" | "practice" | "challenge";
 export async function getPuzzle(mode: PuzzleMode = "daily") {
    switch (mode) {
 case "practice": {
-  console.log("doing practice")
   return generatePracticePuzzle();
 }
 
@@ -142,7 +136,6 @@ case "practice": {
 
     case "daily":
     default: {
-      console.log("doing daily?")
       const seed = getDailySeed();
       return generatePuzzleFromSeed(seed);
     }

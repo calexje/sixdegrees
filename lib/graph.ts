@@ -21,10 +21,10 @@ export function buildGraph(): Graph {
 
   for (const appearance of appearances) {
     const playerNode =
-      `player:${appearance.player}`;
+      `player:${appearance.player_name}`;
 
     const clubSeasonNode =
-      `clubseason:${appearance.club}:${appearance.season}`;
+      `clubseason:${appearance.club_name}:${appearance.season}`;
 
     addEdge(
       graph,
