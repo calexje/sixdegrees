@@ -1,16 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { leagueName } from "@/lib/leagues";
+import { formatSeason } from "@/lib/format";
+import { recordDailyWin } from "@/lib/stats";
+import {
+  difficultyFor,
+  DIFFICULTY_CLASS,
+} from "@/lib/difficulty";
 
 type Props = {
+    mode?: string;
     origin: string;
     target: string;
-    solutionDistance: number;
+    solutionDistance: number | null;
+    solutionPath?: string[];
+    requiredWaypoint?: string;
+    excludedPlayer?: string;
+    notLeagues?: string[];
 };
 
 type ClubSeason = {
   club: string;
   season: string;
+  competition?: string;
 };
 
 type Player = {
@@ -31,9 +44,14 @@ type PathNode =
 type Option = PathNode;
 
 export default function Game({
+  mode,
   origin,
   target,
-  solutionDistance
+  solutionDistance,
+  solutionPath,
+  requiredWaypoint,
+  excludedPlayer,
+  notLeagues,
 }: Props) {
   const [path, setPath] = useState<PathNode[]>([
     {
@@ -44,7 +62,15 @@ export default function Game({
 
   const [query, setQuery] = useState("");
   const [options, setOptions] = useState<Option[]>([]);
-  const [hintLevel, setHintLevel] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [showRecentClub, setShowRecentClub] =
+    useState(false);
+  const [showCareer, setShowCareer] = useState(false);
+  const [bestMove, setBestMove] = useState<
+    string | null
+  >(null);
+  const [bestMoveLoading, setBestMoveLoading] =
+    useState(false);
   const [targetCareer, setTargetCareer] =
     useState<ClubSeason[]>([]);
 
@@ -54,18 +80,41 @@ export default function Game({
     : null;
   const [showWinModal, setShowWinModal] =
     useState(false);
+  const [showOptimal, setShowOptimal] =
+    useState(false);
+  const [stats, setStats] = useState<{
+    gamesPlayed: number;
+    currentStreak: number;
+  } | null>(null);
 
   const current = path[path.length - 1];
 
+  const passedWaypoint =
+    !requiredWaypoint ||
+    path.some(
+      (node) =>
+        node.type === "player" &&
+        node.value === requiredWaypoint
+    );
+
   const won =
     current.type === "player" &&
-    current.value === target;
+    current.value === target &&
+    passedWaypoint;
 
   useEffect(() => {
     if (won) {
       setShowWinModal(true);
+
+      // Only the Daily puzzle feeds the streak/games-played stats.
+      if (mode === "daily") {
+        const today = new Date()
+          .toISOString()
+          .slice(0, 10);
+        setStats(recordDailyWin(today));
+      }
     }
-  }, [won]);
+  }, [won, mode]);
 
   useEffect(() => {
     async function loadTargetCareer() {
@@ -84,7 +133,20 @@ export default function Game({
   }, [target]);
 
   useEffect(() => {
+    // Track whether this is still the current node. If the player selects
+    // another option before the fetch returns, this run is stale and its
+    // results must be ignored, otherwise out-of-order responses could append an
+    // option that belongs to a previous node.
+    let active = true;
+
     async function loadOptions() {
+      // Clear the list and show a loading state straight away so stale options
+      // cannot be clicked while the next node's data is in flight.
+      setLoading(true);
+      setOptions([]);
+      // The best-move suggestion is tied to the current node, so drop it.
+      setBestMove(null);
+
       if (current.type === "player") {
         const response = await fetch(
           `/api/player?name=${encodeURIComponent(
@@ -95,12 +157,22 @@ export default function Game({
         const data: ClubSeason[] =
           await response.json();
 
+        if (!active) return;
+
         setOptions(
-          data.map((item) => ({
-            type: "clubseason",
-            club: item.club,
-            season: item.season,
-          }))
+          data
+            .filter(
+              (item) =>
+                !item.competition ||
+                !notLeagues?.includes(
+                  item.competition
+                )
+            )
+            .map((item) => ({
+              type: "clubseason",
+              club: item.club,
+              season: item.season,
+            }))
         );
       } else {
         const response = await fetch(
@@ -114,16 +186,29 @@ export default function Game({
         const data: Player[] =
           await response.json();
 
+        if (!active) return;
+
         setOptions(
-          data.map((item) => ({
-            type: "player",
-            value: item.player,
-          }))
+          data
+            .filter(
+              (item) =>
+                item.player !== excludedPlayer
+            )
+            .map((item) => ({
+              type: "player",
+              value: item.player,
+            }))
         );
       }
+
+      setLoading(false);
     }
 
     loadOptions();
+
+    return () => {
+      active = false;
+    };
   }, [current]);
 
   function selectOption(option: Option) {
@@ -140,12 +225,62 @@ function goBack() {
 }
 
   async function copyResults() {
+    // window.location.href carries the current mode and any challenge params,
+    // so the link works the same once the app is deployed.
     const shareText =
-      `I connected ${origin} to ${target} in ${path.length - 1} moves! Can you do better?`;
+      `I connected ${origin} to ${target} in ${path.length - 1} moves! Can you do better?\n${window.location.href}`;
 
-    await navigator.clipboard.writeText(
-      shareText
-    );
+    try {
+      await navigator.clipboard.writeText(shareText);
+      alert("Results copied!");
+    } catch {
+      alert("Couldn't copy results to the clipboard.");
+    }
+  }
+
+  // Asks the server which of the current options moves closest to the goal.
+  // With a waypoint not yet reached, the goal is the waypoint; otherwise the
+  // target.
+  async function loadBestMove() {
+    const passed =
+      !requiredWaypoint ||
+      path.some(
+        (node) =>
+          node.type === "player" &&
+          node.value === requiredWaypoint
+      );
+
+    const goalName =
+      requiredWaypoint && !passed
+        ? requiredWaypoint
+        : target;
+
+    const currentKey =
+      current.type === "player"
+        ? `player:${current.value}`
+        : `clubseason:${current.club}:${current.season}`;
+
+    const params = new URLSearchParams();
+    params.set("mode", mode ?? "daily");
+    params.set("current", currentKey);
+    params.set("goal", `player:${goalName}`);
+    if (notLeagues && notLeagues.length > 0) {
+      params.set("not_leagues", notLeagues.join(","));
+    }
+    if (excludedPlayer) {
+      params.set("not_player", excludedPlayer);
+    }
+
+    setBestMoveLoading(true);
+    try {
+      const response = await fetch(
+        `/api/hint?${params.toString()}`
+      );
+      const data = await response.json();
+      setBestMove(data.suggestion ?? "No move found");
+    } finally {
+      setBestMoveLoading(false);
+    }
   }
 
 const filteredOptions = options.filter((option) => {
@@ -184,8 +319,7 @@ const filteredOptions = options.filter((option) => {
         .includes(query.toLowerCase());
 });
 
-  const currentGame =
-    `${origin} and ${target} (${solutionDistance} moves apart)`;
+  const hasSolution = solutionDistance !== null;
 
   const moveCount = path.length - 1;
 
@@ -196,83 +330,117 @@ const filteredOptions = options.filter((option) => {
 
   // TODO: real values
   const puzzleNumber = 1;
-  
-  const extraMoves =
-    moveCount - solutionDistance;
+
+  const extraMoves = hasSolution
+    ? moveCount - solutionDistance
+    : null;
+
+  const rating =
+    extraMoves === null
+      ? "🏁 Completed"
+      : extraMoves === 0
+      ? "⭐ Perfect"
+      : extraMoves === 1
+      ? "🟢 Excellent"
+      : extraMoves === 2
+      ? "🟡 Good"
+      : "🔴 Completed";
+
+  const hasConstraints =
+    !!requiredWaypoint ||
+    !!excludedPlayer ||
+    (notLeagues?.length ?? 0) > 0;
 
   return (
     <>
       {showWinModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-black text-black rounded-xl shadow-2xl p-6 w-full max-w-xl text-white">
-            <h2 className="text-2xl font-bold mb-4">
-              Football Degrees #
-              {puzzleNumber}
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+          <div className="bg-background text-foreground border border-border rounded-lg shadow-2xl p-6 w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-1">
+              Football Degrees #{puzzleNumber}
             </h2>
 
-            <p className="text-lg mb-4">
-              {extraMoves === 0 &&
-                "⭐ Perfect"}
-              {extraMoves === 1 &&
-                "🟢 Excellent"}
-              {extraMoves === 2 &&
-                "🟡 Good"}
-              {extraMoves >= 3 &&
-                "🔴 Completed"}
+            <p className="text-lg mb-4 font-semibold text-primary-700 dark:text-primary-400">
+              {rating}
             </p>
 
             <p className="mb-2">
               Success! You connected{" "}
               <strong>{origin}</strong> to{" "}
               <strong>{target}</strong> in{" "}
-              <strong>{moveCount}</strong>{" "}
-              moves.
+              <strong>{moveCount}</strong> moves.
             </p>
 
-            <p className="mb-4">
-              The shortest solution was{" "}
-              <strong>
-                {solutionDistance}
-              </strong>{" "}
-              moves.
-            </p>
+            {hasSolution ? (
+              <p className="mb-4 text-muted">
+                The shortest solution was{" "}
+                <strong>{solutionDistance}</strong> moves.
+              </p>
+            ) : (
+              <p className="mb-4 text-muted">
+                No known solution for these constraints.
+              </p>
+            )}
 
-            <div className="border rounded p-4 mb-4">
+            <h3 className="font-bold mb-1 text-sm">
+              Your route
+            </h3>
+            <div className="border border-border rounded-lg p-4 mb-4 text-sm leading-relaxed">
               {path.map((node, i) => (
                 <span key={i}>
                   {node.type === "player"
                     ? node.value
-                    : `${node.club} (${node.season})`}
-
-                  {i <
-                    path.length - 1 &&
-                    " → "}
+                    : `${node.club} (${formatSeason(node.season)})`}
+                  {i < path.length - 1 && " → "}
                 </span>
               ))}
             </div>
 
-            <div className="border-t pt-4 mb-4">
-              <h3 className="font-bold mb-2">
-                Statistics
-              </h3>
+            {solutionPath && solutionPath.length > 0 && (
+              <div className="mb-4">
+                {showOptimal ? (
+                  <>
+                    <h3 className="font-bold mb-1 text-sm">
+                      Optimal route
+                    </h3>
+                    <div className="border border-border rounded-lg p-4 text-sm leading-relaxed">
+                      {solutionPath.join(" → ")}
+                    </div>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => setShowOptimal(true)}
+                    className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
+                  >
+                    Show optimal route
+                  </button>
+                )}
+              </div>
+            )}
 
-              <p>Current Streak: 1</p>
-              <p>Games Played: 1</p>
-            </div>
+            {mode === "daily" && stats && (
+              <div className="border-t border-border pt-4 mb-4">
+                <h3 className="font-bold mb-2">Statistics</h3>
+                <p className="text-muted">
+                  Current Streak: {stats.currentStreak}
+                </p>
+                <p className="text-muted">
+                  Games Played: {stats.gamesPlayed}
+                </p>
+              </div>
+            )}
 
             <div className="flex gap-2">
               <button
                 onClick={copyResults}
-                className="px-4 py-2 border rounded"
+                className="px-4 py-2 rounded-lg bg-primary-500 text-black font-semibold hover:bg-primary-600 transition"
               >
                 Copy Results
               </button>
 
               <button
-                onClick={() =>
-                  setShowWinModal(false)
-                }
-                className="px-4 py-2 border rounded"
+                onClick={() => setShowWinModal(false)}
+                className="px-4 py-2 rounded-lg border border-border hover:bg-surface-100 dark:hover:bg-surface-800 transition"
               >
                 Close
               </button>
@@ -281,159 +449,218 @@ const filteredOptions = options.filter((option) => {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div className="border p-4">
-          <h3 className="text-xl font-bold mb-4">
+      <div>
+        <div className="text-center mb-6">
+          <p className="text-sm text-muted mb-1">
             Find a link between
-          </h3>
-
-          <h4 className="text-sm mb-4">
-            {currentGame}
-          </h4>
-            <button
-            onClick={() =>
-                setHintLevel(
-                Math.min(hintLevel + 1, 3)
-                )
-            }
-            className="border rounded px-3 py-1 text-sm"
-            >
-            💡 Hint
-            </button>
-<div className="mt-4 space-y-2">
-  {hintLevel >= 1 &&
-    mostRecentClub && (
-      <div className="text-sm">
-        <strong>
-          Most Recent Club:
-        </strong>{" "}
-        {mostRecentClub.club}
-        {" "}
-        (
-        {mostRecentClub.season}
-        )
-      </div>
-    )}
-
-  {hintLevel >= 2 && (
-    <div className="text-sm">
-      <strong>
-        Shortest Solution:
-      </strong>{" "}
-      {solutionDistance}
-      {" "}
-      moves
-    </div>
-  )}
-
-  {hintLevel >= 3 && (
-    <div className="text-sm">
-      <strong>
-        Full Career:
-      </strong>
-
-      <ul className="mt-2">
-        {targetCareer.map(
-          (career, i) => (
-            <li key={i}>
-              {career.club}
+          </p>
+          <h2 className="text-xl font-bold">
+            {origin}
+            <span className="text-muted font-normal">
               {" "}
-              (
-              {career.season}
-              )
-            </li>
-          )
-        )}
-      </ul>
-    </div>
-  )}
-</div>
-
-          <h3 className="text-xl font-bold mb-4">
-            Path ({moveCountLabel})
-          </h3>
-            <button
-                onClick={goBack}
-                disabled={path.length <= 1}
-                className="border rounded px-3 py-1 text-sm mb-4 disabled:opacity-50">
-                ← Back
-            </button>
-
-          <ul>
-            {path.map((node, i) => (
-              <li
-                key={i}
-                className="py-2"
+              and{" "}
+            </span>
+            {target}
+          </h2>
+          {solutionDistance !== null && (
+            <div className="mt-2 flex items-center justify-center gap-2 text-sm">
+              <span className="text-muted">
+                {solutionDistance} moves apart
+              </span>
+              <span
+                className={`px-2 py-0.5 rounded-full text-xs font-semibold ${DIFFICULTY_CLASS[difficultyFor(solutionDistance)]}`}
               >
-                {node.type === "player"
-                  ? node.value
-                  : `${node.club} (${node.season})`}
-              </li>
-            ))}
-          </ul>
+                {difficultyFor(solutionDistance)}
+              </span>
+            </div>
+          )}
         </div>
 
-        <div className="border p-4">
-          {!won && (
-            <>
-              <h3 className="text-xl font-bold mb-4">
-                Next Move
-              </h3>
-
-              <h4 className="text-sm text-gray-500 mb-4">
-                {current.type === "player"
-                  ? `Showing ${current.value}'s Career`
-                  : `Showing ${current.club} (${current.season}) Squad`}
-              </h4>
-
-              <input
-                value={query}
-                onChange={(e) =>
-                  setQuery(
-                    e.target.value
-                  )
-                }
-                placeholder="Search..."
-                className="w-full border rounded p-2 mb-3"
-              />
-
-              <div className="border rounded">
-                {filteredOptions.map(
-                  (option, i) => {
-                    const label =
-                      option.type ===
-                      "player"
-                        ? option.value
-                        : `${option.club} (${option.season})`;
-
-                    return (
-                      <button
-                        key={i}
-                        onClick={() => {
-                          selectOption(
-                            option
-                          );
-                          setQuery("");
-                        }}
-                        className="
-                          w-full
-                          text-left
-                          px-3
-                          py-2
-                          border-b
-                          hover:bg-gray-50
-                          hover:text-black
-                          transition
-                        "
-                      >
-                        {label}
-                      </button>
-                    );
-                  }
-                )}
+        {hasConstraints && (
+          <div className="border border-border rounded-lg p-3 mb-6 text-sm space-y-1">
+            <div className="font-semibold">
+              Challenge rules
+            </div>
+            {notLeagues && notLeagues.length > 0 && (
+              <div className="text-muted">
+                Excluded leagues:{" "}
+                {notLeagues.map(leagueName).join(", ")}
               </div>
-            </>
+            )}
+            {requiredWaypoint && (
+              <div className="text-muted">
+                Must pass through: {requiredWaypoint}
+              </div>
+            )}
+            {excludedPlayer && (
+              <div className="text-muted">
+                Cannot use: {excludedPlayer}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {!won && (
+            <div className="order-1 lg:order-2">
+              <div className="flex items-baseline justify-between mb-2">
+                <h3 className="font-semibold">Next move</h3>
+                <span className="text-xs text-muted">
+                  {current.type === "player"
+                    ? `${current.value}'s clubs`
+                    : `${current.club} (${formatSeason(current.season)}) squad`}
+                </span>
+              </div>
+
+              {loading ? (
+                <div className="text-sm text-muted py-3">
+                  {current.type === "player"
+                    ? "Fetching clubs..."
+                    : "Fetching players..."}
+                </div>
+              ) : (
+                <>
+                  <input
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search..."
+                    className="w-full rounded-lg border border-border bg-background px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  />
+
+                  <div className="rounded-lg border border-border divide-y divide-border overflow-hidden max-h-72 overflow-y-auto">
+                    {filteredOptions.map((option, i) => {
+                      const label =
+                        option.type === "player"
+                          ? option.value
+                          : `${option.club} (${formatSeason(option.season)})`;
+
+                      return (
+                        <button
+                          key={i}
+                          onClick={() => {
+                            selectOption(option);
+                            setQuery("");
+                          }}
+                          className="w-full text-left px-3 py-2 hover:bg-surface-100 dark:hover:bg-surface-800 transition"
+                        >
+                          {label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
           )}
+
+          <div className="order-2 lg:order-1 space-y-6">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="font-semibold">
+                  Your path{" "}
+                  <span className="text-muted font-normal">
+                    ({moveCountLabel})
+                  </span>
+                </h3>
+                <button
+                  onClick={goBack}
+                  disabled={path.length <= 1}
+                  className="rounded-lg border border-border px-3 py-1 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
+                >
+                  ← Back
+                </button>
+              </div>
+
+              <ol className="space-y-1">
+                {path.map((node, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-2"
+                  >
+                    {i > 0 && (
+                      <span className="text-muted select-none">
+                        ↳
+                      </span>
+                    )}
+                    <span
+                      className={
+                        node.type === "player"
+                          ? "font-medium"
+                          : "text-sm text-muted"
+                      }
+                    >
+                      {node.type === "player"
+                        ? node.value
+                        : `${node.club} (${formatSeason(node.season)})`}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {!won && (
+              <div>
+                <div className="flex flex-wrap gap-2">
+                  {!showRecentClub && (
+                    <button
+                      onClick={() => setShowRecentClub(true)}
+                      className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
+                    >
+                      💡 Hint: Most recent club
+                    </button>
+                  )}
+                  {!showCareer && (
+                    <button
+                      onClick={() => setShowCareer(true)}
+                      className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
+                    >
+                      💡 Hint: Show career
+                    </button>
+                  )}
+                  <button
+                    onClick={loadBestMove}
+                    disabled={bestMoveLoading}
+                    className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
+                  >
+                    {bestMoveLoading
+                      ? "💡 Finding best move..."
+                      : "💡 Hint: Best move"}
+                  </button>
+                </div>
+
+                <div className="mt-3 space-y-2">
+                  {showRecentClub && mostRecentClub && (
+                    <div className="text-sm">
+                      <strong>Most recent club:</strong>{" "}
+                      {mostRecentClub.club} (
+                      {formatSeason(mostRecentClub.season)})
+                    </div>
+                  )}
+
+                  {bestMove && (
+                    <div className="text-sm">
+                      <strong>Best move:</strong>{" "}
+                      {bestMove}
+                    </div>
+                  )}
+
+                  {showCareer && (
+                    <div className="text-sm">
+                      <strong>Full career:</strong>
+                      <ul className="mt-2 list-disc list-inside text-muted">
+                        {targetCareer.map((career, i) => (
+                          <li key={i}>
+                            {career.club} (
+                            {formatSeason(career.season)})
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

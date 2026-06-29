@@ -1,15 +1,16 @@
 export default function Footer() {
   return (
-    <footer className="border-t mt-12">
+    <footer className="border-t border-border mt-12">
       <div
         className="
-          max-w-7xl
+          max-w-xl
+          lg:max-w-4xl
           mx-auto
           px-4
           py-6
           text-center
           text-sm
-          text-gray-500
+          text-muted
         "
       >
         © Callum Alexandre 2026

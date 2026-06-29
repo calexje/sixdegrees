@@ -1,82 +1,82 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Game from "@/components/game";
-import { getPuzzle } from "@/lib/puzzle";
+import ChallengeBuilder from "@/components/challenge-builder";
+import { buildChallenge, getPuzzle, PuzzleMode } from "@/lib/puzzle";
+import { getCompetitions } from "@/lib/db";
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: Promise<{
     mode?: string;
+    from?: string;
+    to?: string;
+    via?: string;
+    not_player?: string;
+    not_leagues?: string;
   }>;
 }) {
   const params = await searchParams;
 
-  const mode =
-    params.mode === "practice" ||
-    params.mode === "challenge"
-      ? params.mode
-      : "daily";
+  let content;
 
-  const puzzle = await getPuzzle(mode);
+  if (params.mode === "challenge") {
+    const challenge =
+      params.from && params.to
+        ? buildChallenge({
+            fromId: params.from,
+            toId: params.to,
+            viaId: params.via,
+            notPlayerId: params.not_player,
+            notLeagues: params.not_leagues
+              ? params.not_leagues.split(",")
+              : [],
+          })
+        : null;
+
+    content = challenge ? (
+      <Game
+        key={`challenge:${challenge.originId}:${challenge.targetId}:${challenge.viaId ?? ""}:${challenge.excludedId ?? ""}:${challenge.notLeagues.join(",")}`}
+        mode="challenge"
+        origin={challenge.origin}
+        target={challenge.target}
+        solutionDistance={challenge.solutionDistance}
+        solutionPath={challenge.solutionPath ?? undefined}
+        requiredWaypoint={challenge.via ?? undefined}
+        excludedPlayer={challenge.excludedPlayer ?? undefined}
+        notLeagues={challenge.notLeagues}
+      />
+    ) : (
+      <ChallengeBuilder leagues={getCompetitions()} />
+    );
+  } else {
+    const mode: PuzzleMode =
+      params.mode === "practice" ||
+      params.mode === "expert"
+        ? params.mode
+        : "daily";
+
+    const puzzle = await getPuzzle(mode);
+
+    content = (
+      <Game
+        key={`${mode}:${puzzle.origin}:${puzzle.target}`}
+        mode={mode}
+        origin={puzzle.origin}
+        target={puzzle.target}
+        solutionDistance={puzzle.solutionDistance}
+        solutionPath={puzzle.solutionPath}
+      />
+    );
+  }
+
   return (
     <>
       <Header />
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-
-        <div className="grid grid-cols-12 gap-8">
-
-          <aside className="hidden xl:block col-span-2">
-            <div
-              className="
-                border
-                rounded-lg
-                p-4
-                text-center
-                text-sm
-                text-gray-500
-              "
-            >
-              Advertisement
-            </div>
-          </aside>
-
-          <section className="col-span-12 xl:col-span-8">
-            <div
-              className="
-                bg-white
-                dark:bg-zinc-900
-                rounded-xl
-                shadow-xl
-                p-8
-              "
-            >
-              <Game
-                origin={puzzle.origin}
-                target={puzzle.target}
-                solutionDistance={puzzle.solutionDistance}
-              />
-            </div>
-          </section>
-
-          <aside className="hidden xl:block col-span-2">
-            <div
-              className="
-                border
-                rounded-lg
-                p-4
-                text-center
-                text-sm
-                text-gray-500
-              "
-            >
-              Advertisement
-            </div>
-          </aside>
-
-        </div>
-
+      <main className="max-w-xl lg:max-w-4xl w-full mx-auto px-4 py-10">
+        {content}
       </main>
 
       <Footer />
