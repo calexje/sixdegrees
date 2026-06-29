@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const Database = require("better-sqlite3");
 
-const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","PO1","ES2","IT2","L2","FR2","PO2"];
+const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","PO1","GB2","ES2","IT2","L2","FR2","PO2"];
 
 const db = new Database("../database/football.db");
 
@@ -18,25 +18,39 @@ CREATE TABLE appearances (
     player_name TEXT,
     club_id TEXT,
     club_name TEXT,
-    season TEXT
+    season TEXT,
+    competition TEXT
 );
 `);
 
 const insert = db.prepare(`
     INSERT INTO appearances
-    (player_id, player_name, club_id, club_name, season)
-    VALUES (?, ?, ?, ?, ?)
+    (player_id, player_name, club_id, club_name, season, competition)
+    VALUES (?, ?, ?, ?, ?, ?)
 `);
+
+// Some top-flight clubs are duplicated into the second-tier files for the same
+// season (identical squads). Competitions are imported top tier first (GB1
+// before GB2, PO1 before PO2, ...), so once a club-season has been imported we
+// skip any later copy and keep the higher-tier record.
+const importedClubSeasons = new Set<string>();
 
 const importSeason = db.transaction((data : any) => {
     for (const club of data.clubs) {
+        const key = `${club.id}:${data.season}`;
+        if (importedClubSeasons.has(key)) {
+            continue;
+        }
+        importedClubSeasons.add(key);
+
         for (const player of club.players) {
             insert.run(
                 player.id,
                 player.name,
                 club.id,
                 club.name,
-                data.season
+                data.season,
+                data.competitionId
             );
         }
     }
@@ -54,6 +68,9 @@ function createIndexes() {
 
     CREATE INDEX idx_player_name
     ON appearances(player_name);
+
+    CREATE INDEX idx_competition
+    ON appearances(competition);
     `);
 
     console.log("Done");

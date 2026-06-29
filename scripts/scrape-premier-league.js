@@ -1,21 +1,21 @@
 const fs = require("fs/promises");
 
 const COMPETITIONS = [
-    //"GB1",
-    "ES1"/*,
+    "GB1",
+    "ES1",
     "IT1",
     "L1",
-    //"FR1",
+    "FR1",
     "PO1",
     "GB2",
     "ES2",
     "IT2",
     "L2",
     "FR2",
-    "PO2"*/
+    "PO2"
 ];
 
-const START_SEASON = 2012 //2025;
+const START_SEASON = 2012;
 
 const BASE_URL = "https://transfermarkt-api.fly.dev";
 
