@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-50: rgb(236 243 241);
+  --color-primary-100: rgb(229 239 237);
+  --color-primary-200: rgb(223 235 232);
+  --color-primary-300: rgb(203 223 218);
+  --color-primary-400: rgb(164 198 191);
+  --color-primary-500: rgb(125 174 163);
+  --color-primary-600: rgb(113 157 147);
+  --color-primary-700: rgb(94 131 122);
+  --color-primary-800: rgb(75 104 98);
+  --color-primary-900: rgb(61 85 80);
+
+  --color-secondary-500: rgb(211 134 155);
+  --color-tertiary-400: rgb(231 216 189);
+  --color-tertiary-500: rgb(221 199 161);
+
+  --color-success-400: rgb(195 204 147);
+  --color-success-500: rgb(169 182 101);
+  --color-success-600: rgb(152 164 91);
+
+  --color-warning-500: rgb(234 105 98);
+  --color-error-500: rgb(130 1 115);
+
+  --color-surface-50: rgb(230 229 228);
+  --color-surface-100: rgb(222 220 219);
+  --color-surface-200: rgb(214 212 210);
+  --color-surface-300: rgb(189 186 183);
+  --color-surface-400: rgb(140 134 130);
+  --color-surface-500: rgb(90 82 76);
+  --color-surface-600: rgb(80 74 69);
+  --color-surface-700: rgb(69 64 61);
+  --color-surface-800: rgb(50 48 47);
+  --color-surface-900: rgb(40 40 40);
+}
+
+/* Semantic tokens for page background, text and borders. */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: rgb(40 40 40);
+  --border: rgb(229 231 235);
+  --muted: rgb(90 82 76);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgb(40 40 40);
+    --foreground: rgb(221 199 161);
+    --border: rgb(69 64 61);
+    --muted: rgb(189 186 183);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
