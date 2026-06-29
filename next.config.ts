@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Bundle the SQLite file into the serverless functions that read it; Vercel
+  // can't trace a runtime string path on its own.
+  outputFileTracingIncludes: {
+    "/": ["./database/football.db"],
+    "/api/**": ["./database/football.db"],
+  },
 };
 
 export default nextConfig;

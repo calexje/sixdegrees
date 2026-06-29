@@ -1,4 +1,5 @@
 import Database from "better-sqlite3";
+import path from "path";
 
 export type Appearance = {
   player_name: string;
@@ -12,7 +13,10 @@ export type PlayerRef = {
   name: string;
 };
 
-const db = new Database("database/football.db");
+const db = new Database(
+  path.join(process.cwd(), "database", "football.db"),
+  { readonly: true, fileMustExist: true }
+);
 
 export function getPlayerFromClubSeasons(player: string) {
   return db

@@ -6,7 +6,7 @@ const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","PO1","GB2","ES2","IT2","L2",
 const db = new Database("../database/football.db");
 
 db.exec(`
-PRAGMA journal_mode = WAL;
+PRAGMA journal_mode = DELETE;
 PRAGMA synchronous = OFF;
 `);
 
