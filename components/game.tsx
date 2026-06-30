@@ -419,7 +419,7 @@ export default function Game({
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-background text-foreground border border-border rounded-lg shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-1">
-              Football Degrees
+              footylinks
               {puzzleNumber ? ` #${puzzleNumber}` : ""}
             </h2>
 

@@ -72,7 +72,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <span className="text-2xl">⚽</span>
           <span className="font-bold text-xl tracking-tight">
-            Football Degrees
+            footylinks
           </span>
         </div>
 

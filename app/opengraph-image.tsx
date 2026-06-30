@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
+import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 
-export const alt =
-  "Football Degrees — connect two footballers through the clubs they shared";
+export const alt = `${SITE_NAME} — connect two footballers through the clubs they shared`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -32,7 +32,7 @@ export default function Image() {
             letterSpacing: "-0.02em",
           }}
         >
-          Football Degrees
+          {SITE_NAME}
         </div>
         <div
           style={{
@@ -51,8 +51,7 @@ export default function Image() {
             maxWidth: 900,
           }}
         >
-          Connect two footballers through the clubs they
-          shared.
+          {SITE_DESCRIPTION}
         </div>
       </div>
     ),

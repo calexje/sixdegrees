@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Football Degrees",
+  title: "About — footylinks",
 };
 
 const linkClass =
@@ -11,11 +11,11 @@ export default function AboutPage() {
   return (
     <article className="max-w-2xl mx-auto space-y-6 text-sm leading-relaxed">
       <h1 className="text-2xl font-bold">
-        About Football Degrees
+        About footylinks
       </h1>
 
       <p>
-        Football Degrees is a daily football puzzle in the
+        footylinks is a daily football puzzle in the
         spirit of six degrees of separation. You&apos;re
         given two players and have to connect them through
         the clubs they shared, hopping player to club to

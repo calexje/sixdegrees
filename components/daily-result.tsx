@@ -62,7 +62,7 @@ export default function DailyResult({
         ? ` with ${hints} hint${hints === 1 ? "" : "s"}`
         : "";
     const text =
-      `I solved Football Degrees${puzzleNumber ? ` #${puzzleNumber}` : ""} (${origin} → ${target}) in ${moves} moves${hintText}!\n${window.location.href}`;
+      `I solved footylinks${puzzleNumber ? ` #${puzzleNumber}` : ""} (${origin} → ${target}) in ${moves} moves${hintText}!\n${window.location.href}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
@@ -75,7 +75,7 @@ export default function DailyResult({
   return (
     <div className="max-w-md mx-auto text-center">
       <h2 className="text-2xl font-bold mb-1">
-        Football Degrees
+        footylinks
         {puzzleNumber ? ` #${puzzleNumber}` : ""}
       </h2>
       <p className="text-lg mb-4 font-semibold text-primary-700 dark:text-primary-400">

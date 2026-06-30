@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Football Degrees",
+  title: "Privacy Policy — footylinks",
 };
 
 const linkClass =
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       </div>
 
       <p>
-        Football Degrees is operated by{" "}
+        footylinks is operated by{" "}
         <strong>Calex SEO</strong>. This policy explains
         what data the site handles. Questions? Email{" "}
         <a
