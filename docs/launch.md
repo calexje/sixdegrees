@@ -63,22 +63,25 @@ stays the bundled read-only SQLite throughout (no hosted DB required).
 
 ## 2. Ads prerequisites: privacy policy + consent — [decided: UK/EU audience]
 
-EU/UK traffic means consent is required before ads (and any non-essential
-cookies) run. This is a hard gate for AdSense.
+EU/UK traffic means consent is required before advertising cookies run. This is
+a hard gate for AdSense.
 
-- **Privacy policy page** (`/privacy`): what's stored (localStorage stats — no
-  PII), third parties (Google AdSense, Vercel Analytics), cookies, and contact.
-  Owner: **Calex SEO**, contact **sixlinksgaming@gmail.com**.
-- **Consent banner / CMP**: use Google's CMP ("Privacy & messaging" / Funding
-  Choices) — free and AdSense-integrated — or a lightweight TCF CMP. Gate ad
-  scripts (and GA-style analytics) behind consent.
-- **An `/about` (how-to-play) page**: doubles as the content AdSense wants
-  (helps clear the "low-value content" review) and a natural home for the link.
-- Vercel Analytics is cookieless, so it can run without the consent gate, but it
-  still gets a line in the privacy policy.
-- This is the **AdSense-readiness** half of the "ads" work; the ad units
-  themselves (likely AdSense H5 Games Ads — rewarded/interstitial, see earlier
-  research) come after approval.
+**Done (in code):**
+- **`/privacy`** — privacy policy covering local-storage game data (no PII),
+  Vercel Analytics (cookieless), and Google AdSense cookies + UK/EEA consent,
+  with the Google opt-out links. Owner: Calex SEO, sixlinksgaming@gmail.com.
+- **`/about`** — how-to-play + modes + data attribution; doubles as the content
+  AdSense's "low-value content" review wants.
+- **Footer links** to both on every page.
+
+**Remaining (at AdSense onboarding, not now):**
+- **Consent banner = Google's certified CMP** ("Privacy & messaging" in the
+  AdSense dashboard). For EEA/UK, Google *requires* an IAB-TCF-certified CMP to
+  serve ads — a hand-rolled banner is non-compliant for ads, so there's nothing
+  to build here in advance. It's free and toggled on when ads go live.
+- Vercel Analytics is cookieless, so it needs no consent gate today.
+- The ad units themselves (likely AdSense H5 Games Ads — rewarded/interstitial,
+  see earlier research) also come after approval.
 
 ## 3. Daily lock after completion — [decided: lock until tomorrow]
 
