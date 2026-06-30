@@ -23,7 +23,11 @@ const fullGraph = buildGraph();
 const premierLeagueGraph = buildGraph({ competition: "GB1" });
 
 const EXPERT_DISTANCE = 6;
-const PRACTICE_DISTANCE = 2;
+// Practice difficulty in moves (selections). A move is one step; a hop
+// (player -> club -> player) is two, so move counts are always even. Capped at
+// 10 (5 hops): 12-move/6-hop pairs are too rare to offer reliably.
+const PRACTICE_DEFAULT_MOVES = 4;
+const PRACTICE_MAX_MOVES = 10;
 
 // Generated puzzles never go below this many jumps. A 1-jump puzzle is two
 // players who shared a club (e.g. Tonali and Donnarumma at Milan), which is
@@ -80,6 +84,13 @@ function getDailySeed() {
 // (player-to-player hops); if no player sits exactly that far away we fall back
 // to the farthest reachable player within that bound. solutionDistance is in
 // moves (selections / graph edges), matching how the player's moves are counted.
+// Football is small-world: most players sit within a few hops, so exactly-N-hop
+// pairs get rarer as N grows. A single random start often has no node at the
+// requested distance. We try a few starts to honour the target, keeping the
+// closest-below as we go, and return as soon as we hit it exactly. Easy targets
+// are found on the first try, so this adds no cost there.
+const TARGET_ATTEMPTS = 8;
+
 function generatePuzzle(
   graph: Graph,
   targetJumps: number,
@@ -92,7 +103,16 @@ function generatePuzzle(
       (!allowed || allowed.has(node))
   );
 
-  while (true) {
+  type Found = {
+    startNode: string;
+    target: string;
+    parent: Map<string, string>;
+    jumps: number;
+  };
+
+  // One random start: the best (highest, capped at target) reachable pair, or
+  // null if nothing sits at or above the floor.
+  function attempt(): Found | null {
     const startNode =
       players[Math.floor(rng() * players.length)];
 
@@ -102,7 +122,6 @@ function generatePuzzle(
       targetJumps * 2
     );
 
-    // Bucket reachable players by their shortest distance in jumps.
     const byJumps = new Map<number, string[]>();
     for (const [node, edges] of distance) {
       if (
@@ -120,8 +139,7 @@ function generatePuzzle(
     }
 
     // Prefer the requested difficulty; otherwise the closest available down to
-    // the floor. Never go below MIN_JUMPS — retry with a new origin instead, so
-    // we never serve a trivial same-club puzzle.
+    // the floor. Never go below MIN_JUMPS (no trivial same-club puzzles).
     let jumps = 0;
     for (let j = targetJumps; j >= MIN_JUMPS; j--) {
       if (byJumps.has(j)) {
@@ -130,22 +148,51 @@ function generatePuzzle(
       }
     }
 
-    if (jumps === 0) continue; // nothing at/above the floor here, try another
+    if (jumps === 0) return null;
 
     const bucket = byJumps.get(jumps)!;
     const target =
       bucket[Math.floor(rng() * bucket.length)];
 
-    const path = reconstructPath(parent, startNode, target);
+    return { startNode, target, parent, jumps };
+  }
 
+  function build(found: Found) {
+    const path = reconstructPath(
+      found.parent,
+      found.startNode,
+      found.target
+    );
     return {
-      originId: startNode.slice("player:".length),
-      origin: nodeLabel(startNode),
-      targetId: target.slice("player:".length),
-      target: nodeLabel(target),
+      originId: found.startNode.slice("player:".length),
+      origin: nodeLabel(found.startNode),
+      targetId: found.target.slice("player:".length),
+      target: nodeLabel(found.target),
       solutionDistance: path.length - 1,
       solutionPath: pathToLabels(path),
     };
+  }
+
+  let best: Found | null = null;
+  for (let i = 0; i < TARGET_ATTEMPTS; i++) {
+    const found = attempt();
+    if (!found) continue;
+    if (found.jumps === targetJumps) {
+      return build(found);
+    }
+    if (!best || found.jumps > best.jumps) {
+      best = found;
+    }
+  }
+
+  if (best) return build(best);
+
+  // Pathological pool (e.g. over-restrictive filters): keep trying for any
+  // valid pair at or above the floor.
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    const found = attempt();
+    if (found) return build(found);
   }
 }
 
@@ -190,6 +237,7 @@ export type PracticeFilters = {
   seasonFrom?: number;
   seasonTo?: number;
   obscurity?: number;
+  moves?: number;
 };
 
 export function generatePracticePuzzle(
@@ -209,9 +257,19 @@ export function generatePracticePuzzle(
       ? undefined
       : prominentPlayerNodes(minSeasons);
 
+  // Difficulty in moves; clamp to [floor, max] then convert to jumps (2 moves
+  // per hop) for generation.
+  const moves = Math.min(
+    Math.max(
+      filters.moves ?? PRACTICE_DEFAULT_MOVES,
+      MIN_JUMPS * 2
+    ),
+    PRACTICE_MAX_MOVES
+  );
+
   return generatePuzzle(
     graph,
-    PRACTICE_DISTANCE,
+    Math.round(moves / 2),
     Math.random,
     allowed
   );

@@ -22,6 +22,7 @@ export default async function Home({
     from_season?: string;
     to_season?: string;
     obscurity?: string;
+    moves?: string;
   }>;
 }) {
   const params = await searchParams;
@@ -74,12 +75,16 @@ export default async function Home({
     const obscurity = params.obscurity
       ? Number(params.obscurity)
       : 5;
+    const moves = params.moves
+      ? Number(params.moves)
+      : undefined;
 
     const puzzle = generatePracticePuzzle({
       leagues,
       seasonFrom,
       seasonTo,
       obscurity,
+      moves,
     });
 
     content = (
@@ -87,7 +92,7 @@ export default async function Home({
         <PracticeConfig
           leagues={getCompetitions()}
           bounds={getSeasonBounds()}
-          current={{ leagues, seasonFrom, seasonTo, obscurity }}
+          current={{ leagues, seasonFrom, seasonTo, obscurity, moves }}
         />
         <Game
           key={`practice:${puzzle.originId}:${puzzle.targetId}`}

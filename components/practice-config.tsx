@@ -5,6 +5,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useNav } from "./nav-context";
 import { leagueName } from "@/lib/leagues";
 import { OBSCURITY_LABELS } from "@/lib/prominence";
+import { difficultyFor } from "@/lib/difficulty";
+
+// Difficulty in moves (selections); even-only, mirrors the clamp in puzzle.tsx.
+const MIN_MOVES = 4;
+const MAX_MOVES = 10;
 
 export default function PracticeConfig({
   leagues,
@@ -18,6 +23,7 @@ export default function PracticeConfig({
     seasonFrom?: number;
     seasonTo?: number;
     obscurity: number;
+    moves?: number;
   };
 }) {
   const router = useRouter();
@@ -42,6 +48,9 @@ export default function PracticeConfig({
   const [obscurity, setObscurity] = useState(
     current.obscurity
   );
+  const [moves, setMoves] = useState(
+    current.moves ?? MIN_MOVES
+  );
 
   function toggle(code: string) {
     setSelected((prev) => {
@@ -63,6 +72,9 @@ export default function PracticeConfig({
     if (to < bounds.max) params.set("to_season", String(to));
     if (obscurity !== 5) {
       params.set("obscurity", String(obscurity));
+    }
+    if (moves !== MIN_MOVES) {
+      params.set("moves", String(moves));
     }
     return `/?${params.toString()}`;
   }
@@ -154,6 +166,26 @@ export default function PracticeConfig({
             className="w-24 rounded-lg border border-border bg-background px-2 py-1"
           />
         </div>
+      </div>
+
+      <div>
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-semibold">
+            Difficulty
+          </span>
+          <span className="text-xs text-muted">
+            {moves} moves · {difficultyFor(moves)}
+          </span>
+        </div>
+        <input
+          type="range"
+          min={MIN_MOVES}
+          max={MAX_MOVES}
+          step={2}
+          value={moves}
+          onChange={(e) => setMoves(Number(e.target.value))}
+          className="w-full mt-1 accent-primary-500"
+        />
       </div>
 
       <div>
