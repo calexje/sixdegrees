@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { NavProvider } from "@/components/nav-context";
 import Content from "@/components/content";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,14 +22,22 @@ const SITE_NAME = "Football Degrees";
 const DESCRIPTION =
   "Connect two footballers through the clubs they shared.";
 
-// Set NEXT_PUBLIC_SITE_URL to the production origin so share links resolve
-// absolute OG asset URLs; falls back to localhost in dev.
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  "http://localhost:3000";
+// Resolve the site origin without hardcoding it: an explicit override wins,
+// otherwise Vercel's production-domain / deployment env vars (which point at the
+// real domain once it's attached), falling back to localhost in dev.
+function resolveSiteUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL;
+  }
+  const host =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    process.env.VERCEL_URL;
+  if (host) return `https://${host}`;
+  return "http://localhost:3000";
+}
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(resolveSiteUrl()),
   title: SITE_NAME,
   description: DESCRIPTION,
   openGraph: {
@@ -38,7 +47,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: SITE_NAME,
     description: DESCRIPTION,
   },
@@ -66,6 +75,7 @@ export default function RootLayout({
 
           <Footer />
         </NavProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -4,37 +4,62 @@ The game is feature-complete and the major correctness bugs are fixed. This is
 the remaining work to take it to a public launch (with ads and a real domain).
 Decisions taken with the owner are marked **[decided]**.
 
-## Inputs still needed from the owner
+## Known facts
 
-These feed specific steps below; none block starting:
+- **Cold start ≈ 6s** to first byte on Expert. Real problem; fix in item 1.
+- **Traffic:** being posted around (bursty), so cold starts will be hit often.
+- **Budget:** free until AdSense revenue; open to free DB hosting. Plan to mirror
+  to other sports later, so keep things reasonably generic.
+- **Privacy policy:** owner "Calex SEO", contact sixlinksgaming@gmail.com.
+- **Domain:** use the runtime origin (`window.location` client-side, request
+  host server-side) so nothing is hardcoded before the domain is registered.
 
-- **Live Expert cold-start numbers** (response time + any 500s / memory warnings
-  from the Vercel function logs) — gates item 1.
-- **Traffic expectation + infra appetite** (small/self-contained vs willing to
-  add a hosted DB free tier) — informs item 1's fix.
-- **Domain** — for `NEXT_PUBLIC_SITE_URL`, OG tags, AdSense verification.
-- **Privacy policy basics** — owning entity/person name + contact email.
+## 1. Performance: ~6s cold start — implementation plan
 
-## 1. Performance: serverless cold start — [decided: measure first]
+**Diagnosis first, but the cause is almost certainly the in-memory graph build,
+not the database.** Two things make it worse than it needs to be:
 
-The whole graph is rebuilt in memory from the 26 MB SQLite on every cold start;
-Expert builds the full multi-league graph and generation runs several BFS
-passes. Plan:
+- `lib/puzzle.tsx` builds **both** `fullGraph` and `premierLeagueGraph` at module
+  import, eagerly, so *any* code path that imports it (a Daily page load, the
+  hint route) pays to build the full multi-league graph even when it's not used.
+- Each serverless cold start redoes this from scratch (better-sqlite3 load + a
+  280k-row scan + Map construction).
 
-- **Instrument**: log graph-build time and `process.memoryUsage()` at module
-  init in `lib/puzzle.tsx`, and time per-request generation. Pull the numbers
-  from a few cold Expert hits on the live deployment.
-- **Decide against thresholds**: if Expert cold start is comfortably within the
-  function's time/memory limits, leave it and just monitor. If it's slow or
-  near the limit, act.
-- **Quick mitigation** first: raise the function memory/`maxDuration` via route
-  segment config or `vercel.json`.
-- **If still a problem**, in order of preference:
-  1. **Precompute the graph** as a build artifact (serialized adjacency) and
-     load it at cold start instead of parsing SQLite + building Maps. No new
-     infra.
-  2. **Hosted DB** (Turso/libSQL) queried on demand, if precompute isn't enough.
-- Touch: `lib/puzzle.tsx`, `lib/graph.ts`, possibly a build script + `vercel.json`.
+Important: **a hosted database does not fix this.** The BFS needs the whole
+adjacency in memory, so moving rows to Turso/Postgres would still require
+building the graph per cold start (and add network latency). The levers are
+about *when* and *how fast* the graph is built, and *how often* a cold start
+happens. All of the below are free.
+
+**Step 0 — measure (confirm the cause).** Wrap the graph builds and a sample
+generation in `console.time` + `process.memoryUsage()` and read the Vercel
+function logs for one cold hit per mode. Confirm it's the build (vs cold boot /
+native module load).
+
+**Step 1 — lazy, per-graph build (free, no infra, likely the big win).** Stop
+building at module import; build each graph on first use and memoise it. Then a
+Daily cold start builds only the smaller Premier League graph; the full graph is
+built only when Expert/Practice is actually requested. Also make
+`dailyAllowedPlayers` (prominence) lazy. Touch: `lib/puzzle.tsx`.
+
+**Step 2 — more memory = more CPU (free, config).** Vercel scales CPU with
+memory, so bumping the function memory (route segment config / `vercel.json`)
+can roughly halve a CPU-bound build. One line.
+
+**Step 3 — precompute the graph artifact (free, no infra)** if the build itself
+is still the cost: serialize the adjacency (+ label registry) at build time and
+load/deserialize it at cold start instead of going through SQLite. Touch: a
+build script, `lib/graph.ts`.
+
+**Step 4 — escape per-request cold starts entirely (free tier, if bursts still
+hurt).** Serverless rebuilds per cold instance; a long-lived Node process builds
+the graph **once** and serves warm. A free host (Fly.io / Render / Railway)
+running `next start` with the bundled SQLite would do this. Caveat: free tiers
+sleep when idle, so the first hit after a quiet spell still pays once. Only worth
+it if steps 1-3 don't tame the burst behaviour.
+
+Recommended order: 0 → 1 → 2, re-measure, then 3 or 4 only if needed. The DB
+stays the bundled read-only SQLite throughout (no hosted DB required).
 
 ## 2. Ads prerequisites: privacy policy + consent — [decided: UK/EU audience]
 
@@ -43,7 +68,7 @@ cookies) run. This is a hard gate for AdSense.
 
 - **Privacy policy page** (`/privacy`): what's stored (localStorage stats — no
   PII), third parties (Google AdSense, Vercel Analytics), cookies, and contact.
-  Needs the entity name + email.
+  Owner: **Calex SEO**, contact **sixlinksgaming@gmail.com**.
 - **Consent banner / CMP**: use Google's CMP ("Privacy & messaging" / Funding
   Choices) — free and AdSense-integrated — or a lightweight TCF CMP. Gate ad
   scripts (and GA-style analytics) behind consent.
@@ -81,11 +106,13 @@ fresh board.
 Tags are in place but text-only. Sharing (challenge/daily links) is a core
 mechanic, so a real card matters.
 
-- Add a branded OG image: simplest is a static `public/og.png`; nicer is a
-  dynamic `app/opengraph-image.tsx` via `next/og` (could even render
-  "Connect X to Y" per challenge later).
-- Switch `twitter.card` to `summary_large_image` once an image exists.
-- Set `NEXT_PUBLIC_SITE_URL` to the domain so absolute URLs resolve.
+- Add a dynamic `app/opengraph-image.tsx` via `next/og` (no asset needed —
+  render the wordmark + tagline on the palette; could render "Connect X to Y"
+  per challenge later). Switch `twitter.card` to `summary_large_image`.
+- **Domain via runtime origin**: rather than hardcode `NEXT_PUBLIC_SITE_URL`,
+  derive `metadataBase` from the request host (`headers()`), so OG URLs resolve
+  on whatever domain serves the app. Client-side share already uses
+  `window.location`.
 
 ## 6. Tests
 

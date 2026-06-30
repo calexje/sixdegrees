@@ -7,6 +7,14 @@ export type Stats = {
 };
 
 const KEY = "footballDegrees:dailyStats";
+const RESULT_KEY = "footballDegrees:dailyResult";
+
+// The most recent completed Daily, for the lock-until-tomorrow screen.
+export type DailyResult = {
+  date: string;
+  moves: number;
+  hints: number;
+};
 
 const EMPTY: Stats = {
   gamesPlayed: 0,
@@ -71,4 +79,42 @@ export function recordDailyWin(today: string): Stats {
 
   save(next);
   return next;
+}
+
+// Read-only stats for the result screen.
+export function loadStats(): Stats {
+  return load();
+}
+
+// The Daily result is stored for the latest day played; returned only when it
+// matches `today` (i.e. the player has already finished today's Daily).
+export function getDailyResult(
+  today: string
+): DailyResult | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(RESULT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed.date !== today) return null;
+    return {
+      date: parsed.date,
+      moves: Number(parsed.moves) || 0,
+      hints: Number(parsed.hints) || 0,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function recordDailyResult(result: DailyResult) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(
+      RESULT_KEY,
+      JSON.stringify(result)
+    );
+  } catch {
+    // ignore (private mode / disabled storage)
+  }
 }

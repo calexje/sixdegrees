@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import { leagueName } from "@/lib/leagues";
 import { formatSeason } from "@/lib/format";
-import { recordDailyWin } from "@/lib/stats";
+import {
+  recordDailyWin,
+  recordDailyResult,
+  getDailyResult,
+} from "@/lib/stats";
+import DailyResult from "@/components/daily-result";
 import {
   difficultyFor,
   DIFFICULTY_CLASS,
@@ -101,6 +106,11 @@ export default function Game({
     gamesPlayed: number;
     currentStreak: number;
   } | null>(null);
+  // Set when today's Daily was already completed (lock-until-tomorrow).
+  const [locked, setLocked] = useState<{
+    moves: number;
+    hints: number;
+  } | null>(null);
 
   const current = path[path.length - 1];
 
@@ -121,15 +131,35 @@ export default function Game({
     if (won) {
       setShowWinModal(true);
 
-      // Only the Daily puzzle feeds the streak/games-played stats.
+      // Only the Daily feeds the streak/games stats and the lock result.
       if (mode === "daily") {
         const today = new Date()
           .toISOString()
           .slice(0, 10);
         setStats(recordDailyWin(today));
+        recordDailyResult({
+          date: today,
+          moves: path.length - 1,
+          hints: hintStage + bestMoves.length,
+        });
       }
     }
   }, [won, mode]);
+
+  // On load, lock the Daily if it's already been completed today.
+  useEffect(() => {
+    if (mode !== "daily") return;
+    const today = new Date()
+      .toISOString()
+      .slice(0, 10);
+    const result = getDailyResult(today);
+    if (result) {
+      setLocked({
+        moves: result.moves,
+        hints: result.hints,
+      });
+    }
+  }, [mode]);
 
   useEffect(() => {
     async function loadTargetCareer() {
@@ -369,6 +399,19 @@ export default function Game({
     !!requiredWaypoint ||
     !!excludedPlayer ||
     (notLeagues?.length ?? 0) > 0;
+
+  // Today's Daily is already done: show the result, not a replayable board.
+  if (mode === "daily" && locked) {
+    return (
+      <DailyResult
+        puzzleNumber={puzzleNumber}
+        origin={origin}
+        target={target}
+        moves={locked.moves}
+        hints={locked.hints}
+      />
+    );
+  }
 
   return (
     <>
