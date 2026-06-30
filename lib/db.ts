@@ -44,41 +44,65 @@ export function getClubSeasonFromPlayers(
     .all(club, season);
 }
 
+export type AppearanceFilter = {
+  competition?: string;
+  includeLeagues?: string[];
+  excludeLeagues?: string[];
+  seasonFrom?: number;
+  seasonTo?: number;
+};
+
 export function getAllAppearances(
-  opts: { competition?: string; excludeLeagues?: string[] } = {}
+  opts: AppearanceFilter = {}
 ): Appearance[] {
-  const { competition, excludeLeagues } = opts;
+  const clauses: string[] = [];
+  const params: (string | number)[] = [];
 
-  if (competition) {
-    return db
-      .prepare(`
-        SELECT player_name, club_name, season
-        FROM appearances
-        WHERE competition = ?
-      `)
-      .all(competition) as Appearance[];
+  if (opts.competition) {
+    clauses.push("competition = ?");
+    params.push(opts.competition);
+  }
+  if (opts.includeLeagues && opts.includeLeagues.length > 0) {
+    const ph = opts.includeLeagues.map(() => "?").join(", ");
+    clauses.push(`competition IN (${ph})`);
+    params.push(...opts.includeLeagues);
+  }
+  if (opts.excludeLeagues && opts.excludeLeagues.length > 0) {
+    const ph = opts.excludeLeagues.map(() => "?").join(", ");
+    clauses.push(`competition NOT IN (${ph})`);
+    params.push(...opts.excludeLeagues);
+  }
+  if (opts.seasonFrom !== undefined) {
+    clauses.push("CAST(season AS REAL) >= ?");
+    params.push(opts.seasonFrom);
+  }
+  if (opts.seasonTo !== undefined) {
+    clauses.push("CAST(season AS REAL) <= ?");
+    params.push(opts.seasonTo);
   }
 
-  if (excludeLeagues && excludeLeagues.length > 0) {
-    const placeholders = excludeLeagues
-      .map(() => "?")
-      .join(", ");
-
-    return db
-      .prepare(`
-        SELECT player_name, club_name, season
-        FROM appearances
-        WHERE competition NOT IN (${placeholders})
-      `)
-      .all(...excludeLeagues) as Appearance[];
-  }
+  const where =
+    clauses.length > 0 ? `WHERE ${clauses.join(" AND ")}` : "";
 
   return db
     .prepare(`
       SELECT player_name, club_name, season
       FROM appearances
+      ${where}
     `)
-    .all() as Appearance[];
+    .all(...params) as Appearance[];
+}
+
+// Min/max season year in the dataset, for the Practice season-range controls.
+export function getSeasonBounds(): { min: number; max: number } {
+  const row = db
+    .prepare(`
+      SELECT MIN(CAST(season AS REAL)) AS min,
+             MAX(CAST(season AS REAL)) AS max
+      FROM appearances
+    `)
+    .get() as { min: number; max: number };
+  return { min: Math.floor(row.min), max: Math.floor(row.max) };
 }
 
 export function getPlayerById(
@@ -116,5 +140,30 @@ export function getCompetitions(): string[] {
       `)
       .all() as { competition: string }[]
   ).map((row) => row.competition);
+}
+
+// The Big-5 top flights. A player's count of distinct seasons in these is our
+// prominence proxy: it rewards the long, well-travelled careers people actually
+// recognise, rather than current market value (which favours young hype).
+const TOP_FLIGHT = ["GB1", "ES1", "IT1", "L1", "FR1"];
+
+// Player names with at least `minSeasons` distinct top-flight seasons. Names
+// (not ids) to match the name-keyed graph; same-name players are merged, which
+// is consistent with the rest of the engine.
+export function getProminentPlayerNames(
+  minSeasons: number
+): Set<string> {
+  const placeholders = TOP_FLIGHT.map(() => "?").join(", ");
+  const rows = db
+    .prepare(`
+      SELECT player_name AS name
+      FROM appearances
+      WHERE competition IN (${placeholders})
+      GROUP BY player_name
+      HAVING COUNT(DISTINCT season) >= ?
+    `)
+    .all(...TOP_FLIGHT, minSeasons) as { name: string }[];
+
+  return new Set(rows.map((row) => row.name));
 }
 

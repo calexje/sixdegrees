@@ -6,7 +6,11 @@ import {
   pathToLabels,
   Graph,
 } from "./graph";
-import { getPlayerById, getCompetitions } from "./db";
+import {
+  getPlayerById,
+  getCompetitions,
+  getProminentPlayerNames,
+} from "./db";
 
 // Expert mode uses every competition in the dataset; the daily puzzle is
 // restricted to the Premier League (competition "GB1").
@@ -20,6 +24,16 @@ const PRACTICE_DISTANCE = 2;
 // players who shared a club (e.g. Tonali and Donnarumma at Milan), which is
 // trivial; 2+ jumps forces a link through an intermediate player.
 const MIN_JUMPS = 2;
+
+// Daily uses only reasonably recognisable players (prominence >= 3, i.e. at
+// least 5 top-flight seasons) so it stays gettable. Computed once per process.
+const DAILY_MIN_PROMINENCE_SEASONS = 5;
+const dailyAllowedPlayers = new Set(
+  Array.from(
+    getProminentPlayerNames(DAILY_MIN_PROMINENCE_SEASONS),
+    (name) => `player:${name}`
+  )
+);
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
 // seed, so its difficulty is stable for the day and exposed via solutionDistance.
@@ -55,10 +69,13 @@ function getDailySeed() {
 function generatePuzzle(
   graph: Graph,
   targetJumps: number,
-  rng: () => number
+  rng: () => number,
+  allowed?: Set<string>
 ) {
-  const players = Array.from(graph.keys()).filter((node) =>
-    node.startsWith("player:")
+  const players = Array.from(graph.keys()).filter(
+    (node) =>
+      node.startsWith("player:") &&
+      (!allowed || allowed.has(node))
   );
 
   while (true) {
@@ -77,7 +94,8 @@ function generatePuzzle(
       if (
         edges === 0 ||
         edges % 2 !== 0 ||
-        !node.startsWith("player:")
+        !node.startsWith("player:") ||
+        (allowed && !allowed.has(node))
       ) {
         continue;
       }
@@ -133,7 +151,12 @@ function generateDailyPuzzle() {
     DAILY_MIN_DISTANCE + Math.floor(rng() * span);
 
   return {
-    ...generatePuzzle(premierLeagueGraph, targetJumps, rng),
+    ...generatePuzzle(
+      premierLeagueGraph,
+      targetJumps,
+      rng,
+      dailyAllowedPlayers
+    ),
     seed,
   };
 }

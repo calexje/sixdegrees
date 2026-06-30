@@ -1,4 +1,8 @@
-import { Appearance, getAllAppearances } from "./db";
+import {
+  Appearance,
+  AppearanceFilter,
+  getAllAppearances,
+} from "./db";
 import { formatSeason } from "./format";
 
 export type Graph = Map<string, Set<string>>;
