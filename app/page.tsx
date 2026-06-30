@@ -1,7 +1,12 @@
 import Game from "@/components/game";
 import ChallengeBuilder from "@/components/challenge-builder";
-import { buildChallenge, getPuzzle, PuzzleMode } from "@/lib/puzzle";
-import { getCompetitions } from "@/lib/db";
+import PracticeConfig from "@/components/practice-config";
+import {
+  buildChallenge,
+  generatePracticePuzzle,
+  getPuzzle,
+} from "@/lib/puzzle";
+import { getCompetitions, getSeasonBounds } from "@/lib/db";
 
 export default async function Home({
   searchParams,
@@ -13,6 +18,10 @@ export default async function Home({
     via?: string;
     not_player?: string;
     not_leagues?: string;
+    leagues?: string;
+    from_season?: string;
+    to_season?: string;
+    obscurity?: string;
   }>;
 }) {
   const params = await searchParams;
@@ -48,13 +57,46 @@ export default async function Home({
     ) : (
       <ChallengeBuilder leagues={getCompetitions()} />
     );
-  } else {
-    const mode: PuzzleMode =
-      params.mode === "practice" ||
-      params.mode === "expert"
-        ? params.mode
-        : "daily";
+  } else if (params.mode === "practice") {
+    const leagues = params.leagues
+      ? params.leagues.split(",")
+      : [];
+    const seasonFrom = params.from_season
+      ? Number(params.from_season)
+      : undefined;
+    const seasonTo = params.to_season
+      ? Number(params.to_season)
+      : undefined;
+    const obscurity = params.obscurity
+      ? Number(params.obscurity)
+      : 5;
 
+    const puzzle = generatePracticePuzzle({
+      leagues,
+      seasonFrom,
+      seasonTo,
+      obscurity,
+    });
+
+    content = (
+      <>
+        <PracticeConfig
+          leagues={getCompetitions()}
+          bounds={getSeasonBounds()}
+          current={{ leagues, seasonFrom, seasonTo, obscurity }}
+        />
+        <Game
+          key={`practice:${puzzle.origin}:${puzzle.target}`}
+          mode="practice"
+          origin={puzzle.origin}
+          target={puzzle.target}
+          solutionDistance={puzzle.solutionDistance}
+          solutionPath={puzzle.solutionPath}
+        />
+      </>
+    );
+  } else {
+    const mode = params.mode === "expert" ? "expert" : "daily";
     const puzzle = await getPuzzle(mode);
 
     content = (
