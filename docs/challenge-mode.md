@@ -66,17 +66,18 @@ Solve (a shared challenge):
 - `not_leagues` — optional comma-separated competition codes to exclude. Absent means
   all leagues allowed.
 
-## Identity model and its caveat
+## Identity model
 
-The traversal graph is keyed on **player name** (`player:<name>`), not id. IDs are
-used in the URL and during creation for stability, then resolved to names server-side
-before play.
+The traversal graph is keyed on **player id** (`player:<player_id>`) and **club id**
+(`clubseason:<club_id>:<season>`), with display names carried in a separate label
+registry. IDs flow through the URL, the graph, and the game; names are only for
+display.
 
-**Known limitation:** two distinct players who share a name are merged into one node
-by the name-keyed graph. With ids in the URL this is invisible during selection, but
-the solve engine cannot tell them apart. This is a pre-existing property of the graph,
-not introduced here. Migrating the graph to id-keyed nodes is **out of scope for v1**
-and listed under Future work. Document the caveat; do not block on it.
+> **Resolved:** this originally shipped name-keyed, which merged distinct players who
+> shared a name (e.g. all 17 "Fernando"s into one node, creating false connections and
+> a merged career when you clicked them). The graph and the whole engine were migrated
+> to id keys, so same-name players are now distinct. The "Identity" verification below
+> still applies: a link built from ids resolves to the correct names on load.
 
 ## Leagues
 
@@ -240,8 +241,6 @@ Pass the new constraint data to `<Game>`: `requiredWaypoint?` (name), `excludedP
 ## Out of scope / future work
 
 - Server-side storage, play counts, or leaderboards (the share model is URL-only).
-- Migrating the traversal graph from name-keyed to id-keyed nodes (removes the
-  same-name merge caveat).
 - More than one waypoint or more than one excluded player.
 - Adding GB2 (and any other missing competitions) to the dataset, unless chosen as the
   prerequisite above.
