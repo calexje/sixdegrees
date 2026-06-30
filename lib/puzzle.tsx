@@ -14,7 +14,12 @@ const fullGraph = buildGraph();
 const premierLeagueGraph = buildGraph({ competition: "GB1" });
 
 const EXPERT_DISTANCE = 6;
-const PRACTICE_DISTANCE = 1; //graph sees player -> team -> player as one jump, so 1 jump is 2 moves
+const PRACTICE_DISTANCE = 2;
+
+// Generated puzzles never go below this many jumps. A 1-jump puzzle is two
+// players who shared a club (e.g. Tonali and Donnarumma at Milan), which is
+// trivial; 2+ jumps forces a link through an intermediate player.
+const MIN_JUMPS = 2;
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
 // seed, so its difficulty is stable for the day and exposed via solutionDistance.
@@ -82,16 +87,18 @@ function generatePuzzle(
       byJumps.set(jumps, bucket);
     }
 
-    // Prefer the requested difficulty; otherwise the closest available below it.
+    // Prefer the requested difficulty; otherwise the closest available down to
+    // the floor. Never go below MIN_JUMPS — retry with a new origin instead, so
+    // we never serve a trivial same-club puzzle.
     let jumps = 0;
-    for (let j = targetJumps; j >= 1; j--) {
+    for (let j = targetJumps; j >= MIN_JUMPS; j--) {
       if (byJumps.has(j)) {
         jumps = j;
         break;
       }
     }
 
-    if (jumps === 0) continue; // isolated start, try another
+    if (jumps === 0) continue; // nothing at/above the floor here, try another
 
     const bucket = byJumps.get(jumps)!;
     const target =
