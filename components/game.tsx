@@ -76,12 +76,13 @@ export default function Game({
   const [query, setQuery] = useState("");
   const [options, setOptions] = useState<Option[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showRecentClub, setShowRecentClub] =
-    useState(false);
-  const [showCareer, setShowCareer] = useState(false);
-  const [bestMove, setBestMove] = useState<
-    string | null
-  >(null);
+  // Hints reveal in stages from one button: 0 none, 1 most-recent club,
+  // 2 full career; from stage 2 the button asks for "next move" suggestions,
+  // which accumulate (newest first).
+  const [hintStage, setHintStage] = useState(0);
+  const [bestMoves, setBestMoves] = useState<string[]>(
+    []
+  );
   const [bestMoveLoading, setBestMoveLoading] =
     useState(false);
   const [targetCareer, setTargetCareer] =
@@ -154,8 +155,6 @@ export default function Game({
       // cannot be clicked while the next node's data is in flight.
       setLoading(true);
       setOptions([]);
-      // The best-move suggestion is tied to the current node, so drop it.
-      setBestMove(null);
 
       if (current.type === "player") {
         const response = await fetch(
@@ -238,8 +237,11 @@ export default function Game({
   async function copyResults() {
     // window.location.href carries the current mode and any challenge params,
     // so the link works the same once the app is deployed.
-    const shareText =
-      `I connected ${origin} to ${target} in ${path.length - 1} moves! Can you do better?\n${window.location.href}`;
+    const targetText =
+      `I connected ${origin} to ${target} in ${path.length - 1} moves`
+    const hintText = ` and used ${hintCount} hint${hintCount === 1 ? "" : "s"}`;
+    const afterText = `! Can you do better?\n${window.location.href}`;
+    const shareText = targetText + (hintCount > 0 ? hintText : "") + afterText;
 
     try {
       await navigator.clipboard.writeText(shareText);
@@ -280,7 +282,11 @@ export default function Game({
         `/api/hint?${params.toString()}`
       );
       const data = await response.json();
-      setBestMove(data.suggestion ?? "No move found");
+      // Prepend so the latest suggestion shows on top.
+      setBestMoves((prev) => [
+        data.suggestion ?? "No move found",
+        ...prev,
+      ]);
     } finally {
       setBestMoveLoading(false);
     }
@@ -331,6 +337,10 @@ export default function Game({
       moveCount !== 1 ? "s" : ""
     }`;
 
+  // Recent-club (stage 1) and career (stage 2) each count as one hint, plus one
+  // per next-move suggestion.
+  const hintCount = hintStage + bestMoves.length;
+
   // TODO: real values
   const puzzleNumber = 1;
 
@@ -371,7 +381,10 @@ export default function Game({
               Success! You connected{" "}
               <strong>{origin}</strong> to{" "}
               <strong>{target}</strong> in{" "}
-              <strong>{moveCount}</strong> moves.
+              <strong>{moveCount}</strong> moves
+              {hintCount > 0
+                ? ` with ${hintCount} hint${hintCount === 1 ? "" : "s"}.`
+                : " with no hints."}
             </p>
 
             {hasSolution ? (
@@ -603,53 +616,37 @@ export default function Game({
 
             {!won && (
               <div>
-                <div className="flex flex-wrap gap-2">
-                  {!showRecentClub && (
-                    <button
-                      onClick={() => setShowRecentClub(true)}
-                      className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
-                    >
-                      💡 Hint: Most recent club
-                    </button>
-                  )}
-                  {!showCareer && (
-                    <button
-                      onClick={() => setShowCareer(true)}
-                      className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
-                    >
-                      💡 Hint: Show career
-                    </button>
-                  )}
-                  <button
-                    onClick={loadBestMove}
-                    disabled={bestMoveLoading}
-                    className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
-                  >
-                    {bestMoveLoading
-                      ? "💡 Finding best move..."
-                      : "💡 Hint: Best move"}
-                  </button>
-                </div>
+                <button
+                  onClick={() => {
+                    if (hintStage === 0) setHintStage(1);
+                    else if (hintStage === 1)
+                      setHintStage(2);
+                    else loadBestMove();
+                  }}
+                  disabled={bestMoveLoading}
+                  className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
+                >
+                  {hintStage === 0
+                    ? "💡 Hint: Target's recent club"
+                    : hintStage === 1
+                    ? "💡 Hint: Show Target's Career"
+                    : bestMoveLoading
+                    ? "💡 Finding next move..."
+                    : "💡 Hint: Show Next Move"}
+                </button>
 
+                {/* Hints, newest first: next-move suggestions, then career,
+                    then most recent club. */}
                 <div className="mt-3 space-y-2">
-                  {showRecentClub && mostRecentClub && (
-                    <div className="text-sm">
-                      <strong>Most recent club:</strong>{" "}
-                      {mostRecentClub.club} (
-                      {formatSeason(mostRecentClub.season)})
+                  {bestMoves.map((move, i) => (
+                    <div key={i} className="text-sm">
+                      <strong>Next move:</strong> {move}
                     </div>
-                  )}
+                  ))}
 
-                  {bestMove && (
+                  {hintStage >= 2 && (
                     <div className="text-sm">
-                      <strong>Best move:</strong>{" "}
-                      {bestMove}
-                    </div>
-                  )}
-
-                  {showCareer && (
-                    <div className="text-sm">
-                      <strong>Full career:</strong>
+                      <strong>{target}&apos;s career:</strong>
                       <ul className="mt-2 list-disc list-inside text-muted">
                         {targetCareer.map((career, i) => (
                           <li key={i}>
@@ -658,6 +655,14 @@ export default function Game({
                           </li>
                         ))}
                       </ul>
+                    </div>
+                  )}
+
+                  {hintStage >= 1 && mostRecentClub && (
+                    <div className="text-sm">
+                      <strong>Most recent club:</strong>{" "}
+                      {mostRecentClub.club} (
+                      {formatSeason(mostRecentClub.season)})
                     </div>
                   )}
                 </div>
