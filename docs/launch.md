@@ -31,16 +31,34 @@ building the graph per cold start (and add network latency). The levers are
 about *when* and *how fast* the graph is built, and *how often* a cold start
 happens. All of the below are free.
 
-**Step 0 — measure (confirm the cause).** Wrap the graph builds and a sample
-generation in `console.time` + `process.memoryUsage()` and read the Vercel
-function logs for one cold hit per mode. Confirm it's the build (vs cold boot /
-native module load).
+**Step 0 — measure (confirm the cause). [done]** Added a `[graph] built … in Nms`
+log around each build. Production `next start`, first hit per mode:
+- Premier League graph build: ~58ms. Full (all-leagues) graph build: ~775ms.
+- The Expert puzzle *search* (BFS for a distance-6 link on the full graph), not
+  the build, was the dominant cost: a cold Expert hit was ~6s, of which the build
+  was only ~775ms. And being date-seeded (identical all day), it was re-running
+  that ~5s search on **every** request.
 
-**Step 1 — lazy, per-graph build (free, no infra, likely the big win).** Stop
-building at module import; build each graph on first use and memoise it. Then a
-Daily cold start builds only the smaller Premier League graph; the full graph is
-built only when Expert/Practice is actually requested. Also make
-`dailyAllowedPlayers` (prominence) lazy. Touch: `lib/puzzle.tsx`.
+**Step 1 — lazy build + per-seed memoisation (free, no infra). [done]** Two
+changes in `lib/puzzle.tsx`:
+- Graphs build on first use and memoise, instead of both building at module
+  import. `dailyAllowedPlayers` (prominence) is lazy too.
+- Daily/Expert puzzles are cached in a single slot keyed by the date seed (it
+  self-invalidates at UTC midnight), so the search runs at most once per process
+  per day rather than per request.
+
+Measured result (production `next start`):
+
+| | before | after |
+|---|---|---|
+| Daily cold start | ~6s | **354ms** |
+| Daily warm | — | 14ms |
+| Expert cold (first hit, builds full graph + one search) | ~6s | 4.25s |
+| Expert warm (was re-searching every request) | ~5s | **6ms** |
+
+Daily (the default, highest-traffic route) no longer touches the full graph at
+all. The only remaining penalty is the *first* Expert hit per cold instance
+(~4.25s, search-dominated); steps 2-4 target that if it proves to hurt.
 
 **Step 2 — more memory = more CPU (free, config).** Vercel scales CPU with
 memory, so bumping the function memory (route segment config / `vercel.json`)

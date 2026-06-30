@@ -18,9 +18,34 @@ import {
 } from "./prominence";
 
 // Expert mode uses every competition in the dataset; the daily puzzle is
-// restricted to the Premier League (competition "GB1").
-const fullGraph = buildGraph();
-const premierLeagueGraph = buildGraph({ competition: "GB1" });
+// restricted to the Premier League (competition "GB1"). Both are built lazily
+// and memoised on first use rather than at module load: a Daily or Practice
+// request shouldn't pay to build the (much larger) full multi-league graph it
+// never touches, which dominated cold-start time.
+let _fullGraph: Graph | null = null;
+let _premierLeagueGraph: Graph | null = null;
+
+function timed<T>(label: string, build: () => T): T {
+  const start = performance.now();
+  const result = build();
+  const ms = Math.round(performance.now() - start);
+  console.log(`[graph] built ${label} in ${ms}ms`);
+  return result;
+}
+
+function fullGraph(): Graph {
+  if (!_fullGraph) _fullGraph = timed("full", () => buildGraph());
+  return _fullGraph;
+}
+
+function premierLeagueGraph(): Graph {
+  if (!_premierLeagueGraph) {
+    _premierLeagueGraph = timed("premier-league", () =>
+      buildGraph({ competition: "GB1" })
+    );
+  }
+  return _premierLeagueGraph;
+}
 
 const EXPERT_DISTANCE = 6;
 // Practice difficulty in moves (selections). A move is one step; a hop
@@ -48,10 +73,16 @@ function prominentPlayerNodes(minSeasons: number): Set<string> {
 }
 
 // Daily uses only reasonably recognisable players (prominence >= 3) so it stays
-// gettable.
-const dailyAllowedPlayers = prominentPlayerNodes(
-  DAILY_MIN_TOP_FLIGHT_SEASONS
-);
+// gettable. Computed lazily so non-Daily requests skip the GROUP BY query.
+let _dailyAllowedPlayers: Set<string> | null = null;
+function dailyAllowedPlayers(): Set<string> {
+  if (!_dailyAllowedPlayers) {
+    _dailyAllowedPlayers = prominentPlayerNodes(
+      DAILY_MIN_TOP_FLIGHT_SEASONS
+    );
+  }
+  return _dailyAllowedPlayers;
+}
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
 // seed, so its difficulty is stable for the day and exposed via solutionDistance.
@@ -218,7 +249,7 @@ function getPracticeGraph(
     leagues.length === 0 &&
     seasonFrom === undefined &&
     seasonTo === undefined;
-  if (noFilter) return fullGraph;
+  if (noFilter) return fullGraph();
 
   const key = `${[...leagues].sort().join(",")}|${seasonFrom ?? ""}|${seasonTo ?? ""}`;
   const cached = practiceGraphCache.get(key);
@@ -283,8 +314,22 @@ export function generatePracticePuzzle(
   );
 }
 
+// Daily and Expert puzzles are seeded by the date, so they're identical for the
+// whole UTC day. Without memoisation the BFS search (expensive on the full
+// Expert graph) re-runs on every request; instead each is cached in a single
+// slot that self-invalidates when the seed (date) changes.
+type GeneratedPuzzle = ReturnType<typeof generatePuzzle>;
+let _dailyCache:
+  | { seed: string; puzzle: GeneratedPuzzle & { seed: string; puzzleNumber: number } }
+  | null = null;
+let _expertCache:
+  | { seed: string; puzzle: GeneratedPuzzle & { seed: string } }
+  | null = null;
+
 function generateDailyPuzzle() {
   const seed = getDailySeed();
+  if (_dailyCache && _dailyCache.seed === seed) return _dailyCache.puzzle;
+
   const rng = seededRandom(seed);
 
   // The daily difficulty (in jumps) is the same for everyone on a given day.
@@ -292,28 +337,34 @@ function generateDailyPuzzle() {
   const targetJumps =
     DAILY_MIN_DISTANCE + Math.floor(rng() * span);
 
-  return {
+  const puzzle = {
     ...generatePuzzle(
-      premierLeagueGraph,
+      premierLeagueGraph(),
       targetJumps,
       rng,
-      dailyAllowedPlayers
+      dailyAllowedPlayers()
     ),
     seed,
     puzzleNumber: dailyNumber(seed),
   };
+  _dailyCache = { seed, puzzle };
+  return puzzle;
 }
 
 function generateExpertPuzzle() {
   const seed = getDailySeed();
-  return {
+  if (_expertCache && _expertCache.seed === seed) return _expertCache.puzzle;
+
+  const puzzle = {
     ...generatePuzzle(
-      fullGraph,
+      fullGraph(),
       EXPERT_DISTANCE,
       seededRandom(seed)
     ),
     seed,
   };
+  _expertCache = { seed, puzzle };
+  return puzzle;
 }
 
 // The set of real competition codes, used to reject arbitrary league values
@@ -337,7 +388,7 @@ function sanitizeLeagues(notLeagues: string[]): string[] {
 
 function getChallengeGraph(notLeagues: string[]): Graph {
   if (notLeagues.length === 0) {
-    return fullGraph;
+    return fullGraph();
   }
 
   const key = [...notLeagues].sort().join(",");
@@ -448,12 +499,12 @@ export function getGraphForMode(
   notLeagues: string[] = []
 ): Graph {
   if (mode === "daily") {
-    return premierLeagueGraph;
+    return premierLeagueGraph();
   }
   if (mode === "challenge") {
     return getChallengeGraph(sanitizeLeagues(notLeagues));
   }
-  return fullGraph;
+  return fullGraph();
 }
 
 export type PuzzleMode = "daily" | "expert" | "practice";
