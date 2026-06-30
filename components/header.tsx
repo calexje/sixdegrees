@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useNav } from "./nav-context";
 
 type Mode = "daily" | "expert" | "practice" | "challenge";
 
@@ -24,6 +25,15 @@ export default function Header() {
     setPendingMode(null);
   }, [search]);
 
+  // The navigation (and its server render) runs in a transition; isPending
+  // stays true until the new puzzle is ready. Share it so the content area can
+  // show "Building player database…" meanwhile.
+  const [isPending, startTransition] = useTransition();
+  const { setPending } = useNav();
+  useEffect(() => {
+    setPending(isPending);
+  }, [isPending, setPending]);
+
   function setMode(newMode: Mode) {
     // Flip the highlight now; the navigation follows.
     setPendingMode(newMode);
@@ -34,7 +44,9 @@ export default function Header() {
     const params = new URLSearchParams();
     params.set("mode", newMode);
 
-    router.push(`/?${params.toString()}`);
+    startTransition(() => {
+      router.push(`/?${params.toString()}`);
+    });
   }
 
   function buttonClass(active: boolean) {
