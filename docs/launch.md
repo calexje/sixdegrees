@@ -57,8 +57,28 @@ Measured result (production `next start`):
 | Expert warm (was re-searching every request) | ~5s | **6ms** |
 
 Daily (the default, highest-traffic route) no longer touches the full graph at
-all. The only remaining penalty is the *first* Expert hit per cold instance
-(~4.25s, search-dominated); steps 2-4 target that if it proves to hurt.
+all. The only remaining penalty was the *first* Expert hit per cold instance
+(~4.25s, search-dominated) — addressed in step 1b.
+
+**Step 1b — precompute Expert puzzles (free, no infra). [done]** Expert is
+deterministic per date seed, so the cold-start BFS search was pure waste. The
+import script now precomputes a 365-day horizon of Expert puzzles into
+`database/expert-puzzles.json` (committed, bundled into the page function via
+`outputFileTracingIncludes`). At runtime `generateExpertPuzzle` looks today's
+seed up in that table and serves it **without building the graph or searching at
+all**; missing file or out-of-horizon dates fall back to live generation. The
+full graph then only builds on the first *hint* (behind a button with a loading
+state), not on page load.
+
+- New: `scripts/precompute-puzzles.ts` (`npx tsx scripts/precompute-puzzles.ts
+  [days]`), invoked automatically at the tail of `scripts/import.ts`.
+- Generation cost is ~3s/puzzle (~18 min for 365), paid offline twice a year
+  alongside the database reimport, not at deploy or request time.
+- Result: cold Expert page load drops from ~4.25s to ~0.35s (matches Daily).
+
+Re-stock the horizon whenever the database is reimported (the import script does
+this automatically). If the live date ever runs past the generated horizon,
+Expert silently falls back to the old ~4s live search until the next reimport.
 
 **Step 2 — more memory = more CPU (free, config).** Vercel scales CPU with
 memory, so bumping the function memory (route segment config / `vercel.json`)

@@ -101,6 +101,18 @@ async function main() {
 
     createIndexes();
     db.close();
+
+    // Regenerate the precomputed Expert puzzles against the fresh database. Run
+    // as a child process from the project root: this script runs from scripts/,
+    // but the precompute (via lib/db) resolves the database from the cwd.
+    const { execSync } = require("child_process");
+    const path = require("path");
+    const projectRoot = path.resolve(process.cwd(), "..");
+    console.log("Precomputing Expert puzzles...");
+    execSync("npx tsx scripts/precompute-puzzles.ts", {
+        cwd: projectRoot,
+        stdio: "inherit",
+    });
 }
 
 main().catch(console.error);

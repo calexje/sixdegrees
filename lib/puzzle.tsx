@@ -1,3 +1,5 @@
+import { readFileSync } from "fs";
+import path from "path";
 import {
   buildGraph,
   bfsFrom,
@@ -319,12 +321,31 @@ export function generatePracticePuzzle(
 // Expert graph) re-runs on every request; instead each is cached in a single
 // slot that self-invalidates when the seed (date) changes.
 type GeneratedPuzzle = ReturnType<typeof generatePuzzle>;
+type ExpertPuzzle = GeneratedPuzzle & { seed: string };
 let _dailyCache:
   | { seed: string; puzzle: GeneratedPuzzle & { seed: string; puzzleNumber: number } }
   | null = null;
-let _expertCache:
-  | { seed: string; puzzle: GeneratedPuzzle & { seed: string } }
-  | null = null;
+let _expertCache: { seed: string; puzzle: ExpertPuzzle } | null = null;
+
+// Expert puzzles are deterministic per date but the BFS search over the full
+// graph is slow (~seconds on a cold start). The import script precomputes a
+// horizon of upcoming days into database/expert-puzzles.json; if today's seed
+// is in there, the page serves it without building the graph or searching at
+// all. Missing file or out-of-horizon dates fall back to live generation.
+const precomputedExpert: Map<string, ExpertPuzzle> = (() => {
+  try {
+    const raw = readFileSync(
+      path.join(process.cwd(), "database", "expert-puzzles.json"),
+      "utf8"
+    );
+    const data = JSON.parse(raw) as {
+      puzzles?: Record<string, ExpertPuzzle>;
+    };
+    return new Map(Object.entries(data.puzzles ?? {}));
+  } catch {
+    return new Map();
+  }
+})();
 
 function generateDailyPuzzle() {
   const seed = getDailySeed();
@@ -351,18 +372,21 @@ function generateDailyPuzzle() {
   return puzzle;
 }
 
+// The live Expert generation for a given date seed. Exported so the precompute
+// script produces puzzles byte-identical to what this would generate at runtime.
+export function generateExpertPuzzleForSeed(seed: string): ExpertPuzzle {
+  return {
+    ...generatePuzzle(fullGraph(), EXPERT_DISTANCE, seededRandom(seed)),
+    seed,
+  };
+}
+
 function generateExpertPuzzle() {
   const seed = getDailySeed();
   if (_expertCache && _expertCache.seed === seed) return _expertCache.puzzle;
 
-  const puzzle = {
-    ...generatePuzzle(
-      fullGraph(),
-      EXPERT_DISTANCE,
-      seededRandom(seed)
-    ),
-    seed,
-  };
+  const puzzle =
+    precomputedExpert.get(seed) ?? generateExpertPuzzleForSeed(seed);
   _expertCache = { seed, puzzle };
   return puzzle;
 }
