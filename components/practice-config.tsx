@@ -4,14 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useNav } from "./nav-context";
 import { leagueName } from "@/lib/leagues";
-
-const OBSCURITY_LABELS: Record<number, string> = {
-  1: "Household names",
-  2: "Well known",
-  3: "Fans will know",
-  4: "Deep cuts",
-  5: "Anyone",
-};
+import { OBSCURITY_LABELS } from "@/lib/prominence";
 
 export default function PracticeConfig({
   leagues,

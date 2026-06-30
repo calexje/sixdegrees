@@ -11,6 +11,10 @@ import {
   getCompetitions,
   getProminentPlayerNames,
 } from "./db";
+import {
+  OBSCURITY_MIN_SEASONS,
+  DAILY_MIN_TOP_FLIGHT_SEASONS,
+} from "./prominence";
 
 // Expert mode uses every competition in the dataset; the daily puzzle is
 // restricted to the Premier League (competition "GB1").
@@ -40,11 +44,10 @@ function prominentPlayerNodes(minSeasons: number): Set<string> {
   );
 }
 
-// Daily uses only reasonably recognisable players (prominence >= 3, i.e. at
-// least 5 top-flight seasons) so it stays gettable.
-const DAILY_MIN_PROMINENCE_SEASONS = 5;
+// Daily uses only reasonably recognisable players (prominence >= 3) so it stays
+// gettable.
 const dailyAllowedPlayers = prominentPlayerNodes(
-  DAILY_MIN_PROMINENCE_SEASONS
+  DAILY_MIN_TOP_FLIGHT_SEASONS
 );
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
@@ -180,15 +183,6 @@ function getPracticeGraph(
   practiceGraphCache.set(key, graph);
   return graph;
 }
-
-// Obscurity slider: 1 = household names only, 5 = anything goes. Maps to a
-// minimum top-flight season count; 5 means no prominence gate at all.
-const OBSCURITY_MIN_SEASONS: Record<number, number> = {
-  1: 12,
-  2: 8,
-  3: 5,
-  4: 3,
-};
 
 export type PracticeFilters = {
   leagues?: string[];
