@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Football Degrees
 
-## Getting Started
+A six-degrees-of-separation puzzle game for footballers. Connect two players
+through clubs they shared: the path alternates **player → club-season → player →
+…** (e.g. _Steven Gerrard → Liverpool FC (2014) → Glen Johnson → Chelsea FC
+(2007) → Frank Lampard_). Inspired by [Travle](https://travle.earth), but for
+football.
 
-First, run the development server:
+## Modes
+
+- **Daily** – one puzzle per day (seeded by date), Premier League only.
+- **Expert** – same idea, but the full multi-league dataset.
+- **Practice** – unlimited quick random puzzles.
+- **Challenge** – build your own puzzle from two players and share it via URL.
+  Optional constraints: a required waypoint player, an excluded player, and
+  league filters. The link encodes everything (players by id); no backend
+  storage.
+
+Each puzzle shows a difficulty rating (Basic/Easy/Medium/Hard/Expert) derived
+from the true shortest-path distance, hints (most-recent club, full career, and
+a "best move" suggestion), and a win screen with an optional optimal-route
+reveal. Daily streak / games-played are kept in `localStorage`.
+
+A "move" is one selection (player→club or club→player); a player-to-player
+"jump" is two moves. Distances shown in the UI are in moves.
+
+## Tech stack
+
+- **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript**
+- **Tailwind CSS v4** with `@theme` design tokens (no component library)
+- State is plain React (`useState`/`useEffect`) plus Server Components; mode and
+  challenge config live in URL search params. No Redux/Zustand/React Query.
+- **better-sqlite3** over a committed SQLite file (`database/football.db`)
+- The connection graph and all path logic (BFS shortest path, waypoints,
+  excluded nodes, best-move) are hand-rolled in `lib/graph.ts` — no graph
+  library.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts: `npm run build`, `npm start`, `npm run lint`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> Note: this repo pins a customised Next.js. See `AGENTS.md` — check the bundled
+> guides under `node_modules/next/dist/docs/` before relying on APIs from memory.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data
 
-## Learn More
+`database/football.db` holds ~277k appearance rows across 12 European leagues
+(scraped from Transfermarkt). It is rebuilt from the per-competition JSON files
+in `scripts/data/`:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd scripts && npx tsx import.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The import tags each row with its competition, and de-duplicates club-seasons
+that the source duplicates across tiers (top-flight clubs that also appear in
+second-division files with identical squads).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
+- `app/page.tsx` – server component; resolves mode and renders the game or the
+  challenge builder
+- `app/api/*` – route handlers (player, clubseason, search, hint,
+  challenge/validate, puzzle)
+- `components/game.tsx` – the main game UI; `challenge-builder.tsx`, `header`,
+  `footer`
+- `lib/db.ts` – SQLite queries (opened read-only)
+- `lib/graph.ts` – graph build + BFS helpers
+- `lib/puzzle.tsx` – daily/expert/practice generation and the challenge resolver
+- `lib/{leagues,format,difficulty,stats,rate-limit}.ts` – small helpers
+- `docs/challenge-mode.md` – challenge mode spec
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploys on Vercel from `main`. Two things matter for the SQLite file on
+serverless:
+
+- The DB is committed in rollback-journal mode (not WAL) and opened **read-only**
+  — Vercel's function filesystem is read-only, and WAL needs to write a `-shm`
+  file.
+- `next.config.ts` uses `outputFileTracingIncludes` to bundle `football.db` into
+  the functions, since Vercel can't trace a runtime string path on its own.
+
+The graph is rebuilt in memory per cold start from the ~26 MB DB; fine for now,
+but the natural next step at scale is a hosted database (e.g. libSQL/Turso) or a
+precomputed graph rather than shipping and parsing SQLite on every cold boot.
