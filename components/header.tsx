@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type Mode = "daily" | "expert" | "practice" | "challenge";
@@ -8,15 +9,29 @@ export default function Header() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const mode: Mode =
+  const urlMode: Mode =
     (searchParams.get("mode") as Mode) ?? "daily";
 
+  // Optimistic highlight: reflect the clicked tab immediately, before the
+  // (sometimes slow) navigation and server render finish. Cleared once the URL
+  // catches up, so the highlight never feels stuck.
+  const [pendingMode, setPendingMode] =
+    useState<Mode | null>(null);
+  const activeMode = pendingMode ?? urlMode;
+
+  const search = searchParams.toString();
+  useEffect(() => {
+    setPendingMode(null);
+  }, [search]);
+
   function setMode(newMode: Mode) {
+    // Flip the highlight now; the navigation follows.
+    setPendingMode(newMode);
+
     // Switch modes cleanly: dropping any challenge params (from, to, via,
     // not_player, not_leagues) ensures "Create Challenge" opens the builder
     // rather than re-loading a challenge that is currently being solved.
     const params = new URLSearchParams();
-
     params.set("mode", newMode);
 
     router.push(`/?${params.toString()}`);
@@ -54,7 +69,7 @@ export default function Header() {
             <button
               key={m.id}
               onClick={() => setMode(m.id)}
-              className={buttonClass(mode === m.id)}
+              className={buttonClass(activeMode === m.id)}
             >
               {m.label}
             </button>

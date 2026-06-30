@@ -1,5 +1,3 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import Game from "@/components/game";
 import ChallengeBuilder from "@/components/challenge-builder";
 import { buildChallenge, getPuzzle, PuzzleMode } from "@/lib/puzzle";
@@ -71,15 +69,5 @@ export default async function Home({
     );
   }
 
-  return (
-    <>
-      <Header />
-
-      <main className="max-w-xl lg:max-w-4xl w-full mx-auto px-4 py-10">
-        {content}
-      </main>
-
-      <Footer />
-    </>
-  );
+  return content;
 }
