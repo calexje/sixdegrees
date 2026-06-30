@@ -25,14 +25,26 @@ const PRACTICE_DISTANCE = 2;
 // trivial; 2+ jumps forces a link through an intermediate player.
 const MIN_JUMPS = 2;
 
+// Prominence gating: the set of player nodes with at least `minSeasons`
+// top-flight seasons. Memoised per threshold (it's a GROUP BY over every
+// appearance, so we don't want to repeat it on each Practice generation).
+const prominentNamesCache = new Map<number, Set<string>>();
+function prominentPlayerNodes(minSeasons: number): Set<string> {
+  let names = prominentNamesCache.get(minSeasons);
+  if (!names) {
+    names = getProminentPlayerNames(minSeasons);
+    prominentNamesCache.set(minSeasons, names);
+  }
+  return new Set(
+    Array.from(names, (name) => `player:${name}`)
+  );
+}
+
 // Daily uses only reasonably recognisable players (prominence >= 3, i.e. at
-// least 5 top-flight seasons) so it stays gettable. Computed once per process.
+// least 5 top-flight seasons) so it stays gettable.
 const DAILY_MIN_PROMINENCE_SEASONS = 5;
-const dailyAllowedPlayers = new Set(
-  Array.from(
-    getProminentPlayerNames(DAILY_MIN_PROMINENCE_SEASONS),
-    (name) => `player:${name}`
-  )
+const dailyAllowedPlayers = prominentPlayerNodes(
+  DAILY_MIN_PROMINENCE_SEASONS
 );
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
@@ -133,11 +145,80 @@ function generatePuzzle(
   }
 }
 
-function generatePracticePuzzle() {
+// Practice graphs are filtered by league and season. The unfiltered case reuses
+// the module-level fullGraph; filtered ones are built on demand and cached
+// (bounded, oldest-out) like challenge graphs.
+const practiceGraphCache = new Map<string, Graph>();
+
+function getPracticeGraph(
+  leagues: string[],
+  seasonFrom?: number,
+  seasonTo?: number
+): Graph {
+  const noFilter =
+    leagues.length === 0 &&
+    seasonFrom === undefined &&
+    seasonTo === undefined;
+  if (noFilter) return fullGraph;
+
+  const key = `${[...leagues].sort().join(",")}|${seasonFrom ?? ""}|${seasonTo ?? ""}`;
+  const cached = practiceGraphCache.get(key);
+  if (cached) return cached;
+
+  const graph = buildGraph({
+    includeLeagues: leagues.length > 0 ? leagues : undefined,
+    seasonFrom,
+    seasonTo,
+  });
+
+  if (practiceGraphCache.size >= MAX_CACHED_GRAPHS) {
+    const oldest = practiceGraphCache.keys().next().value;
+    if (oldest !== undefined) {
+      practiceGraphCache.delete(oldest);
+    }
+  }
+  practiceGraphCache.set(key, graph);
+  return graph;
+}
+
+// Obscurity slider: 1 = household names only, 5 = anything goes. Maps to a
+// minimum top-flight season count; 5 means no prominence gate at all.
+const OBSCURITY_MIN_SEASONS: Record<number, number> = {
+  1: 12,
+  2: 8,
+  3: 5,
+  4: 3,
+};
+
+export type PracticeFilters = {
+  leagues?: string[];
+  seasonFrom?: number;
+  seasonTo?: number;
+  obscurity?: number;
+};
+
+export function generatePracticePuzzle(
+  filters: PracticeFilters = {}
+) {
+  const leagues = sanitizeLeagues(filters.leagues ?? []);
+  const graph = getPracticeGraph(
+    leagues,
+    filters.seasonFrom,
+    filters.seasonTo
+  );
+
+  const obscurity = filters.obscurity ?? 5;
+  const minSeasons = OBSCURITY_MIN_SEASONS[obscurity];
+  const allowed =
+    minSeasons === undefined
+      ? undefined
+      : prominentPlayerNodes(minSeasons);
+
   return generatePuzzle(
-    fullGraph,
+    graph,
     PRACTICE_DISTANCE,
-    Math.random
+    Math.random,
+    allowed
   );
 }
 

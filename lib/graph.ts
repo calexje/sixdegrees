@@ -20,7 +20,7 @@ function addEdge(
 }
 
 export function buildGraph(
-  opts: { competition?: string; excludeLeagues?: string[] } = {}
+  opts: AppearanceFilter = {}
 ): Graph {
   const graph: Graph = new Map();
 
