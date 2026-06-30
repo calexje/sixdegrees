@@ -3,8 +3,7 @@
 A six-degrees-of-separation puzzle game for footballers. Connect two players
 through clubs they shared: the path alternates **player → club-season → player →
 …** (e.g. _Steven Gerrard → Liverpool FC (2014) → Glen Johnson → Chelsea FC
-(2007) → Frank Lampard_). Inspired by [Travle](https://travle.earth), but for
-football.
+(2007) → Frank Lampard_). Inspired by [Six Degrees of Kevin Bacon](https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon), and a conversation about the career of [James Milner] (https://www.skysports.com/football/news/11095/13549725/james-milner-premier-league-record-appearance-holder-announces-retirement-at-age-of-40-after-24-year-top-flight-career)
 
 ## Modes
 
@@ -21,9 +20,6 @@ from the true shortest-path distance, hints (most-recent club, full career, and
 a "best move" suggestion), and a win screen with an optional optimal-route
 reveal. Daily streak / games-played are kept in `localStorage`.
 
-A "move" is one selection (player→club or club→player); a player-to-player
-"jump" is two moves. Distances shown in the UI are in moves.
-
 ## Tech stack
 
 - **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript**
@@ -35,6 +31,19 @@ A "move" is one selection (player→club or club→player); a player-to-player
   excluded nodes, best-move) are hand-rolled in `lib/graph.ts` — no graph
   library.
 
+## Pathfinding (BFS)
+
+The connection graph is unweighted (every move costs the same), so pathfinding
+uses breadth-first search rather than anything heavier. BFS explores outward in
+rings from a starting node, so the first time it reaches a player it has already
+found the shortest route there. The key to scaling is that it tracks distance
+per _node_, not per _path_ — it never enumerates the astronomical number of
+routes between two players, so its work stays linear in the size of the graph
+ and stays fast across the ~277k-appearance dataset. A single sweep
+also gives the distance from one node to every other, which is how the
+"best move" hint is computed in one pass, and searches are depth-capped so a
+puzzle only explores the relevant neighbourhood instead of the whole graph.
+
 ## Getting started
 
 ```bash
@@ -44,8 +53,7 @@ npm run dev      # http://localhost:3000
 
 Other scripts: `npm run build`, `npm start`, `npm run lint`.
 
-> Note: this repo pins a customised Next.js. See `AGENTS.md` — check the bundled
-> guides under `node_modules/next/dist/docs/` before relying on APIs from memory.
+> this repo uses a customised Next.js build; see node_modules/next/dist/docs/ for accurate API reference before relying on memory
 
 ## Data
 
