@@ -114,6 +114,10 @@ export default async function Home({
       <Game
         key={`${mode}:${puzzle.originId}:${puzzle.targetId}`}
         mode={mode}
+        puzzleNumber={
+          (puzzle as { puzzleNumber?: number })
+            .puzzleNumber
+        }
         originId={puzzle.originId}
         origin={puzzle.origin}
         targetId={puzzle.targetId}

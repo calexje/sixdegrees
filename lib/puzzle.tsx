@@ -79,6 +79,14 @@ function getDailySeed() {
   return new Date().toISOString().slice(0, 10);
 }
 
+// Daily puzzle number, counting up from launch. Set the epoch to your launch
+// date (UTC); that day is #1.
+const DAILY_EPOCH = Date.UTC(2026, 5, 30); // 2026-06-30
+function dailyNumber(seed: string): number {
+  const day = Date.parse(`${seed}T00:00:00Z`);
+  return Math.floor((day - DAILY_EPOCH) / 86_400_000) + 1;
+}
+
 // Picks an origin and a target that are a genuine shortest distance apart, then
 // reports that shortest path. `targetJumps` is the desired difficulty in jumps
 // (player-to-player hops); if no player sits exactly that far away we fall back
@@ -292,6 +300,7 @@ function generateDailyPuzzle() {
       dailyAllowedPlayers
     ),
     seed,
+    puzzleNumber: dailyNumber(seed),
   };
 }
 

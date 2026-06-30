@@ -11,6 +11,7 @@ import {
 
 type Props = {
     mode?: string;
+    puzzleNumber?: number;
     originId: string;
     origin: string;
     targetId: string;
@@ -53,6 +54,7 @@ type Option = PathNode;
 
 export default function Game({
   mode,
+  puzzleNumber,
   originId,
   origin,
   targetId,
@@ -131,13 +133,14 @@ export default function Game({
 
   useEffect(() => {
     async function loadTargetCareer() {
-      const response = await fetch(
-        `/api/player?id=${encodeURIComponent(targetId)}`
-      );
-
-      const data = await response.json();
-
-      setTargetCareer(data);
+      try {
+        const response = await fetch(
+          `/api/player?id=${encodeURIComponent(targetId)}`
+        );
+        setTargetCareer(await response.json());
+      } catch {
+        setTargetCareer([]);
+      }
     }
 
     loadTargetCareer();
@@ -156,62 +159,68 @@ export default function Game({
       setLoading(true);
       setOptions([]);
 
-      if (current.type === "player") {
-        const response = await fetch(
-          `/api/player?id=${encodeURIComponent(
-            current.id
-          )}`
-        );
+      try {
+        if (current.type === "player") {
+          const response = await fetch(
+            `/api/player?id=${encodeURIComponent(
+              current.id
+            )}`
+          );
 
-        const data: ClubSeason[] =
-          await response.json();
+          const data: ClubSeason[] =
+            await response.json();
 
-        if (!active) return;
+          if (!active) return;
 
-        setOptions(
-          data
-            .filter(
-              (item) =>
-                !item.competition ||
-                !notLeagues?.includes(
-                  item.competition
-                )
-            )
-            .map((item) => ({
-              type: "clubseason",
-              clubId: item.clubId,
-              club: item.club,
-              season: item.season,
-            }))
-        );
-      } else {
-        const response = await fetch(
-          `/api/clubseason?club_id=${encodeURIComponent(
-            current.clubId
-          )}&season=${encodeURIComponent(
-            current.season
-          )}`
-        );
+          setOptions(
+            data
+              .filter(
+                (item) =>
+                  !item.competition ||
+                  !notLeagues?.includes(
+                    item.competition
+                  )
+              )
+              .map((item) => ({
+                type: "clubseason",
+                clubId: item.clubId,
+                club: item.club,
+                season: item.season,
+              }))
+          );
+        } else {
+          const response = await fetch(
+            `/api/clubseason?club_id=${encodeURIComponent(
+              current.clubId
+            )}&season=${encodeURIComponent(
+              current.season
+            )}`
+          );
 
-        const data: PlayerRow[] =
-          await response.json();
+          const data: PlayerRow[] =
+            await response.json();
 
-        if (!active) return;
+          if (!active) return;
 
-        setOptions(
-          data
-            .filter(
-              (item) => item.id !== excludedPlayerId
-            )
-            .map((item) => ({
-              type: "player",
-              id: item.id,
-              name: item.name,
-            }))
-        );
+          setOptions(
+            data
+              .filter(
+                (item) => item.id !== excludedPlayerId
+              )
+              .map((item) => ({
+                type: "player",
+                id: item.id,
+                name: item.name,
+              }))
+          );
+        }
+      } catch {
+        // Network/parse failure: leave the options empty rather than hanging on
+        // the loading state forever.
+        if (active) setOptions([]);
+      } finally {
+        if (active) setLoading(false);
       }
-
-      setLoading(false);
     }
 
     loadOptions();
@@ -341,9 +350,6 @@ export default function Game({
   // per next-move suggestion.
   const hintCount = hintStage + bestMoves.length;
 
-  // TODO: real values
-  const puzzleNumber = 1;
-
   const extraMoves = hasSolution
     ? moveCount - solutionDistance
     : null;
@@ -370,7 +376,8 @@ export default function Game({
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-background text-foreground border border-border rounded-lg shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-1">
-              Football Degrees #{puzzleNumber}
+              Football Degrees
+              {puzzleNumber ? ` #${puzzleNumber}` : ""}
             </h2>
 
             <p className="text-lg mb-4 font-semibold text-primary-700 dark:text-primary-400">

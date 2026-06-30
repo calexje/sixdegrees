@@ -17,10 +17,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_NAME = "Football Degrees";
+const DESCRIPTION =
+  "Connect two footballers through the clubs they shared.";
+
+// Set NEXT_PUBLIC_SITE_URL to the production origin so share links resolve
+// absolute OG asset URLs; falls back to localhost in dev.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Football Degrees",
-  description:
-    "Connect two footballers through the clubs they shared.",
+  metadataBase: new URL(siteUrl),
+  title: SITE_NAME,
+  description: DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_NAME,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
