@@ -11,32 +11,40 @@ import {
 
 type Props = {
     mode?: string;
+    originId: string;
     origin: string;
+    targetId: string;
     target: string;
     solutionDistance: number | null;
     solutionPath?: string[];
+    requiredWaypointId?: string;
     requiredWaypoint?: string;
+    excludedPlayerId?: string;
     excludedPlayer?: string;
     notLeagues?: string[];
 };
 
 type ClubSeason = {
+  clubId: string;
   club: string;
   season: string;
   competition?: string;
 };
 
-type Player = {
-  player: string;
+type PlayerRow = {
+  id: string;
+  name: string;
 };
 
 type PathNode =
   | {
       type: "player";
-      value: string;
+      id: string;
+      name: string;
     }
   | {
       type: "clubseason";
+      clubId: string;
       club: string;
       season: string;
     };
@@ -45,18 +53,23 @@ type Option = PathNode;
 
 export default function Game({
   mode,
+  originId,
   origin,
+  targetId,
   target,
   solutionDistance,
   solutionPath,
+  requiredWaypointId,
   requiredWaypoint,
+  excludedPlayerId,
   excludedPlayer,
   notLeagues,
 }: Props) {
   const [path, setPath] = useState<PathNode[]>([
     {
       type: "player",
-      value: origin,
+      id: originId,
+      name: origin,
     },
   ]);
 
@@ -75,9 +88,8 @@ export default function Game({
     useState<ClubSeason[]>([]);
 
   const mostRecentClub =
-  targetCareer.length > 0
-    ? targetCareer[0]
-    : null;
+    targetCareer.length > 0 
+      ? targetCareer[0] : null;
   const [showWinModal, setShowWinModal] =
     useState(false);
   const [showOptimal, setShowOptimal] =
@@ -90,16 +102,16 @@ export default function Game({
   const current = path[path.length - 1];
 
   const passedWaypoint =
-    !requiredWaypoint ||
+    !requiredWaypointId ||
     path.some(
       (node) =>
         node.type === "player" &&
-        node.value === requiredWaypoint
+        node.id === requiredWaypointId
     );
 
   const won =
     current.type === "player" &&
-    current.value === target &&
+    current.id === targetId &&
     passedWaypoint;
 
   useEffect(() => {
@@ -119,9 +131,7 @@ export default function Game({
   useEffect(() => {
     async function loadTargetCareer() {
       const response = await fetch(
-        `/api/player?name=${encodeURIComponent(
-          target
-        )}`
+        `/api/player?id=${encodeURIComponent(targetId)}`
       );
 
       const data = await response.json();
@@ -130,7 +140,7 @@ export default function Game({
     }
 
     loadTargetCareer();
-  }, [target]);
+  }, [targetId]);
 
   useEffect(() => {
     // Track whether this is still the current node. If the player selects
@@ -149,8 +159,8 @@ export default function Game({
 
       if (current.type === "player") {
         const response = await fetch(
-          `/api/player?name=${encodeURIComponent(
-            current.value
+          `/api/player?id=${encodeURIComponent(
+            current.id
           )}`
         );
 
@@ -170,20 +180,21 @@ export default function Game({
             )
             .map((item) => ({
               type: "clubseason",
+              clubId: item.clubId,
               club: item.club,
               season: item.season,
             }))
         );
       } else {
         const response = await fetch(
-          `/api/clubseason?club=${encodeURIComponent(
-            current.club
+          `/api/clubseason?club_id=${encodeURIComponent(
+            current.clubId
           )}&season=${encodeURIComponent(
             current.season
           )}`
         );
 
-        const data: Player[] =
+        const data: PlayerRow[] =
           await response.json();
 
         if (!active) return;
@@ -191,12 +202,12 @@ export default function Game({
         setOptions(
           data
             .filter(
-              (item) =>
-                item.player !== excludedPlayer
+              (item) => item.id !== excludedPlayerId
             )
             .map((item) => ({
               type: "player",
-              value: item.player,
+              id: item.id,
+              name: item.name,
             }))
         );
       }
@@ -215,14 +226,14 @@ export default function Game({
     setPath([...path, option]);
   }
 
-function goBack() {
+  function goBack() {
     if (path.length <= 1) {
-        return;
+      return;
     }
 
     setQuery("");
     setPath(path.slice(0, -1));
-}
+  }
 
   async function copyResults() {
     // window.location.href carries the current mode and any challenge params,
@@ -242,33 +253,25 @@ function goBack() {
   // With a waypoint not yet reached, the goal is the waypoint; otherwise the
   // target.
   async function loadBestMove() {
-    const passed =
-      !requiredWaypoint ||
-      path.some(
-        (node) =>
-          node.type === "player" &&
-          node.value === requiredWaypoint
-      );
-
-    const goalName =
-      requiredWaypoint && !passed
-        ? requiredWaypoint
-        : target;
+    const goalId =
+      requiredWaypointId && !passedWaypoint
+        ? requiredWaypointId
+        : targetId;
 
     const currentKey =
       current.type === "player"
-        ? `player:${current.value}`
-        : `clubseason:${current.club}:${current.season}`;
+        ? `player:${current.id}`
+        : `clubseason:${current.clubId}:${current.season}`;
 
     const params = new URLSearchParams();
     params.set("mode", mode ?? "daily");
     params.set("current", currentKey);
-    params.set("goal", `player:${goalName}`);
+    params.set("goal", `player:${goalId}`);
     if (notLeagues && notLeagues.length > 0) {
       params.set("not_leagues", notLeagues.join(","));
     }
-    if (excludedPlayer) {
-      params.set("not_player", excludedPlayer);
+    if (excludedPlayerId) {
+      params.set("not_player", excludedPlayerId);
     }
 
     setBestMoveLoading(true);
@@ -283,41 +286,41 @@ function goBack() {
     }
   }
 
-const filteredOptions = options.filter((option) => {
+  const filteredOptions = options.filter((option) => {
     const alreadyVisited = path.some((node) => {
-        if (
-            node.type === "player" &&
-            option.type === "player"
-        ) {
-            return node.value === option.value;
-        }
+      if (
+        node.type === "player" &&
+        option.type === "player"
+      ) {
+        return node.id === option.id;
+      }
 
-        if (
-            node.type === "clubseason" &&
-            option.type === "clubseason"
-        ) {
-            return (
-                node.club === option.club &&
-                node.season === option.season
-            );
-        }
+      if (
+        node.type === "clubseason" &&
+        option.type === "clubseason"
+      ) {
+        return (
+          node.clubId === option.clubId &&
+          node.season === option.season
+        );
+      }
 
-        return false;
+      return false;
     });
 
     if (alreadyVisited) {
-        return false;
+      return false;
     }
 
     const label =
-        option.type === "player"
-            ? option.value
-            : `${option.club} (${option.season})`;
+      option.type === "player"
+        ? option.name
+        : `${option.club} (${formatSeason(option.season)})`;
 
     return label
-        .toLowerCase()
-        .includes(query.toLowerCase());
-});
+      .toLowerCase()
+      .includes(query.toLowerCase());
+  });
 
   const hasSolution = solutionDistance !== null;
 
@@ -389,7 +392,7 @@ const filteredOptions = options.filter((option) => {
               {path.map((node, i) => (
                 <span key={i}>
                   {node.type === "player"
-                    ? node.value
+                    ? node.name
                     : `${node.club} (${formatSeason(node.season)})`}
                   {i < path.length - 1 && " → "}
                 </span>
@@ -507,7 +510,7 @@ const filteredOptions = options.filter((option) => {
                 <h3 className="font-semibold">Next move</h3>
                 <span className="text-xs text-muted">
                   {current.type === "player"
-                    ? `${current.value}'s clubs`
+                    ? `${current.name}'s clubs`
                     : `${current.club} (${formatSeason(current.season)}) squad`}
                 </span>
               </div>
@@ -531,7 +534,7 @@ const filteredOptions = options.filter((option) => {
                     {filteredOptions.map((option, i) => {
                       const label =
                         option.type === "player"
-                          ? option.value
+                          ? option.name
                           : `${option.club} (${formatSeason(option.season)})`;
 
                       return (
@@ -590,7 +593,7 @@ const filteredOptions = options.filter((option) => {
                       }
                     >
                       {node.type === "player"
-                        ? node.value
+                        ? node.name
                         : `${node.club} (${formatSeason(node.season)})`}
                     </span>
                   </li>

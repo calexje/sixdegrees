@@ -2,7 +2,9 @@ import Database from "better-sqlite3";
 import path from "path";
 
 export type Appearance = {
+  player_id: string;
   player_name: string;
+  club_id: string;
   club_name: string;
   season: string;
   competition?: string;
@@ -13,35 +15,46 @@ export type PlayerRef = {
   name: string;
 };
 
+export type ClubSeasonRow = {
+  clubId: string;
+  club: string;
+  season: string;
+  competition: string;
+};
+
 const db = new Database(
   path.join(process.cwd(), "database", "football.db"),
   { readonly: true, fileMustExist: true }
 );
 
-export function getPlayerFromClubSeasons(player: string) {
+// A specific player's club-seasons, by player id (not name).
+export function getPlayerClubSeasons(
+  playerId: string
+): ClubSeasonRow[] {
   return db
     .prepare(`
-      SELECT DISTINCT club_name AS club, season, competition
+      SELECT DISTINCT club_id AS clubId, club_name AS club, season, competition
       FROM appearances
-      WHERE player_name = ?
+      WHERE player_id = ?
       ORDER BY CAST(season AS REAL) DESC
     `)
-    .all(player);
+    .all(playerId) as ClubSeasonRow[];
 }
 
-export function getClubSeasonFromPlayers(
-  club: string,
+// The squad of a specific club-season, by club id (not name).
+export function getClubSeasonPlayers(
+  clubId: string,
   season: string
-) {
+): PlayerRef[] {
   return db
     .prepare(`
-      SELECT DISTINCT player_name AS player
+      SELECT DISTINCT player_id AS id, player_name AS name
       FROM appearances
-      WHERE club_name = ?
+      WHERE club_id = ?
       AND season = ?
       ORDER BY player_name
     `)
-    .all(club, season);
+    .all(clubId, season) as PlayerRef[];
 }
 
 export type AppearanceFilter = {
@@ -86,7 +99,7 @@ export function getAllAppearances(
 
   return db
     .prepare(`
-      SELECT player_name, club_name, season
+      SELECT player_id, player_name, club_id, club_name, season
       FROM appearances
       ${where}
     `)
@@ -147,23 +160,22 @@ export function getCompetitions(): string[] {
 // recognise, rather than current market value (which favours young hype).
 const TOP_FLIGHT = ["GB1", "ES1", "IT1", "L1", "FR1"];
 
-// Player names with at least `minSeasons` distinct top-flight seasons. Names
-// (not ids) to match the name-keyed graph; same-name players are merged, which
-// is consistent with the rest of the engine.
-export function getProminentPlayerNames(
+// Player ids with at least `minSeasons` distinct top-flight seasons. Keyed by
+// id, so distinct players who share a name are counted separately.
+export function getProminentPlayerIds(
   minSeasons: number
 ): Set<string> {
   const placeholders = TOP_FLIGHT.map(() => "?").join(", ");
   const rows = db
     .prepare(`
-      SELECT player_name AS name
+      SELECT player_id AS id
       FROM appearances
       WHERE competition IN (${placeholders})
-      GROUP BY player_name
+      GROUP BY player_id
       HAVING COUNT(DISTINCT season) >= ?
     `)
-    .all(...TOP_FLIGHT, minSeasons) as { name: string }[];
+    .all(...TOP_FLIGHT, minSeasons) as { id: string }[];
 
-  return new Set(rows.map((row) => row.name));
+  return new Set(rows.map((row) => row.id));
 }
 

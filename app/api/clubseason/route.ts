@@ -1,17 +1,15 @@
 import { NextResponse } from "next/server";
-import { getClubSeasonFromPlayers } from "@/lib/db";
+import { getClubSeasonPlayers } from "@/lib/db";
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
-    const club = searchParams.get("club");
+    const clubId = searchParams.get("club_id");
     const season = searchParams.get("season");
 
-    if (!club || !season) {
+    if (!clubId || !season) {
         return NextResponse.json(
-            { error: "Missing required parameter: club or season", }, { status: 400 }
+            { error: "Missing required parameter: club_id or season", }, { status: 400 }
         );
     }
-    const clubSeasons = getClubSeasonFromPlayers(club,season);
-    return NextResponse.json(clubSeasons
-    );
+    return NextResponse.json(getClubSeasonPlayers(clubId, season));
 }

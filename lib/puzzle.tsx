@@ -4,12 +4,13 @@ import {
   reconstructPath,
   shortestPathVia,
   pathToLabels,
+  nodeLabel,
   Graph,
 } from "./graph";
 import {
   getPlayerById,
   getCompetitions,
-  getProminentPlayerNames,
+  getProminentPlayerIds,
 } from "./db";
 import {
   OBSCURITY_MIN_SEASONS,
@@ -32,16 +33,14 @@ const MIN_JUMPS = 2;
 // Prominence gating: the set of player nodes with at least `minSeasons`
 // top-flight seasons. Memoised per threshold (it's a GROUP BY over every
 // appearance, so we don't want to repeat it on each Practice generation).
-const prominentNamesCache = new Map<number, Set<string>>();
+const prominentIdsCache = new Map<number, Set<string>>();
 function prominentPlayerNodes(minSeasons: number): Set<string> {
-  let names = prominentNamesCache.get(minSeasons);
-  if (!names) {
-    names = getProminentPlayerNames(minSeasons);
-    prominentNamesCache.set(minSeasons, names);
+  let ids = prominentIdsCache.get(minSeasons);
+  if (!ids) {
+    ids = getProminentPlayerIds(minSeasons);
+    prominentIdsCache.set(minSeasons, ids);
   }
-  return new Set(
-    Array.from(names, (name) => `player:${name}`)
-  );
+  return new Set(Array.from(ids, (id) => `player:${id}`));
 }
 
 // Daily uses only reasonably recognisable players (prominence >= 3) so it stays
@@ -140,8 +139,10 @@ function generatePuzzle(
     const path = reconstructPath(parent, startNode, target);
 
     return {
-      origin: startNode.replace("player:", ""),
-      target: target.replace("player:", ""),
+      originId: startNode.slice("player:".length),
+      origin: nodeLabel(startNode),
+      targetId: target.slice("player:".length),
+      target: nodeLabel(target),
       solutionDistance: path.length - 1,
       solutionPath: pathToLabels(path),
     };
@@ -339,14 +340,14 @@ export function buildChallenge(
   const graph = getChallengeGraph(notLeagues);
 
   const blocked = excluded
-    ? new Set([`player:${excluded.name}`])
+    ? new Set([`player:${excluded.id}`])
     : undefined;
 
   const solutionNodes = shortestPathVia(
     graph,
-    `player:${from.name}`,
-    `player:${to.name}`,
-    via ? `player:${via.name}` : undefined,
+    `player:${from.id}`,
+    `player:${to.id}`,
+    via ? `player:${via.id}` : undefined,
     blocked
   );
 

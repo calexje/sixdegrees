@@ -7,6 +7,13 @@ import { formatSeason } from "./format";
 
 export type Graph = Map<string, Set<string>>;
 
+// Nodes are keyed by id (`player:<player_id>`, `clubseason:<club_id>:<season>`)
+// so that distinct players/clubs sharing a name are never merged. This registry
+// maps each node to its display label, populated as graphs are built. Every
+// node that appears in any (filtered) graph also appears in the full graph, so
+// the labels cover them all.
+const nodeLabels = new Map<string, string>();
+
 function addEdge(
   graph: Graph,
   from: string,
@@ -27,23 +34,22 @@ export function buildGraph(
   const appearances = getAllAppearances(opts);
 
   for (const appearance of appearances) {
-    const playerNode =
-      `player:${appearance.player_name}`;
-
+    const playerNode = `player:${appearance.player_id}`;
     const clubSeasonNode =
-      `clubseason:${appearance.club_name}:${appearance.season}`;
+      `clubseason:${appearance.club_id}:${appearance.season}`;
 
-    addEdge(
-      graph,
-      playerNode,
-      clubSeasonNode
-    );
+    if (!nodeLabels.has(playerNode)) {
+      nodeLabels.set(playerNode, appearance.player_name);
+    }
+    if (!nodeLabels.has(clubSeasonNode)) {
+      nodeLabels.set(
+        clubSeasonNode,
+        `${appearance.club_name} (${formatSeason(appearance.season)})`
+      );
+    }
 
-    addEdge(
-      graph,
-      clubSeasonNode,
-      playerNode
-    );
+    addEdge(graph, playerNode, clubSeasonNode);
+    addEdge(graph, clubSeasonNode, playerNode);
   }
 
   return graph;
@@ -238,18 +244,9 @@ export function bestMove(
   return best;
 }
 
-// Converts a graph node key to a human label, e.g. "player:Pelé" -> "Pelé" and
-// "clubseason:Santos:1962.0" -> "Santos (1962)".
+// Display label for a node id, from the registry populated during graph build.
 export function nodeLabel(node: string): string {
-  if (node.startsWith("player:")) {
-    return node.slice("player:".length);
-  }
-
-  const rest = node.slice("clubseason:".length);
-  const lastColon = rest.lastIndexOf(":");
-  const club = rest.slice(0, lastColon);
-  const season = rest.slice(lastColon + 1);
-  return `${club} (${formatSeason(season)})`;
+  return nodeLabels.get(node) ?? node;
 }
 
 export function pathToLabels(path: string[]): string[] {

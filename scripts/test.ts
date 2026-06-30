@@ -1,8 +1,4 @@
-import { getClubSeasonFromPlayers } from "../lib/db";
+import { getClubSeasonPlayers } from "../lib/db";
 
-console.log(
-  getClubSeasonFromPlayers(
-    "Manchester United",
-    "2013-14"
-  )
-);
+// club_id 985 = Manchester United; season ids are stored like "2013.0".
+console.log(getClubSeasonPlayers("985", "2013.0"));

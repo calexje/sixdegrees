@@ -46,11 +46,15 @@ export default async function Home({
       <Game
         key={`challenge:${challenge.originId}:${challenge.targetId}:${challenge.viaId ?? ""}:${challenge.excludedId ?? ""}:${challenge.notLeagues.join(",")}`}
         mode="challenge"
+        originId={challenge.originId}
         origin={challenge.origin}
+        targetId={challenge.targetId}
         target={challenge.target}
         solutionDistance={challenge.solutionDistance}
         solutionPath={challenge.solutionPath ?? undefined}
+        requiredWaypointId={challenge.viaId ?? undefined}
         requiredWaypoint={challenge.via ?? undefined}
+        excludedPlayerId={challenge.excludedId ?? undefined}
         excludedPlayer={challenge.excludedPlayer ?? undefined}
         notLeagues={challenge.notLeagues}
       />
@@ -86,9 +90,11 @@ export default async function Home({
           current={{ leagues, seasonFrom, seasonTo, obscurity }}
         />
         <Game
-          key={`practice:${puzzle.origin}:${puzzle.target}`}
+          key={`practice:${puzzle.originId}:${puzzle.targetId}`}
           mode="practice"
+          originId={puzzle.originId}
           origin={puzzle.origin}
+          targetId={puzzle.targetId}
           target={puzzle.target}
           solutionDistance={puzzle.solutionDistance}
           solutionPath={puzzle.solutionPath}
@@ -101,9 +107,11 @@ export default async function Home({
 
     content = (
       <Game
-        key={`${mode}:${puzzle.origin}:${puzzle.target}`}
+        key={`${mode}:${puzzle.originId}:${puzzle.targetId}`}
         mode={mode}
+        originId={puzzle.originId}
         origin={puzzle.origin}
+        targetId={puzzle.targetId}
         target={puzzle.target}
         solutionDistance={puzzle.solutionDistance}
         solutionPath={puzzle.solutionPath}
