@@ -15,7 +15,7 @@ export default function Footer() {
             Privacy
           </Link>
         </nav>
-        © Calex SEO 2026
+        © Calex Digital 2026
       </div>
     </footer>
   );

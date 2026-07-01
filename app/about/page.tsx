@@ -82,7 +82,7 @@ export default function AboutPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold">Contact</h2>
         <p>
-          Built by Calex SEO. Feedback and bug reports:{" "}
+          Built by Calex Digital. Feedback and bug reports:{" "}
           <a
             className={linkClass}
             href="mailto:sixlinksgaming@gmail.com"

@@ -21,7 +21,7 @@ export default function PrivacyPage() {
 
       <p>
         footylinks is operated by{" "}
-        <strong>Calex SEO</strong>. This policy explains
+        <strong>Calex Digital</strong>. This policy explains
         what data the site handles. Questions? Email{" "}
         <a
           className={linkClass}
