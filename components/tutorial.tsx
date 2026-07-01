@@ -144,7 +144,8 @@ export default function HowToPlay() {
                   from that season. Repeat until you reach the target player. If you run out of moves before you reach the target, you lose.
                 </p>
                 <p>
-                  Daily 
+                  Daily and Expert modes refresh every day at midnight UTC. The Expert mode has a larger dataset, including players from Europe's top divisions and second tiers.
+                  Set and share challenges using Create mode, or try custom puzzles in Practice mode.
                 </p>
               </Section>
             </div>
