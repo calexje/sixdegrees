@@ -14,6 +14,7 @@ export type DailyResult = {
   date: string;
   moves: number;
   hints: number;
+  solved: boolean;
 };
 
 const EMPTY: Stats = {
@@ -58,16 +59,18 @@ function previousDay(date: string): string {
 
 // Records completion of the Daily for `today` (YYYY-MM-DD). Idempotent: calling
 // it again for the same day does not change the stats, so it is safe against
-// re-renders and React's double-invoked effects.
-export function recordDailyWin(today: string): Stats {
+// re-renders and React's double-invoked effects. A win extends the streak (or
+// starts a new one); a loss resets it to zero. Both count as a game played.
+function recordDaily(today: string, solved: boolean): Stats {
   const stats = load();
 
   if (stats.lastPlayed === today) {
     return stats;
   }
 
-  const currentStreak =
-    stats.lastPlayed === previousDay(today)
+  const currentStreak = !solved
+    ? 0
+    : stats.lastPlayed === previousDay(today)
       ? stats.currentStreak + 1
       : 1;
 
@@ -79,6 +82,14 @@ export function recordDailyWin(today: string): Stats {
 
   save(next);
   return next;
+}
+
+export function recordDailyWin(today: string): Stats {
+  return recordDaily(today, true);
+}
+
+export function recordDailyLoss(today: string): Stats {
+  return recordDaily(today, false);
 }
 
 // Read-only stats for the result screen.
@@ -101,6 +112,8 @@ export function getDailyResult(
       date: parsed.date,
       moves: Number(parsed.moves) || 0,
       hints: Number(parsed.hints) || 0,
+      // Older stored results predate the flag; treat them as solved.
+      solved: parsed.solved !== false,
     };
   } catch {
     return null;

@@ -10,7 +10,7 @@ Decisions taken with the owner are marked **[decided]**.
 - **Traffic:** being posted around (bursty), so cold starts will be hit often.
 - **Budget:** free until AdSense revenue; open to free DB hosting. Plan to mirror
   to other sports later, so keep things reasonably generic.
-- **Privacy policy:** owner "Calex SEO", contact sixlinksgaming@gmail.com.
+- **Privacy policy:** owner "Calex Digital", contact sixlinksgaming@gmail.com.
 - **Domain:** use the runtime origin (`window.location` client-side, request
   host server-side) so nothing is hardcoded before the domain is registered.
 
@@ -107,7 +107,7 @@ a hard gate for AdSense.
 **Done (in code):**
 - **`/privacy`** — privacy policy covering local-storage game data (no PII),
   Vercel Analytics (cookieless), and Google AdSense cookies + UK/EEA consent,
-  with the Google opt-out links. Owner: Calex SEO, sixlinksgaming@gmail.com.
+  with the Google opt-out links. Owner: Calex Digital, sixlinksgaming@gmail.com.
 - **`/about`** — how-to-play + modes + data attribution; doubles as the content
   AdSense's "low-value content" review wants.
 - **Footer links** to both on every page.

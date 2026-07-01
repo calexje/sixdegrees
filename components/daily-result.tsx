@@ -30,12 +30,14 @@ export default function DailyResult({
   target,
   moves,
   hints,
+  solved,
 }: {
   puzzleNumber?: number;
   origin: string;
   target: string;
   moves: number;
   hints: number;
+  solved: boolean;
 }) {
   const [stats, setStats] = useState<{
     gamesPlayed: number;
@@ -61,8 +63,12 @@ export default function DailyResult({
       hints > 0
         ? ` with ${hints} hint${hints === 1 ? "" : "s"}`
         : "";
-    const text =
-      `I solved footylinks${puzzleNumber ? ` #${puzzleNumber}` : ""} (${origin} → ${target}) in ${moves} moves${hintText}!\n${window.location.href}`;
+    const numbered = puzzleNumber
+      ? ` #${puzzleNumber}`
+      : "";
+    const text = solved
+      ? `I solved footylinks${numbered} (${origin} → ${target}) in ${moves} moves${hintText}!\n${window.location.href}`
+      : `I couldn't solve footylinks${numbered} (${origin} → ${target}) today${hintText}. Can you?\n${window.location.href}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
@@ -78,19 +84,33 @@ export default function DailyResult({
         footylinks
         {puzzleNumber ? ` #${puzzleNumber}` : ""}
       </h2>
-      <p className="text-lg mb-4 font-semibold text-primary-700 dark:text-primary-400">
-        ✅ Solved
+      <p
+        className={`text-lg mb-4 font-semibold ${
+          solved
+            ? "text-primary-700 dark:text-primary-400"
+            : "text-red-500"
+        }`}
+      >
+        {solved ? "✅ Solved" : "❌ Out of moves"}
       </p>
 
-      <p className="mb-2">
-        You connected <strong>{origin}</strong> to{" "}
-        <strong>{target}</strong> in{" "}
-        <strong>{moves}</strong> moves
-        {hints > 0
-          ? ` with ${hints} hint${hints === 1 ? "" : "s"}`
-          : ""}
-        .
-      </p>
+      {solved ? (
+        <p className="mb-2">
+          You connected <strong>{origin}</strong> to{" "}
+          <strong>{target}</strong> in{" "}
+          <strong>{moves}</strong> moves
+          {hints > 0
+            ? ` with ${hints} hint${hints === 1 ? "" : "s"}`
+            : ""}
+          .
+        </p>
+      ) : (
+        <p className="mb-2">
+          You ran out of moves connecting{" "}
+          <strong>{origin}</strong> to{" "}
+          <strong>{target}</strong> today.
+        </p>
+      )}
 
       {stats && (
         <p className="text-sm text-muted mb-4">

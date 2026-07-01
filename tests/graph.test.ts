@@ -86,6 +86,20 @@ describe("bfsFrom / reconstructPath", () => {
   });
 });
 
+describe("bfsFrom with blocked", () => {
+  it("treats blocked nodes as absent", () => {
+    // From player:3, blocking player:2 severs the only bridge to player:1.
+    const { distance } = bfsFrom(
+      graph,
+      "player:3",
+      undefined,
+      new Set(["player:2"])
+    );
+    expect(distance.get("clubseason:B")).toBe(1);
+    expect(distance.get("player:1")).toBeUndefined();
+  });
+});
+
 describe("bestMove", () => {
   it("picks the neighbour closest to the goal", () => {
     // From player:1, club A leads toward player:3; club C leads away.

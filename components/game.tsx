@@ -5,6 +5,7 @@ import { leagueName } from "@/lib/leagues";
 import { formatSeason } from "@/lib/format";
 import {
   recordDailyWin,
+  recordDailyLoss,
   recordDailyResult,
   getDailyResult,
 } from "@/lib/stats";
@@ -13,6 +14,7 @@ import {
   difficultyFor,
   DIFFICULTY_CLASS,
 } from "@/lib/difficulty";
+import { MOVE_SLACK } from "@/lib/game";
 
 type Props = {
     mode?: string;
@@ -57,6 +59,13 @@ type PathNode =
 
 type Option = PathNode;
 
+// Graph node key for a path node, matching the server's keying.
+function nodeKeyOf(node: PathNode): string {
+  return node.type === "player"
+    ? `player:${node.id}`
+    : `clubseason:${node.clubId}:${node.season}`;
+}
+
 export default function Game({
   mode,
   puzzleNumber,
@@ -94,11 +103,21 @@ export default function Game({
     useState(false);
   const [targetCareer, setTargetCareer] =
     useState<ClubSeason[]>([]);
+  // Distance (in moves) from each visited node to the target, for per-move
+  // colour feedback (item 4). Seeded with the origin, whose distance is the
+  // known optimal; the rest are fetched as the player commits moves.
+  const [distances, setDistances] = useState<
+    Record<string, number>
+  >(
+    solutionDistance !== null
+      ? { [`player:${originId}`]: solutionDistance }
+      : {}
+  );
 
   const mostRecentClub =
     targetCareer.length > 0 
       ? targetCareer[0] : null;
-  const [showWinModal, setShowWinModal] =
+  const [showEndModal, setShowEndModal] =
     useState(false);
   const [showOptimal, setShowOptimal] =
     useState(false);
@@ -110,6 +129,7 @@ export default function Game({
   const [locked, setLocked] = useState<{
     moves: number;
     hints: number;
+    solved: boolean;
   } | null>(null);
 
   const current = path[path.length - 1];
@@ -127,24 +147,35 @@ export default function Game({
     current.id === targetId &&
     passedWaypoint;
 
-  useEffect(() => {
-    if (won) {
-      setShowWinModal(true);
+  const moveCount = path.length - 1;
+  const hasSolution = solutionDistance !== null;
+  // Move budget (item 2): the puzzle is failed once the player exceeds the
+  // optimal by more than the slack. No budget when there's no known solution.
+  const budget = hasSolution
+    ? solutionDistance + MOVE_SLACK
+    : null;
+  const failed =
+    budget !== null && !won && moveCount >= budget;
+  const gameOver = won || failed;
 
-      // Only the Daily feeds the streak/games stats and the lock result.
-      if (mode === "daily") {
-        const today = new Date()
-          .toISOString()
-          .slice(0, 10);
+  useEffect(() => {
+    if (!gameOver) return;
+    setShowEndModal(true);
+
+    // Only the Daily feeds the streak/games stats and the lock result.
+    if (mode === "daily") {
+      const today = new Date().toISOString().slice(0, 10);
+      const moves = path.length - 1;
+      const hints = hintStage + bestMoves.length;
+      if (won) {
         setStats(recordDailyWin(today));
-        recordDailyResult({
-          date: today,
-          moves: path.length - 1,
-          hints: hintStage + bestMoves.length,
-        });
+        recordDailyResult({ date: today, moves, hints, solved: true });
+      } else {
+        setStats(recordDailyLoss(today));
+        recordDailyResult({ date: today, moves, hints, solved: false });
       }
     }
-  }, [won, mode]);
+  }, [gameOver, mode]);
 
   // On load, lock the Daily if it's already been completed today.
   useEffect(() => {
@@ -157,6 +188,7 @@ export default function Game({
       setLocked({
         moves: result.moves,
         hints: result.hints,
+        solved: result.solved,
       });
     }
   }, [mode]);
@@ -260,6 +292,55 @@ export default function Game({
     };
   }, [current]);
 
+  // Fetch the current node's distance-to-target so the move that landed on it
+  // can be coloured. Skipped when there's no known solution. The origin is
+  // pre-seeded, so this only fires for moves the player makes.
+  useEffect(() => {
+    if (solutionDistance === null) return;
+    const key = nodeKeyOf(current);
+    if (distances[key] !== undefined) return;
+
+    let active = true;
+
+    async function loadDistance() {
+      const params = new URLSearchParams();
+      params.set("mode", mode ?? "daily");
+      params.set("node", key);
+      params.set("goal", `player:${targetId}`);
+      if (notLeagues && notLeagues.length > 0) {
+        params.set("not_leagues", notLeagues.join(","));
+      }
+      if (excludedPlayerId) {
+        params.set("not_player", excludedPlayerId);
+      }
+
+      try {
+        const response = await fetch(
+          `/api/distance?${params.toString()}`
+        );
+        const data = await response.json();
+        if (!active) return;
+        if (typeof data.distance === "number") {
+          setDistances((prev) => ({
+            ...prev,
+            [key]: data.distance,
+          }));
+        }
+      } catch {
+        // Leave the move uncoloured on failure.
+      }
+    }
+
+    loadDistance();
+
+    return () => {
+      active = false;
+    };
+    // distances is intentionally omitted: the key changes with `current`, and
+    // re-running on every distance update would loop.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, targetId]);
+
   function selectOption(option: Option) {
     setPath([...path, option]);
   }
@@ -276,11 +357,14 @@ export default function Game({
   async function copyResults() {
     // window.location.href carries the current mode and any challenge params,
     // so the link works the same once the app is deployed.
-    const targetText =
-      `I connected ${origin} to ${target} in ${path.length - 1} moves`
     const hintText = ` and used ${hintCount} hint${hintCount === 1 ? "" : "s"}`;
-    const afterText = `! Can you do better?\n${window.location.href}`;
-    const shareText = targetText + (hintCount > 0 ? hintText : "") + afterText;
+    const shareText = failed
+      ? `I ran out of moves trying to connect ${origin} to ${target}` +
+        (hintCount > 0 ? hintText : "") +
+        `! Can you do better?\n${window.location.href}`
+      : `I connected ${origin} to ${target} in ${path.length - 1} moves` +
+        (hintCount > 0 ? hintText : "") +
+        `! Can you do better?\n${window.location.href}`;
 
     try {
       await navigator.clipboard.writeText(shareText);
@@ -331,7 +415,9 @@ export default function Game({
     }
   }
 
-  const filteredOptions = options.filter((option) => {
+  // Onward options not already used in the path. Drives both the dead-end Back
+  // control (item 3) and the searchable list below.
+  const availableOptions = options.filter((option) => {
     const alreadyVisited = path.some((node) => {
       if (
         node.type === "player" &&
@@ -353,47 +439,89 @@ export default function Game({
       return false;
     });
 
-    if (alreadyVisited) {
-      return false;
-    }
-
-    const label =
-      option.type === "player"
-        ? option.name
-        : `${option.club} (${formatSeason(option.season)})`;
-
-    return label
-      .toLowerCase()
-      .includes(query.toLowerCase());
+    return !alreadyVisited;
   });
 
-  const hasSolution = solutionDistance !== null;
+  const filteredOptions = availableOptions.filter(
+    (option) => {
+      const label =
+        option.type === "player"
+          ? option.name
+          : `${option.club} (${formatSeason(option.season)})`;
 
-  const moveCount = path.length - 1;
+      return label
+        .toLowerCase()
+        .includes(query.toLowerCase());
+    }
+  );
+
+  // A dead end: the current node has no unused onward options (every teammate or
+  // club-season is already in the path). Only then is Back offered, so it's an
+  // escape hatch rather than a free undo that would defeat the move budget.
+  const atDeadEnd =
+    !loading &&
+    !gameOver &&
+    availableOptions.length === 0 &&
+    path.length > 1;
 
   const moveCountLabel =
     `${moveCount} move${
       moveCount !== 1 ? "s" : ""
     }`;
 
-  // Recent-club (stage 1) and career (stage 2) each count as one hint, plus one
+  // Budget readout (item 2): show moves used against the budget, warning as the
+  // player nears it. Falls back to a plain count when there's no budget. Append
+  // the current distance-to-target (item 4) as the numeric nuance behind the
+  // move colours.
+  const currentDistance = distances[nodeKeyOf(current)];
+   // Recent-club (stage 1) and career (stage 2) each count as one hint, plus one
   // per next-move suggestion.
   const hintCount = hintStage + bestMoves.length;
+  const budgetReadout =
+    (budget !== null
+      ? `${moveCount} / ${budget} moves`
+      : moveCountLabel) +
+    (currentDistance !== undefined && !gameOver
+      ? ` · ${currentDistance} from target. ${hintCount} hint${hintCount === 1 ? "" : "s"} used`
+      : "");
+  const budgetClass =
+    budget === null
+      ? "text-muted"
+      : moveCount >= budget
+        ? "text-red-500"
+        : moveCount >= budget - 2
+          ? "text-amber-500"
+          : "text-muted";
 
   const extraMoves = hasSolution
     ? moveCount - solutionDistance
     : null;
 
-  const rating =
-    extraMoves === null
+  const rating = failed
+    ? "💀 Out of moves"
+    : extraMoves === null
       ? "🏁 Completed"
       : extraMoves === 0
-      ? "⭐ Perfect"
-      : extraMoves === 1
-      ? "🟢 Excellent"
-      : extraMoves === 2
-      ? "🟡 Good"
-      : "🔴 Completed";
+        ? "⭐ Perfect"
+        : extraMoves === 1
+          ? "🟢 Excellent"
+          : extraMoves === 2
+            ? "🟡 Good"
+            : "🔴 Completed";
+
+  // Colour a committed move by whether it moved closer to the target. In a
+  // bipartite unweighted graph every move is exactly one step closer or further,
+  // so this is binary: green (on a shortest path) or amber (a detour). The
+  // origin (i === 0) and moves whose distances aren't known yet stay neutral.
+  function moveColorClass(i: number): string {
+    if (i === 0) return "";
+    const prev = distances[nodeKeyOf(path[i - 1])];
+    const cur = distances[nodeKeyOf(path[i])];
+    if (prev === undefined || cur === undefined) return "";
+    return cur < prev
+      ? "text-green-600 dark:text-green-400"
+      : "text-amber-600 dark:text-amber-500";
+  }
 
   const hasConstraints =
     !!requiredWaypoint ||
@@ -409,13 +537,14 @@ export default function Game({
         target={target}
         moves={locked.moves}
         hints={locked.hints}
+        solved={locked.solved}
       />
     );
   }
 
   return (
     <>
-      {showWinModal && (
+      {showEndModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-background text-foreground border border-border rounded-lg shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-1">
@@ -427,15 +556,24 @@ export default function Game({
               {rating}
             </p>
 
-            <p className="mb-2">
-              Success! You connected{" "}
-              <strong>{origin}</strong> to{" "}
-              <strong>{target}</strong> in{" "}
-              <strong>{moveCount}</strong> moves
-              {hintCount > 0
-                ? ` with ${hintCount} hint${hintCount === 1 ? "" : "s"}.`
-                : " with no hints."}
-            </p>
+            {won ? (
+              <p className="mb-2">
+                Success! You connected{" "}
+                <strong>{origin}</strong> to{" "}
+                <strong>{target}</strong> in{" "}
+                <strong>{moveCount}</strong> moves
+                {hintCount > 0
+                  ? ` with ${hintCount} hint${hintCount === 1 ? "" : "s"}.`
+                  : " with no hints."}
+              </p>
+            ) : (
+              <p className="mb-2">
+                Out of moves. You used all{" "}
+                <strong>{budget}</strong> moves without
+                connecting <strong>{origin}</strong> to{" "}
+                <strong>{target}</strong>.
+              </p>
+            )}
 
             {hasSolution ? (
               <p className="mb-4 text-muted">
@@ -505,7 +643,7 @@ export default function Game({
               </button>
 
               <button
-                onClick={() => setShowWinModal(false)}
+                onClick={() => setShowEndModal(false)}
                 className="px-4 py-2 rounded-lg border border-border hover:bg-surface-100 dark:hover:bg-surface-800 transition"
               >
                 Close
@@ -567,7 +705,7 @@ export default function Game({
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {!won && (
+          {!gameOver && (
             <div className="order-1 lg:order-2">
               <div className="flex items-baseline justify-between mb-2">
                 <h3 className="font-semibold">Next move</h3>
@@ -624,17 +762,20 @@ export default function Game({
               <div className="flex items-center justify-between mb-2">
                 <h3 className="font-semibold">
                   Your path{" "}
-                  <span className="text-muted font-normal">
-                    ({moveCountLabel})
+                  <span
+                    className={`font-normal ${budgetClass}`}
+                  >
+                    ({budgetReadout})
                   </span>
                 </h3>
-                <button
-                  onClick={goBack}
-                  disabled={path.length <= 1}
-                  className="rounded-lg border border-border px-3 py-1 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
-                >
-                  ← Back
-                </button>
+                {atDeadEnd && (
+                  <button
+                    onClick={goBack}
+                    className="rounded-lg border border-border px-3 py-1 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition"
+                  >
+                    ← Back (dead end)
+                  </button>
+                )}
               </div>
 
               <ol className="space-y-1">
@@ -649,11 +790,16 @@ export default function Game({
                       </span>
                     )}
                     <span
-                      className={
+                      className={`${
                         node.type === "player"
                           ? "font-medium"
-                          : "text-sm text-muted"
-                      }
+                          : "text-sm"
+                      } ${
+                        moveColorClass(i) ||
+                        (node.type === "player"
+                          ? ""
+                          : "text-muted")
+                      }`}
                     >
                       {node.type === "player"
                         ? node.name
@@ -664,7 +810,7 @@ export default function Game({
               </ol>
             </div>
 
-            {!won && (
+            {!gameOver && (
               <div>
                 <button
                   onClick={() => {
@@ -677,7 +823,7 @@ export default function Game({
                   className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
                 >
                   {hintStage === 0
-                    ? "💡 Hint: Target's recent club"
+                    ? "💡 Hint: Target's most recent club"
                     : hintStage === 1
                     ? "💡 Hint: Show Target's Career"
                     : bestMoveLoading

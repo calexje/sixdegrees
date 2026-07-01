@@ -3,6 +3,7 @@
 import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useNav } from "./nav-context";
+import HowToPlay from "./tutorial";
 
 type Mode = "daily" | "expert" | "practice" | "challenge";
 
@@ -74,6 +75,7 @@ export default function Header() {
           <span className="font-bold text-xl tracking-tight">
             footylinks
           </span>
+          <HowToPlay />
         </div>
 
         <nav className="flex flex-wrap justify-center gap-1 rounded-lg bg-surface-100 dark:bg-surface-800 p-1">

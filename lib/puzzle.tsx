@@ -531,6 +531,54 @@ export function getGraphForMode(
   return fullGraph();
 }
 
+// Distance (in moves/edges) from the target to every node, from a single BFS
+// *from the target* on the mode's graph. Backs the per-move colour feedback
+// (item 4): colouring any move is then an O(1) lookup, not a fresh traversal.
+// Cached per mode + target + constraints and bounded like the graph caches, so
+// the BFS runs at most once per puzzle. Uses the same graph as the hint
+// endpoint (getGraphForMode), so colours and hints always agree.
+const targetDistanceCache = new Map<
+  string,
+  Map<string, number>
+>();
+
+export function getTargetDistances(
+  mode: string,
+  targetKey: string,
+  notLeagues: string[] = [],
+  notPlayer?: string
+): Map<string, number> {
+  const leagues =
+    mode === "challenge" ? sanitizeLeagues(notLeagues) : [];
+  const key = `${mode}|${targetKey}|${[...leagues]
+    .sort()
+    .join(",")}|${notPlayer ?? ""}`;
+
+  let distances = targetDistanceCache.get(key);
+  if (!distances) {
+    const graph = getGraphForMode(mode, leagues);
+    const blocked = notPlayer
+      ? new Set([`player:${notPlayer}`])
+      : undefined;
+    distances = bfsFrom(
+      graph,
+      targetKey,
+      undefined,
+      blocked
+    ).distance;
+    if (targetDistanceCache.size >= MAX_CACHED_GRAPHS) {
+      const oldest = targetDistanceCache
+        .keys()
+        .next().value;
+      if (oldest !== undefined) {
+        targetDistanceCache.delete(oldest);
+      }
+    }
+    targetDistanceCache.set(key, distances);
+  }
+  return distances;
+}
+
 export type PuzzleMode = "daily" | "expert" | "practice";
 
 export async function getPuzzle(mode: PuzzleMode = "daily") {

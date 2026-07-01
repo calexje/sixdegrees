@@ -116,17 +116,23 @@ export function findShortestPath(
 
 // Single BFS outward from `start`, returning every reachable node's distance
 // (in edges) and parent, for reconstructing shortest paths. `maxDepth` caps the
-// search depth in edges.
+// search depth in edges; `blocked` nodes are treated as absent.
 export function bfsFrom(
   graph: Graph,
   start: string,
-  maxDepth?: number
+  maxDepth?: number,
+  blocked?: Set<string>
 ): {
   distance: Map<string, number>;
   parent: Map<string, string>;
 } {
   const distance = new Map<string, number>();
   const parent = new Map<string, string>();
+
+  if (blocked?.has(start)) {
+    return { distance, parent };
+  }
+
   distance.set(start, 0);
 
   const queue: string[] = [start];
@@ -140,6 +146,7 @@ export function bfsFrom(
     }
 
     for (const neighbour of graph.get(node) ?? new Set()) {
+      if (blocked?.has(neighbour)) continue;
       if (distance.has(neighbour)) continue;
       distance.set(neighbour, d + 1);
       parent.set(neighbour, node);
