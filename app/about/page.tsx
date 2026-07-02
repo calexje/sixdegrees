@@ -47,6 +47,52 @@ export default function AboutPage() {
       </section>
 
       <section className="space-y-2">
+        <h2 className="text-lg font-semibold">
+          Moves, the budget and scoring
+        </h2>
+        <p>
+          Every pick is a move, so a jump from one player to
+          the next through a shared club costs two. Each
+          puzzle has a move budget: the length of the best
+          solution plus a small allowance. Spend every move
+          without connecting the two players and you lose that
+          puzzle, which is what keeps a daily game tense.
+        </p>
+        <p>
+          After each move, the step you made is coloured.
+          Green means you stayed on a shortest path; amber
+          means you took a detour and are now further from the
+          target than you needed to be. The number beside your
+          path tells you how many moves remain between you and
+          the target.
+        </p>
+      </section>
+
+      <section className="space-y-2">
+        <h2 className="text-lg font-semibold">A few tips</h2>
+        <ul className="list-disc list-inside space-y-1 text-muted">
+          <li>
+            Work back from the target as well as forward from
+            the origin. Knowing where the target played
+            narrows the clubs you are aiming for.
+          </li>
+          <li>
+            Long-serving players and big squads are useful
+            hubs: a club-season with many well-travelled names
+            gives you more onward routes.
+          </li>
+          <li>
+            Watch the colours. An amber move isn&apos;t fatal,
+            but two or three in a row will eat your budget.
+          </li>
+          <li>
+            Save hints for when you are genuinely stuck, since
+            they count towards your result.
+          </li>
+        </ul>
+      </section>
+
+      <section className="space-y-2">
         <h2 className="text-lg font-semibold">Modes</h2>
         <ul className="list-disc list-inside space-y-1 text-muted">
           <li>

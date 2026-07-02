@@ -152,7 +152,7 @@ export default function HowToPlay() {
 
             <div className="flex items-center justify-between">
               <Link
-                href="/about"
+                href="/faq"
                 className="text-sm text-primary-700 dark:text-primary-400 underline"
                 onClick={close}
               >
