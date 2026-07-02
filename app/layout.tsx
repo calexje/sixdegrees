@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
@@ -10,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
+  ADSENSE_CLIENT_ID,
   resolveSiteUrl,
 } from "@/lib/site";
 
@@ -38,6 +40,11 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
   },
+  // AdSense ownership verification (Google reads this during review). Only
+  // emitted once the publisher ID is set.
+  other: ADSENSE_CLIENT_ID
+    ? { "google-adsense-account": ADSENSE_CLIENT_ID }
+    : {},
 };
 
 export default function RootLayout({
@@ -63,6 +70,15 @@ export default function RootLayout({
           <Footer />
         </NavProvider>
         <Analytics />
+        {ADSENSE_CLIENT_ID && (
+          <Script
+            id="adsbygoogle-init"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        )}
       </body>
     </html>
   );

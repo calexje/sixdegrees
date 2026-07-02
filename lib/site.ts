@@ -9,6 +9,13 @@ export const SITE_DESCRIPTION =
 // deferred this until the domain was live). An explicit env override still wins.
 export const SITE_URL = "https://footylinks.app";
 
+// Google AdSense publisher ID, in the "ca-pub-…" form from the AdSense account.
+// Empty until the account is created; when set, the loader script, the
+// ownership meta tag, and /ads.txt all activate. It's a public value (it ships
+// in the page), so committing it is fine.
+export const ADSENSE_CLIENT_ID: string =
+  "ca-pub-5020097253607144";
+
 // Resolve the site origin. Order: an explicit override, then the canonical
 // domain in production, then a preview deployment's own generated URL, then
 // localhost in dev.
