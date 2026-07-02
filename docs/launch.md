@@ -177,7 +177,8 @@ most.
 ## Pre-launch checklist (one-liners)
 
 - Set `DAILY_EPOCH` (`lib/puzzle.tsx`) to the real launch date (today = #1).
-- Set `NEXT_PUBLIC_SITE_URL` env var to the production domain.
+- Canonical domain `https://footylinks.app` is baked into `lib/site.ts`
+  (production); `NEXT_PUBLIC_SITE_URL` still overrides it if ever needed.
 - Confirm the static `/_not-found` and all four modes build green (they do now).
 - AdSense: site verified on the domain, privacy policy + consent live before
   enabling ad units.
