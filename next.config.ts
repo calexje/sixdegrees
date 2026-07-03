@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     "/": [
       "./database/football.db",
       "./database/expert-puzzles.json",
+      "./database/daily-puzzles.json",
     ],
     "/api/**": ["./database/football.db"],
   },

@@ -29,6 +29,11 @@ export const OBSCURITY_LABELS: Record<number, string> = {
   5: "Anyone (incl. lower leagues)",
 };
 
-// Daily gates to prominence >= 3 (at least 3 top-flight seasons) so its
-// endpoints are recognisable without being limited to superstars.
-export const DAILY_MIN_TOP_FLIGHT_SEASONS = 3;
+// The Daily gates both endpoints to recognisable players, with a higher bar for
+// the target than the origin. The target's career is what hints reveal, so a
+// clearly well-known target saves players from burning hints just to learn who
+// they're aiming at; a solid-but-slightly-lesser origin is fine. Values are the
+// minimum distinct top-flight seasons (see the buckets above: 6-10 is
+// well-established, 3-5 is a solid regular).
+export const DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS = 5;
+export const DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS = 8;

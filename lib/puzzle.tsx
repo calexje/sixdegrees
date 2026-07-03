@@ -17,7 +17,8 @@ import {
 } from "./db";
 import {
   OBSCURITY_MIN_SEASONS,
-  DAILY_MIN_TOP_FLIGHT_SEASONS,
+  DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS,
+  DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS,
 } from "./prominence";
 
 // Expert mode uses every competition in the dataset; the daily puzzle is
@@ -87,20 +88,19 @@ function recentPlayerNodes(minSeason: number): Set<string> {
   return new Set(Array.from(ids, (id) => `player:${id}`));
 }
 
-// Both Daily endpoints must have played within this many years of the puzzle
-// date, so origin and target are players people are likely to know.
-const DAILY_RECENT_YEARS = 10;
+// How recently each Daily endpoint must have played, in years before the puzzle
+// date. The target window is tighter: recency tracks recognisability far better
+// than career length does, so a recently-active target is the best guard against
+// long-but-obscure names (a journeyman who last played years ago). The origin
+// can be older.
+const DAILY_ORIGIN_RECENT_YEARS = 10;
+const DAILY_TARGET_RECENT_YEARS = 5;
 
-// Daily uses only reasonably recognisable players (prominence >= 3) so it stays
-// gettable. Computed lazily so non-Daily requests skip the GROUP BY query.
-let _dailyAllowedPlayers: Set<string> | null = null;
-function dailyAllowedPlayers(): Set<string> {
-  if (!_dailyAllowedPlayers) {
-    _dailyAllowedPlayers = prominentPlayerNodes(
-      DAILY_MIN_TOP_FLIGHT_SEASONS
-    );
-  }
-  return _dailyAllowedPlayers;
+function intersect(
+  a: Set<string>,
+  b: Set<string>
+): Set<string> {
+  return new Set([...a].filter((node) => b.has(node)));
 }
 
 // The daily puzzle picks a distance in this range (inclusive) from the date
@@ -153,7 +153,10 @@ function generatePuzzle(
   graph: Graph,
   targetJumps: number,
   rng: () => number,
-  allowed?: Set<string>
+  allowed?: Set<string>,
+  // When set, the target must also be in this set (the origin need only satisfy
+  // `allowed`). Lets the Daily hold the target to a higher bar than the origin.
+  targetAllowed?: Set<string>
 ) {
   const players = Array.from(graph.keys()).filter(
     (node) =>
@@ -186,7 +189,8 @@ function generatePuzzle(
         edges === 0 ||
         edges % 2 !== 0 ||
         !node.startsWith("player:") ||
-        (allowed && !allowed.has(node))
+        (allowed && !allowed.has(node)) ||
+        (targetAllowed && !targetAllowed.has(node))
       ) {
         continue;
       }
@@ -364,41 +368,94 @@ const precomputedExpert: Map<string, ExpertPuzzle> = (() => {
   }
 })();
 
-function generateDailyPuzzle() {
-  const seed = getDailySeed();
-  if (_dailyCache && _dailyCache.seed === seed) return _dailyCache.puzzle;
+// Hand-curated Daily puzzles, an ordered list keyed by puzzle number (entry 0 is
+// puzzle #1). Vetted so the target is a recognisable player, working around the
+// prominence metric's blind spot for long-but-obscure careers until the dataset
+// carries minutes played. Missing file or numbers past the end fall back to live
+// generation.
+const curatedDaily: Map<number, GeneratedPuzzle> = (() => {
+  try {
+    const raw = readFileSync(
+      path.join(process.cwd(), "database", "daily-puzzles.json"),
+      "utf8"
+    );
+    const data = JSON.parse(raw) as {
+      puzzles?: GeneratedPuzzle[];
+    };
+    const map = new Map<number, GeneratedPuzzle>();
+    (data.puzzles ?? []).forEach((puzzle, i) =>
+      map.set(i + 1, puzzle)
+    );
+    return map;
+  } catch {
+    return new Map();
+  }
+})();
 
+// The origin and target pools for a Daily generated relative to `refYear`. Both
+// endpoints must be recent and prominent, with a higher prominence bar and a
+// tighter recency window on the target (recency tracks recognisability better
+// than career length, so it guards against long-but-obscure names). Intermediate
+// players on the route are unconstrained.
+const dailyAllowedCache = new Map<
+  number,
+  { originAllowed: Set<string>; targetAllowed: Set<string> }
+>();
+function dailyAllowedSets(refYear: number) {
+  let sets = dailyAllowedCache.get(refYear);
+  if (!sets) {
+    sets = {
+      originAllowed: intersect(
+        prominentPlayerNodes(DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS),
+        recentPlayerNodes(refYear - DAILY_ORIGIN_RECENT_YEARS)
+      ),
+      targetAllowed: intersect(
+        prominentPlayerNodes(DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS),
+        recentPlayerNodes(refYear - DAILY_TARGET_RECENT_YEARS)
+      ),
+    };
+    dailyAllowedCache.set(refYear, sets);
+  }
+  return sets;
+}
+
+// Live Daily generation for an arbitrary seed. Exported so the candidate script
+// can generate a pool for manual curation; `refYear` sets the recency windows.
+export function generateDailyPuzzleForSeed(
+  seed: string,
+  refYear: number
+) {
   const rng = seededRandom(seed);
-
-  // The daily difficulty (in jumps) is the same for everyone on a given day.
   const span = DAILY_MAX_DISTANCE - DAILY_MIN_DISTANCE + 1;
   const targetJumps =
     DAILY_MIN_DISTANCE + Math.floor(rng() * span);
+  const { originAllowed, targetAllowed } =
+    dailyAllowedSets(refYear);
 
-  // Both endpoints must be prominent (recognisable careers) and recent (active
-  // within the last N years of the puzzle date), so neither the origin nor the
-  // target is an obscure name from decades ago. Intermediate players along the
-  // route are unconstrained. Derived from the seed's year, so it's deterministic
-  // per day.
-  const puzzleYear = Number(seed.slice(0, 4));
-  const recent = recentPlayerNodes(
-    puzzleYear - DAILY_RECENT_YEARS
-  );
-  const prominent = dailyAllowedPlayers();
-  const allowed = new Set(
-    [...prominent].filter((node) => recent.has(node))
-  );
-
-  const puzzle = {
+  return {
     ...generatePuzzle(
       premierLeagueGraph(),
       targetJumps,
       rng,
-      allowed
+      originAllowed,
+      targetAllowed
     ),
     seed,
-    puzzleNumber: dailyNumber(seed),
   };
+}
+
+function generateDailyPuzzle() {
+  const seed = getDailySeed();
+  if (_dailyCache && _dailyCache.seed === seed) return _dailyCache.puzzle;
+
+  const number = dailyNumber(seed);
+  // Prefer the hand-curated puzzle for this number; fall back to live
+  // generation past the end of the curated list (or if the file is missing).
+  const base =
+    curatedDaily.get(number) ??
+    generateDailyPuzzleForSeed(seed, Number(seed.slice(0, 4)));
+
+  const puzzle = { ...base, seed, puzzleNumber: number };
   _dailyCache = { seed, puzzle };
   return puzzle;
 }
