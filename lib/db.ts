@@ -179,3 +179,19 @@ export function getProminentPlayerIds(
   return new Set(rows.map((row) => row.id));
 }
 
+// Player ids with any appearance in season `minSeason` or later, i.e. players
+// who were active recently. Used to keep the Daily's target recognisable.
+export function getRecentPlayerIds(
+  minSeason: number
+): Set<string> {
+  const rows = db
+    .prepare(`
+      SELECT DISTINCT player_id AS id
+      FROM appearances
+      WHERE CAST(season AS REAL) >= ?
+    `)
+    .all(minSeason) as { id: string }[];
+
+  return new Set(rows.map((row) => row.id));
+}
+

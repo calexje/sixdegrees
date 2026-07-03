@@ -13,6 +13,7 @@ import {
   getPlayerById,
   getCompetitions,
   getProminentPlayerIds,
+  getRecentPlayerIds,
 } from "./db";
 import {
   OBSCURITY_MIN_SEASONS,
@@ -73,6 +74,22 @@ function prominentPlayerNodes(minSeasons: number): Set<string> {
   }
   return new Set(Array.from(ids, (id) => `player:${id}`));
 }
+
+// Player nodes active in `minSeason` or later. Memoised per threshold, same as
+// prominence. Used to keep the Daily's target a recent, recognisable player.
+const recentIdsCache = new Map<number, Set<string>>();
+function recentPlayerNodes(minSeason: number): Set<string> {
+  let ids = recentIdsCache.get(minSeason);
+  if (!ids) {
+    ids = getRecentPlayerIds(minSeason);
+    recentIdsCache.set(minSeason, ids);
+  }
+  return new Set(Array.from(ids, (id) => `player:${id}`));
+}
+
+// The Daily target must have played within this many years of the puzzle date,
+// so the player people are aiming for is someone they're likely to know.
+const DAILY_TARGET_RECENT_YEARS = 10;
 
 // Daily uses only reasonably recognisable players (prominence >= 3) so it stays
 // gettable. Computed lazily so non-Daily requests skip the GROUP BY query.
@@ -136,7 +153,10 @@ function generatePuzzle(
   graph: Graph,
   targetJumps: number,
   rng: () => number,
-  allowed?: Set<string>
+  allowed?: Set<string>,
+  // When set, the target (but not the origin) must also be in this set. Used by
+  // the Daily to force a recent, recognisable target.
+  targetAllowed?: Set<string>
 ) {
   const players = Array.from(graph.keys()).filter(
     (node) =>
@@ -169,7 +189,8 @@ function generatePuzzle(
         edges === 0 ||
         edges % 2 !== 0 ||
         !node.startsWith("player:") ||
-        (allowed && !allowed.has(node))
+        (allowed && !allowed.has(node)) ||
+        (targetAllowed && !targetAllowed.has(node))
       ) {
         continue;
       }
@@ -358,12 +379,22 @@ function generateDailyPuzzle() {
   const targetJumps =
     DAILY_MIN_DISTANCE + Math.floor(rng() * span);
 
+  // Force the target to a recent player (active within the last N years of the
+  // puzzle date), so the player people are aiming for is recognisable. The
+  // origin stays any prominent player. Derived from the seed's year, so it's
+  // deterministic per day.
+  const puzzleYear = Number(seed.slice(0, 4));
+  const recentTargets = recentPlayerNodes(
+    puzzleYear - DAILY_TARGET_RECENT_YEARS
+  );
+
   const puzzle = {
     ...generatePuzzle(
       premierLeagueGraph(),
       targetJumps,
       rng,
-      dailyAllowedPlayers()
+      dailyAllowedPlayers(),
+      recentTargets
     ),
     seed,
     puzzleNumber: dailyNumber(seed),
