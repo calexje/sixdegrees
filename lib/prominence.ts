@@ -29,11 +29,13 @@ export const OBSCURITY_LABELS: Record<number, string> = {
   5: "Anyone (incl. lower leagues)",
 };
 
-// The Daily gates both endpoints to recognisable players, with a higher bar for
-// the target than the origin. The target's career is what hints reveal, so a
-// clearly well-known target saves players from burning hints just to learn who
-// they're aiming at; a solid-but-slightly-lesser origin is fine. Values are the
-// minimum distinct top-flight seasons (see the buckets above: 6-10 is
-// well-established, 3-5 is a solid regular).
-export const DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS = 5;
+// The Daily gates its two endpoints asymmetrically. The target must be clearly
+// well-known (its career is what hints reveal). The origin is deliberately
+// looser: fame correlates with connectivity, so a less-famous origin is what
+// sits a genuine 3-4 jumps from a famous target on the full graph. Both are
+// still Premier League players, so the puzzle stays recognisable at both ends;
+// the origin is just a more modest name. Values are minimum distinct top-flight
+// seasons (buckets above: 6-10 well-established, 3-5 a solid regular, 1-2 a
+// squad player).
+export const DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS = 2;
 export const DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS = 8;

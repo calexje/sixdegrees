@@ -103,10 +103,11 @@ function intersect(
   return new Set([...a].filter((node) => b.has(node)));
 }
 
-// The daily puzzle picks a distance in this range (inclusive) from the date
-// seed, so its difficulty is stable for the day and exposed via solutionDistance.
-const DAILY_MIN_DISTANCE = 2;
-const DAILY_MAX_DISTANCE = 6;
+// Target difficulty for the daily, in jumps, measured on the FULL graph (the
+// graph the puzzle is actually played on). 3-4 jumps gives a proper chain; the
+// generator settles lower only if no target sits that far from the origin.
+const DAILY_MIN_DISTANCE = 3;
+const DAILY_MAX_DISTANCE = 4;
 
 function seededRandom(seed: string) {
   let h = 2166136261;
@@ -397,6 +398,22 @@ const curatedDaily: Map<number, GeneratedPuzzle> = (() => {
 // tighter recency window on the target (recency tracks recognisability better
 // than career length, so it guards against long-but-obscure names). Intermediate
 // players on the route are unconstrained.
+// Player nodes that appear in the Premier League graph, i.e. players with a
+// top-flight English appearance. Both Daily endpoints are drawn from this set so
+// the puzzle stays recognisable to a PL audience, even though the route is
+// solved on the full (all-leagues) graph.
+let _plPlayerNodes: Set<string> | null = null;
+function plPlayerNodes(): Set<string> {
+  if (!_plPlayerNodes) {
+    _plPlayerNodes = new Set(
+      [...premierLeagueGraph().keys()].filter((n) =>
+        n.startsWith("player:")
+      )
+    );
+  }
+  return _plPlayerNodes;
+}
+
 const dailyAllowedCache = new Map<
   number,
   { originAllowed: Set<string>; targetAllowed: Set<string> }
@@ -404,13 +421,20 @@ const dailyAllowedCache = new Map<
 function dailyAllowedSets(refYear: number) {
   let sets = dailyAllowedCache.get(refYear);
   if (!sets) {
+    const pl = plPlayerNodes();
     sets = {
       originAllowed: intersect(
-        prominentPlayerNodes(DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS),
+        intersect(
+          pl,
+          prominentPlayerNodes(DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS)
+        ),
         recentPlayerNodes(refYear - DAILY_ORIGIN_RECENT_YEARS)
       ),
       targetAllowed: intersect(
-        prominentPlayerNodes(DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS),
+        intersect(
+          pl,
+          prominentPlayerNodes(DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS)
+        ),
         recentPlayerNodes(refYear - DAILY_TARGET_RECENT_YEARS)
       ),
     };
@@ -432,9 +456,11 @@ export function generateDailyPuzzleForSeed(
   const { originAllowed, targetAllowed } =
     dailyAllowedSets(refYear);
 
+  // Solve on the full graph so the stored optimal is the true shortest route
+  // (cross-league shortcuts included), not a PL-only over-estimate.
   return {
     ...generatePuzzle(
-      premierLeagueGraph(),
+      fullGraph(),
       targetJumps,
       rng,
       originAllowed,
@@ -610,9 +636,9 @@ export function getGraphForMode(
   mode: string,
   notLeagues: string[] = []
 ): Graph {
-  if (mode === "daily") {
-    return premierLeagueGraph();
-  }
+  // Daily endpoints are PL players, but it's played and solved on the full
+  // graph (cross-league routes allowed), so hints and colour feedback must use
+  // the full graph too, or they'd disagree with the true optimal.
   if (mode === "challenge") {
     return getChallengeGraph(sanitizeLeagues(notLeagues));
   }

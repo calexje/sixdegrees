@@ -148,13 +148,20 @@ export default function Game({
     current.id === targetId &&
     passedWaypoint;
 
-  const moveCount = path.length - 1;
+  // A "move" is a stepping stone between the two given players: the origin is
+  // free and reaching the target doesn't count, so it's one less than the number
+  // of selections (path edges). solutionDistance is stored in edges, so the
+  // optimal in moves is likewise one less. This shift is uniform, so the budget
+  // and rating maths below are unchanged.
+  const moveCount = Math.max(0, path.length - 2);
   const hasSolution = solutionDistance !== null;
+  const optimalMoves = hasSolution
+    ? Math.max(0, solutionDistance - 1)
+    : null;
   // Move budget (item 2): the puzzle is failed once the player exceeds the
   // optimal by more than the slack. No budget when there's no known solution.
-  const budget = hasSolution
-    ? solutionDistance + MOVE_SLACK
-    : null;
+  const budget =
+    optimalMoves !== null ? optimalMoves + MOVE_SLACK : null;
   const failed =
     budget !== null && !won && moveCount >= budget;
   const gameOver = won || failed;
@@ -163,7 +170,7 @@ export default function Game({
     if (!gameOver) return;
     setShowEndModal(true);
 
-    const moves = path.length - 1;
+    const moves = moveCount;
     const hints = hintStage + bestMoves.length;
     // Core funnel, tracked for every mode: solve rate, difficulty, hint use.
     track(won ? "puzzle_won" : "puzzle_lost", {
@@ -370,7 +377,7 @@ export default function Game({
       ? `I ran out of moves trying to connect ${origin} to ${target}` +
         (hintCount > 0 ? hintText : "") +
         `! Can you do better?\n${window.location.href}`
-      : `I connected ${origin} to ${target} in ${path.length - 1} moves` +
+      : `I connected ${origin} to ${target} in ${moveCount} moves` +
         (hintCount > 0 ? hintText : "") +
         `! Can you do better?\n${window.location.href}`;
 
@@ -495,7 +502,7 @@ export default function Game({
       ? `${moveCount} / ${budget} moves`
       : moveCountLabel) +
     (currentDistance !== undefined && !gameOver
-      ? ` · ${currentDistance} from target. ${hintCount} hint${hintCount === 1 ? "" : "s"} used`
+      ? ` · ${Math.max(0, currentDistance - 1)} from target. ${hintCount} hint${hintCount === 1 ? "" : "s"} used`
       : "");
   const budgetClass =
     budget === null
@@ -506,9 +513,8 @@ export default function Game({
           ? "text-amber-500"
           : "text-muted";
 
-  const extraMoves = hasSolution
-    ? moveCount - solutionDistance
-    : null;
+  const extraMoves =
+    optimalMoves !== null ? moveCount - optimalMoves : null;
 
   const rating = failed
     ? "💀 Out of moves"
@@ -591,7 +597,7 @@ export default function Game({
             {hasSolution ? (
               <p className="mb-4 text-muted">
                 The shortest solution was{" "}
-                <strong>{solutionDistance}</strong> moves.
+                <strong>{optimalMoves}</strong> moves.
               </p>
             ) : (
               <p className="mb-4 text-muted">
@@ -682,7 +688,7 @@ export default function Game({
           {solutionDistance !== null && (
             <div className="mt-2 flex items-center justify-center gap-2 text-sm">
               <span className="text-muted">
-                {solutionDistance} moves apart
+                {optimalMoves} moves apart
               </span>
               <span
                 className={`px-2 py-0.5 rounded-full text-xs font-semibold ${DIFFICULTY_CLASS[difficultyFor(solutionDistance)]}`}
