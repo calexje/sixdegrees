@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 
 // Auto-opens once on the first ever visit (any mode), then only on demand via
 // the "?" button. The flag is global, so it never reappears after the first
@@ -43,6 +44,7 @@ export default function HowToPlay() {
     try {
       if (!window.localStorage.getItem(FLAG)) {
         setOpen(true);
+        track("tutorial_opened", { source: "auto" });
       }
     } catch {
       // ignore (private mode / disabled storage)
@@ -61,7 +63,10 @@ export default function HowToPlay() {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          track("tutorial_opened", { source: "button" });
+        }}
         aria-label="How to play"
         className="w-6 h-6 rounded-full border border-border text-sm text-muted hover:text-foreground hover:border-foreground transition flex items-center justify-center"
       >

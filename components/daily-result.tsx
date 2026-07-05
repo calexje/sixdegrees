@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { loadStats } from "@/lib/stats";
+import { track } from "@vercel/analytics";
 
 function msToNextUtcMidnight(): number {
   const now = new Date();
@@ -69,6 +70,11 @@ export default function DailyResult({
     const text = solved
       ? `I solved footylinks${numbered} (${origin} → ${target}) in ${moves} moves${hintText}!\n${window.location.href}`
       : `I couldn't solve footylinks${numbered} (${origin} → ${target}) today${hintText}. Can you?\n${window.location.href}`;
+    track("share_clicked", {
+      mode: "daily",
+      result: solved ? "won" : "lost",
+    });
+
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);

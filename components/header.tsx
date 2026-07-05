@@ -4,6 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useNav } from "./nav-context";
 import HowToPlay from "./tutorial";
+import { track } from "@vercel/analytics";
 
 type Mode = "daily" | "expert" | "practice" | "challenge";
 
@@ -36,6 +37,8 @@ export default function Header() {
   }, [isPending, setPending]);
 
   function setMode(newMode: Mode) {
+    track("mode_selected", { mode: newMode });
+
     // Flip the highlight now; the navigation follows.
     setPendingMode(newMode);
 

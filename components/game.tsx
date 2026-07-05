@@ -15,6 +15,7 @@ import {
   DIFFICULTY_CLASS,
 } from "@/lib/difficulty";
 import { MOVE_SLACK } from "@/lib/game";
+import { track } from "@vercel/analytics";
 
 type Props = {
     mode?: string;
@@ -162,11 +163,18 @@ export default function Game({
     if (!gameOver) return;
     setShowEndModal(true);
 
+    const moves = path.length - 1;
+    const hints = hintStage + bestMoves.length;
+    // Core funnel, tracked for every mode: solve rate, difficulty, hint use.
+    track(won ? "puzzle_won" : "puzzle_lost", {
+      mode: mode ?? "daily",
+      moves,
+      hints,
+    });
+
     // Only the Daily feeds the streak/games stats and the lock result.
     if (mode === "daily") {
       const today = new Date().toISOString().slice(0, 10);
-      const moves = path.length - 1;
-      const hints = hintStage + bestMoves.length;
       if (won) {
         setStats(recordDailyWin(today));
         recordDailyResult({ date: today, moves, hints, solved: true });
@@ -365,6 +373,11 @@ export default function Game({
       : `I connected ${origin} to ${target} in ${path.length - 1} moves` +
         (hintCount > 0 ? hintText : "") +
         `! Can you do better?\n${window.location.href}`;
+
+    track("share_clicked", {
+      mode: mode ?? "daily",
+      result: won ? "won" : "lost",
+    });
 
     try {
       await navigator.clipboard.writeText(shareText);
@@ -814,10 +827,26 @@ export default function Game({
               <div>
                 <button
                   onClick={() => {
-                    if (hintStage === 0) setHintStage(1);
-                    else if (hintStage === 1)
+                    const m = mode ?? "daily";
+                    if (hintStage === 0) {
+                      setHintStage(1);
+                      track("hint_used", {
+                        mode: m,
+                        stage: "recent_club",
+                      });
+                    } else if (hintStage === 1) {
                       setHintStage(2);
-                    else loadBestMove();
+                      track("hint_used", {
+                        mode: m,
+                        stage: "career",
+                      });
+                    } else {
+                      loadBestMove();
+                      track("hint_used", {
+                        mode: m,
+                        stage: "next_move",
+                      });
+                    }
                   }}
                   disabled={bestMoveLoading}
                   className="rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-surface-100 dark:hover:bg-surface-800 transition disabled:opacity-50"
