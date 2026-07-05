@@ -15,7 +15,7 @@ import {
   DIFFICULTY_CLASS,
 } from "@/lib/difficulty";
 import { MOVE_SLACK } from "@/lib/game";
-import { track } from "@vercel/analytics";
+import { trackEvent } from "@/lib/analytics";
 
 type Props = {
     mode?: string;
@@ -173,7 +173,7 @@ export default function Game({
     const moves = moveCount;
     const hints = hintStage + bestMoves.length;
     // Core funnel, tracked for every mode: solve rate, difficulty, hint use.
-    track(won ? "puzzle_won" : "puzzle_lost", {
+    trackEvent(won ? "puzzle_won" : "puzzle_lost", {
       mode: mode ?? "daily",
       moves,
       hints,
@@ -357,6 +357,11 @@ export default function Game({
   }, [current, targetId]);
 
   function selectOption(option: Option) {
+    // First selection = the player has engaged with the puzzle. Distinguishes
+    // "started then dropped" from "landed and bounced" in the funnel.
+    if (path.length === 1) {
+      trackEvent("puzzle_started", { mode: mode ?? "daily" });
+    }
     setPath([...path, option]);
   }
 
@@ -381,7 +386,7 @@ export default function Game({
         (hintCount > 0 ? hintText : "") +
         `! Can you do better?\n${window.location.href}`;
 
-    track("share_clicked", {
+    trackEvent("share_clicked", {
       mode: mode ?? "daily",
       result: won ? "won" : "lost",
     });
@@ -836,19 +841,19 @@ export default function Game({
                     const m = mode ?? "daily";
                     if (hintStage === 0) {
                       setHintStage(1);
-                      track("hint_used", {
+                      trackEvent("hint_used", {
                         mode: m,
                         stage: "recent_club",
                       });
                     } else if (hintStage === 1) {
                       setHintStage(2);
-                      track("hint_used", {
+                      trackEvent("hint_used", {
                         mode: m,
                         stage: "career",
                       });
                     } else {
                       loadBestMove();
-                      track("hint_used", {
+                      trackEvent("hint_used", {
                         mode: m,
                         stage: "next_move",
                       });

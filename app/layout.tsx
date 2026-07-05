@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { NavProvider } from "@/components/nav-context";
+import PostHogProvider from "@/components/posthog-provider";
 import Content from "@/components/content";
 import { Analytics } from "@vercel/analytics/react";
 import {
@@ -58,6 +59,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <PostHogProvider>
         <NavProvider>
           <Suspense>
             <Header />
@@ -69,6 +71,7 @@ export default function RootLayout({
 
           <Footer />
         </NavProvider>
+        </PostHogProvider>
         <Analytics />
         {ADSENSE_CLIENT_ID && (
           <Script
