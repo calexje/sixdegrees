@@ -19,6 +19,10 @@ export default function PostHogProvider({
       // which is fine for the within-session funnels we care about. Flip this to a
       // persistent mode once the AdSense consent banner is live.
       persistence: "memory",
+      // Rely on named events, not autocapture: a click-heavy game would otherwise
+      // drown the useful events in click noise and burn the free event quota.
+      autocapture: false,
+      capture_performance: false, // no web-vitals / network-timing events
       capture_pageview: true,
       capture_pageleave: true,
     });

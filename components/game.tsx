@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { leagueName } from "@/lib/leagues";
 import { formatSeason } from "@/lib/format";
 import {
@@ -191,6 +191,45 @@ export default function Game({
       }
     }
   }, [gameOver, mode]);
+
+  // Dropout tracking: fire puzzle_abandoned if the player started but left before
+  // winning or losing (navigating away in-app, or closing the tab), carrying the
+  // hint count so dropouts are comparable to won/lost. A snapshot ref holds the
+  // latest state so the unmount/pagehide handler (registered once) reads fresh
+  // values without re-registering on every move.
+  const abandonSnapshot = useRef({
+    started: false,
+    ended: false,
+    hints: 0,
+    moves: 0,
+    mode: mode ?? "daily",
+  });
+  abandonSnapshot.current = {
+    started: path.length > 1,
+    ended: gameOver,
+    hints: hintStage + bestMoves.length,
+    moves: moveCount,
+    mode: mode ?? "daily",
+  };
+  const abandonFired = useRef(false);
+  useEffect(() => {
+    function abandon() {
+      const s = abandonSnapshot.current;
+      if (s.started && !s.ended && !abandonFired.current) {
+        abandonFired.current = true;
+        trackEvent("puzzle_abandoned", {
+          mode: s.mode,
+          hints: s.hints,
+          moves: s.moves,
+        });
+      }
+    }
+    window.addEventListener("pagehide", abandon);
+    return () => {
+      window.removeEventListener("pagehide", abandon);
+      abandon(); // navigated away within the app
+    };
+  }, []);
 
   // On load, lock the Daily if it's already been completed today.
   useEffect(() => {
