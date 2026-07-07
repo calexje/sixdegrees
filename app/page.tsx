@@ -103,6 +103,9 @@ export default async function Home({
           target={puzzle.target}
           solutionDistance={puzzle.solutionDistance}
           solutionPath={puzzle.solutionPath}
+          includeLeagues={leagues}
+          seasonFrom={seasonFrom}
+          seasonTo={seasonTo}
         />
       </>
     );

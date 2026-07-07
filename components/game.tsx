@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { leagueName } from "@/lib/leagues";
 import { formatSeason } from "@/lib/format";
 import {
@@ -31,6 +31,12 @@ type Props = {
     excludedPlayerId?: string;
     excludedPlayer?: string;
     notLeagues?: string[];
+    // Practice filters: constrain the playable options to the chosen leagues and
+    // season range, so play stays inside the same graph the puzzle was solved on
+    // (otherwise the shown "optimal" can be beaten by routing outside the filter).
+    includeLeagues?: string[];
+    seasonFrom?: number;
+    seasonTo?: number;
 };
 
 type ClubSeason = {
@@ -81,6 +87,9 @@ export default function Game({
   excludedPlayerId,
   excludedPlayer,
   notLeagues,
+  includeLeagues,
+  seasonFrom,
+  seasonTo,
 }: Props) {
   const [path, setPath] = useState<PathNode[]>([
     {
@@ -192,45 +201,6 @@ export default function Game({
     }
   }, [gameOver, mode]);
 
-  // Dropout tracking: fire puzzle_abandoned if the player started but left before
-  // winning or losing (navigating away in-app, or closing the tab), carrying the
-  // hint count so dropouts are comparable to won/lost. A snapshot ref holds the
-  // latest state so the unmount/pagehide handler (registered once) reads fresh
-  // values without re-registering on every move.
-  const abandonSnapshot = useRef({
-    started: false,
-    ended: false,
-    hints: 0,
-    moves: 0,
-    mode: mode ?? "daily",
-  });
-  abandonSnapshot.current = {
-    started: path.length > 1,
-    ended: gameOver,
-    hints: hintStage + bestMoves.length,
-    moves: moveCount,
-    mode: mode ?? "daily",
-  };
-  const abandonFired = useRef(false);
-  useEffect(() => {
-    function abandon() {
-      const s = abandonSnapshot.current;
-      if (s.started && !s.ended && !abandonFired.current) {
-        abandonFired.current = true;
-        trackEvent("puzzle_abandoned", {
-          mode: s.mode,
-          hints: s.hints,
-          moves: s.moves,
-        });
-      }
-    }
-    window.addEventListener("pagehide", abandon);
-    return () => {
-      window.removeEventListener("pagehide", abandon);
-      abandon(); // navigated away within the app
-    };
-  }, []);
-
   // On load, lock the Daily if it's already been completed today.
   useEffect(() => {
     if (mode !== "daily") return;
@@ -290,13 +260,39 @@ export default function Game({
 
           setOptions(
             data
-              .filter(
-                (item) =>
-                  !item.competition ||
-                  !notLeagues?.includes(
-                    item.competition
-                  )
-              )
+              .filter((item) => {
+                // Challenge: excluded leagues.
+                if (
+                  item.competition &&
+                  notLeagues?.includes(item.competition)
+                ) {
+                  return false;
+                }
+                // Practice: only the chosen leagues and season range, so play
+                // stays inside the graph the puzzle was solved on.
+                if (
+                  includeLeagues &&
+                  includeLeagues.length > 0 &&
+                  item.competition &&
+                  !includeLeagues.includes(item.competition)
+                ) {
+                  return false;
+                }
+                const year = Number(item.season);
+                if (
+                  seasonFrom !== undefined &&
+                  year < seasonFrom
+                ) {
+                  return false;
+                }
+                if (
+                  seasonTo !== undefined &&
+                  year > seasonTo
+                ) {
+                  return false;
+                }
+                return true;
+              })
               .map((item) => ({
                 type: "clubseason",
                 clubId: item.clubId,
