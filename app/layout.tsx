@@ -6,7 +6,9 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { NavProvider } from "@/components/nav-context";
-import PostHogProvider from "@/components/posthog-provider";
+import { ConsentProvider } from "@/components/consent-context";
+import ConsentBanner from "@/components/consent-banner";
+import AnalyticsLoaders from "@/components/analytics-loaders";
 import Content from "@/components/content";
 import { Analytics } from "@vercel/analytics/react";
 import {
@@ -59,19 +61,24 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <PostHogProvider>
-        <NavProvider>
-          <Suspense>
-            <Header />
-          </Suspense>
+        <ConsentProvider>
+          <NavProvider>
+            <Suspense>
+              <Header />
+            </Suspense>
 
-          <main className="max-w-xl lg:max-w-4xl w-full mx-auto px-4 py-10">
-            <Content>{children}</Content>
-          </main>
+            <main className="max-w-xl lg:max-w-4xl w-full mx-auto px-4 py-10">
+              <Content>{children}</Content>
+            </main>
 
-          <Footer />
-        </NavProvider>
-        </PostHogProvider>
+            <Footer />
+          </NavProvider>
+
+          {/* GA4 + Clarity, only mounted once analytics cookies are accepted. */}
+          <AnalyticsLoaders />
+          <ConsentBanner />
+        </ConsentProvider>
+        {/* Vercel Analytics is cookieless, so it stays outside the consent gate. */}
         <Analytics />
         {ADSENSE_CLIENT_ID && (
           <Script

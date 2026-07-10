@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookiePreferencesButton from "./cookie-preferences-button";
 
 export default function Footer() {
   return (
@@ -20,6 +21,7 @@ export default function Footer() {
           <Link href="/terms" className="hover:text-foreground">
             Terms
           </Link>
+          <CookiePreferencesButton />
         </nav>
         © Calex Digital 2026
       </div>

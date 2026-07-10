@@ -51,9 +51,21 @@ export default function PrivacyPage() {
         <p>
           We use Vercel Analytics to understand aggregate,
           anonymous usage such as page views and which game
-          modes are popular. It does not use cookies and
-          does not collect personally identifiable
-          information.
+          modes are popular. It does not use cookies and does
+          not collect personally identifiable information, so
+          it runs for all visitors.
+        </p>
+        <p>
+          With your consent, we also use Google Analytics and
+          Microsoft Clarity to understand how the game is
+          played (for example how often puzzles are solved and
+          which hints are used) so we can improve it. These
+          use cookies and are loaded only after you accept
+          analytics cookies in the banner; if you reject, they
+          are not loaded at all. Clarity may record anonymised
+          interactions such as clicks and scrolling. You can
+          change your choice any time via &ldquo;Cookie
+          preferences&rdquo; in the footer.
         </p>
       </section>
 
@@ -98,10 +110,15 @@ export default function PrivacyPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold">Cookies</h2>
         <p>
-          We do not set our own tracking cookies. Game
-          progress uses local storage (above), and
-          advertising cookies are set by Google and its
-          partners subject to your consent in the UK/EEA.
+          Game progress uses local storage (above), which is
+          not a cookie and is always on. Analytics cookies
+          (Google Analytics, Microsoft Clarity) and, in
+          future, advertising cookies (Google AdSense) are set
+          only after you accept them in the consent banner. In
+          the UK and EEA nothing but essential storage runs
+          until you choose, and you can withdraw consent at any
+          time via &ldquo;Cookie preferences&rdquo; in the
+          footer.
         </p>
       </section>
 
