@@ -179,45 +179,130 @@ export function getProminentPlayerIds(
   return new Set(rows.map((row) => row.id));
 }
 
-// A player's distinct clubs (season collapsed), most-recent first. Easy mode
-// (docs/easy-mode.md) picks a club rather than a specific club-season.
+// League/season restriction for the club-collapsed board, mirroring the
+// AppearanceFilter the solve graph is built with. It exists so the no-year board
+// (docs/easy-mode.md) offers exactly the clubs/teammates the puzzle's graph
+// contains — no more, no less. Daily/Expert pass nothing (full graph); Practice
+// and Challenge pass their filters so the shown optimal can't be beaten (see
+// docs/graph-consistency.md).
+export type OptionFilter = {
+  includeLeagues?: string[];
+  excludeLeagues?: string[];
+  seasonFrom?: number;
+  seasonTo?: number;
+};
+
+// A teammate on the collapsed board, plus the seasons they shared with the
+// player at the club — surfaced only so the path can label the link with the
+// year(s) they actually overlapped.
+export type ClubTeammate = {
+  id: string;
+  name: string;
+  seasons: string[];
+};
+
+// Builds the shared WHERE fragment (with leading " AND ") and its params for an
+// OptionFilter, so the same restriction can be applied to both the outer query
+// and the inner seasons sub-select.
+function optionFilterSql(f: OptionFilter): {
+  sql: string;
+  params: (string | number)[];
+} {
+  const clauses: string[] = [];
+  const params: (string | number)[] = [];
+
+  if (f.includeLeagues && f.includeLeagues.length > 0) {
+    const ph = f.includeLeagues.map(() => "?").join(", ");
+    clauses.push(`competition IN (${ph})`);
+    params.push(...f.includeLeagues);
+  }
+  if (f.excludeLeagues && f.excludeLeagues.length > 0) {
+    const ph = f.excludeLeagues.map(() => "?").join(", ");
+    clauses.push(`competition NOT IN (${ph})`);
+    params.push(...f.excludeLeagues);
+  }
+  if (f.seasonFrom !== undefined) {
+    clauses.push("CAST(season AS REAL) >= ?");
+    params.push(f.seasonFrom);
+  }
+  if (f.seasonTo !== undefined) {
+    clauses.push("CAST(season AS REAL) <= ?");
+    params.push(f.seasonTo);
+  }
+
+  return {
+    sql: clauses.length > 0 ? ` AND ${clauses.join(" AND ")}` : "",
+    params,
+  };
+}
+
+// A player's distinct clubs (season collapsed), most-recent first. The board
+// (docs/easy-mode.md) picks a club rather than a specific club-season. `filter`
+// keeps the offered clubs inside the puzzle's graph for the filtered modes.
 export function getPlayerClubs(
-  playerId: string
+  playerId: string,
+  filter: OptionFilter = {}
 ): { clubId: string; club: string }[] {
+  const f = optionFilterSql(filter);
   return db
     .prepare(`
       SELECT club_id AS clubId, club_name AS club,
              MAX(CAST(season AS REAL)) AS recent
       FROM appearances
-      WHERE player_id = ?
+      WHERE player_id = ?${f.sql}
       GROUP BY club_id
       ORDER BY recent DESC
     `)
-    .all(playerId) as {
+    .all(playerId, ...f.params) as {
     clubId: string;
     club: string;
   }[];
 }
 
 // Teammates of `playerId` at `clubId`: players who were at that club in a season
-// the player was also there. Preserves real teammate connectivity while letting
-// Easy mode collapse the season away.
+// the player was also there, with those shared seasons. Preserves real teammate
+// connectivity (an era relay must go through a real overlapping teammate) while
+// letting the board collapse the season away. `filter` applies to both sides of
+// the overlap so it matches the filtered solve graph exactly.
 export function getClubTeammates(
   playerId: string,
-  clubId: string
-): PlayerRef[] {
-  return db
+  clubId: string,
+  filter: OptionFilter = {}
+): ClubTeammate[] {
+  const f = optionFilterSql(filter);
+  const rows = db
     .prepare(`
-      SELECT DISTINCT player_id AS id, player_name AS name
+      SELECT DISTINCT player_id AS id, player_name AS name, season
       FROM appearances
-      WHERE club_id = ?
+      WHERE club_id = ?${f.sql}
         AND season IN (
           SELECT season FROM appearances
-          WHERE player_id = ? AND club_id = ?
+          WHERE player_id = ? AND club_id = ?${f.sql}
         )
       ORDER BY player_name
     `)
-    .all(clubId, playerId, clubId) as PlayerRef[];
+    .all(clubId, ...f.params, playerId, clubId, ...f.params) as {
+    id: string;
+    name: string;
+    season: string;
+  }[];
+
+  // Collapse the per-season rows into one entry per teammate, preserving the
+  // name ordering and gathering the shared seasons for the path label.
+  const byId = new Map<string, ClubTeammate>();
+  for (const row of rows) {
+    const existing = byId.get(row.id);
+    if (existing) {
+      existing.seasons.push(row.season);
+    } else {
+      byId.set(row.id, {
+        id: row.id,
+        name: row.name,
+        seasons: [row.season],
+      });
+    }
+  }
+  return [...byId.values()];
 }
 
 // Player ids with any appearance in season `minSeason` or later, i.e. players

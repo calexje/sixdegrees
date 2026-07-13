@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { leagueName } from "@/lib/leagues";
-import { formatSeason } from "@/lib/format";
 import {
   recordDailyWin,
   recordDailyLoss,
@@ -47,11 +46,16 @@ type ClubSeason = {
   competition?: string;
 };
 
-type PlayerRow = {
+type Teammate = {
   id: string;
   name: string;
+  seasons: string[];
 };
 
+// The board is club-collapsed for every mode (docs/easy-mode.md): you pick a
+// club, not a club-season. A path alternates player -> club -> player; the club
+// node carries the season(s) the two adjacent players actually overlapped, shown
+// only as a "when they were there together" label.
 type PathNode =
   | {
       type: "player";
@@ -59,32 +63,41 @@ type PathNode =
       name: string;
     }
   | {
-      type: "clubseason";
-      clubId: string;
-      club: string;
-      season: string;
-    }
-  // Easy mode: a club with the season collapsed away (see docs/easy-mode.md).
-  | {
       type: "club";
       clubId: string;
       club: string;
+      season?: string;
     };
 
-type Option = PathNode;
+// An option is a path node, plus (for a teammate) the seasons shared with the
+// player who leads to them, used to label the club hop once it's picked.
+type Option =
+  | { type: "player"; id: string; name: string; seasons?: string[] }
+  | { type: "club"; clubId: string; club: string };
 
 // Graph node key for a path node, matching the server's keying. Club nodes are
-// collapsed (no season) so they have no graph node and never carry a distance.
+// collapsed (no season), so they have no graph node and never carry a distance.
 function nodeKeyOf(node: PathNode): string {
-  if (node.type === "player") return `player:${node.id}`;
-  if (node.type === "club") return `club:${node.clubId}`;
-  return `clubseason:${node.clubId}:${node.season}`;
+  return node.type === "player"
+    ? `player:${node.id}`
+    : `club:${node.clubId}`;
 }
 
 function pathNodeLabel(node: PathNode): string {
   if (node.type === "player") return node.name;
-  if (node.type === "club") return node.club;
-  return `${node.club} (${formatSeason(node.season)})`;
+  return node.season ? `${node.club} (${node.season})` : node.club;
+}
+
+// Compact label for the seasons two players shared at a club: a single year, or
+// a first-last range. Display only ("when they were there together").
+function seasonRangeLabel(seasons: string[]): string {
+  const years = [...new Set(seasons.map((s) => s.split(".")[0]))]
+    .map(Number)
+    .sort((a, b) => a - b);
+  if (years.length === 0) return "";
+  return years.length === 1
+    ? `${years[0]}`
+    : `${years[0]}–${years[years.length - 1]}`;
 }
 
 export default function Game({
@@ -138,9 +151,25 @@ export default function Game({
       : {}
   );
 
-  const mostRecentClub =
-    targetCareer.length > 0 
-      ? targetCareer[0] : null;
+  // Target's clubs, collapsed to one entry per club with the season range they
+  // were there, most-recent first (targetCareer is season-desc, so a club's
+  // first-seen row is its most recent). Background context for the hints.
+  const targetClubs = (() => {
+    const byClub = new Map<
+      string,
+      { club: string; seasons: string[] }
+    >();
+    for (const c of targetCareer) {
+      const entry = byClub.get(c.clubId);
+      if (entry) entry.seasons.push(c.season);
+      else byClub.set(c.clubId, { club: c.club, seasons: [c.season] });
+    }
+    return [...byClub.values()].map((e) => ({
+      club: e.club,
+      range: seasonRangeLabel(e.seasons),
+    }));
+  })();
+  const mostRecentClubName = targetClubs[0]?.club ?? null;
   const [showEndModal, setShowEndModal] =
     useState(false);
   const [showOptimal, setShowOptimal] =
@@ -157,10 +186,6 @@ export default function Game({
   } | null>(null);
 
   const current = path[path.length - 1];
-
-  // Easy mode: pick clubs, not club-seasons (docs/easy-mode.md). Same puzzle and
-  // connectivity as the daily; only the board granularity changes.
-  const easy = mode === "easy";
 
   const passedWaypoint =
     !requiredWaypointId ||
@@ -257,6 +282,25 @@ export default function Game({
     // option that belongs to a previous node.
     let active = true;
 
+    // Mirror the puzzle's league/season restriction onto the option requests, so
+    // play stays inside the graph the optimal was solved on (docs/
+    // graph-consistency.md). Daily/Expert are unfiltered and add nothing.
+    function withFilters(params: URLSearchParams): URLSearchParams {
+      if (includeLeagues && includeLeagues.length > 0) {
+        params.set("leagues", includeLeagues.join(","));
+      }
+      if (notLeagues && notLeagues.length > 0) {
+        params.set("not_leagues", notLeagues.join(","));
+      }
+      if (seasonFrom !== undefined) {
+        params.set("from_season", String(seasonFrom));
+      }
+      if (seasonTo !== undefined) {
+        params.set("to_season", String(seasonTo));
+      }
+      return params;
+    }
+
     async function loadOptions() {
       // Clear the list and show a loading state straight away so stale options
       // cannot be clicked while the next node's data is in flight.
@@ -264,10 +308,12 @@ export default function Game({
       setOptions([]);
 
       try {
-        if (easy && current.type === "player") {
-          // Easy: this player's distinct clubs (season collapsed).
+        if (current.type === "player") {
+          // The player's distinct clubs (season collapsed).
+          const params = withFilters(new URLSearchParams());
+          params.set("id", current.id);
           const response = await fetch(
-            `/api/player-clubs?id=${encodeURIComponent(current.id)}`
+            `/api/player-clubs?${params.toString()}`
           );
           const data: { clubId: string; club: string }[] =
             await response.json();
@@ -279,103 +325,36 @@ export default function Game({
               club: c.club,
             }))
           );
-        } else if (easy && current.type === "club") {
-          // Easy: teammates of the player who led here, across their seasons at
-          // this club (preserves real teammate connectivity).
+        } else {
+          // Teammates of the player who led here, across their shared seasons at
+          // this club: a genuine overlap, so an era relay must pass through a
+          // real teammate rather than treating the club as a wormhole.
           const prior = path[path.length - 2];
           const priorId =
             prior && prior.type === "player" ? prior.id : "";
+          const params = withFilters(new URLSearchParams());
+          params.set("player", priorId);
+          params.set("club", current.clubId);
           const response = await fetch(
-            `/api/club-teammates?player=${encodeURIComponent(priorId)}&club=${encodeURIComponent(current.clubId)}`
+            `/api/club-teammates?${params.toString()}`
           );
-          const data: PlayerRow[] = await response.json();
+          const data: Teammate[] = await response.json();
           if (!active) return;
           setOptions(
             data
-              .filter((item) => item.id !== priorId)
-              .map((item) => ({
-                type: "player",
-                id: item.id,
-                name: item.name,
-              }))
-          );
-        } else if (current.type === "player") {
-          const response = await fetch(
-            `/api/player?id=${encodeURIComponent(
-              current.id
-            )}`
-          );
-
-          const data: ClubSeason[] =
-            await response.json();
-
-          if (!active) return;
-
-          setOptions(
-            data
-              .filter((item) => {
-                // Challenge: excluded leagues.
-                if (
-                  item.competition &&
-                  notLeagues?.includes(item.competition)
-                ) {
-                  return false;
-                }
-                // Practice: only the chosen leagues and season range, so play
-                // stays inside the graph the puzzle was solved on.
-                if (
-                  includeLeagues &&
-                  includeLeagues.length > 0 &&
-                  item.competition &&
-                  !includeLeagues.includes(item.competition)
-                ) {
-                  return false;
-                }
-                const year = Number(item.season);
-                if (
-                  seasonFrom !== undefined &&
-                  year < seasonFrom
-                ) {
-                  return false;
-                }
-                if (
-                  seasonTo !== undefined &&
-                  year > seasonTo
-                ) {
-                  return false;
-                }
-                return true;
-              })
-              .map((item) => ({
-                type: "clubseason",
-                clubId: item.clubId,
-                club: item.club,
-                season: item.season,
-              }))
-          );
-        } else if (current.type === "clubseason") {
-          const response = await fetch(
-            `/api/clubseason?club_id=${encodeURIComponent(
-              current.clubId
-            )}&season=${encodeURIComponent(
-              current.season
-            )}`
-          );
-
-          const data: PlayerRow[] =
-            await response.json();
-
-          if (!active) return;
-
-          setOptions(
-            data
+              // Drop the player themselves (their own list) and any excluded
+              // player. Revisiting earlier players is allowed (it just costs a
+              // move), so only the immediate self is filtered here.
               .filter(
-                (item) => item.id !== excludedPlayerId
+                (item) =>
+                  item.id !== priorId &&
+                  item.id !== excludedPlayerId
               )
               .map((item) => ({
                 type: "player",
                 id: item.id,
                 name: item.name,
+                seasons: item.seasons,
               }))
           );
         }
@@ -400,9 +379,9 @@ export default function Game({
   // pre-seeded, so this only fires for moves the player makes.
   useEffect(() => {
     if (solutionDistance === null) return;
-    // Easy: only players carry a graph distance (clubs are collapsed), so we
-    // only colour player arrivals.
-    if (easy && current.type !== "player") return;
+    // Only players carry a graph distance (clubs are collapsed), so we only
+    // fetch/colour player arrivals.
+    if (current.type !== "player") return;
     const key = nodeKeyOf(current);
     if (distances[key] !== undefined) return;
 
@@ -453,6 +432,24 @@ export default function Game({
     if (path.length === 1) {
       trackEvent("puzzle_started", { mode: mode ?? "daily" });
     }
+    // Landing on a teammate resolves the club hop we came through: stamp that
+    // club node with the season(s) the two players overlapped, so the finished
+    // path reads like a real link ("Arsenal (2016)").
+    if (current.type === "club" && option.type === "player") {
+      const stampedClub: PathNode = {
+        ...current,
+        season: option.seasons
+          ? seasonRangeLabel(option.seasons)
+          : current.season,
+      };
+      const nextPlayer: PathNode = {
+        type: "player",
+        id: option.id,
+        name: option.name,
+      };
+      setPath([...path.slice(0, -1), stampedClub, nextPlayer]);
+      return;
+    }
     setPath([...path, option]);
   }
 
@@ -499,30 +496,43 @@ export default function Game({
         ? requiredWaypointId
         : targetId;
 
-    let currentKey: string;
-    if (current.type === "player") {
-      currentKey = `player:${current.id}`;
-    } else if (current.type === "clubseason") {
-      currentKey = `clubseason:${current.clubId}:${current.season}`;
-    } else {
-      // Easy club node: run the hint from the player who led here, so it still
-      // suggests a useful club to head through.
-      const prior = path[path.length - 2];
-      currentKey =
-        prior && prior.type === "player"
-          ? `player:${prior.id}`
-          : `player:${originId}`;
-    }
-
     const params = new URLSearchParams();
     params.set("mode", mode ?? "daily");
-    params.set("current", currentKey);
     params.set("goal", `player:${goalId}`);
+
+    if (current.type === "player") {
+      // Standing on a player: suggest the best club (team) to head through.
+      params.set("current", `player:${current.id}`);
+    } else {
+      // Standing on a club: suggest the best teammate to pick here. Hint from the
+      // player who led in, tagging the club so the server ranks its teammates
+      // rather than pointing back at the club we're already on.
+      const prior = path[path.length - 2];
+      params.set(
+        "current",
+        prior && prior.type === "player"
+          ? `player:${prior.id}`
+          : `player:${originId}`
+      );
+      params.set("via_club", current.clubId);
+    }
+
+    // Mirror the puzzle's constraints so the hint ranks the same options the
+    // board offers (docs/graph-consistency.md).
     if (notLeagues && notLeagues.length > 0) {
       params.set("not_leagues", notLeagues.join(","));
     }
     if (excludedPlayerId) {
       params.set("not_player", excludedPlayerId);
+    }
+    if (includeLeagues && includeLeagues.length > 0) {
+      params.set("leagues", includeLeagues.join(","));
+    }
+    if (seasonFrom !== undefined) {
+      params.set("from_season", String(seasonFrom));
+    }
+    if (seasonTo !== undefined) {
+      params.set("to_season", String(seasonTo));
     }
 
     setBestMoveLoading(true);
@@ -541,39 +551,10 @@ export default function Game({
     }
   }
 
-  // Onward options not already used in the path. Drives both the dead-end Back
-  // control (item 3) and the searchable list below.
-  const availableOptions = options.filter((option) => {
-    const alreadyVisited = path.some((node) => {
-      if (
-        node.type === "player" &&
-        option.type === "player"
-      ) {
-        return node.id === option.id;
-      }
-
-      if (
-        node.type === "clubseason" &&
-        option.type === "clubseason"
-      ) {
-        return (
-          node.clubId === option.clubId &&
-          node.season === option.season
-        );
-      }
-
-      if (
-        node.type === "club" &&
-        option.type === "club"
-      ) {
-        return node.clubId === option.clubId;
-      }
-
-      return false;
-    });
-
-    return !alreadyVisited;
-  });
+  // Revisiting nodes is allowed: a club is not a wormhole (a long-serving player
+  // legitimately relays across eras), and a loop simply burns moves from the
+  // budget. So every fetched option is offered; the search box narrows them.
+  const availableOptions = options;
 
   const filteredOptions = availableOptions.filter(
     (option) =>
@@ -641,19 +622,18 @@ export default function Game({
   // origin (i === 0) and moves whose distances aren't known yet stay neutral.
   function moveColorClass(i: number): string {
     if (i === 0) return "";
-    // Easy: clubs aren't scored; colour a player against the previous player
-    // (two steps back), which is one jump.
-    if (easy) {
-      if (path[i].type !== "player" || i < 2) return "";
-      const prev = distances[nodeKeyOf(path[i - 2])];
-      const cur = distances[nodeKeyOf(path[i])];
-      if (prev === undefined || cur === undefined) return "";
-      return cur < prev
-        ? "text-green-600 dark:text-green-400"
-        : "text-amber-600 dark:text-amber-500";
-    }
-    const prev = distances[nodeKeyOf(path[i - 1])];
-    const cur = distances[nodeKeyOf(path[i])];
+    // A jump is player -> club -> player. Colour both the club and the player it
+    // leads to by whether that jump moved closer to the target, so the whole
+    // move lights up as one. A club has no graph distance of its own, so it
+    // borrows its jump's colour: the player before it vs. the player after it
+    // (neutral until that next player is picked).
+    const toIdx = path[i].type === "player" ? i : i + 1;
+    const fromIdx = toIdx - 2;
+    const from = path[fromIdx];
+    const to = path[toIdx];
+    if (!from || !to) return "";
+    const prev = distances[nodeKeyOf(from)];
+    const cur = distances[nodeKeyOf(to)];
     if (prev === undefined || cur === undefined) return "";
     return cur < prev
       ? "text-green-600 dark:text-green-400"
@@ -873,9 +853,7 @@ export default function Game({
                 <span className="text-xs text-muted">
                   {current.type === "player"
                     ? `${current.name}'s clubs`
-                    : current.type === "club"
-                      ? `${current.club} teammates`
-                      : `${current.club} (${formatSeason(current.season)}) squad`}
+                    : `${current.club} teammates`}
                 </span>
               </div>
 
@@ -999,7 +977,7 @@ export default function Game({
                   {hintStage === 0
                     ? "💡 Hint: Target's most recent club"
                     : hintStage === 1
-                    ? "💡 Hint: Show Target's Career"
+                    ? "💡 Hint: Show Target's Clubs"
                     : bestMoveLoading
                     ? "💡 Finding next move..."
                     : "💡 Hint: Show Next Move"}
@@ -1016,23 +994,22 @@ export default function Game({
 
                   {hintStage >= 2 && (
                     <div className="text-sm">
-                      <strong>{target}&apos;s career:</strong>
+                      <strong>{target}&apos;s clubs:</strong>
                       <ul className="mt-2 list-disc list-inside text-muted">
-                        {targetCareer.map((career, i) => (
+                        {targetClubs.map((c, i) => (
                           <li key={i}>
-                            {career.club} (
-                            {formatSeason(career.season)})
+                            {c.club}
+                            {c.range ? ` (${c.range})` : ""}
                           </li>
                         ))}
                       </ul>
                     </div>
                   )}
 
-                  {hintStage >= 1 && mostRecentClub && (
+                  {hintStage >= 1 && mostRecentClubName && (
                     <div className="text-sm">
                       <strong>Most recent club:</strong>{" "}
-                      {mostRecentClub.club} (
-                      {formatSeason(mostRecentClub.season)})
+                      {mostRecentClubName}
                     </div>
                   )}
                 </div>
