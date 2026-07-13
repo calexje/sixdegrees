@@ -16,6 +16,7 @@ import {
 } from "@/lib/difficulty";
 import { MOVE_SLACK } from "@/lib/game";
 import { trackEvent } from "@/lib/analytics";
+import { transfermarktUrl } from "@/lib/site";
 
 type Props = {
     mode?: string;
@@ -62,15 +63,28 @@ type PathNode =
       clubId: string;
       club: string;
       season: string;
+    }
+  // Easy mode: a club with the season collapsed away (see docs/easy-mode.md).
+  | {
+      type: "club";
+      clubId: string;
+      club: string;
     };
 
 type Option = PathNode;
 
-// Graph node key for a path node, matching the server's keying.
+// Graph node key for a path node, matching the server's keying. Club nodes are
+// collapsed (no season) so they have no graph node and never carry a distance.
 function nodeKeyOf(node: PathNode): string {
-  return node.type === "player"
-    ? `player:${node.id}`
-    : `clubseason:${node.clubId}:${node.season}`;
+  if (node.type === "player") return `player:${node.id}`;
+  if (node.type === "club") return `club:${node.clubId}`;
+  return `clubseason:${node.clubId}:${node.season}`;
+}
+
+function pathNodeLabel(node: PathNode): string {
+  if (node.type === "player") return node.name;
+  if (node.type === "club") return node.club;
+  return `${node.club} (${formatSeason(node.season)})`;
 }
 
 export default function Game({
@@ -143,6 +157,10 @@ export default function Game({
   } | null>(null);
 
   const current = path[path.length - 1];
+
+  // Easy mode: pick clubs, not club-seasons (docs/easy-mode.md). Same puzzle and
+  // connectivity as the daily; only the board granularity changes.
+  const easy = mode === "easy";
 
   const passedWaypoint =
     !requiredWaypointId ||
@@ -246,7 +264,42 @@ export default function Game({
       setOptions([]);
 
       try {
-        if (current.type === "player") {
+        if (easy && current.type === "player") {
+          // Easy: this player's distinct clubs (season collapsed).
+          const response = await fetch(
+            `/api/player-clubs?id=${encodeURIComponent(current.id)}`
+          );
+          const data: { clubId: string; club: string }[] =
+            await response.json();
+          if (!active) return;
+          setOptions(
+            data.map((c) => ({
+              type: "club",
+              clubId: c.clubId,
+              club: c.club,
+            }))
+          );
+        } else if (easy && current.type === "club") {
+          // Easy: teammates of the player who led here, across their seasons at
+          // this club (preserves real teammate connectivity).
+          const prior = path[path.length - 2];
+          const priorId =
+            prior && prior.type === "player" ? prior.id : "";
+          const response = await fetch(
+            `/api/club-teammates?player=${encodeURIComponent(priorId)}&club=${encodeURIComponent(current.clubId)}`
+          );
+          const data: PlayerRow[] = await response.json();
+          if (!active) return;
+          setOptions(
+            data
+              .filter((item) => item.id !== priorId)
+              .map((item) => ({
+                type: "player",
+                id: item.id,
+                name: item.name,
+              }))
+          );
+        } else if (current.type === "player") {
           const response = await fetch(
             `/api/player?id=${encodeURIComponent(
               current.id
@@ -300,7 +353,7 @@ export default function Game({
                 season: item.season,
               }))
           );
-        } else {
+        } else if (current.type === "clubseason") {
           const response = await fetch(
             `/api/clubseason?club_id=${encodeURIComponent(
               current.clubId
@@ -347,6 +400,9 @@ export default function Game({
   // pre-seeded, so this only fires for moves the player makes.
   useEffect(() => {
     if (solutionDistance === null) return;
+    // Easy: only players carry a graph distance (clubs are collapsed), so we
+    // only colour player arrivals.
+    if (easy && current.type !== "player") return;
     const key = nodeKeyOf(current);
     if (distances[key] !== undefined) return;
 
@@ -443,10 +499,20 @@ export default function Game({
         ? requiredWaypointId
         : targetId;
 
-    const currentKey =
-      current.type === "player"
-        ? `player:${current.id}`
-        : `clubseason:${current.clubId}:${current.season}`;
+    let currentKey: string;
+    if (current.type === "player") {
+      currentKey = `player:${current.id}`;
+    } else if (current.type === "clubseason") {
+      currentKey = `clubseason:${current.clubId}:${current.season}`;
+    } else {
+      // Easy club node: run the hint from the player who led here, so it still
+      // suggests a useful club to head through.
+      const prior = path[path.length - 2];
+      currentKey =
+        prior && prior.type === "player"
+          ? `player:${prior.id}`
+          : `player:${originId}`;
+    }
 
     const params = new URLSearchParams();
     params.set("mode", mode ?? "daily");
@@ -496,6 +562,13 @@ export default function Game({
         );
       }
 
+      if (
+        node.type === "club" &&
+        option.type === "club"
+      ) {
+        return node.clubId === option.clubId;
+      }
+
       return false;
     });
 
@@ -503,16 +576,10 @@ export default function Game({
   });
 
   const filteredOptions = availableOptions.filter(
-    (option) => {
-      const label =
-        option.type === "player"
-          ? option.name
-          : `${option.club} (${formatSeason(option.season)})`;
-
-      return label
+    (option) =>
+      pathNodeLabel(option)
         .toLowerCase()
-        .includes(query.toLowerCase());
-    }
+        .includes(query.toLowerCase())
   );
 
   // A dead end: the current node has no unused onward options (every teammate or
@@ -574,6 +641,17 @@ export default function Game({
   // origin (i === 0) and moves whose distances aren't known yet stay neutral.
   function moveColorClass(i: number): string {
     if (i === 0) return "";
+    // Easy: clubs aren't scored; colour a player against the previous player
+    // (two steps back), which is one jump.
+    if (easy) {
+      if (path[i].type !== "player" || i < 2) return "";
+      const prev = distances[nodeKeyOf(path[i - 2])];
+      const cur = distances[nodeKeyOf(path[i])];
+      if (prev === undefined || cur === undefined) return "";
+      return cur < prev
+        ? "text-green-600 dark:text-green-400"
+        : "text-amber-600 dark:text-amber-500";
+    }
     const prev = distances[nodeKeyOf(path[i - 1])];
     const cur = distances[nodeKeyOf(path[i])];
     if (prev === undefined || cur === undefined) return "";
@@ -651,9 +729,18 @@ export default function Game({
             <div className="border border-border rounded-lg p-4 mb-4 text-sm leading-relaxed">
               {path.map((node, i) => (
                 <span key={i}>
-                  {node.type === "player"
-                    ? node.name
-                    : `${node.club} (${formatSeason(node.season)})`}
+                  {node.type === "player" ? (
+                    <a
+                      href={transfermarktUrl(node.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      {node.name}
+                    </a>
+                  ) : (
+                    pathNodeLabel(node)
+                  )}
                   {i < path.length - 1 && " → "}
                 </span>
               ))}
@@ -718,12 +805,26 @@ export default function Game({
             Find a link between
           </p>
           <h2 className="text-xl font-bold">
-            {origin}
+            <a
+              href={transfermarktUrl(originId)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              {origin}
+            </a>
             <span className="text-muted font-normal">
               {" "}
               and{" "}
             </span>
-            {target}
+            <a
+              href={transfermarktUrl(targetId)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              {target}
+            </a>
           </h2>
           {solutionDistance !== null && (
             <div className="mt-2 flex items-center justify-center gap-2 text-sm">
@@ -737,6 +838,7 @@ export default function Game({
               </span>
             </div>
           )}
+
         </div>
 
         {hasConstraints && (
@@ -771,7 +873,9 @@ export default function Game({
                 <span className="text-xs text-muted">
                   {current.type === "player"
                     ? `${current.name}'s clubs`
-                    : `${current.club} (${formatSeason(current.season)}) squad`}
+                    : current.type === "club"
+                      ? `${current.club} teammates`
+                      : `${current.club} (${formatSeason(current.season)}) squad`}
                 </span>
               </div>
 
@@ -792,10 +896,7 @@ export default function Game({
 
                   <div className="rounded-lg border border-border divide-y divide-border overflow-hidden max-h-72 overflow-y-auto">
                     {filteredOptions.map((option, i) => {
-                      const label =
-                        option.type === "player"
-                          ? option.name
-                          : `${option.club} (${formatSeason(option.season)})`;
+                      const label = pathNodeLabel(option);
 
                       return (
                         <button
@@ -860,9 +961,7 @@ export default function Game({
                           : "text-muted")
                       }`}
                     >
-                      {node.type === "player"
-                        ? node.name
-                        : `${node.club} (${formatSeason(node.season)})`}
+                      {pathNodeLabel(node)}
                     </span>
                   </li>
                 ))}

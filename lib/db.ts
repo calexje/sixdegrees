@@ -179,6 +179,47 @@ export function getProminentPlayerIds(
   return new Set(rows.map((row) => row.id));
 }
 
+// A player's distinct clubs (season collapsed), most-recent first. Easy mode
+// (docs/easy-mode.md) picks a club rather than a specific club-season.
+export function getPlayerClubs(
+  playerId: string
+): { clubId: string; club: string }[] {
+  return db
+    .prepare(`
+      SELECT club_id AS clubId, club_name AS club,
+             MAX(CAST(season AS REAL)) AS recent
+      FROM appearances
+      WHERE player_id = ?
+      GROUP BY club_id
+      ORDER BY recent DESC
+    `)
+    .all(playerId) as {
+    clubId: string;
+    club: string;
+  }[];
+}
+
+// Teammates of `playerId` at `clubId`: players who were at that club in a season
+// the player was also there. Preserves real teammate connectivity while letting
+// Easy mode collapse the season away.
+export function getClubTeammates(
+  playerId: string,
+  clubId: string
+): PlayerRef[] {
+  return db
+    .prepare(`
+      SELECT DISTINCT player_id AS id, player_name AS name
+      FROM appearances
+      WHERE club_id = ?
+        AND season IN (
+          SELECT season FROM appearances
+          WHERE player_id = ? AND club_id = ?
+        )
+      ORDER BY player_name
+    `)
+    .all(clubId, playerId, clubId) as PlayerRef[];
+}
+
 // Player ids with any appearance in season `minSeason` or later, i.e. players
 // who were active recently. Used to keep the Daily's target recognisable.
 export function getRecentPlayerIds(

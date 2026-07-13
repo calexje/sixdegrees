@@ -16,6 +16,12 @@ export const SITE_URL = "https://footylinks.app";
 export const ADSENSE_CLIENT_ID: string =
   "ca-pub-5020097253607144";
 
+// Our player ids are Transfermarkt player ids, so we can deep-link straight to
+// a player's profile for anyone who wants to know who they are.
+export function transfermarktUrl(playerId: string): string {
+  return `https://www.transfermarkt.com/-/profil/spieler/${playerId}`;
+}
+
 // Resolve the site origin. Order: an explicit override, then the canonical
 // domain in production, then a preview deployment's own generated URL, then
 // localhost in dev.

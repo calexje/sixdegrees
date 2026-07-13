@@ -110,13 +110,22 @@ export default async function Home({
       </>
     );
   } else {
-    const mode = params.mode === "expert" ? "expert" : "daily";
-    const puzzle = await getPuzzle(mode);
+    // Easy plays the same daily puzzle with a club-collapsed board, so it uses
+    // the daily puzzle but keeps its own UI mode. Expert is its own puzzle.
+    const uiMode =
+      params.mode === "expert"
+        ? "expert"
+        : params.mode === "easy"
+          ? "easy"
+          : "daily";
+    const puzzle = await getPuzzle(
+      uiMode === "expert" ? "expert" : "daily"
+    );
 
     content = (
       <Game
-        key={`${mode}:${puzzle.originId}:${puzzle.targetId}`}
-        mode={mode}
+        key={`${uiMode}:${puzzle.originId}:${puzzle.targetId}`}
+        mode={uiMode}
         puzzleNumber={
           (puzzle as { puzzleNumber?: number })
             .puzzleNumber
