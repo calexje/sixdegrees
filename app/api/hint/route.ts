@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { bestMove, nodeLabel } from "@/lib/graph";
+import { bestMove, nodeLabel, playerNode, isNodeId } from "@/lib/graph";
 import { getGraphForMode, getTargetDistances } from "@/lib/puzzle";
 import { getClubTeammates, OptionFilter } from "@/lib/db";
 import { enforceRateLimit } from "@/lib/rate-limit";
@@ -31,6 +31,15 @@ export async function GET(request: Request) {
   if (!current || !goal) {
     return NextResponse.json(
       { error: "Missing required parameter: current or goal" },
+      { status: 400 }
+    );
+  }
+
+  // Untrusted URL input: narrow the raw strings to NodeId before they cross
+  // into the typed graph API (also rejects malformed ids up front).
+  if (!isNodeId(current) || !isNodeId(goal)) {
+    return NextResponse.json(
+      { error: "Malformed node id: current or goal" },
       { status: 400 }
     );
   }
@@ -76,7 +85,7 @@ export async function GET(request: Request) {
   );
 
   const blocked = notPlayer
-    ? new Set([`player:${notPlayer}`])
+    ? new Set([playerNode(notPlayer)])
     : undefined;
 
   const suggestion = bestMove(graph, current, goal, blocked);

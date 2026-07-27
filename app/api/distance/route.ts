@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getTargetDistances } from "@/lib/puzzle";
+import { isNodeId } from "@/lib/graph";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 // Distance (in moves) from a node to the puzzle's target, for per-move colour
@@ -22,6 +23,14 @@ export async function GET(request: Request) {
   if (!node || !goal) {
     return NextResponse.json(
       { error: "Missing required parameter: node or goal" },
+      { status: 400 }
+    );
+  }
+
+  // Untrusted URL input: `goal` keys the typed BFS, so narrow it to NodeId here.
+  if (!isNodeId(goal)) {
+    return NextResponse.json(
+      { error: "Malformed node id: goal" },
       { status: 400 }
     );
   }

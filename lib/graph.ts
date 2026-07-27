@@ -5,19 +5,49 @@ import {
 } from "./db";
 import { formatSeason } from "./format";
 
-export type Graph = Map<string, Set<string>>;
+// A node id is either a player or a specific club-season. Encoding the shape in
+// the type (rather than a bare `string`) makes the compiler reject bare ids,
+// typo'd prefixes, and passing one kind where the other is expected — all at
+// zero runtime cost. The slots are `${string}` (not `${number}`) because
+// player_id, club_id and season are all typed `string` in the DB layer (./db).
+export type NodeId =
+  | `player:${string}`
+  | `clubseason:${string}:${string}`;
+
+export type Graph = Map<NodeId, Set<NodeId>>;
+
+// Constructors — the single source of truth for the id format. Callers build
+// ids through these rather than interpolating strings by hand, so the shape
+// lives in one place and every id produced is a genuine `NodeId`. (A bare
+// template literal like `player:${id}` is inferred as `string`, not `NodeId`,
+// so hand-built ids wouldn't satisfy the type anyway.)
+export function playerNode(id: string): NodeId {
+  return `player:${id}`;
+}
+
+export function clubSeasonNode(clubId: string, season: string): NodeId {
+  return `clubseason:${clubId}:${season}`;
+}
+
+// Runtime guard for untrusted input (e.g. ids arriving as URL params). Narrows a
+// plain `string` to `NodeId` so it can safely cross into the typed graph API.
+// This is where runtime validation belongs — at the boundary — complementing
+// the compile-time guarantees the type gives everywhere inside.
+export function isNodeId(value: string): value is NodeId {
+  return /^player:.+$/.test(value) || /^clubseason:.+:.+$/.test(value);
+}
 
 // Nodes are keyed by id (`player:<player_id>`, `clubseason:<club_id>:<season>`)
 // so that distinct players/clubs sharing a name are never merged. This registry
 // maps each node to its display label, populated as graphs are built. Every
 // node that appears in any (filtered) graph also appears in the full graph, so
 // the labels cover them all.
-const nodeLabels = new Map<string, string>();
+const nodeLabels = new Map<NodeId, string>();
 
 function addEdge(
   graph: Graph,
-  from: string,
-  to: string
+  from: NodeId,
+  to: NodeId
 ) {
   if (!graph.has(from)) {
     graph.set(from, new Set());
@@ -34,22 +64,24 @@ export function buildGraph(
   const appearances = getAllAppearances(opts);
 
   for (const appearance of appearances) {
-    const playerNode = `player:${appearance.player_id}`;
-    const clubSeasonNode =
-      `clubseason:${appearance.club_id}:${appearance.season}`;
+    const player = playerNode(appearance.player_id);
+    const clubSeason = clubSeasonNode(
+      appearance.club_id,
+      appearance.season
+    );
 
-    if (!nodeLabels.has(playerNode)) {
-      nodeLabels.set(playerNode, appearance.player_name);
+    if (!nodeLabels.has(player)) {
+      nodeLabels.set(player, appearance.player_name);
     }
-    if (!nodeLabels.has(clubSeasonNode)) {
+    if (!nodeLabels.has(clubSeason)) {
       nodeLabels.set(
-        clubSeasonNode,
+        clubSeason,
         `${appearance.club_name} (${formatSeason(appearance.season)})`
       );
     }
 
-    addEdge(graph, playerNode, clubSeasonNode);
-    addEdge(graph, clubSeasonNode, playerNode);
+    addEdge(graph, player, clubSeason);
+    addEdge(graph, clubSeason, player);
   }
 
   return graph;
@@ -57,19 +89,19 @@ export function buildGraph(
 
 export function findShortestPath(
   graph: Graph,
-  start: string,
-  target: string,
-  blocked?: Set<string>
-): string[] | null {
+  start: NodeId,
+  target: NodeId,
+  blocked?: Set<NodeId>
+): NodeId[] | null {
   if (blocked?.has(start) || blocked?.has(target)) {
     return null;
   }
 
-  const queue: string[] = [start];
+  const queue: NodeId[] = [start];
 
-  const visited = new Set<string>();
+  const visited = new Set<NodeId>();
 
-  const parent = new Map<string, string>();
+  const parent = new Map<NodeId, NodeId>();
 
   visited.add(start);
 
@@ -77,7 +109,7 @@ export function findShortestPath(
     const current = queue.shift()!;
 
     if (current === target) {
-      const path: string[] = [];
+      const path: NodeId[] = [];
 
       let node = target;
 
@@ -119,15 +151,15 @@ export function findShortestPath(
 // search depth in edges; `blocked` nodes are treated as absent.
 export function bfsFrom(
   graph: Graph,
-  start: string,
+  start: NodeId,
   maxDepth?: number,
-  blocked?: Set<string>
+  blocked?: Set<NodeId>
 ): {
-  distance: Map<string, number>;
-  parent: Map<string, string>;
+  distance: Map<NodeId, number>;
+  parent: Map<NodeId, NodeId>;
 } {
-  const distance = new Map<string, number>();
-  const parent = new Map<string, string>();
+  const distance = new Map<NodeId, number>();
+  const parent = new Map<NodeId, NodeId>();
 
   if (blocked?.has(start)) {
     return { distance, parent };
@@ -135,7 +167,7 @@ export function bfsFrom(
 
   distance.set(start, 0);
 
-  const queue: string[] = [start];
+  const queue: NodeId[] = [start];
 
   while (queue.length > 0) {
     const node = queue.shift()!;
@@ -158,12 +190,12 @@ export function bfsFrom(
 }
 
 export function reconstructPath(
-  parent: Map<string, string>,
-  start: string,
-  target: string
-): string[] {
-  const path: string[] = [];
-  let node: string | undefined = target;
+  parent: Map<NodeId, NodeId>,
+  start: NodeId,
+  target: NodeId
+): NodeId[] {
+  const path: NodeId[] = [];
+  let node: NodeId | undefined = target;
 
   while (node !== undefined) {
     path.push(node);
@@ -178,11 +210,11 @@ export function reconstructPath(
 // blocking a set of nodes. Returns null if any required segment is unreachable.
 export function shortestPathVia(
   graph: Graph,
-  origin: string,
-  target: string,
-  via?: string,
-  blocked?: Set<string>
-): string[] | null {
+  origin: NodeId,
+  target: NodeId,
+  via?: NodeId,
+  blocked?: Set<NodeId>
+): NodeId[] | null {
   if (via) {
     const first = findShortestPath(graph, origin, via, blocked);
     const second = findShortestPath(graph, via, target, blocked);
@@ -202,10 +234,10 @@ export function shortestPathVia(
 // hop, i.e. two graph edges. Returns null if unreachable.
 export function shortestDistanceVia(
   graph: Graph,
-  origin: string,
-  target: string,
-  via?: string,
-  blocked?: Set<string>
+  origin: NodeId,
+  target: NodeId,
+  via?: NodeId,
+  blocked?: Set<NodeId>
 ): number | null {
   const path = shortestPathVia(graph, origin, target, via, blocked);
   return path ? (path.length - 1) / 2 : null;
@@ -215,13 +247,13 @@ export function shortestDistanceVia(
 // Runs a single BFS outward from the goal. Returns null if nothing is reachable.
 export function bestMove(
   graph: Graph,
-  current: string,
-  goal: string,
-  blocked?: Set<string>
-): string | null {
+  current: NodeId,
+  goal: NodeId,
+  blocked?: Set<NodeId>
+): NodeId | null {
   // BFS from the goal to get the distance of every reachable node.
-  const distance = new Map<string, number>();
-  const queue: string[] = [goal];
+  const distance = new Map<NodeId, number>();
+  const queue: NodeId[] = [goal];
   distance.set(goal, 0);
 
   while (queue.length > 0) {
@@ -236,7 +268,7 @@ export function bestMove(
     }
   }
 
-  let best: string | null = null;
+  let best: NodeId | null = null;
   let bestDistance = Infinity;
 
   for (const neighbour of graph.get(current) ?? new Set()) {
@@ -252,23 +284,23 @@ export function bestMove(
 }
 
 // Display label for a node id, from the registry populated during graph build.
-export function nodeLabel(node: string): string {
+export function nodeLabel(node: NodeId): string {
   return nodeLabels.get(node) ?? node;
 }
 
-export function pathToLabels(path: string[]): string[] {
+export function pathToLabels(path: NodeId[]): string[] {
   return path.map(nodeLabel);
 }
 
 export function randomPath(
   graph: Graph,
-  start: string,
+  start: NodeId,
   moves: number,
   rng: () => number
-): string[] | null {
-  const path = [start];
+): NodeId[] | null {
+  const path: NodeId[] = [start];
 
-  const visited = new Set<string>();
+  const visited = new Set<NodeId>();
   visited.add(start);
 
   let current = start;
@@ -285,21 +317,16 @@ export function randomPath(
       return null;
     }
 
-  const next =
-  neighbours[
-    Math.floor(
-      rng() *
-        neighbours.length
-    )
-  ];
+    const next =
+      neighbours[
+        Math.floor(rng() * neighbours.length)
+      ];
 
     path.push(next);
     visited.add(next);
     current = next;
 
-    if (
-      next.startsWith("player:")
-    ) {
+    if (next.startsWith("player:")) {
       playerMoves++;
     }
   }

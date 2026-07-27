@@ -13,7 +13,7 @@
 
 import { readFileSync } from "fs";
 import path from "path";
-import { buildGraph, findShortestPath } from "../lib/graph";
+import { buildGraph, findShortestPath, playerNode } from "../lib/graph";
 import {
   generateDailyPuzzleForSeed,
   generateExpertPuzzleForSeed,
@@ -80,8 +80,8 @@ function boardWalk(
 ): { jumps: number } | { error: string } {
   const p = findShortestPath(
     graph,
-    `player:${originId}`,
-    `player:${targetId}`
+    playerNode(originId),
+    playerNode(targetId)
   );
   if (!p) return { error: "unreachable on full graph" };
 

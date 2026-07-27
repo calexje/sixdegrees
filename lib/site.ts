@@ -14,7 +14,7 @@ export const SITE_URL = "https://footylinks.app";
 // ownership meta tag, and /ads.txt all activate. It's a public value (it ships
 // in the page), so committing it is fine.
 export const ADSENSE_CLIENT_ID: string =
-  "ca-pub-5020097253607144";
+  "ca-pub-3730349371544209";
 
 // Our player ids are Transfermarkt player ids, so we can deep-link straight to
 // a player's profile for anyone who wants to know who they are.

@@ -7,7 +7,9 @@ import {
   shortestPathVia,
   pathToLabels,
   nodeLabel,
+  playerNode,
   Graph,
+  NodeId,
 } from "./graph";
 import {
   getPlayerById,
@@ -166,9 +168,9 @@ function generatePuzzle(
   );
 
   type Found = {
-    startNode: string;
-    target: string;
-    parent: Map<string, string>;
+    startNode: NodeId;
+    target: NodeId;
+    parent: Map<NodeId, NodeId>;
     jumps: number;
   };
 
@@ -184,7 +186,7 @@ function generatePuzzle(
       targetJumps * 2
     );
 
-    const byJumps = new Map<number, string[]>();
+    const byJumps = new Map<number, NodeId[]>();
     for (const [node, edges] of distance) {
       if (
         edges === 0 ||
@@ -596,14 +598,14 @@ export function buildChallenge(
   const graph = getChallengeGraph(notLeagues);
 
   const blocked = excluded
-    ? new Set([`player:${excluded.id}`])
+    ? new Set([playerNode(excluded.id)])
     : undefined;
 
   const solutionNodes = shortestPathVia(
     graph,
-    `player:${from.id}`,
-    `player:${to.id}`,
-    via ? `player:${via.id}` : undefined,
+    playerNode(from.id),
+    playerNode(to.id),
+    via ? playerNode(via.id) : undefined,
     blocked
   );
 
@@ -658,7 +660,7 @@ const targetDistanceCache = new Map<
 
 export function getTargetDistances(
   mode: string,
-  targetKey: string,
+  targetKey: NodeId,
   notLeagues: string[] = [],
   notPlayer?: string
 ): Map<string, number> {
@@ -672,7 +674,7 @@ export function getTargetDistances(
   if (!distances) {
     const graph = getGraphForMode(mode, leagues);
     const blocked = notPlayer
-      ? new Set([`player:${notPlayer}`])
+      ? new Set([playerNode(notPlayer)])
       : undefined;
     distances = bfsFrom(
       graph,
