@@ -237,26 +237,59 @@ function optionFilterSql(f: OptionFilter): {
 }
 
 // A player's distinct clubs (season collapsed), most-recent first. The board
-// (docs/easy-mode.md) picks a club rather than a specific club-season. `filter`
-// keeps the offered clubs inside the puzzle's graph for the filtered modes.
+// (docs/easy-mode.md) picks a club rather than a specific club-season. `years`
+// is the distinct season years the player was at the club (ascending), so the
+// option can show their tenure to anchor the era — kept as the full set rather
+// than a min/max range so a return to a club renders as separate spells (e.g.
+// Fowler's Liverpool "1992–2001, 2005–2006") instead of one span that swallows
+// the seasons he was away. It reflects the same filtered rows, so under a
+// season/league filter it narrows to what's actually playable. `filter` keeps
+// the offered clubs inside the puzzle's graph for the filtered modes.
 export function getPlayerClubs(
   playerId: string,
   filter: OptionFilter = {}
-): { clubId: string; club: string }[] {
+): { clubId: string; club: string; years: number[] }[] {
   const f = optionFilterSql(filter);
-  return db
+  const rows = db
     .prepare(`
-      SELECT club_id AS clubId, club_name AS club,
-             MAX(CAST(season AS REAL)) AS recent
+      SELECT DISTINCT club_id AS clubId, club_name AS club,
+             CAST(season AS REAL) AS year
       FROM appearances
       WHERE player_id = ?${f.sql}
-      GROUP BY club_id
-      ORDER BY recent DESC
     `)
     .all(playerId, ...f.params) as {
     clubId: string;
     club: string;
+    year: number;
   }[];
+
+  // Collapse to one entry per club, gathering the years they were there. Order
+  // clubs by their most-recent year so the familiar "latest club first" order
+  // the board has always shown is preserved.
+  const byClub = new Map<
+    string,
+    { clubId: string; club: string; years: number[] }
+  >();
+  for (const row of rows) {
+    const year = Math.floor(row.year);
+    const entry = byClub.get(row.clubId);
+    if (entry) entry.years.push(year);
+    else
+      byClub.set(row.clubId, {
+        clubId: row.clubId,
+        club: row.club,
+        years: [year],
+      });
+  }
+
+  return [...byClub.values()]
+    .map((e) => ({
+      ...e,
+      years: [...new Set(e.years)].sort((a, b) => a - b),
+    }))
+    .sort(
+      (a, b) => b.years[b.years.length - 1] - a.years[a.years.length - 1]
+    );
 }
 
 // Teammates of `playerId` at `clubId`: players who were at that club in a season

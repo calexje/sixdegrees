@@ -16,6 +16,7 @@ import {
 import { MOVE_SLACK } from "@/lib/game";
 import { trackEvent } from "@/lib/analytics";
 import { transfermarktUrl } from "@/lib/site";
+import { formatTenure } from "@/lib/format";
 
 type Props = {
     mode?: string;
@@ -70,10 +71,12 @@ type PathNode =
     };
 
 // An option is a path node, plus (for a teammate) the seasons shared with the
-// player who leads to them, used to label the club hop once it's picked.
+// player who leads to them, used to label the club hop once it's picked. A club
+// option carries `range`, the player's tenure there (e.g. "2011–2018"), shown to
+// anchor the era when choosing which of the player's clubs to route through.
 type Option =
   | { type: "player"; id: string; name: string; seasons?: string[] }
-  | { type: "club"; clubId: string; club: string };
+  | { type: "club"; clubId: string; club: string; range?: string };
 
 // Graph node key for a path node, matching the server's keying. Club nodes are
 // collapsed (no season), so they have no graph node and never carry a distance.
@@ -86,6 +89,16 @@ function nodeKeyOf(node: PathNode): string {
 function pathNodeLabel(node: PathNode): string {
   if (node.type === "player") return node.name;
   return node.season ? `${node.club} (${node.season})` : node.club;
+}
+
+// Label for an option button (and the text the search box filters on). A club
+// shows the player's tenure there ("Arsenal (2011–2018)") so you can pick the
+// club whose era overlaps the target; a teammate is just their name. This is
+// distinct from a club's label once it's on the path, which carries the season
+// the two adjacent players actually overlapped (stamped in selectOption).
+function optionLabel(option: Option): string {
+  if (option.type === "player") return option.name;
+  return option.range ? `${option.club} (${option.range})` : option.club;
 }
 
 // Compact label for the seasons two players shared at a club: a single year, or
@@ -315,14 +328,18 @@ export default function Game({
           const response = await fetch(
             `/api/player-clubs?${params.toString()}`
           );
-          const data: { clubId: string; club: string }[] =
-            await response.json();
+          const data: {
+            clubId: string;
+            club: string;
+            years: number[];
+          }[] = await response.json();
           if (!active) return;
           setOptions(
             data.map((c) => ({
               type: "club",
               clubId: c.clubId,
               club: c.club,
+              range: formatTenure(c.years),
             }))
           );
         } else {
@@ -558,7 +575,7 @@ export default function Game({
 
   const filteredOptions = availableOptions.filter(
     (option) =>
-      pathNodeLabel(option)
+      optionLabel(option)
         .toLowerCase()
         .includes(query.toLowerCase())
   );
@@ -874,7 +891,7 @@ export default function Game({
 
                   <div className="rounded-lg border border-border divide-y divide-border overflow-hidden max-h-72 overflow-y-auto">
                     {filteredOptions.map((option, i) => {
-                      const label = pathNodeLabel(option);
+                      const label = optionLabel(option);
 
                       return (
                         <button
