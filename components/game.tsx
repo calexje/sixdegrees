@@ -391,35 +391,50 @@ export default function Game({
     };
   }, [current]);
 
-  // Fetch the current node's distance-to-target so the move that landed on it
-  // can be coloured. Skipped when there's no known solution. The origin is
-  // pre-seeded, so this only fires for moves the player makes.
+  // Fetch the current node's distance-to-target for the "N from target" readout
+  // and per-move colour. Non-blocking: it only feeds ambient feedback and never
+  // gates the option list, so the (cold-start) graph build it may trigger can't
+  // stall play. Skipped when there's no known solution; the origin is pre-seeded,
+  // so this only fires for nodes the player moves to.
+  //
+  // A player has its own graph node, so we ask for it directly. A collapsed club
+  // has none, so we ask by (prior player, club) and the server returns the min
+  // over their club-seasons — the closest that club can get you.
   useEffect(() => {
     if (solutionDistance === null) return;
-    // Only players carry a graph distance (clubs are collapsed), so we only
-    // fetch/colour player arrivals.
-    if (current.type !== "player") return;
     const key = nodeKeyOf(current);
     if (distances[key] !== undefined) return;
+
+    const params = new URLSearchParams();
+    params.set("mode", mode ?? "daily");
+    params.set("goal", `player:${targetId}`);
+    if (notLeagues && notLeagues.length > 0) {
+      params.set("not_leagues", notLeagues.join(","));
+    }
+    if (excludedPlayerId) {
+      params.set("not_player", excludedPlayerId);
+    }
+
+    let url: string | null = null;
+    if (current.type === "player") {
+      params.set("node", key);
+      url = `/api/distance?${params.toString()}`;
+    } else {
+      const prior = path[path.length - 2];
+      if (prior && prior.type === "player") {
+        params.set("player", prior.id);
+        params.set("club", current.clubId);
+        url = `/api/club-distance?${params.toString()}`;
+      }
+    }
+    if (!url) return;
+    const requestUrl = url;
 
     let active = true;
 
     async function loadDistance() {
-      const params = new URLSearchParams();
-      params.set("mode", mode ?? "daily");
-      params.set("node", key);
-      params.set("goal", `player:${targetId}`);
-      if (notLeagues && notLeagues.length > 0) {
-        params.set("not_leagues", notLeagues.join(","));
-      }
-      if (excludedPlayerId) {
-        params.set("not_player", excludedPlayerId);
-      }
-
       try {
-        const response = await fetch(
-          `/api/distance?${params.toString()}`
-        );
+        const response = await fetch(requestUrl);
         const data = await response.json();
         if (!active) return;
         if (typeof data.distance === "number") {
@@ -429,7 +444,7 @@ export default function Game({
           }));
         }
       } catch {
-        // Leave the move uncoloured on failure.
+        // Leave the readout/colour unset on failure.
       }
     }
 
@@ -598,17 +613,36 @@ export default function Game({
   // player nears it. Falls back to a plain count when there's no budget. Append
   // the current distance-to-target (item 4) as the numeric nuance behind the
   // move colours.
-  const currentDistance = distances[nodeKeyOf(current)];
-   // Recent-club (stage 1) and career (stage 2) each count as one hint, plus one
+  //
+  // On a club (a mid-move transit node) there's no graph distance to look up —
+  // clubs are collapsed and never fetched — so hold the readout at the distance
+  // of the player we arrived from. A move isn't complete until we land on the
+  // next player, so "N from target" legitimately stays put across the club step
+  // rather than blinking out.
+  const currentDistance =
+    distances[nodeKeyOf(current)] ??
+    (current.type === "club" && path.length >= 2
+      ? distances[nodeKeyOf(path[path.length - 2])]
+      : undefined);
+  // Recent-club (stage 1) and career (stage 2) each count as one hint, plus one
   // per next-move suggestion.
   const hintCount = hintStage + bestMoves.length;
+  // The distance can be absent (no known solution), but the hint count is always
+  // meaningful mid-game, so keep it out of the distance guard rather than letting
+  // it vanish whenever the distance does.
+  const distanceReadout =
+    currentDistance !== undefined && !gameOver
+      ? ` · ${Math.max(0, currentDistance - 1)} from target`
+      : "";
+  const hintsReadout = gameOver
+    ? ""
+    : `. ${hintCount} hint${hintCount === 1 ? "" : "s"} used`;
   const budgetReadout =
     (budget !== null
       ? `${moveCount} / ${budget} moves`
       : moveCountLabel) +
-    (currentDistance !== undefined && !gameOver
-      ? ` · ${Math.max(0, currentDistance - 1)} from target. ${hintCount} hint${hintCount === 1 ? "" : "s"} used`
-      : "");
+    distanceReadout +
+    hintsReadout;
   const budgetClass =
     budget === null
       ? "text-muted"

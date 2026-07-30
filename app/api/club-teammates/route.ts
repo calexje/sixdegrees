@@ -17,7 +17,9 @@ function filterFromParams(params: URLSearchParams): OptionFilter {
 }
 
 // The no-year board: teammates of a player at a club, across the seasons they
-// were there, with the shared seasons for the path label.
+// were there, with the shared seasons for the path label. A pure DB query with
+// no graph build, so the teammate list is never gated on the cold-start BFS —
+// the club's distance readout is fetched separately (/api/club-distance).
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const player = searchParams.get("player");
