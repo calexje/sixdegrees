@@ -1,0 +1,37 @@
+name: CI
+
+# Runs on every push and every pull request. Vercel handles deployment (CD) on
+# its own Git integration; this workflow is the CI gate that runs the checks.
+on:
+  push:
+  pull_request:
+
+# A newer push to the same ref cancels an in-flight run, so we don't burn minutes
+# on commits that have already been superseded.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Typecheck & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # npm ci installs from the committed lockfile; it also builds the
+      # better-sqlite3 native addon (ubuntu runners have the toolchain, and
+      # prebuilt binaries are used where available).
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Test
+        run: npm test
