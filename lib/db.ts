@@ -158,7 +158,14 @@ export function getCompetitions(): string[] {
 // The Big-5 top flights. A player's count of distinct seasons in these is our
 // prominence proxy: it rewards the long, well-travelled careers people actually
 // recognise, rather than current market value (which favours young hype).
-const TOP_FLIGHT = ["GB1", "ES1", "IT1", "L1", "FR1"];
+// EFD1 is the pre-1992 English First Division — the same top flight the Premier
+// League replaced — so it counts here. Omitting it would dock two seasons from
+// every player whose career straddled 1992, biasing the metric against an
+// entire cohort. Note this is deliberately NOT added to the Daily's
+// `competition: "GB1"` gate in lib/puzzle.tsx: that gate is a proxy for "known
+// to a Premier League audience", which pre-1992 football is not, whereas this
+// list measures career substance.
+const TOP_FLIGHT = ["GB1", "EFD1", "ES1", "IT1", "L1", "FR1"];
 
 // Player ids with at least `minSeasons` distinct top-flight seasons. Keyed by
 // id, so distinct players who share a name are counted separately.

@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const Database = require("better-sqlite3");
 
-const COMPETITIONS = ["GB1","ES1","IT1","L1","FR1","PO1","GB2","ES2","IT2","L2","FR2","PO2"];
+const COMPETITIONS = ["GB1","EFD1","ES1","IT1","L1","FR1","PO1","GB2","EFD2","ES2","IT2","L2","FR2","PO2"];
 
 const db = new Database("../database/football.db");
 
@@ -19,14 +19,17 @@ CREATE TABLE appearances (
     club_id TEXT,
     club_name TEXT,
     season TEXT,
-    competition TEXT
+    competition TEXT,
+    position TEXT,
+    minutes INTEGER
 );
 `);
 
 const insert = db.prepare(`
     INSERT INTO appearances
-    (player_id, player_name, club_id, club_name, season, competition)
-    VALUES (?, ?, ?, ?, ?, ?)
+    (player_id, player_name, club_id, club_name, season, competition,
+     position, minutes)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 `);
 
 // Some top-flight clubs are duplicated into the second-tier files for the same
@@ -50,7 +53,14 @@ const importSeason = db.transaction((data : any) => {
                 club.id,
                 club.name,
                 data.season,
-                data.competitionId
+                data.competitionId,
+                // Coalesced because better-sqlite3 refuses to bind undefined,
+                // and a JSON file written before the scraper collected these
+                // fields has neither. After a full recrawl every file carries
+                // both, and a null `minutes` then means one thing only: the
+                // player was at the club that season but never played.
+                player.position ?? null,
+                player.minutes ?? null
             );
         }
     }
@@ -78,7 +88,7 @@ function createIndexes() {
 
 async function main() {
     for (const competitionId of COMPETITIONS) {
-        for (let year = 2025; year >= 1990; year--) {
+        for (let year = 2026; year >= 1990; year--) {
             const filePath = `data/${competitionId}-${year}.json`;
 
             console.log(`Reading ${filePath}`);

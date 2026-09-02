@@ -3,7 +3,9 @@
 // getCompetitions(); this table only provides their human-readable labels.
 export const LEAGUE_NAMES: Record<string, string> = {
   GB1: "Premier League",
+  EFD1: "First Division (to 1992)",
   GB2: "Championship",
+  EFD2: "First Division (1992–2004)",
   ES1: "La Liga",
   ES2: "Segunda División",
   IT1: "Serie A",
