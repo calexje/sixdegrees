@@ -488,6 +488,14 @@ function generateDailyPuzzle() {
   return puzzle;
 }
 
+export function getPinnedDailyPuzzle(pin: string) {
+  const number = Number(pin);
+  if (!Number.isInteger(number)) return null;
+  const base = curatedDaily.get(number);
+  if (!base) return null;
+  return { ...base, seed: `pinned:${number}`, puzzleNumber: number };
+}
+
 // The live Expert generation for a given date seed. Exported so the precompute
 // script produces puzzles byte-identical to what this would generate at runtime.
 export function generateExpertPuzzleForSeed(seed: string): ExpertPuzzle {

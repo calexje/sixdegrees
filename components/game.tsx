@@ -713,7 +713,7 @@ export default function Game({
   return (
     <>
       {showEndModal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+        <div data-testid="end-modal" className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
           <div className="bg-background text-foreground border border-border rounded-lg shadow-2xl p-6 w-full max-w-md">
             <h2 className="text-2xl font-bold mb-1">
               footylinks
@@ -919,11 +919,11 @@ export default function Game({
                   <input
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search..."
+                    aria-label={current.type === "player" ? "Search clubs" : "Search players"}
+                    placeholder={current.type === "player" ? "Search clubs" : "Search players"}
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   />
-
-                  <div className="rounded-lg border border-border divide-y divide-border overflow-hidden max-h-72 overflow-y-auto">
+                  <div data-testid="options" className="rounded-lg border border-border divide-y divide-border overflow-hidden max-h-72 overflow-y-auto">
                     {filteredOptions.map((option, i) => {
                       const label = optionLabel(option);
 
@@ -952,6 +952,7 @@ export default function Game({
                 <h3 className="font-semibold">
                   Your path{" "}
                   <span
+                    data-testid="budget"
                     className={`font-normal ${budgetClass}`}
                   >
                     ({budgetReadout})
@@ -967,7 +968,7 @@ export default function Game({
                 )}
               </div>
 
-              <ol className="space-y-1">
+              <ol data-testid="path" className="space-y-1">
                 {path.map((node, i) => (
                   <li
                     key={i}

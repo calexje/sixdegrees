@@ -4,6 +4,7 @@ import PracticeConfig from "@/components/practice-config";
 import {
   buildChallenge,
   generatePracticePuzzle,
+  getPinnedDailyPuzzle,
   getPuzzle,
 } from "@/lib/puzzle";
 import { getCompetitions, getSeasonBounds } from "@/lib/db";
@@ -13,6 +14,7 @@ export default async function Home({
 }: {
   searchParams: Promise<{
     mode?: string;
+    puzzle?: string;
     from?: string;
     to?: string;
     via?: string;
@@ -108,10 +110,14 @@ export default async function Home({
           seasonTo={seasonTo}
         />
       </>
-    );
-  } else {
+    );  
+  } else {   
     const mode = params.mode === "expert" ? "expert" : "daily";
-    const puzzle = await getPuzzle(mode);
+    const pinned =
+      mode === "daily" && params.puzzle
+        ? getPinnedDailyPuzzle(params.puzzle)
+        : null;
+    const puzzle = pinned ?? (await getPuzzle(mode));
 
     content = (
       <Game
