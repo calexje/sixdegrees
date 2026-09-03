@@ -155,27 +155,9 @@ export function getCompetitions(): string[] {
   ).map((row) => row.competition);
 }
 
-// The Big-5 top flights. A player's count of distinct seasons in these is our
-// prominence proxy: it rewards the long, well-travelled careers people actually
-// recognise, rather than current market value (which favours young hype).
-// EFD1 is the pre-1992 English First Division — the same top flight the Premier
-// League replaced — so it counts here. Omitting it would dock two seasons from
-// every player whose career straddled 1992, biasing the metric against an
-// entire cohort. Note this is deliberately NOT added to the Daily's
-// `competition: "GB1"` gate in lib/puzzle.tsx: that gate is a proxy for "known
-// to a Premier League audience", which pre-1992 football is not, whereas this
-// list measures career substance.
-const TOP_FLIGHT = ["GB1", "EFD1", "ES1", "IT1", "L1", "FR1"];
-
-// Player ids at or above a given obscurity rank, i.e. rank <= maxRank, where
-// rank 1 is the most recognisable. Built by scripts/build-obscurity.ts from two
-// signals — Wikipedia language editions per era cohort, capped by the share of
-// a career spent as a regular — replacing the old count of top-flight seasons,
-// which measured how long a career lasted rather than who has heard of it.
-//
-// Players absent from the table failed qualification and are rank 5, so a
-// maxRank of 5 means "everyone" and the caller should skip gating entirely
-// rather than calling this.
+// Player ids with rank <= maxRank, 1 being the most recognisable. Players
+// absent from the table are rank 5, so maxRank 5 means "everyone" and the
+// caller should skip gating rather than call this. See docs/roadmap.md.
 export function getPlayerIdsByMaxRank(
   maxRank: number
 ): Set<string> {
