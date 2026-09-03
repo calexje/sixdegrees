@@ -8,103 +8,153 @@
       "players": [
         {
           "id": "39832",
-          "name": "Jörg Schmadtke"
+          "name": "Jörg Schmadtke",
+          "position": "Goalkeeper",
+          "minutes": 3480
         },
         {
           "id": "490",
-          "name": "Jürgen Wittmann"
-        },
-        {
-          "id": "95886",
-          "name": "Ralf Loose"
+          "name": "Jürgen Wittmann",
+          "position": "Goalkeeper",
+          "minutes": 360
         },
         {
           "id": "611",
-          "name": "Martin Spanring"
+          "name": "Martin Spanring",
+          "position": "Centre-Back",
+          "minutes": 2340
         },
         {
           "id": "81667",
-          "name": "Rudolf Wojtowicz"
+          "name": "Rudolf Wojtowicz",
+          "position": "Centre-Back",
+          "minutes": 1682
+        },
+        {
+          "id": "95886",
+          "name": "Ralf Loose",
+          "position": "Sweeper",
+          "minutes": 3300
         },
         {
           "id": "99940",
-          "name": "Karl Werner"
-        },
-        {
-          "id": "39162",
-          "name": "Anthony Baffoe"
-        },
-        {
-          "id": "78766",
-          "name": "Michael Schütz"
-        },
-        {
-          "id": "84617",
-          "name": "Per-Egil Ahlsen"
-        },
-        {
-          "id": "106985",
-          "name": "Andreas Kaiser"
-        },
-        {
-          "id": "112158",
-          "name": "Jörg Spillmann"
-        },
-        {
-          "id": "1092",
-          "name": "Antoine Hey"
+          "name": "Karl Werner",
+          "position": "Centre-Back",
+          "minutes": 3247
         },
         {
           "id": "363",
-          "name": "Michael Büskens"
+          "name": "Michael Büskens",
+          "position": "Left Midfield",
+          "minutes": 3560
         },
         {
           "id": "996",
-          "name": "Karsten Hutwelker"
+          "name": "Karsten Hutwelker",
+          "position": "Left Midfield",
+          "minutes": 1159
         },
         {
           "id": "1125",
-          "name": "Jörg Albertz"
+          "name": "Jörg Albertz",
+          "position": "Left Midfield",
+          "minutes": 876
+        },
+        {
+          "id": "39162",
+          "name": "Anthony Baffoe",
+          "position": "Defensive Midfield",
+          "minutes": 3089
+        },
+        {
+          "id": "1092",
+          "name": "Antoine Hey",
+          "position": "Right Midfield",
+          "minutes": 1678
+        },
+        {
+          "id": "78766",
+          "name": "Michael Schütz",
+          "position": "Defensive Midfield",
+          "minutes": 3007
+        },
+        {
+          "id": "84617",
+          "name": "Per-Egil Ahlsen",
+          "position": "Defensive Midfield",
+          "minutes": 922
         },
         {
           "id": "84648",
-          "name": "Dirk Krümpelmann"
+          "name": "Dirk Krümpelmann",
+          "position": "Left Midfield",
+          "minutes": 918
         },
         {
           "id": "84677",
-          "name": "Richard Walz"
+          "name": "Richard Walz",
+          "position": "Attacking Midfield",
+          "minutes": 828
+        },
+        {
+          "id": "106985",
+          "name": "Andreas Kaiser",
+          "position": "Defensive Midfield",
+          "minutes": 2532
         },
         {
           "id": "109194",
-          "name": "Marcelo Carracedo"
+          "name": "Marcelo Carracedo",
+          "position": "Attacking Midfield",
+          "minutes": 1086
         },
         {
-          "id": "1486",
-          "name": "Sven Demandt"
-        },
-        {
-          "id": "3506",
-          "name": "Jørn Andersen"
+          "id": "112158",
+          "name": "Jörg Spillmann",
+          "position": "Midfield",
+          "minutes": 90
         },
         {
           "id": "5190",
-          "name": "Oliver Ebersbach"
-        },
-        {
-          "id": "21665",
-          "name": "Thomas Allofs"
+          "name": "Oliver Ebersbach",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "84636",
-          "name": "Oliver Gensch"
+          "name": "Oliver Gensch",
+          "position": "Attack",
+          "minutes": 20
+        },
+        {
+          "id": "1486",
+          "name": "Sven Demandt",
+          "position": "Centre-Forward",
+          "minutes": 1166
+        },
+        {
+          "id": "3506",
+          "name": "Jørn Andersen",
+          "position": "Centre-Forward",
+          "minutes": 3145
+        },
+        {
+          "id": "21665",
+          "name": "Thomas Allofs",
+          "position": "Centre-Forward",
+          "minutes": 3369
         },
         {
           "id": "84645",
-          "name": "Bernd Klotz"
+          "name": "Bernd Klotz",
+          "position": "Centre-Forward",
+          "minutes": 237
         },
         {
           "id": "108260",
-          "name": "Jörg Schuberth"
+          "name": "Jörg Schuberth",
+          "position": "Attack",
+          "minutes": 98
         }
       ]
     },
@@ -114,95 +164,141 @@
       "players": [
         {
           "id": "14220",
-          "name": "Ralf Eilenberger"
+          "name": "Ralf Eilenberger",
+          "position": "Goalkeeper",
+          "minutes": 2370
         },
         {
           "id": "91305",
-          "name": "Udo Mai"
+          "name": "Udo Mai",
+          "position": "Goalkeeper",
+          "minutes": 1080
         },
         {
           "id": "366",
-          "name": "Stefan Emmerling"
-        },
-        {
-          "id": "95316",
-          "name": "Stephan Kuhn"
-        },
-        {
-          "id": "95317",
-          "name": "Uwe Neuhaus"
-        },
-        {
-          "id": "95318",
-          "name": "Martin Reimann"
-        },
-        {
-          "id": "84556",
-          "name": "Jörg Bach"
-        },
-        {
-          "id": "87865",
-          "name": "Thomas Langbein"
-        },
-        {
-          "id": "95269",
-          "name": "Thomas Siewert"
+          "name": "Stefan Emmerling",
+          "position": "Sweeper",
+          "minutes": 2417
         },
         {
           "id": "2550",
-          "name": "Jörg Sobiech"
+          "name": "Jörg Sobiech",
+          "position": "Left-Back",
+          "minutes": 3331
+        },
+        {
+          "id": "84556",
+          "name": "Jörg Bach",
+          "position": "Centre-Back",
+          "minutes": 2280
+        },
+        {
+          "id": "87865",
+          "name": "Thomas Langbein",
+          "position": "Centre-Back",
+          "minutes": 893
         },
         {
           "id": "92639",
-          "name": "Hans Werner Moser"
+          "name": "Hans Werner Moser",
+          "position": "Right-Back",
+          "minutes": 3194
+        },
+        {
+          "id": "95269",
+          "name": "Thomas Siewert",
+          "position": "Centre-Back",
+          "minutes": 1573
+        },
+        {
+          "id": "95316",
+          "name": "Stephan Kuhn",
+          "position": "Sweeper",
+          "minutes": 1616
+        },
+        {
+          "id": "95317",
+          "name": "Uwe Neuhaus",
+          "position": "Sweeper",
+          "minutes": 3171
+        },
+        {
+          "id": "95318",
+          "name": "Martin Reimann",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "199",
-          "name": "Thorsten Fink"
-        },
-        {
-          "id": "95321",
-          "name": "Heinz Vossen"
-        },
-        {
-          "id": "95363",
-          "name": "Eduard Buckmaier"
+          "name": "Thorsten Fink",
+          "position": "Defensive Midfield",
+          "minutes": 2714
         },
         {
           "id": "84694",
-          "name": "Dirk Kontny"
+          "name": "Dirk Kontny",
+          "position": "Left Midfield",
+          "minutes": 1648
         },
         {
           "id": "87860",
-          "name": "Frank Hartmann"
+          "name": "Frank Hartmann",
+          "position": "Attacking Midfield",
+          "minutes": 3268
         },
         {
-          "id": "85984",
-          "name": "Werner Schmitz"
+          "id": "95321",
+          "name": "Heinz Vossen",
+          "position": "Midfield",
+          "minutes": 206
+        },
+        {
+          "id": "95363",
+          "name": "Eduard Buckmaier",
+          "position": "Right Midfield",
+          "minutes": 764
         },
         {
           "id": "16304",
-          "name": "Souleyman Sané"
+          "name": "Souleyman Sané",
+          "position": "Centre-Forward",
+          "minutes": 3202
         },
         {
           "id": "85977",
-          "name": "Srđan Janković"
+          "name": "Srđan Janković",
+          "position": "Centre-Forward",
+          "minutes": 133
         },
         {
           "id": "85979",
-          "name": "Harald Kohr"
+          "name": "Harald Kohr",
+          "position": "Centre-Forward",
+          "minutes": 513
+        },
+        {
+          "id": "85984",
+          "name": "Werner Schmitz",
+          "position": "Left Winger",
+          "minutes": 89
         },
         {
           "id": "86014",
-          "name": "Ali Ibrahim"
+          "name": "Ali Ibrahim",
+          "position": "Centre-Forward",
+          "minutes": 1006
         },
         {
           "id": "86044",
-          "name": "Uwe Tschiskale"
+          "name": "Uwe Tschiskale",
+          "position": "Centre-Forward",
+          "minutes": 2413
         },
         {
           "id": "95320",
-          "name": "Robert Trenner"
+          "name": "Robert Trenner",
+          "position": "Attack",
+          "minutes": 38
         }
       ]
     },
@@ -212,107 +308,159 @@
       "players": [
         {
           "id": "196",
-          "name": "Bernd Dreher"
+          "name": "Bernd Dreher",
+          "position": "Goalkeeper",
+          "minutes": 3615
         },
         {
           "id": "112162",
-          "name": "Andreas Asche"
-        },
-        {
-          "id": "6503",
-          "name": "Holger Fach"
-        },
-        {
-          "id": "17985",
-          "name": "Rainer Zietsch"
-        },
-        {
-          "id": "112292",
-          "name": "Marco Titgens"
+          "name": "Andreas Asche",
+          "position": "Goalkeeper",
+          "minutes": 45
         },
         {
           "id": "561",
-          "name": "Stephan Paßlack"
-        },
-        {
-          "id": "8200",
-          "name": "Wolfgang Funkel"
-        },
-        {
-          "id": "95339",
-          "name": "Werner Kempkens"
-        },
-        {
-          "id": "112184",
-          "name": "Eckhard Vorholt"
+          "name": "Stephan Paßlack",
+          "position": "Centre-Back",
+          "minutes": 2607
         },
         {
           "id": "84707",
-          "name": "Michael Klein"
+          "name": "Michael Klein",
+          "position": "Left-Back",
+          "minutes": 2461
         },
         {
           "id": "1019",
-          "name": "Torsten Chmielewski"
+          "name": "Torsten Chmielewski",
+          "position": "Left-Back",
+          "minutes": 943
+        },
+        {
+          "id": "6503",
+          "name": "Holger Fach",
+          "position": "Sweeper",
+          "minutes": 3135
+        },
+        {
+          "id": "8200",
+          "name": "Wolfgang Funkel",
+          "position": "Centre-Back",
+          "minutes": 2595
+        },
+        {
+          "id": "17985",
+          "name": "Rainer Zietsch",
+          "position": "Sweeper",
+          "minutes": 1913
         },
         {
           "id": "95048",
-          "name": "Gerhard Kleppinger"
+          "name": "Gerhard Kleppinger",
+          "position": "Right-Back",
+          "minutes": 3413
+        },
+        {
+          "id": "95339",
+          "name": "Werner Kempkens",
+          "position": "Centre-Back",
+          "minutes": 762
+        },
+        {
+          "id": "112184",
+          "name": "Eckhard Vorholt",
+          "position": "Centre-Back",
+          "minutes": 786
+        },
+        {
+          "id": "112292",
+          "name": "Marco Titgens",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "740",
-          "name": "Thomas Puschmann"
-        },
-        {
-          "id": "383",
-          "name": "Horst Steffen"
-        },
-        {
-          "id": "17279",
-          "name": "Darius Scholtysik"
-        },
-        {
-          "id": "21669",
-          "name": "Wolfgang Rolff"
-        },
-        {
-          "id": "108716",
-          "name": "Dietmar Klinger"
-        },
-        {
-          "id": "112163",
-          "name": "Jan Bartram"
+          "name": "Thomas Puschmann",
+          "position": "Defensive Midfield",
+          "minutes": 128
         },
         {
           "id": "5180",
-          "name": "Markus Bayertz"
+          "name": "Markus Bayertz",
+          "position": "Left Midfield",
+          "minutes": 204
         },
         {
           "id": "26595",
-          "name": "Andreas Sassen"
+          "name": "Andreas Sassen",
+          "position": "Attacking Midfield",
+          "minutes": 1408
+        },
+        {
+          "id": "17279",
+          "name": "Darius Scholtysik",
+          "position": "Midfield",
+          "minutes": 21
+        },
+        {
+          "id": "383",
+          "name": "Horst Steffen",
+          "position": "Defensive Midfield",
+          "minutes": 2230
+        },
+        {
+          "id": "21669",
+          "name": "Wolfgang Rolff",
+          "position": "Defensive Midfield",
+          "minutes": 2141
         },
         {
           "id": "84709",
-          "name": "Daniel Timofte"
+          "name": "Daniel Timofte",
+          "position": "Attacking Midfield",
+          "minutes": 1128
+        },
+        {
+          "id": "108716",
+          "name": "Dietmar Klinger",
+          "position": "Defensive Midfield",
+          "minutes": 1775
+        },
+        {
+          "id": "112163",
+          "name": "Jan Bartram",
+          "position": "Central Midfield",
+          "minutes": 2532
         },
         {
           "id": "807",
-          "name": "Marcel Witeczek"
-        },
-        {
-          "id": "31843",
-          "name": "Michael Klauß"
+          "name": "Marcel Witeczek",
+          "position": "Centre-Forward",
+          "minutes": 3269
         },
         {
           "id": "3501",
-          "name": "Stéphane Chapuisat"
+          "name": "Stéphane Chapuisat",
+          "position": "Centre-Forward",
+          "minutes": 807
+        },
+        {
+          "id": "31843",
+          "name": "Michael Klauß",
+          "position": "Centre-Forward",
+          "minutes": 1283
         },
         {
           "id": "78330",
-          "name": "Siegfried Reich"
+          "name": "Siegfried Reich",
+          "position": "Centre-Forward",
+          "minutes": 872
         },
         {
           "id": "100861",
-          "name": "Oliver Grein"
+          "name": "Oliver Grein",
+          "position": "Attack",
+          "minutes": 610
         }
       ]
     },
@@ -322,91 +470,135 @@
       "players": [
         {
           "id": "27727",
-          "name": "Jürgen Rollmann"
+          "name": "Jürgen Rollmann",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "278",
-          "name": "Oliver Reck"
-        },
-        {
-          "id": "13804",
-          "name": "Rune Bratseth"
-        },
-        {
-          "id": "25269",
-          "name": "Gunnar Sauer"
-        },
-        {
-          "id": "1015",
-          "name": "Alexander Malchow"
-        },
-        {
-          "id": "13765",
-          "name": "Uli Borowka"
+          "name": "Oliver Reck",
+          "position": "Goalkeeper",
+          "minutes": 3750
         },
         {
           "id": "539",
-          "name": "Andree Wiedener"
+          "name": "Andree Wiedener",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
-          "id": "22454",
-          "name": "Jonny Otten"
+          "id": "1015",
+          "name": "Alexander Malchow",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "13764",
-          "name": "Manfred Bockenfeld"
+          "name": "Manfred Bockenfeld",
+          "position": "Right-Back",
+          "minutes": 826
+        },
+        {
+          "id": "13765",
+          "name": "Uli Borowka",
+          "position": "Centre-Back",
+          "minutes": 3314
+        },
+        {
+          "id": "13804",
+          "name": "Rune Bratseth",
+          "position": "Sweeper",
+          "minutes": 3433
         },
         {
           "id": "17210",
-          "name": "Thomas Schaaf"
+          "name": "Thomas Schaaf",
+          "position": "Right-Back",
+          "minutes": 821
         },
         {
-          "id": "525",
-          "name": "Dieter Eilts"
+          "id": "22454",
+          "name": "Jonny Otten",
+          "position": "Left-Back",
+          "minutes": 500
         },
         {
-          "id": "22541",
-          "name": "Mirko Votava"
-        },
-        {
-          "id": "32767",
-          "name": "Thomas Wolter"
+          "id": "25269",
+          "name": "Gunnar Sauer",
+          "position": "Sweeper",
+          "minutes": 2250
         },
         {
           "id": "1593",
-          "name": "Oliver Freund"
+          "name": "Oliver Freund",
+          "position": "Left Midfield",
+          "minutes": 3
         },
         {
-          "id": "16053",
-          "name": "Günter Hermann"
+          "id": "32767",
+          "name": "Thomas Wolter",
+          "position": "Right Midfield",
+          "minutes": 2892
+        },
+        {
+          "id": "525",
+          "name": "Dieter Eilts",
+          "position": "Defensive Midfield",
+          "minutes": 3459
         },
         {
           "id": "16052",
-          "name": "Uwe Harttgen"
+          "name": "Uwe Harttgen",
+          "position": "Attacking Midfield",
+          "minutes": 3150
         },
         {
-          "id": "520",
-          "name": "Marco Bode"
+          "id": "16053",
+          "name": "Günter Hermann",
+          "position": "Left Midfield",
+          "minutes": 3141
         },
         {
-          "id": "27959",
-          "name": "Frank Neubarth"
+          "id": "22541",
+          "name": "Mirko Votava",
+          "position": "Defensive Midfield",
+          "minutes": 3456
         },
         {
           "id": "293",
-          "name": "Marinus Bester"
+          "name": "Marinus Bester",
+          "position": "Centre-Forward",
+          "minutes": 87
         },
         {
           "id": "803",
-          "name": "Arie van Lent"
+          "name": "Arie van Lent",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "27959",
+          "name": "Frank Neubarth",
+          "position": "Centre-Forward",
+          "minutes": 1817
+        },
+        {
+          "id": "520",
+          "name": "Marco Bode",
+          "position": "Left Winger",
+          "minutes": 1494
         },
         {
           "id": "9538",
-          "name": "Wynton Rufer"
+          "name": "Wynton Rufer",
+          "position": "Centre-Forward",
+          "minutes": 3561
         },
         {
           "id": "13761",
-          "name": "Klaus Allofs"
+          "name": "Klaus Allofs",
+          "position": "Centre-Forward",
+          "minutes": 3261
         }
       ]
     },
@@ -416,107 +608,159 @@
       "players": [
         {
           "id": "85764",
-          "name": "Andreas Wessels"
+          "name": "Andreas Wessels",
+          "position": "Goalkeeper",
+          "minutes": 3420
         },
         {
           "id": "95243",
-          "name": "Ralf Zumdick"
-        },
-        {
-          "id": "84025",
-          "name": "Thomas Kempe"
+          "name": "Ralf Zumdick",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "1544",
-          "name": "Rob Reekers"
+          "name": "Rob Reekers",
+          "position": "Centre-Back",
+          "minutes": 3240
         },
         {
           "id": "17277",
-          "name": "Andreas Ridder"
+          "name": "Andreas Ridder",
+          "position": "Centre-Back",
+          "minutes": 1642
         },
         {
           "id": "84004",
-          "name": "Olaf Dressel"
+          "name": "Olaf Dressel",
+          "position": "Centre-Back",
+          "minutes": 1704
         },
         {
           "id": "84007",
-          "name": "Christian Herrmann"
-        },
-        {
-          "id": "84035",
-          "name": "Peter Zanter"
-        },
-        {
-          "id": "84692",
-          "name": "Michael Hubner"
+          "name": "Christian Herrmann",
+          "position": "Centre-Back",
+          "minutes": 1588
         },
         {
           "id": "84022",
-          "name": "Patrick Guillou"
+          "name": "Patrick Guillou",
+          "position": "Left-Back",
+          "minutes": 64
         },
         {
-          "id": "81607",
-          "name": "Frank Heinemann"
+          "id": "84025",
+          "name": "Thomas Kempe",
+          "position": "Sweeper",
+          "minutes": 2732
         },
         {
-          "id": "84032",
-          "name": "Michael Rzehaczek"
+          "id": "84035",
+          "name": "Peter Zanter",
+          "position": "Centre-Back",
+          "minutes": 557
         },
         {
-          "id": "84188",
-          "name": "Walter Oswald"
+          "id": "84692",
+          "name": "Michael Hubner",
+          "position": "Centre-Back",
+          "minutes": 214
         },
         {
           "id": "633",
-          "name": "Peter Peschel"
-        },
-        {
-          "id": "121158",
-          "name": "László Farkasházy"
-        },
-        {
-          "id": "270",
-          "name": "Thorsten Legat"
+          "name": "Peter Peschel",
+          "position": "Right Midfield",
+          "minutes": 1372
         },
         {
           "id": "8196",
-          "name": "Uwe Wegmann"
+          "name": "Uwe Wegmann",
+          "position": "Attacking Midfield",
+          "minutes": 2662
+        },
+        {
+          "id": "121158",
+          "name": "László Farkasházy",
+          "position": "Right Midfield",
+          "minutes": 31
+        },
+        {
+          "id": "270",
+          "name": "Thorsten Legat",
+          "position": "Left Midfield",
+          "minutes": 3116
         },
         {
           "id": "72106",
-          "name": "Josef Nehl"
+          "name": "Josef Nehl",
+          "position": "Attacking Midfield",
+          "minutes": 2906
+        },
+        {
+          "id": "81607",
+          "name": "Frank Heinemann",
+          "position": "Defensive Midfield",
+          "minutes": 2778
         },
         {
           "id": "84006",
-          "name": "Dirk Helmig"
+          "name": "Dirk Helmig",
+          "position": "Attacking Midfield",
+          "minutes": 735
+        },
+        {
+          "id": "84032",
+          "name": "Michael Rzehaczek",
+          "position": "Defensive Midfield",
+          "minutes": 2794
+        },
+        {
+          "id": "84188",
+          "name": "Walter Oswald",
+          "position": "Defensive Midfield",
+          "minutes": 2289
         },
         {
           "id": "107428",
-          "name": "Frank Benatelli"
+          "name": "Frank Benatelli",
+          "position": "Attacking Midfield",
+          "minutes": 349
         },
         {
           "id": "113325",
-          "name": "Elard Ostermann"
+          "name": "Elard Ostermann",
+          "position": "Attacking Midfield",
+          "minutes": 198
         },
         {
           "id": "3745",
-          "name": "Rocco Milde"
+          "name": "Rocco Milde",
+          "position": "Centre-Forward",
+          "minutes": 961
         },
         {
           "id": "13769",
-          "name": "Stefan Kohn"
+          "name": "Stefan Kohn",
+          "position": "Centre-Forward",
+          "minutes": 2240
         },
         {
           "id": "81629",
-          "name": "Uwe Leifeld"
+          "name": "Uwe Leifeld",
+          "position": "Centre-Forward",
+          "minutes": 268
         },
         {
           "id": "84199",
-          "name": "Thomas Epp"
+          "name": "Thomas Epp",
+          "position": "Centre-Forward",
+          "minutes": 594
         },
         {
           "id": "85446",
-          "name": "Adam Woitynek"
+          "name": "Adam Woitynek",
+          "position": "Attack",
+          "minutes": 79
         }
       ]
     },
@@ -526,99 +770,147 @@
       "players": [
         {
           "id": "615",
-          "name": "Eberhard Trautner"
+          "name": "Eberhard Trautner",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "73587",
-          "name": "Eike Immel"
-        },
-        {
-          "id": "77010",
-          "name": "Matthias Sammer"
-        },
-        {
-          "id": "97181",
-          "name": "Nils Schmäler"
+          "name": "Eike Immel",
+          "position": "Goalkeeper",
+          "minutes": 3450
         },
         {
           "id": "28",
-          "name": "Jens Keller"
+          "name": "Jens Keller",
+          "position": "Centre-Back",
+          "minutes": 45
         },
         {
           "id": "452",
-          "name": "Uwe Schneider"
+          "name": "Uwe Schneider",
+          "position": "Centre-Back",
+          "minutes": 1361
         },
         {
           "id": "486",
-          "name": "Alexander Strehmel"
+          "name": "Alexander Strehmel",
+          "position": "Centre-Back",
+          "minutes": 1032
         },
         {
           "id": "14833",
-          "name": "Günther Schäfer"
+          "name": "Günther Schäfer",
+          "position": "Centre-Back",
+          "minutes": 2235
         },
         {
-          "id": "79561",
-          "name": "Guido Buchwald"
+          "id": "77010",
+          "name": "Matthias Sammer",
+          "position": "Sweeper",
+          "minutes": 2983
         },
         {
           "id": "77398",
-          "name": "Michael Frontzeck"
+          "name": "Michael Frontzeck",
+          "position": "Left-Back",
+          "minutes": 3012
         },
         {
-          "id": "355",
-          "name": "Eyjólfur Sverrisson"
+          "id": "79561",
+          "name": "Guido Buchwald",
+          "position": "Centre-Back",
+          "minutes": 2251
         },
         {
-          "id": "84638",
-          "name": "Jürgen Hartmann"
-        },
-        {
-          "id": "84736",
-          "name": "Manfred Schnalke"
-        },
-        {
-          "id": "84619",
-          "name": "Karl Allgöwer"
-        },
-        {
-          "id": "84624",
-          "name": "José Basualdo"
-        },
-        {
-          "id": "3",
-          "name": "Andreas Buck"
+          "id": "97181",
+          "name": "Nils Schmäler",
+          "position": "Sweeper",
+          "minutes": 1440
         },
         {
           "id": "949",
-          "name": "Jürgen Kramny"
-        },
-        {
-          "id": "474",
-          "name": "Ludwig Kögl"
+          "name": "Jürgen Kramny",
+          "position": "Right Midfield",
+          "minutes": 86
         },
         {
           "id": "9320",
-          "name": "Maurizio Gaudino"
+          "name": "Maurizio Gaudino",
+          "position": "Attacking Midfield",
+          "minutes": 1238
         },
         {
           "id": "21659",
-          "name": "Axel Jüptner"
+          "name": "Axel Jüptner",
+          "position": "Attacking Midfield",
+          "minutes": 409
+        },
+        {
+          "id": "3",
+          "name": "Andreas Buck",
+          "position": "Right Midfield",
+          "minutes": 1992
+        },
+        {
+          "id": "355",
+          "name": "Eyjólfur Sverrisson",
+          "position": "Defensive Midfield",
+          "minutes": 1700
+        },
+        {
+          "id": "474",
+          "name": "Ludwig Kögl",
+          "position": "Left Midfield",
+          "minutes": 2235
+        },
+        {
+          "id": "84619",
+          "name": "Karl Allgöwer",
+          "position": "Central Midfield",
+          "minutes": 3253
+        },
+        {
+          "id": "84624",
+          "name": "José Basualdo",
+          "position": "Central Midfield",
+          "minutes": 1293
+        },
+        {
+          "id": "84638",
+          "name": "Jürgen Hartmann",
+          "position": "Defensive Midfield",
+          "minutes": 3259
+        },
+        {
+          "id": "84736",
+          "name": "Manfred Schnalke",
+          "position": "Defensive Midfield",
+          "minutes": 1334
         },
         {
           "id": "12406",
-          "name": "Fritz Walter"
+          "name": "Fritz Walter",
+          "position": "Centre-Forward",
+          "minutes": 2326
         },
         {
           "id": "22789",
-          "name": "Olaf Schmäler"
+          "name": "Olaf Schmäler",
+          "position": "Attack",
+          "minutes": 148
         },
         {
           "id": "84666",
-          "name": "Peter Rasmussen"
+          "name": "Peter Rasmussen",
+          "position": "Centre-Forward",
+          "minutes": 146
         },
         {
           "id": "85592",
-          "name": "Manfred Kastl"
+          "name": "Manfred Kastl",
+          "position": "Centre-Forward",
+          "minutes": 670
         }
       ]
     },
@@ -628,111 +920,165 @@
       "players": [
         {
           "id": "206",
-          "name": "Oliver Kahn"
+          "name": "Oliver Kahn",
+          "position": "Goalkeeper",
+          "minutes": 2025
         },
         {
           "id": "81726",
-          "name": "Alexander Famulla"
+          "name": "Alexander Famulla",
+          "position": "Goalkeeper",
+          "minutes": 1605
         },
         {
           "id": "11043",
-          "name": "Michael Wittwer"
+          "name": "Michael Wittwer",
+          "position": "Sweeper",
+          "minutes": 814
         },
         {
           "id": "81722",
-          "name": "Srecko Bogdan"
-        },
-        {
-          "id": "81734",
-          "name": "Jenner Külbag"
-        },
-        {
-          "id": "81741",
-          "name": "Marc Rapp"
+          "name": "Srecko Bogdan",
+          "position": "Sweeper",
+          "minutes": 3540
         },
         {
           "id": "1053",
-          "name": "Oliver Kreuzer"
+          "name": "Oliver Kreuzer",
+          "position": "Centre-Back",
+          "minutes": 3450
         },
         {
           "id": "81524",
-          "name": "Ralph Bany"
+          "name": "Ralph Bany",
+          "position": "Centre-Back",
+          "minutes": 2077
+        },
+        {
+          "id": "81734",
+          "name": "Jenner Külbag",
+          "position": "Defender",
+          "minutes": 62
+        },
+        {
+          "id": "81741",
+          "name": "Marc Rapp",
+          "position": "Defender",
+          "minutes": 794
         },
         {
           "id": "81751",
-          "name": "Thomas Süss"
-        },
-        {
-          "id": "81733",
-          "name": "Frank Kastner"
-        },
-        {
-          "id": "81736",
-          "name": "Michael Merx"
-        },
-        {
-          "id": "81744",
-          "name": "Lars Schmidt"
-        },
-        {
-          "id": "81752",
-          "name": "Wolfgang Trapp"
-        },
-        {
-          "id": "81753",
-          "name": "Oliver Westerbeek"
-        },
-        {
-          "id": "1494",
-          "name": "Rainer Schütterle"
-        },
-        {
-          "id": "79568",
-          "name": "Gunther Metz"
-        },
-        {
-          "id": "628",
-          "name": "Matthias Lust"
-        },
-        {
-          "id": "81746",
-          "name": "Geovani Silva"
+          "name": "Thomas Süss",
+          "position": "Centre-Back",
+          "minutes": 1920
         },
         {
           "id": "217",
-          "name": "Mehmet Scholl"
+          "name": "Mehmet Scholl",
+          "position": "Attacking Midfield",
+          "minutes": 1788
+        },
+        {
+          "id": "628",
+          "name": "Matthias Lust",
+          "position": "Left Midfield",
+          "minutes": 399
+        },
+        {
+          "id": "81746",
+          "name": "Geovani Silva",
+          "position": "Attacking Midfield",
+          "minutes": 1121
+        },
+        {
+          "id": "81733",
+          "name": "Frank Kastner",
+          "position": "Defensive Midfield",
+          "minutes": 156
+        },
+        {
+          "id": "1494",
+          "name": "Rainer Schütterle",
+          "position": "Right Midfield",
+          "minutes": 3251
         },
         {
           "id": "78758",
-          "name": "Michael Harforth"
+          "name": "Michael Harforth",
+          "position": "Attacking Midfield",
+          "minutes": 2814
+        },
+        {
+          "id": "79568",
+          "name": "Gunther Metz",
+          "position": "Right Midfield",
+          "minutes": 2077
+        },
+        {
+          "id": "81736",
+          "name": "Michael Merx",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "81744",
+          "name": "Lars Schmidt",
+          "position": "Defensive Midfield",
+          "minutes": 2823
         },
         {
           "id": "81749",
-          "name": "Guido Streichsbier"
+          "name": "Guido Streichsbier",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "81752",
+          "name": "Wolfgang Trapp",
+          "position": "Defensive Midfield",
+          "minutes": 375
+        },
+        {
+          "id": "81753",
+          "name": "Oliver Westerbeek",
+          "position": "Defensive Midfield",
+          "minutes": 629
         },
         {
           "id": "81268",
-          "name": "Eberhard Carl"
+          "name": "Eberhard Carl",
+          "position": "Centre-Forward",
+          "minutes": 1238
         },
         {
           "id": "81728",
-          "name": "Arno Glesius"
+          "name": "Arno Glesius",
+          "position": "Centre-Forward",
+          "minutes": 1836
         },
         {
           "id": "81730",
-          "name": "Helmut Hermann"
+          "name": "Helmut Hermann",
+          "position": "Centre-Forward",
+          "minutes": 2391
         },
         {
           "id": "81735",
-          "name": "Stefan Mees"
+          "name": "Stefan Mees",
+          "position": "Attack",
+          "minutes": 132
         },
         {
           "id": "81742",
-          "name": "Peter Reichert"
+          "name": "Peter Reichert",
+          "position": "Centre-Forward",
+          "minutes": 1900
         },
         {
           "id": "81747",
-          "name": "Daniel Simmes"
+          "name": "Daniel Simmes",
+          "position": "Centre-Forward",
+          "minutes": 687
         }
       ]
     },
@@ -742,107 +1088,159 @@
       "players": [
         {
           "id": "959",
-          "name": "Marco Sejna"
+          "name": "Marco Sejna",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "25258",
-          "name": "Walter Junghans"
+          "name": "Walter Junghans",
+          "position": "Goalkeeper",
+          "minutes": 2700
         },
         {
           "id": "84087",
-          "name": "Reinhard Mager"
-        },
-        {
-          "id": "25255",
-          "name": "Dirk Greiser"
-        },
-        {
-          "id": "25257",
-          "name": "Robert Holzer"
+          "name": "Reinhard Mager",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "744",
-          "name": "Daniel Scheinhardt"
+          "name": "Daniel Scheinhardt",
+          "position": "Centre-Back",
+          "minutes": 2136
         },
         {
-          "id": "25430",
-          "name": "Jan Halvor Halvorsen"
+          "id": "25255",
+          "name": "Dirk Greiser",
+          "position": "Sweeper",
+          "minutes": 1348
+        },
+        {
+          "id": "25257",
+          "name": "Robert Holzer",
+          "position": "Sweeper",
+          "minutes": 2385
         },
         {
           "id": "25340",
-          "name": "Michael Jakobs"
+          "name": "Michael Jakobs",
+          "position": "Left-Back",
+          "minutes": 1104
         },
         {
-          "id": "25347",
-          "name": "Norbert Schlegel"
-        },
-        {
-          "id": "25409",
-          "name": "Thorsten Gowitzke"
-        },
-        {
-          "id": "25410",
-          "name": "Frank Mischke"
-        },
-        {
-          "id": "25354",
-          "name": "Thomas Zetzmann"
-        },
-        {
-          "id": "25274",
-          "name": "André Winkhold"
+          "id": "25430",
+          "name": "Jan Halvor Halvorsen",
+          "position": "Centre-Back",
+          "minutes": 2645
         },
         {
           "id": "25343",
-          "name": "Wolfgang Patzke"
+          "name": "Wolfgang Patzke",
+          "position": "Left Midfield",
+          "minutes": 578
+        },
+        {
+          "id": "25354",
+          "name": "Thomas Zetzmann",
+          "position": "Right Midfield",
+          "minutes": 225
         },
         {
           "id": "25355",
-          "name": "Martin Zimmer"
+          "name": "Martin Zimmer",
+          "position": "Left Midfield",
+          "minutes": 60
         },
         {
           "id": "927",
-          "name": "Marco Zernicke"
-        },
-        {
-          "id": "25330",
-          "name": "Armin Görtz"
+          "name": "Marco Zernicke",
+          "position": "Left Midfield",
+          "minutes": 1447
         },
         {
           "id": "25256",
-          "name": "Theo Gries"
+          "name": "Theo Gries",
+          "position": "Attacking Midfield",
+          "minutes": 2415
         },
         {
           "id": "25266",
-          "name": "Uwe Rahn"
+          "name": "Uwe Rahn",
+          "position": "Attacking Midfield",
+          "minutes": 1595
+        },
+        {
+          "id": "25274",
+          "name": "André Winkhold",
+          "position": "Right Midfield",
+          "minutes": 1470
         },
         {
           "id": "25317",
-          "name": "Dragutin Celic"
+          "name": "Dragutin Celic",
+          "position": "Attacking Midfield",
+          "minutes": 771
+        },
+        {
+          "id": "25330",
+          "name": "Armin Görtz",
+          "position": "Left Midfield",
+          "minutes": 2505
+        },
+        {
+          "id": "25347",
+          "name": "Norbert Schlegel",
+          "position": "Defensive Midfield",
+          "minutes": 2325
+        },
+        {
+          "id": "25409",
+          "name": "Thorsten Gowitzke",
+          "position": "Midfield",
+          "minutes": 1452
+        },
+        {
+          "id": "25410",
+          "name": "Frank Mischke",
+          "position": "Midfield",
+          "minutes": 804
         },
         {
           "id": "5263",
-          "name": "Mike Lünsmann"
+          "name": "Mike Lünsmann",
+          "position": "Centre-Forward",
+          "minutes": 1972
         },
         {
           "id": "9345",
-          "name": "Sven Kretschmer"
+          "name": "Sven Kretschmer",
+          "position": "Centre-Forward",
+          "minutes": 1471
         },
         {
           "id": "25327",
-          "name": "Mark Farrington"
+          "name": "Mark Farrington",
+          "position": "Attack",
+          "minutes": 513
         },
         {
           "id": "25353",
-          "name": "René Unglaube"
+          "name": "René Unglaube",
+          "position": "Centre-Forward",
+          "minutes": 1603
         },
         {
           "id": "6607",
-          "name": "Axel Kruse"
+          "name": "Axel Kruse",
+          "position": "Centre-Forward",
+          "minutes": 1110
         },
         {
           "id": "25336",
-          "name": "Fred Klaus"
+          "name": "Fred Klaus",
+          "position": "Centre-Forward",
+          "minutes": 371
         }
       ]
     },
@@ -851,100 +1249,148 @@
       "name": "Hamburger SV",
       "players": [
         {
-          "id": "17287",
-          "name": "Nils Bahr"
-        },
-        {
           "id": "403",
-          "name": "Richard Golz"
+          "name": "Richard Golz",
+          "position": "Goalkeeper",
+          "minutes": 3360
         },
         {
-          "id": "25268",
-          "name": "Frank Rohde"
+          "id": "17287",
+          "name": "Nils Bahr",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "38551",
-          "name": "Torsten Fröhling"
+          "name": "Torsten Fröhling",
+          "position": "Centre-Back",
+          "minutes": 10
         },
         {
           "id": "1528",
-          "name": "Dietmar Beiersdorfer"
+          "name": "Dietmar Beiersdorfer",
+          "position": "Centre-Back",
+          "minutes": 3360
         },
         {
           "id": "25261",
-          "name": "Carsten Kober"
+          "name": "Carsten Kober",
+          "position": "Centre-Back",
+          "minutes": 3107
         },
         {
-          "id": "85495",
-          "name": "Michael Schröder"
+          "id": "25268",
+          "name": "Frank Rohde",
+          "position": "Sweeper",
+          "minutes": 3267
         },
         {
           "id": "72271",
-          "name": "Manfred Kaltz"
+          "name": "Manfred Kaltz",
+          "position": "Right-Back",
+          "minutes": 919
         },
         {
-          "id": "652",
-          "name": "Detlev Dammeier"
-        },
-        {
-          "id": "647",
-          "name": "Holger Ballwanz"
-        },
-        {
-          "id": "991",
-          "name": "Thomas Stratos"
-        },
-        {
-          "id": "84641",
-          "name": "Sascha Jusufi"
-        },
-        {
-          "id": "87903",
-          "name": "Waldemar Matysik"
-        },
-        {
-          "id": "92626",
-          "name": "Thorsten Kohn"
-        },
-        {
-          "id": "323",
-          "name": "Harald Spörl"
+          "id": "85495",
+          "name": "Michael Schröder",
+          "position": "Centre-Back",
+          "minutes": 172
         },
         {
           "id": "140",
-          "name": "Jörg Bode"
+          "name": "Jörg Bode",
+          "position": "Right Midfield",
+          "minutes": 359
         },
         {
-          "id": "12454",
-          "name": "Armin Eck"
+          "id": "323",
+          "name": "Harald Spörl",
+          "position": "Right Midfield",
+          "minutes": 2497
+        },
+        {
+          "id": "652",
+          "name": "Detlev Dammeier",
+          "position": "Defensive Midfield",
+          "minutes": 878
         },
         {
           "id": "10682",
-          "name": "Andree Fincke"
+          "name": "Andree Fincke",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "647",
+          "name": "Holger Ballwanz",
+          "position": "Defensive Midfield",
+          "minutes": 1297
+        },
+        {
+          "id": "991",
+          "name": "Thomas Stratos",
+          "position": "Defensive Midfield",
+          "minutes": 1581
         },
         {
           "id": "1455",
-          "name": "Thomas Doll"
+          "name": "Thomas Doll",
+          "position": "Attacking Midfield",
+          "minutes": 3293
+        },
+        {
+          "id": "12454",
+          "name": "Armin Eck",
+          "position": "Left Midfield",
+          "minutes": 3150
         },
         {
           "id": "14838",
-          "name": "Thomas von Heesen"
+          "name": "Thomas von Heesen",
+          "position": "Attacking Midfield",
+          "minutes": 2192
+        },
+        {
+          "id": "84641",
+          "name": "Sascha Jusufi",
+          "position": "Defensive Midfield",
+          "minutes": 604
+        },
+        {
+          "id": "87903",
+          "name": "Waldemar Matysik",
+          "position": "Defensive Midfield",
+          "minutes": 3264
         },
         {
           "id": "92612",
-          "name": "Jens Bochert"
+          "name": "Jens Bochert",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "92626",
+          "name": "Thorsten Kohn",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "87899",
-          "name": "Jan Furtok"
+          "name": "Jan Furtok",
+          "position": "Centre-Forward",
+          "minutes": 2799
         },
         {
           "id": "11129",
-          "name": "Michael Koch"
+          "name": "Michael Koch",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "63267",
-          "name": "Nando"
+          "name": "Nando",
+          "position": "Centre-Forward",
+          "minutes": 1751
         }
       ]
     },
@@ -954,111 +1400,165 @@
       "players": [
         {
           "id": "8199",
-          "name": "Gerry Ehrmann"
+          "name": "Gerry Ehrmann",
+          "position": "Goalkeeper",
+          "minutes": 3463
         },
         {
           "id": "107102",
-          "name": "Michael Serr"
-        },
-        {
-          "id": "8193",
-          "name": "Miroslav Kadlec"
-        },
-        {
-          "id": "22781",
-          "name": "Elvis Hajradinovic"
-        },
-        {
-          "id": "508",
-          "name": "Joachim Stadler"
-        },
-        {
-          "id": "8209",
-          "name": "Roger Lutz"
-        },
-        {
-          "id": "17951",
-          "name": "Kay Friedmann"
-        },
-        {
-          "id": "78742",
-          "name": "Reinhard Stumpf"
-        },
-        {
-          "id": "84552",
-          "name": "Thomas Dooley"
+          "name": "Michael Serr",
+          "position": "Goalkeeper",
+          "minutes": 226
         },
         {
           "id": "17785",
-          "name": "Markus Kranz"
+          "name": "Markus Kranz",
+          "position": "Left-Back",
+          "minutes": 2454
         },
         {
-          "id": "20",
-          "name": "Axel Roos"
+          "id": "508",
+          "name": "Joachim Stadler",
+          "position": "Centre-Back",
+          "minutes": 623
+        },
+        {
+          "id": "8193",
+          "name": "Miroslav Kadlec",
+          "position": "Sweeper",
+          "minutes": 2788
+        },
+        {
+          "id": "8209",
+          "name": "Roger Lutz",
+          "position": "Centre-Back",
+          "minutes": 746
+        },
+        {
+          "id": "17951",
+          "name": "Kay Friedmann",
+          "position": "Centre-Back",
+          "minutes": 1426
+        },
+        {
+          "id": "22781",
+          "name": "Elvis Hajradinovic",
+          "position": "Defender",
+          "minutes": null
+        },
+        {
+          "id": "78742",
+          "name": "Reinhard Stumpf",
+          "position": "Centre-Back",
+          "minutes": 1662
+        },
+        {
+          "id": "84552",
+          "name": "Thomas Dooley",
+          "position": "Centre-Back",
+          "minutes": 2573
         },
         {
           "id": "469",
-          "name": "Marco Haber"
-        },
-        {
-          "id": "25267",
-          "name": "Thomas Richter"
-        },
-        {
-          "id": "84667",
-          "name": "Thomas Renner"
-        },
-        {
-          "id": "851836",
-          "name": "Christian Wieczek"
+          "name": "Marco Haber",
+          "position": "Defensive Midfield",
+          "minutes": 2419
         },
         {
           "id": "3105",
-          "name": "Bjarne Goldbaek"
+          "name": "Bjarne Goldbaek",
+          "position": "Central Midfield",
+          "minutes": 1844
         },
         {
-          "id": "81652",
-          "name": "Uwe Scherr"
+          "id": "851836",
+          "name": "Christian Wieczek",
+          "position": "Midfield",
+          "minutes": null
         },
         {
-          "id": "106441",
-          "name": "Frank Lelle"
+          "id": "20",
+          "name": "Axel Roos",
+          "position": "Defensive Midfield",
+          "minutes": 1156
         },
         {
           "id": "17932",
-          "name": "Markus Schupp"
+          "name": "Markus Schupp",
+          "position": "Attacking Midfield",
+          "minutes": 2006
+        },
+        {
+          "id": "25267",
+          "name": "Thomas Richter",
+          "position": "Defensive Midfield",
+          "minutes": 816
+        },
+        {
+          "id": "81652",
+          "name": "Uwe Scherr",
+          "position": "Right Midfield",
+          "minutes": 2856
+        },
+        {
+          "id": "84667",
+          "name": "Thomas Renner",
+          "position": "Midfield",
+          "minutes": 5
         },
         {
           "id": "96641",
-          "name": "Guido Hoffmann"
+          "name": "Guido Hoffmann",
+          "position": "Attacking Midfield",
+          "minutes": 2531
+        },
+        {
+          "id": "106441",
+          "name": "Frank Lelle",
+          "position": "Left Midfield",
+          "minutes": 1220
         },
         {
           "id": "112203",
-          "name": "Rainer Ernst"
+          "name": "Rainer Ernst",
+          "position": "Attacking Midfield",
+          "minutes": 1496
         },
         {
           "id": "112214",
-          "name": "Kai Krämer"
+          "name": "Kai Krämer",
+          "position": "Attacking Midfield",
+          "minutes": 28
         },
         {
           "id": "112236",
-          "name": "Robby Zimmermann"
+          "name": "Robby Zimmermann",
+          "position": "Attacking Midfield",
+          "minutes": 14
         },
         {
           "id": "149",
-          "name": "Bruno Labbadia"
+          "name": "Bruno Labbadia",
+          "position": "Centre-Forward",
+          "minutes": 1817
         },
         {
           "id": "572",
-          "name": "Bernhard Winkler"
+          "name": "Bernhard Winkler",
+          "position": "Centre-Forward",
+          "minutes": 345
         },
         {
           "id": "8194",
-          "name": "Stefan Kuntz"
+          "name": "Stefan Kuntz",
+          "position": "Centre-Forward",
+          "minutes": 2790
         },
         {
           "id": "67751",
-          "name": "Demir Hotic"
+          "name": "Demir Hotic",
+          "position": "Centre-Forward",
+          "minutes": 3035
         }
       ]
     },
@@ -1068,103 +1568,153 @@
       "players": [
         {
           "id": "38549",
-          "name": "Klaus Thomforde"
+          "name": "Klaus Thomforde",
+          "position": "Goalkeeper",
+          "minutes": 2202
         },
         {
           "id": "107166",
-          "name": "Volker Ippig"
+          "name": "Volker Ippig",
+          "position": "Goalkeeper",
+          "minutes": 1308
         },
         {
           "id": "112186",
-          "name": "Jan Wessel"
-        },
-        {
-          "id": "10896",
-          "name": "Dirk Dammann"
-        },
-        {
-          "id": "106965",
-          "name": "Jan Kocian"
-        },
-        {
-          "id": "111626",
-          "name": "Klaus Ulbricht"
+          "name": "Jan Wessel",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "739",
-          "name": "André Trulsen"
+          "name": "André Trulsen",
+          "position": "Centre-Back",
+          "minutes": 3330
+        },
+        {
+          "id": "10896",
+          "name": "Dirk Dammann",
+          "position": "Sweeper",
+          "minutes": 2370
         },
         {
           "id": "38550",
-          "name": "Bernhard Olck"
-        },
-        {
-          "id": "77514",
-          "name": "Dieter Schlindwein"
-        },
-        {
-          "id": "85565",
-          "name": "Jens Duve"
+          "name": "Bernhard Olck",
+          "position": "Centre-Back",
+          "minutes": 1764
         },
         {
           "id": "310",
-          "name": "Bernd Hollerbach"
+          "name": "Bernd Hollerbach",
+          "position": "Left-Back",
+          "minutes": 1042
         },
         {
-          "id": "99932",
-          "name": "Jürgen Gronau"
+          "id": "77514",
+          "name": "Dieter Schlindwein",
+          "position": "Centre-Back",
+          "minutes": 2981
         },
         {
-          "id": "120585",
-          "name": "Thomas Goch"
+          "id": "85565",
+          "name": "Jens Duve",
+          "position": "Centre-Back",
+          "minutes": 119
+        },
+        {
+          "id": "106965",
+          "name": "Jan Kocian",
+          "position": "Sweeper",
+          "minutes": 2787
+        },
+        {
+          "id": "111626",
+          "name": "Klaus Ulbricht",
+          "position": "Sweeper",
+          "minutes": 909
         },
         {
           "id": "179678",
-          "name": "Morten-Fibak Jensen"
-        },
-        {
-          "id": "107158",
-          "name": "Michael Dahms"
-        },
-        {
-          "id": "84673",
-          "name": "Ralf Sievers"
-        },
-        {
-          "id": "83677",
-          "name": "Dirk Zander"
-        },
-        {
-          "id": "111622",
-          "name": "Klaus Ottens"
-        },
-        {
-          "id": "112187",
-          "name": "Frank Wolf"
+          "name": "Morten-Fibak Jensen",
+          "position": "Midfield",
+          "minutes": 90
         },
         {
           "id": "6703",
-          "name": "Peter Knäbel"
+          "name": "Peter Knäbel",
+          "position": "Attacking Midfield",
+          "minutes": 1631
         },
         {
           "id": "17953",
-          "name": "André Golke"
+          "name": "André Golke",
+          "position": "Attacking Midfield",
+          "minutes": 3412
+        },
+        {
+          "id": "83677",
+          "name": "Dirk Zander",
+          "position": "Left Midfield",
+          "minutes": 1929
+        },
+        {
+          "id": "84673",
+          "name": "Ralf Sievers",
+          "position": "Right Midfield",
+          "minutes": 2550
+        },
+        {
+          "id": "99932",
+          "name": "Jürgen Gronau",
+          "position": "Defensive Midfield",
+          "minutes": 2499
+        },
+        {
+          "id": "107158",
+          "name": "Michael Dahms",
+          "position": "Central Midfield",
+          "minutes": 1568
+        },
+        {
+          "id": "111622",
+          "name": "Klaus Ottens",
+          "position": "Left Midfield",
+          "minutes": 1410
+        },
+        {
+          "id": "112187",
+          "name": "Frank Wolf",
+          "position": "Left Midfield",
+          "minutes": 1608
+        },
+        {
+          "id": "120585",
+          "name": "Thomas Goch",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "10203",
-          "name": "Jörn Großkopf"
+          "name": "Jörn Großkopf",
+          "position": "Second Striker",
+          "minutes": 38
         },
         {
           "id": "30537",
-          "name": "Leonardo Caetano Manzi"
+          "name": "Leonardo Caetano Manzi",
+          "position": "Centre-Forward",
+          "minutes": 706
         },
         {
           "id": "78713",
-          "name": "Waldemar Steubing"
+          "name": "Waldemar Steubing",
+          "position": "Centre-Forward",
+          "minutes": 898
         },
         {
           "id": "85426",
-          "name": "Ivo Knoflicek"
+          "name": "Ivo Knoflicek",
+          "position": "Centre-Forward",
+          "minutes": 1264
         }
       ]
     },
@@ -1174,115 +1724,171 @@
       "players": [
         {
           "id": "216",
-          "name": "Sven Scheuer"
-        },
-        {
-          "id": "84550",
-          "name": "Raimond Aumann"
+          "name": "Sven Scheuer",
+          "position": "Goalkeeper",
+          "minutes": 270
         },
         {
           "id": "91297",
-          "name": "Gerald Hillringhaus"
+          "name": "Gerald Hillringhaus",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "85968",
-          "name": "Klaus Augenthaler"
-        },
-        {
-          "id": "40495",
-          "name": "Ulf Kliche"
-        },
-        {
-          "id": "119",
-          "name": "Jürgen Kohler"
+          "id": "84550",
+          "name": "Raimond Aumann",
+          "position": "Goalkeeper",
+          "minutes": 3690
         },
         {
           "id": "192",
-          "name": "Markus Babbel"
+          "name": "Markus Babbel",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "84618",
-          "name": "Rainer Aigner"
+          "id": "40495",
+          "name": "Ulf Kliche",
+          "position": "Centre-Back",
+          "minutes": 1
         },
         {
           "id": "1119",
-          "name": "Markus Münch"
+          "name": "Markus Münch",
+          "position": "Left-Back",
+          "minutes": 110
         },
         {
-          "id": "81644",
-          "name": "Hans Pflügler"
+          "id": "119",
+          "name": "Jürgen Kohler",
+          "position": "Centre-Back",
+          "minutes": 3419
         },
         {
           "id": "24953",
-          "name": "Roland Grahammer"
+          "name": "Roland Grahammer",
+          "position": "Right-Back",
+          "minutes": 2410
         },
         {
-          "id": "221",
-          "name": "Thomas Strunz"
+          "id": "81644",
+          "name": "Hans Pflügler",
+          "position": "Left-Back",
+          "minutes": 3398
         },
         {
-          "id": "6571",
-          "name": "Manfred Schwabl"
+          "id": "84618",
+          "name": "Rainer Aigner",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
-          "id": "6730",
-          "name": "Michael Hecht"
-        },
-        {
-          "id": "67792",
-          "name": "Thorsten Wörsdörfer"
-        },
-        {
-          "id": "282",
-          "name": "Olaf Thon"
-        },
-        {
-          "id": "17945",
-          "name": "Hans Dorfner"
-        },
-        {
-          "id": "31829",
-          "name": "Allan Nielsen"
+          "id": "85968",
+          "name": "Klaus Augenthaler",
+          "position": "Sweeper",
+          "minutes": 3097
         },
         {
           "id": "155",
-          "name": "Michael Sternkopf"
-        },
-        {
-          "id": "130",
-          "name": "Stefan Reuter"
-        },
-        {
-          "id": "474",
-          "name": "Ludwig Kögl"
+          "name": "Michael Sternkopf",
+          "position": "Right Midfield",
+          "minutes": 439
         },
         {
           "id": "916",
-          "name": "Christian Ziege"
+          "name": "Christian Ziege",
+          "position": "Left Midfield",
+          "minutes": 528
+        },
+        {
+          "id": "31829",
+          "name": "Allan Nielsen",
+          "position": "Central Midfield",
+          "minutes": 6
+        },
+        {
+          "id": "474",
+          "name": "Ludwig Kögl",
+          "position": "Left Midfield",
+          "minutes": 33
+        },
+        {
+          "id": "130",
+          "name": "Stefan Reuter",
+          "position": "Right Midfield",
+          "minutes": 3583
         },
         {
           "id": "197",
-          "name": "Stefan Effenberg"
+          "name": "Stefan Effenberg",
+          "position": "Attacking Midfield",
+          "minutes": 3483
+        },
+        {
+          "id": "221",
+          "name": "Thomas Strunz",
+          "position": "Defensive Midfield",
+          "minutes": 2570
+        },
+        {
+          "id": "282",
+          "name": "Olaf Thon",
+          "position": "Central Midfield",
+          "minutes": 2291
         },
         {
           "id": "1005",
-          "name": "Manfred Bender"
+          "name": "Manfred Bender",
+          "position": "Attacking Midfield",
+          "minutes": 2862
         },
         {
-          "id": "39667",
-          "name": "Brian Laudrup"
+          "id": "6571",
+          "name": "Manfred Schwabl",
+          "position": "Defensive Midfield",
+          "minutes": 1902
+        },
+        {
+          "id": "6730",
+          "name": "Michael Hecht",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "17945",
+          "name": "Hans Dorfner",
+          "position": "Central Midfield",
+          "minutes": 1446
+        },
+        {
+          "id": "67792",
+          "name": "Thorsten Wörsdörfer",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "28780",
-          "name": "Alan McInally"
+          "name": "Alan McInally",
+          "position": "Centre-Forward",
+          "minutes": 334
+        },
+        {
+          "id": "39667",
+          "name": "Brian Laudrup",
+          "position": "Right Winger",
+          "minutes": 3399
         },
         {
           "id": "84555",
-          "name": "Roland Wohlfarth"
+          "name": "Roland Wohlfarth",
+          "position": "Centre-Forward",
+          "minutes": 3324
         },
         {
           "id": "84658",
-          "name": "Radmilo Mihajlovic"
+          "name": "Radmilo Mihajlovic",
+          "position": "Centre-Forward",
+          "minutes": 648
         }
       ]
     },
@@ -1292,119 +1898,177 @@
       "players": [
         {
           "id": "594",
-          "name": "Thomas Ernst"
+          "name": "Thomas Ernst",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "14835",
-          "name": "Ulrich Stein"
-        },
-        {
-          "id": "1523",
-          "name": "Manfred Binz"
-        },
-        {
-          "id": "97898",
-          "name": "Michael Klein"
-        },
-        {
-          "id": "97899",
-          "name": "Thomas Klepper"
-        },
-        {
-          "id": "39781",
-          "name": "Karl-Heinz Körbel"
+          "name": "Ulrich Stein",
+          "position": "Goalkeeper",
+          "minutes": 4020
         },
         {
           "id": "437",
-          "name": "Uwe Bindewald"
+          "name": "Uwe Bindewald",
+          "position": "Centre-Back",
+          "minutes": 939
         },
         {
-          "id": "22768",
-          "name": "Alexander Conrad"
-        },
-        {
-          "id": "95058",
-          "name": "Dietmar Roth"
+          "id": "39781",
+          "name": "Karl-Heinz Körbel",
+          "position": "Centre-Back",
+          "minutes": 4020
         },
         {
           "id": "97901",
-          "name": "Andre Köhler"
+          "name": "Andre Köhler",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "201012",
-          "name": "Leo Caic"
+          "name": "Leo Caic",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "40124",
-          "name": "Ralf Falkenmayer"
+          "id": "1523",
+          "name": "Manfred Binz",
+          "position": "Sweeper",
+          "minutes": 4110
         },
         {
-          "id": "14832",
-          "name": "Peter Hobday"
+          "id": "22768",
+          "name": "Alexander Conrad",
+          "position": "Centre-Back",
+          "minutes": 54
         },
         {
-          "id": "97895",
-          "name": "Christian Heide"
+          "id": "95058",
+          "name": "Dietmar Roth",
+          "position": "Centre-Back",
+          "minutes": 3607
         },
         {
-          "id": "97902",
-          "name": "Thomas Lasser"
+          "id": "97898",
+          "name": "Michael Klein",
+          "position": "Sweeper",
+          "minutes": 1214
         },
         {
-          "id": "97904",
-          "name": "Björn Pistauer"
-        },
-        {
-          "id": "84673",
-          "name": "Ralf Sievers"
-        },
-        {
-          "id": "454",
-          "name": "Ralf Weber"
-        },
-        {
-          "id": "4720",
-          "name": "Stefan Studer"
+          "id": "97899",
+          "name": "Thomas Klepper",
+          "position": "Sweeper",
+          "minutes": null
         },
         {
           "id": "40122",
-          "name": "Uwe Bein"
+          "name": "Uwe Bein",
+          "position": "Attacking Midfield",
+          "minutes": 3484
+        },
+        {
+          "id": "40124",
+          "name": "Ralf Falkenmayer",
+          "position": "Defensive Midfield",
+          "minutes": 2460
         },
         {
           "id": "124",
-          "name": "Andreas Möller"
+          "name": "Andreas Möller",
+          "position": "Attacking Midfield",
+          "minutes": 3632
+        },
+        {
+          "id": "454",
+          "name": "Ralf Weber",
+          "position": "Left Midfield",
+          "minutes": 1388
+        },
+        {
+          "id": "4720",
+          "name": "Stefan Studer",
+          "position": "Left Midfield",
+          "minutes": 3422
+        },
+        {
+          "id": "14832",
+          "name": "Peter Hobday",
+          "position": "Defensive Midfield",
+          "minutes": null
+        },
+        {
+          "id": "84673",
+          "name": "Ralf Sievers",
+          "position": "Right Midfield",
+          "minutes": 17
+        },
+        {
+          "id": "97895",
+          "name": "Christian Heide",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "97902",
+          "name": "Thomas Lasser",
+          "position": "Defensive Midfield",
+          "minutes": 1180
+        },
+        {
+          "id": "97904",
+          "name": "Björn Pistauer",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "11473",
-          "name": "David Wagner"
+          "name": "David Wagner",
+          "position": "Centre-Forward",
+          "minutes": 29
         },
         {
           "id": "39770",
-          "name": "Janusz Turowski"
+          "name": "Janusz Turowski",
+          "position": "Centre-Forward",
+          "minutes": 1451
         },
         {
           "id": "328",
-          "name": "Anthony Yeboah"
+          "name": "Anthony Yeboah",
+          "position": "Centre-Forward",
+          "minutes": 2596
         },
         {
           "id": "3506",
-          "name": "Jørn Andersen"
+          "name": "Jørn Andersen",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "6607",
-          "name": "Axel Kruse"
+          "name": "Axel Kruse",
+          "position": "Centre-Forward",
+          "minutes": 1160
         },
         {
           "id": "17948",
-          "name": "Dieter Eckstein"
+          "name": "Dieter Eckstein",
+          "position": "Centre-Forward",
+          "minutes": 1953
         },
         {
           "id": "78749",
-          "name": "Lothar Sippel"
+          "name": "Lothar Sippel",
+          "position": "Centre-Forward",
+          "minutes": 1128
         },
         {
           "id": "85590",
-          "name": "Heinz Gründel"
+          "name": "Heinz Gründel",
+          "position": "Centre-Forward",
+          "minutes": 3173
         }
       ]
     },
@@ -1414,107 +2078,159 @@
       "players": [
         {
           "id": "784",
-          "name": "Uwe Kamps"
+          "name": "Uwe Kamps",
+          "position": "Goalkeeper",
+          "minutes": 2700
         },
         {
           "id": "1084",
-          "name": "Uwe Brunn"
-        },
-        {
-          "id": "4734",
-          "name": "Frantisek Straka"
-        },
-        {
-          "id": "97246",
-          "name": "Olaf Becker"
-        },
-        {
-          "id": "97255",
-          "name": "Thomas Huschbeck"
-        },
-        {
-          "id": "786",
-          "name": "Michael Klinkert"
+          "name": "Uwe Brunn",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "11854",
-          "name": "Thomas Pfannkuch"
-        },
-        {
-          "id": "17949",
-          "name": "Thomas Eichin"
-        },
-        {
-          "id": "97249",
-          "name": "Hans-Georg Dreßen"
+          "name": "Thomas Pfannkuch",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
           "id": "374",
-          "name": "Jörg Neun"
+          "name": "Jörg Neun",
+          "position": "Left-Back",
+          "minutes": 2964
+        },
+        {
+          "id": "786",
+          "name": "Michael Klinkert",
+          "position": "Centre-Back",
+          "minutes": 3026
+        },
+        {
+          "id": "4734",
+          "name": "Frantisek Straka",
+          "position": "Sweeper",
+          "minutes": 1674
+        },
+        {
+          "id": "17949",
+          "name": "Thomas Eichin",
+          "position": "Centre-Back",
+          "minutes": 2659
         },
         {
           "id": "84644",
-          "name": "Thomas Kastenmaier"
+          "name": "Thomas Kastenmaier",
+          "position": "Right-Back",
+          "minutes": 2418
+        },
+        {
+          "id": "97246",
+          "name": "Olaf Becker",
+          "position": "Defender",
+          "minutes": null
+        },
+        {
+          "id": "97249",
+          "name": "Hans-Georg Dreßen",
+          "position": "Centre-Back",
+          "minutes": 400
+        },
+        {
+          "id": "97255",
+          "name": "Thomas Huschbeck",
+          "position": "Defender",
+          "minutes": 64
         },
         {
           "id": "377",
-          "name": "Martin Schneider"
-        },
-        {
-          "id": "81611",
-          "name": "Christian Hochstätter"
-        },
-        {
-          "id": "97258",
-          "name": "Delano Ketter"
-        },
-        {
-          "id": "97272",
-          "name": "Thomas Winter"
-        },
-        {
-          "id": "109588",
-          "name": "Manfred Stefes"
-        },
-        {
-          "id": "1661",
-          "name": "Carsten Marell"
-        },
-        {
-          "id": "9338",
-          "name": "Peter Wynhoff"
+          "name": "Martin Schneider",
+          "position": "Defensive Midfield",
+          "minutes": 3102
         },
         {
           "id": "1417",
-          "name": "Karlheinz Pflipsen"
+          "name": "Karlheinz Pflipsen",
+          "position": "Attacking Midfield",
+          "minutes": 2195
+        },
+        {
+          "id": "1661",
+          "name": "Carsten Marell",
+          "position": "Right Midfield",
+          "minutes": 50
+        },
+        {
+          "id": "9338",
+          "name": "Peter Wynhoff",
+          "position": "Left Midfield",
+          "minutes": 1054
         },
         {
           "id": "4723",
-          "name": "Michael Spies"
+          "name": "Michael Spies",
+          "position": "Attacking Midfield",
+          "minutes": 636
         },
         {
           "id": "16055",
-          "name": "Norbert Meier"
+          "name": "Norbert Meier",
+          "position": "Attacking Midfield",
+          "minutes": 1665
+        },
+        {
+          "id": "81611",
+          "name": "Christian Hochstätter",
+          "position": "Defensive Midfield",
+          "minutes": 2071
         },
         {
           "id": "84194",
-          "name": "Frank Schulz"
+          "name": "Frank Schulz",
+          "position": "Attacking Midfield",
+          "minutes": 1184
+        },
+        {
+          "id": "97258",
+          "name": "Delano Ketter",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "97272",
+          "name": "Thomas Winter",
+          "position": "Midfield",
+          "minutes": 384
+        },
+        {
+          "id": "109588",
+          "name": "Manfred Stefes",
+          "position": "Defensive Midfield",
+          "minutes": 1158
         },
         {
           "id": "255",
-          "name": "Bachirou Salou"
+          "name": "Bachirou Salou",
+          "position": "Centre-Forward",
+          "minutes": 425
         },
         {
           "id": "560",
-          "name": "Martin Max"
+          "name": "Martin Max",
+          "position": "Centre-Forward",
+          "minutes": 2042
         },
         {
           "id": "17941",
-          "name": "Hans-Jörg Criens"
+          "name": "Hans-Jörg Criens",
+          "position": "Centre-Forward",
+          "minutes": 2455
         },
         {
           "id": "85752",
-          "name": "Igor Belanov"
+          "name": "Igor Belanov",
+          "position": "Centre-Forward",
+          "minutes": 621
         }
       ]
     },
@@ -1524,107 +2240,159 @@
       "players": [
         {
           "id": "108",
-          "name": "Wolfgang de Beer"
+          "name": "Wolfgang de Beer",
+          "position": "Goalkeeper",
+          "minutes": 3510
         },
         {
           "id": "3442",
-          "name": "Stefan Klos"
+          "name": "Stefan Klos",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "81737",
-          "name": "Rolf Meyer"
+          "name": "Rolf Meyer",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "497",
-          "name": "Uwe Grauer"
+          "name": "Uwe Grauer",
+          "position": "Centre-Back",
+          "minutes": 180
         },
         {
           "id": "726",
-          "name": "Peter Quallo"
-        },
-        {
-          "id": "12405",
-          "name": "Thomas Helmer"
-        },
-        {
-          "id": "21657",
-          "name": "Sergey Gorlukovich"
-        },
-        {
-          "id": "22537",
-          "name": "Michael Schulz"
-        },
-        {
-          "id": "95856",
-          "name": "Günter Kutowski"
+          "name": "Peter Quallo",
+          "position": "Centre-Back",
+          "minutes": 1950
         },
         {
           "id": "1071",
-          "name": "Robert Nikolic"
+          "name": "Robert Nikolic",
+          "position": "Right-Back",
+          "minutes": 1004
         },
         {
-          "id": "38033",
-          "name": "Michael Zorc"
+          "id": "12405",
+          "name": "Thomas Helmer",
+          "position": "Centre-Back",
+          "minutes": 3587
         },
         {
-          "id": "1521",
-          "name": "Gerhard Poschner"
+          "id": "21657",
+          "name": "Sergey Gorlukovich",
+          "position": "Centre-Back",
+          "minutes": 2747
         },
         {
-          "id": "84633",
-          "name": "Thomas Franck"
+          "id": "22537",
+          "name": "Michael Schulz",
+          "position": "Centre-Back",
+          "minutes": 2798
         },
         {
-          "id": "84696",
-          "name": "Mario Plechaty"
-        },
-        {
-          "id": "95857",
-          "name": "Murdo MacLeod"
-        },
-        {
-          "id": "95864",
-          "name": "Stefan Strerath"
+          "id": "95856",
+          "name": "Günter Kutowski",
+          "position": "Centre-Back",
+          "minutes": 2235
         },
         {
           "id": "1542",
-          "name": "Steffen Karl"
-        },
-        {
-          "id": "472",
-          "name": "Dirk Hofmann"
-        },
-        {
-          "id": "84554",
-          "name": "Michael Lusch"
-        },
-        {
-          "id": "95853",
-          "name": "Günter Breitzke"
+          "name": "Steffen Karl",
+          "position": "Central Midfield",
+          "minutes": 844
         },
         {
           "id": "15479",
-          "name": "Tim Gutberlet"
+          "name": "Tim Gutberlet",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "38033",
+          "name": "Michael Zorc",
+          "position": "Defensive Midfield",
+          "minutes": 2966
+        },
+        {
+          "id": "472",
+          "name": "Dirk Hofmann",
+          "position": "Right Midfield",
+          "minutes": 90
+        },
+        {
+          "id": "1521",
+          "name": "Gerhard Poschner",
+          "position": "Defensive Midfield",
+          "minutes": 2562
         },
         {
           "id": "77015",
-          "name": "Michael Rummenigge"
+          "name": "Michael Rummenigge",
+          "position": "Attacking Midfield",
+          "minutes": 3278
         },
         {
-          "id": "84562",
-          "name": "Frank Mill"
+          "id": "84554",
+          "name": "Michael Lusch",
+          "position": "Right Midfield",
+          "minutes": 1914
+        },
+        {
+          "id": "84633",
+          "name": "Thomas Franck",
+          "position": "Defensive Midfield",
+          "minutes": 1426
+        },
+        {
+          "id": "84696",
+          "name": "Mario Plechaty",
+          "position": "Midfield",
+          "minutes": 10
+        },
+        {
+          "id": "95853",
+          "name": "Günter Breitzke",
+          "position": "Right Midfield",
+          "minutes": 1485
+        },
+        {
+          "id": "95857",
+          "name": "Murdo MacLeod",
+          "position": "Defensive Midfield",
+          "minutes": 742
+        },
+        {
+          "id": "95864",
+          "name": "Stefan Strerath",
+          "position": "Midfield",
+          "minutes": 483
         },
         {
           "id": "778",
-          "name": "Martin Driller"
+          "name": "Martin Driller",
+          "position": "Centre-Forward",
+          "minutes": 947
+        },
+        {
+          "id": "84562",
+          "name": "Frank Mill",
+          "position": "Centre-Forward",
+          "minutes": 1159
         },
         {
           "id": "81554",
-          "name": "Flemming Povlsen"
+          "name": "Flemming Povlsen",
+          "position": "Centre-Forward",
+          "minutes": 3239
         },
         {
           "id": "95073",
-          "name": "Jürgen Wegmann"
+          "name": "Jürgen Wegmann",
+          "position": "Centre-Forward",
+          "minutes": 1097
         }
       ]
     },
@@ -1634,95 +2402,141 @@
       "players": [
         {
           "id": "440",
-          "name": "Dirk Heinen"
+          "name": "Dirk Heinen",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "81665",
-          "name": "Rüdiger Vollborn"
-        },
-        {
-          "id": "40461",
-          "name": "Franco Foda"
-        },
-        {
-          "id": "3419",
-          "name": "Thomas Hörster"
+          "name": "Rüdiger Vollborn",
+          "position": "Goalkeeper",
+          "minutes": 3810
         },
         {
           "id": "39669",
-          "name": "Alois Reinhardt"
+          "name": "Alois Reinhardt",
+          "position": "Centre-Back",
+          "minutes": 1657
+        },
+        {
+          "id": "40461",
+          "name": "Franco Foda",
+          "position": "Sweeper",
+          "minutes": 2698
         },
         {
           "id": "1209",
-          "name": "Jens Tschiedel"
+          "name": "Jens Tschiedel",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "25349",
-          "name": "Erich Seckler"
-        },
-        {
-          "id": "84184",
-          "name": "Martin Kree"
-        },
-        {
-          "id": "84661",
-          "name": "Oliver Pagé"
-        },
-        {
-          "id": "84680",
-          "name": "Jean-Pierre de Keyser"
+          "id": "3419",
+          "name": "Thomas Hörster",
+          "position": "Sweeper",
+          "minutes": 1736
         },
         {
           "id": "17166",
-          "name": "Jorginho"
+          "name": "Jorginho",
+          "position": "Right-Back",
+          "minutes": 3385
+        },
+        {
+          "id": "25349",
+          "name": "Erich Seckler",
+          "position": "Centre-Back",
+          "minutes": 1315
+        },
+        {
+          "id": "84184",
+          "name": "Martin Kree",
+          "position": "Centre-Back",
+          "minutes": 3597
+        },
+        {
+          "id": "84661",
+          "name": "Oliver Pagé",
+          "position": "Centre-Back",
+          "minutes": 249
+        },
+        {
+          "id": "84680",
+          "name": "Jean-Pierre de Keyser",
+          "position": "Centre-Back",
+          "minutes": 262
         },
         {
           "id": "300",
-          "name": "Andreas Fischer"
+          "name": "Andreas Fischer",
+          "position": "Defensive Midfield",
+          "minutes": 2385
         },
         {
           "id": "1537",
-          "name": "Ioan Lupescu"
+          "name": "Ioan Lupescu",
+          "position": "Central Midfield",
+          "minutes": 3048
         },
         {
           "id": "17990",
-          "name": "Knut Reinhardt"
-        },
-        {
-          "id": "84568",
-          "name": "Mathias Stammann"
+          "name": "Knut Reinhardt",
+          "position": "Left Midfield",
+          "minutes": 3101
         },
         {
           "id": "84192",
-          "name": "Christian Schreier"
+          "name": "Christian Schreier",
+          "position": "Attacking Midfield",
+          "minutes": 3012
+        },
+        {
+          "id": "84568",
+          "name": "Mathias Stammann",
+          "position": "Left Midfield",
+          "minutes": 1310
         },
         {
           "id": "93946",
-          "name": "Andrzej Buncol"
-        },
-        {
-          "id": "5088",
-          "name": "Marek Lesniak"
-        },
-        {
-          "id": "74",
-          "name": "Ulf Kirsten"
-        },
-        {
-          "id": "114",
-          "name": "Heiko Herrlich"
-        },
-        {
-          "id": "356",
-          "name": "Andreas Thom"
+          "name": "Andrzej Buncol",
+          "position": "Attacking Midfield",
+          "minutes": 1324
         },
         {
           "id": "979",
-          "name": "Marcus Feinbier"
+          "name": "Marcus Feinbier",
+          "position": "Centre-Forward",
+          "minutes": 803
+        },
+        {
+          "id": "5088",
+          "name": "Marek Lesniak",
+          "position": "Centre-Forward",
+          "minutes": 2012
+        },
+        {
+          "id": "74",
+          "name": "Ulf Kirsten",
+          "position": "Centre-Forward",
+          "minutes": 2950
+        },
+        {
+          "id": "114",
+          "name": "Heiko Herrlich",
+          "position": "Centre-Forward",
+          "minutes": 1163
+        },
+        {
+          "id": "356",
+          "name": "Andreas Thom",
+          "position": "Centre-Forward",
+          "minutes": 2004
         },
         {
           "id": "85985",
-          "name": "Marco Schröder"
+          "name": "Marco Schröder",
+          "position": "Attack",
+          "minutes": 49
         }
       ]
     },
@@ -1732,107 +2546,159 @@
       "players": [
         {
           "id": "1445",
-          "name": "Andreas Köpke"
+          "name": "Andreas Köpke",
+          "position": "Goalkeeper",
+          "minutes": 3000
         },
         {
           "id": "18292",
-          "name": "Kurt Kowarz"
-        },
-        {
-          "id": "17961",
-          "name": "Vlado Kasalo"
+          "name": "Kurt Kowarz",
+          "position": "Goalkeeper",
+          "minutes": 390
         },
         {
           "id": "558",
-          "name": "Marco Kurz"
+          "name": "Marco Kurz",
+          "position": "Centre-Back",
+          "minutes": 2275
         },
         {
           "id": "17935",
-          "name": "Uli Bayerschmidt"
+          "name": "Uli Bayerschmidt",
+          "position": "Centre-Back",
+          "minutes": 1524
         },
         {
           "id": "17938",
-          "name": "Thomas Brunner"
+          "name": "Thomas Brunner",
+          "position": "Centre-Back",
+          "minutes": 2896
         },
         {
           "id": "17958",
-          "name": "Hans-Jürgen Heidenreich"
+          "name": "Hans-Jürgen Heidenreich",
+          "position": "Centre-Back",
+          "minutes": 1650
+        },
+        {
+          "id": "17961",
+          "name": "Vlado Kasalo",
+          "position": "Sweeper",
+          "minutes": 1706
         },
         {
           "id": "18288",
-          "name": "Jörg Dittwar"
-        },
-        {
-          "id": "6226",
-          "name": "Günter Drews"
-        },
-        {
-          "id": "6512",
-          "name": "Uwe Wolf"
-        },
-        {
-          "id": "17971",
-          "name": "Joachim Philipkowski"
-        },
-        {
-          "id": "17945",
-          "name": "Hans Dorfner"
-        },
-        {
-          "id": "678",
-          "name": "Martin Wagner"
-        },
-        {
-          "id": "17947",
-          "name": "Ralf Dusend"
-        },
-        {
-          "id": "107723",
-          "name": "Ulf Metschies"
+          "name": "Jörg Dittwar",
+          "position": "Centre-Back",
+          "minutes": 2966
         },
         {
           "id": "17977",
-          "name": "Andreas Schöll"
+          "name": "Andreas Schöll",
+          "position": "Attacking Midfield",
+          "minutes": 20
+        },
+        {
+          "id": "678",
+          "name": "Martin Wagner",
+          "position": "Left Midfield",
+          "minutes": 2604
         },
         {
           "id": "1535",
-          "name": "Uwe Weidemann"
+          "name": "Uwe Weidemann",
+          "position": "Attacking Midfield",
+          "minutes": 620
+        },
+        {
+          "id": "6226",
+          "name": "Günter Drews",
+          "position": "Defensive Midfield",
+          "minutes": 514
+        },
+        {
+          "id": "6512",
+          "name": "Uwe Wolf",
+          "position": "Defensive Midfield",
+          "minutes": 1387
+        },
+        {
+          "id": "17945",
+          "name": "Hans Dorfner",
+          "position": "Central Midfield",
+          "minutes": 1270
+        },
+        {
+          "id": "17947",
+          "name": "Ralf Dusend",
+          "position": "Left Midfield",
+          "minutes": null
         },
         {
           "id": "17957",
-          "name": "Christian Hausmann"
+          "name": "Christian Hausmann",
+          "position": "Attacking Midfield",
+          "minutes": 1169
+        },
+        {
+          "id": "17971",
+          "name": "Joachim Philipkowski",
+          "position": "Defensive Midfield",
+          "minutes": 1470
         },
         {
           "id": "17989",
-          "name": "Marc Oechler"
+          "name": "Marc Oechler",
+          "position": "Attacking Midfield",
+          "minutes": 2713
+        },
+        {
+          "id": "107723",
+          "name": "Ulf Metschies",
+          "position": "Left Midfield",
+          "minutes": 2889
         },
         {
           "id": "17983",
-          "name": "Dr. Reiner Wirsching"
+          "name": "Dr. Reiner Wirsching",
+          "position": "Centre-Forward",
+          "minutes": 2152
         },
         {
           "id": "680",
-          "name": "Christian Wück"
+          "name": "Christian Wück",
+          "position": "Centre-Forward",
+          "minutes": 16
         },
         {
           "id": "864",
-          "name": "Frank Türr"
+          "name": "Frank Türr",
+          "position": "Centre-Forward",
+          "minutes": 1180
         },
         {
           "id": "17948",
-          "name": "Dieter Eckstein"
+          "name": "Dieter Eckstein",
+          "position": "Centre-Forward",
+          "minutes": 1429
         },
         {
           "id": "17984",
-          "name": "Sergio Zárate"
+          "name": "Sergio Zárate",
+          "position": "Centre-Forward",
+          "minutes": 791
         },
         {
           "id": "84693",
-          "name": "Sead Kajtaz"
+          "name": "Sead Kajtaz",
+          "position": "Centre-Forward",
+          "minutes": 591
         },
         {
           "id": "100726",
-          "name": "Thomas Klein"
+          "name": "Thomas Klein",
+          "position": "Attack",
+          "minutes": 13
         }
       ]
     },
@@ -1842,99 +2708,147 @@
       "players": [
         {
           "id": "31",
-          "name": "Alexander Bade"
+          "name": "Alexander Bade",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "24474",
-          "name": "Bodo Illgner"
+          "name": "Bodo Illgner",
+          "position": "Goalkeeper",
+          "minutes": 4320
         },
         {
           "id": "80251",
-          "name": "Volker Diergardt"
-        },
-        {
-          "id": "967",
-          "name": "Reinhold Daschner"
-        },
-        {
-          "id": "8988",
-          "name": "Axel Britz"
-        },
-        {
-          "id": "23847",
-          "name": "Jann Jensen"
-        },
-        {
-          "id": "84637",
-          "name": "Andreas Gielchen"
+          "name": "Volker Diergardt",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "876",
-          "name": "Karsten Baumann"
+          "name": "Karsten Baumann",
+          "position": "Centre-Back",
+          "minutes": 2826
         },
         {
-          "id": "81609",
-          "name": "Alfons Higl"
+          "id": "967",
+          "name": "Reinhold Daschner",
+          "position": "Sweeper",
+          "minutes": 151
         },
         {
-          "id": "81658",
-          "name": "Paul Steiner"
+          "id": "8988",
+          "name": "Axel Britz",
+          "position": "Defender",
+          "minutes": 866
         },
         {
-          "id": "96636",
-          "name": "Anders Giske"
+          "id": "23847",
+          "name": "Jann Jensen",
+          "position": "Centre-Back",
+          "minutes": 404
+        },
+        {
+          "id": "84637",
+          "name": "Andreas Gielchen",
+          "position": "Centre-Back",
+          "minutes": 2575
         },
         {
           "id": "62418",
-          "name": "Henrik Andersen"
+          "name": "Henrik Andersen",
+          "position": "Left-Back",
+          "minutes": 3145
         },
         {
-          "id": "6599",
-          "name": "Olaf Janßen"
+          "id": "81609",
+          "name": "Alfons Higl",
+          "position": "Centre-Back",
+          "minutes": 4030
         },
         {
-          "id": "87946",
-          "name": "Hansi Flick"
+          "id": "81658",
+          "name": "Paul Steiner",
+          "position": "Centre-Back",
+          "minutes": 108
         },
         {
-          "id": "179540",
-          "name": "Franz Wunderlich"
-        },
-        {
-          "id": "655",
-          "name": "Frank Greiner"
-        },
-        {
-          "id": "9229",
-          "name": "Andrzej Rudy"
+          "id": "96636",
+          "name": "Anders Giske",
+          "position": "Centre-Back",
+          "minutes": 2041
         },
         {
           "id": "441",
-          "name": "Horst Heldt"
+          "name": "Horst Heldt",
+          "position": "Attacking Midfield",
+          "minutes": 2178
+        },
+        {
+          "id": "9229",
+          "name": "Andrzej Rudy",
+          "position": "Attacking Midfield",
+          "minutes": 2168
+        },
+        {
+          "id": "655",
+          "name": "Frank Greiner",
+          "position": "Right Midfield",
+          "minutes": 3920
+        },
+        {
+          "id": "6599",
+          "name": "Olaf Janßen",
+          "position": "Defensive Midfield",
+          "minutes": 1632
         },
         {
           "id": "6600",
-          "name": "Falko Götz"
+          "name": "Falko Götz",
+          "position": "Attacking Midfield",
+          "minutes": 3833
         },
         {
           "id": "87902",
-          "name": "Pierre Littbarski"
+          "name": "Pierre Littbarski",
+          "position": "Attacking Midfield",
+          "minutes": 1858
+        },
+        {
+          "id": "87946",
+          "name": "Hansi Flick",
+          "position": "Defensive Midfield",
+          "minutes": 2172
+        },
+        {
+          "id": "179540",
+          "name": "Franz Wunderlich",
+          "position": "Midfield",
+          "minutes": 42
         },
         {
           "id": "13773",
-          "name": "Frank Ordenewitz"
+          "name": "Frank Ordenewitz",
+          "position": "Centre-Forward",
+          "minutes": 3201
         },
         {
           "id": "14831",
-          "name": "Uwe Fuchs"
+          "name": "Uwe Fuchs",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "92661",
-          "name": "Maurice Banach"
+          "name": "Maurice Banach",
+          "position": "Centre-Forward",
+          "minutes": 3294
         },
         {
           "id": "106929",
-          "name": "Ralf Sturm"
+          "name": "Ralf Sturm",
+          "position": "Centre-Forward",
+          "minutes": 2651
         }
       ]
     }

@@ -7,176 +7,262 @@
       "name": "Chievo Verona",
       "players": [
         {
-          "id": "22092",
-          "name": "Lorenzo Squizzi"
-        },
-        {
           "id": "34334",
-          "name": "Enrico Alfonso"
+          "name": "Enrico Alfonso",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "28828",
-          "name": "Gabriele Aldegani"
+          "name": "Gabriele Aldegani",
+          "position": "Goalkeeper",
+          "minutes": 84
         },
         {
           "id": "41936",
-          "name": "Mattia Passarini"
+          "name": "Mattia Passarini",
+          "position": "Goalkeeper",
+          "minutes": 6
+        },
+        {
+          "id": "22092",
+          "name": "Lorenzo Squizzi",
+          "position": "Goalkeeper",
+          "minutes": 3780
         },
         {
           "id": "43237",
-          "name": "Massimo Zappino"
-        },
-        {
-          "id": "21689",
-          "name": "Davide Mandelli"
-        },
-        {
-          "id": "21935",
-          "name": "Andrea Mantovani"
-        },
-        {
-          "id": "7097",
-          "name": "Marco Malagò"
-        },
-        {
-          "id": "15977",
-          "name": "César"
-        },
-        {
-          "id": "5913",
-          "name": "Lorenzo D'Anna"
-        },
-        {
-          "id": "5918",
-          "name": "Tommaso Chiecchi"
-        },
-        {
-          "id": "41938",
-          "name": "Cesare Rickler"
-        },
-        {
-          "id": "6152",
-          "name": "Rubén Maldonado"
-        },
-        {
-          "id": "42885",
-          "name": "Stefano Olivieri"
-        },
-        {
-          "id": "84542",
-          "name": "Leonardo Moracci"
+          "name": "Massimo Zappino",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "109110",
-          "name": "Nicolò Brighenti"
+          "name": "Nicolò Brighenti",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "21887",
-          "name": "Giovanni Marchese"
+          "id": "5918",
+          "name": "Tommaso Chiecchi",
+          "position": "Centre-Back",
+          "minutes": 405
         },
         {
-          "id": "34239",
-          "name": "Aleandro Rosi"
+          "id": "21935",
+          "name": "Andrea Mantovani",
+          "position": "Centre-Back",
+          "minutes": 3268
         },
         {
-          "id": "5912",
-          "name": "Fabio Moro"
+          "id": "21689",
+          "name": "Davide Mandelli",
+          "position": "Centre-Back",
+          "minutes": 2826
+        },
+        {
+          "id": "7097",
+          "name": "Marco Malagò",
+          "position": "Centre-Back",
+          "minutes": 2577
         },
         {
           "id": "38589",
-          "name": "Marino Defendi"
+          "name": "Marino Defendi",
+          "position": "Right-Back",
+          "minutes": 135
         },
         {
-          "id": "28849",
-          "name": "Michele Troiano"
+          "id": "6152",
+          "name": "Rubén Maldonado",
+          "position": "Centre-Back",
+          "minutes": 208
         },
         {
-          "id": "6874",
-          "name": "Federico Giunti"
+          "id": "84542",
+          "name": "Leonardo Moracci",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "28836",
-          "name": "Stefano Garzon"
+          "id": "41938",
+          "name": "Cesare Rickler",
+          "position": "Centre-Back",
+          "minutes": 817
         },
         {
-          "id": "34909",
-          "name": "Simone Bentivoglio"
+          "id": "5912",
+          "name": "Fabio Moro",
+          "position": "Right-Back",
+          "minutes": 1244
         },
         {
-          "id": "24303",
-          "name": "Maurizio Ciaramitaro"
+          "id": "34239",
+          "name": "Aleandro Rosi",
+          "position": "Right-Back",
+          "minutes": 514
+        },
+        {
+          "id": "5913",
+          "name": "Lorenzo D'Anna",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "15977",
+          "name": "César",
+          "position": "Centre-Back",
+          "minutes": 3117
+        },
+        {
+          "id": "42885",
+          "name": "Stefano Olivieri",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "21887",
+          "name": "Giovanni Marchese",
+          "position": "Left-Back",
+          "minutes": 991
         },
         {
           "id": "19443",
-          "name": "Michele Marcolini"
+          "name": "Michele Marcolini",
+          "position": "Central Midfield",
+          "minutes": 2507
         },
         {
-          "id": "21865",
-          "name": "Vincenzo Italiano"
+          "id": "6874",
+          "name": "Federico Giunti",
+          "position": "Defensive Midfield",
+          "minutes": 59
         },
         {
-          "id": "22210",
-          "name": "Luca Rigoni"
+          "id": "34909",
+          "name": "Simone Bentivoglio",
+          "position": "Central Midfield",
+          "minutes": 3058
         },
         {
           "id": "6233",
-          "name": "Luciano"
+          "name": "Luciano",
+          "position": "Right Midfield",
+          "minutes": 2437
+        },
+        {
+          "id": "24303",
+          "name": "Maurizio Ciaramitaro",
+          "position": "Central Midfield",
+          "minutes": 1998
+        },
+        {
+          "id": "28849",
+          "name": "Michele Troiano",
+          "position": "Defensive Midfield",
+          "minutes": 801
+        },
+        {
+          "id": "28836",
+          "name": "Stefano Garzon",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "72655",
-          "name": "Matteo Alberti"
+          "name": "Matteo Alberti",
+          "position": "Right Midfield",
+          "minutes": null
         },
         {
-          "id": "83877",
-          "name": "Diego Farias"
+          "id": "21865",
+          "name": "Vincenzo Italiano",
+          "position": "Central Midfield",
+          "minutes": 3076
+        },
+        {
+          "id": "22210",
+          "name": "Luca Rigoni",
+          "position": "Central Midfield",
+          "minutes": 410
         },
         {
           "id": "45567",
-          "name": "Jonathan Biabiany"
-        },
-        {
-          "id": "35852",
-          "name": "Victor Obinna"
-        },
-        {
-          "id": "28870",
-          "name": "Antimo Iunco"
+          "name": "Jonathan Biabiany",
+          "position": "Right Winger",
+          "minutes": null
         },
         {
           "id": "41942",
-          "name": "Diego Silva Reis"
+          "name": "Diego Silva Reis",
+          "position": "Second Striker",
+          "minutes": null
         },
         {
-          "id": "5928",
-          "name": "Sergio Pellissier"
-        },
-        {
-          "id": "6075",
-          "name": "Erjon Bogdani"
-        },
-        {
-          "id": "32963",
-          "name": "Giuseppe Cozzolino"
-        },
-        {
-          "id": "22111",
-          "name": "Mirco Gasparetto"
-        },
-        {
-          "id": "44137",
-          "name": "Giuseppe Greco"
+          "id": "83877",
+          "name": "Diego Farias",
+          "position": "Left Winger",
+          "minutes": null
         },
         {
           "id": "5932",
-          "name": "Federico Cossato"
+          "name": "Federico Cossato",
+          "position": "Centre-Forward",
+          "minutes": 260
+        },
+        {
+          "id": "28870",
+          "name": "Antimo Iunco",
+          "position": "Second Striker",
+          "minutes": 1478
+        },
+        {
+          "id": "32963",
+          "name": "Giuseppe Cozzolino",
+          "position": "Centre-Forward",
+          "minutes": 19
+        },
+        {
+          "id": "44137",
+          "name": "Giuseppe Greco",
+          "position": "Centre-Forward",
+          "minutes": 260
         },
         {
           "id": "7103",
-          "name": "Marcos De Paula"
+          "name": "Marcos De Paula",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "35852",
+          "name": "Victor Obinna",
+          "position": "Second Striker",
+          "minutes": 2091
+        },
+        {
+          "id": "22111",
+          "name": "Mirco Gasparetto",
+          "position": "Centre-Forward",
+          "minutes": 895
+        },
+        {
+          "id": "5928",
+          "name": "Sergio Pellissier",
+          "position": "Centre-Forward",
+          "minutes": 3165
+        },
+        {
+          "id": "6075",
+          "name": "Erjon Bogdani",
+          "position": "Centre-Forward",
+          "minutes": 71
         },
         {
           "id": "287160",
-          "name": "Rodrigo Thiago Aparecido da Silva"
+          "name": "Rodrigo Thiago Aparecido da Silva",
+          "position": "Attack",
+          "minutes": null
         }
       ]
     },
@@ -186,175 +272,261 @@
       "players": [
         {
           "id": "24316",
-          "name": "Emiliano Viviano"
+          "name": "Emiliano Viviano",
+          "position": "Goalkeeper",
+          "minutes": 3420
         },
         {
           "id": "38578",
-          "name": "Michele Arcari"
+          "name": "Michele Arcari",
+          "position": "Goalkeeper",
+          "minutes": 630
         },
         {
           "id": "43112",
-          "name": "Sergio Viotti"
-        },
-        {
-          "id": "456800",
-          "name": "Davide Trapletti"
-        },
-        {
-          "id": "67641",
-          "name": "Luca Rossinetti"
-        },
-        {
-          "id": "76031",
-          "name": "Mauro Bonaccorsi"
-        },
-        {
-          "id": "56817",
-          "name": "Fabiano Santacroce"
-        },
-        {
-          "id": "16898",
-          "name": "Víctor Mareco"
-        },
-        {
-          "id": "5966",
-          "name": "Marius Stankevicius"
-        },
-        {
-          "id": "21904",
-          "name": "Francesco Bega"
-        },
-        {
-          "id": "21702",
-          "name": "Davide Zoboli"
-        },
-        {
-          "id": "5969",
-          "name": "Gilberto Martínez"
+          "name": "Sergio Viotti",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "71019",
-          "name": "Bartosz Salamon"
+          "name": "Bartosz Salamon",
+          "position": "Centre-Back",
+          "minutes": 17
         },
         {
-          "id": "21684",
-          "name": "Simone Dallamano"
+          "id": "21702",
+          "name": "Davide Zoboli",
+          "position": "Centre-Back",
+          "minutes": 3516
+        },
+        {
+          "id": "5966",
+          "name": "Marius Stankevičius",
+          "position": "Centre-Back",
+          "minutes": 2918
+        },
+        {
+          "id": "5969",
+          "name": "Gilberto Martínez",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "28031",
-          "name": "Marco Zambelli"
+          "name": "Marco Zambelli",
+          "position": "Right-Back",
+          "minutes": 2086
+        },
+        {
+          "id": "16898",
+          "name": "Víctor Mareco",
+          "position": "Centre-Back",
+          "minutes": 2457
+        },
+        {
+          "id": "21684",
+          "name": "Simone Dallamano",
+          "position": "Left-Back",
+          "minutes": 3182
+        },
+        {
+          "id": "21904",
+          "name": "Francesco Bega",
+          "position": "Centre-Back",
+          "minutes": 1789
+        },
+        {
+          "id": "56817",
+          "name": "Fabiano Santacroce",
+          "position": "Centre-Back",
+          "minutes": 1253
         },
         {
           "id": "43084",
-          "name": "Gaetano Berardi"
+          "name": "Gaetano Berardi",
+          "position": "Right-Back",
+          "minutes": 606
+        },
+        {
+          "id": "67641",
+          "name": "Luca Rossinetti",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "74448",
-          "name": "Andrea Rispoli"
+          "name": "Andrea Rispoli",
+          "position": "Right-Back",
+          "minutes": 213
         },
         {
-          "id": "5748",
-          "name": "Alessio Tacchinardi"
+          "id": "76031",
+          "name": "Mauro Bonaccorsi",
+          "position": "Defender",
+          "minutes": 90
+        },
+        {
+          "id": "456800",
+          "name": "Davide Trapletti",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "49031",
-          "name": "Ádám Vass"
+          "name": "Ádám Vass",
+          "position": "Defensive Midfield",
+          "minutes": 1432
         },
         {
           "id": "5953",
-          "name": "Francisco Lima"
-        },
-        {
-          "id": "26854",
-          "name": "Danny Szetela"
+          "name": "Francisco Lima",
+          "position": "Central Midfield",
+          "minutes": 3381
         },
         {
           "id": "10060",
-          "name": "Fabrizio Zambrella"
-        },
-        {
-          "id": "16896",
-          "name": "Abderrazzak Jadid"
-        },
-        {
-          "id": "43364",
-          "name": "Luigi Scaglia"
-        },
-        {
-          "id": "67640",
-          "name": "Marco Martina Rini"
+          "name": "Fabrizio Zambrella",
+          "position": "Central Midfield",
+          "minutes": 2074
         },
         {
           "id": "21690",
-          "name": "Daniele Mannini"
-        },
-        {
-          "id": "56803",
-          "name": "Mattia Mustacchio"
+          "name": "Daniele Mannini",
+          "position": "Right Midfield",
+          "minutes": 1339
         },
         {
           "id": "23194",
-          "name": "Roberto De Zerbi"
+          "name": "Roberto De Zerbi",
+          "position": "Attacking Midfield",
+          "minutes": 1120
+        },
+        {
+          "id": "5748",
+          "name": "Alessio Tacchinardi",
+          "position": "Defensive Midfield",
+          "minutes": 3162
         },
         {
           "id": "43092",
-          "name": "Leandro Depetris"
+          "name": "Leandro Depetris",
+          "position": "Attacking Midfield",
+          "minutes": 414
+        },
+        {
+          "id": "16896",
+          "name": "Abderrazzak Jadid",
+          "position": "Central Midfield",
+          "minutes": 188
+        },
+        {
+          "id": "26854",
+          "name": "Danny Szetela",
+          "position": "Central Midfield",
+          "minutes": 422
+        },
+        {
+          "id": "43364",
+          "name": "Luigi Scaglia",
+          "position": "Central Midfield",
+          "minutes": 504
+        },
+        {
+          "id": "67640",
+          "name": "Marco Martina Rini",
+          "position": "Central Midfield",
+          "minutes": 97
         },
         {
           "id": "75667",
-          "name": "Federico Ciasca"
+          "name": "Federico Ciasca",
+          "position": "Attacking Midfield",
+          "minutes": 41
         },
         {
-          "id": "30662",
-          "name": "Riccardo Taddei"
-        },
-        {
-          "id": "43100",
-          "name": "Savio Nsereko"
-        },
-        {
-          "id": "160856",
-          "name": "Daniele Simoncelli"
-        },
-        {
-          "id": "75186",
-          "name": "Vincenzo Sarno"
-        },
-        {
-          "id": "6098",
-          "name": "Andrea Caracciolo"
-        },
-        {
-          "id": "9089",
-          "name": "Fabio Bazzani"
-        },
-        {
-          "id": "22248",
-          "name": "Davide Possanzini"
+          "id": "56803",
+          "name": "Mattia Mustacchio",
+          "position": "Right Winger",
+          "minutes": null
         },
         {
           "id": "22662",
-          "name": "Róbert Feczesin"
+          "name": "Róbert Feczesin",
+          "position": "Centre-Forward",
+          "minutes": 1591
+        },
+        {
+          "id": "30662",
+          "name": "Riccardo Taddei",
+          "position": "Left Winger",
+          "minutes": 736
+        },
+        {
+          "id": "6098",
+          "name": "Andrea Caracciolo",
+          "position": "Centre-Forward",
+          "minutes": 1100
         },
         {
           "id": "16889",
-          "name": "Andrea Alberti"
+          "name": "Andrea Alberti",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "22248",
+          "name": "Davide Possanzini",
+          "position": "Centre-Forward",
+          "minutes": 3103
+        },
+        {
+          "id": "43100",
+          "name": "Savio Nsereko",
+          "position": "Right Winger",
+          "minutes": 104
         },
         {
           "id": "43079",
-          "name": "Luis Alfageme"
-        },
-        {
-          "id": "43095",
-          "name": "Adama Fofana"
-        },
-        {
-          "id": "23256",
-          "name": "Denis Maccan"
+          "name": "Luis Alfageme",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "149160",
-          "name": "Emanuele Bardelloni"
+          "name": "Emanuele Bardelloni",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "9089",
+          "name": "Fabio Bazzani",
+          "position": "Centre-Forward",
+          "minutes": 1383
+        },
+        {
+          "id": "23256",
+          "name": "Denis Maccan",
+          "position": "Centre-Forward",
+          "minutes": 8
+        },
+        {
+          "id": "43095",
+          "name": "Adama Fofana",
+          "position": "Centre-Forward",
+          "minutes": 34
+        },
+        {
+          "id": "160856",
+          "name": "Daniele Simoncelli",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "75186",
+          "name": "Vincenzo Sarno",
+          "position": "Right Winger",
+          "minutes": 27
         }
       ]
     },
@@ -364,135 +536,201 @@
       "players": [
         {
           "id": "6442",
-          "name": "Antonio Rosati"
-        },
-        {
-          "id": "21829",
-          "name": "Francesco Benussi"
+          "name": "Antonio Rosati",
+          "position": "Goalkeeper",
+          "minutes": 1834
         },
         {
           "id": "56678",
-          "name": "Ugo Gabrieli"
+          "name": "Ugo Gabrieli",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "8189",
-          "name": "Souleymane Diamoutene"
-        },
-        {
-          "id": "23351",
-          "name": "Marcello Cottafava"
-        },
-        {
-          "id": "28857",
-          "name": "Raffaele Schiavi"
+          "id": "21829",
+          "name": "Francesco Benussi",
+          "position": "Goalkeeper",
+          "minutes": 2425
         },
         {
           "id": "29620",
-          "name": "Tiziano Polenghi"
+          "name": "Tiziano Polenghi",
+          "position": "Centre-Back",
+          "minutes": 2092
         },
         {
-          "id": "35849",
-          "name": "Andrea Esposito"
+          "id": "23351",
+          "name": "Marcello Cottafava",
+          "position": "Centre-Back",
+          "minutes": 2747
         },
         {
-          "id": "58452",
-          "name": "Fabiano Medina"
-        },
-        {
-          "id": "56677",
-          "name": "Fabio Franceschini"
-        },
-        {
-          "id": "61597",
-          "name": "Mattia Conte"
-        },
-        {
-          "id": "38380",
-          "name": "Hemza Mihoubi"
-        },
-        {
-          "id": "35707",
-          "name": "Alberto Giuliatto"
-        },
-        {
-          "id": "56686",
-          "name": "Antonio Tundo"
+          "id": "8189",
+          "name": "Souleymane Diamoutene",
+          "position": "Centre-Back",
+          "minutes": 3050
         },
         {
           "id": "32966",
-          "name": "Angelo"
+          "name": "Angelo",
+          "position": "Right-Back",
+          "minutes": 2649
         },
         {
-          "id": "42345",
-          "name": "Giuseppe Vives"
+          "id": "35707",
+          "name": "Alberto Giuliatto",
+          "position": "Left-Back",
+          "minutes": 1482
         },
         {
-          "id": "15332",
-          "name": "Andrea Ardito"
+          "id": "58452",
+          "name": "Fabiano Medina",
+          "position": "Centre-Back",
+          "minutes": 1707
         },
         {
-          "id": "6425",
-          "name": "Drissa Diarra"
+          "id": "38380",
+          "name": "Hemza Mihoubi",
+          "position": "Left-Back",
+          "minutes": 301
         },
         {
-          "id": "566294",
-          "name": "Daniel Raschle"
+          "id": "35849",
+          "name": "Andrea Esposito",
+          "position": "Centre-Back",
+          "minutes": 1042
         },
         {
-          "id": "21142",
-          "name": "Luca Ariatti"
+          "id": "61597",
+          "name": "Mattia Conte",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "34194",
-          "name": "Viktor Budyanskiy"
+          "id": "28857",
+          "name": "Raffaele Schiavi",
+          "position": "Centre-Back",
+          "minutes": 1980
         },
         {
-          "id": "22131",
-          "name": "Jaime Valdés"
+          "id": "56686",
+          "name": "Antonio Tundo",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
-          "id": "7098",
-          "name": "Andrea Zanchetta"
-        },
-        {
-          "id": "22598",
-          "name": "Gianni Munari"
-        },
-        {
-          "id": "50298",
-          "name": "Anej Lovrecic"
-        },
-        {
-          "id": "18914",
-          "name": "Ondrej Herzan"
-        },
-        {
-          "id": "56685",
-          "name": "Vittorio Triarico"
+          "id": "56677",
+          "name": "Fabio Franceschini",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "85545",
-          "name": "Kevin Raschle"
+          "name": "Kevin Raschle",
+          "position": "Left Midfield",
+          "minutes": null
         },
         {
-          "id": "6429",
-          "name": "Axel Konan"
+          "id": "34194",
+          "name": "Viktor Budyanskiy",
+          "position": "Central Midfield",
+          "minutes": 985
         },
         {
-          "id": "21700",
-          "name": "Simone Tiribocchi"
+          "id": "7098",
+          "name": "Andrea Zanchetta",
+          "position": "Central Midfield",
+          "minutes": 2918
         },
         {
-          "id": "16863",
-          "name": "Daniele Corvia"
+          "id": "22598",
+          "name": "Gianni Munari",
+          "position": "Central Midfield",
+          "minutes": 3359
+        },
+        {
+          "id": "50298",
+          "name": "Anej Lovrecic",
+          "position": "Central Midfield",
+          "minutes": 11
+        },
+        {
+          "id": "6425",
+          "name": "Drissa Diarra",
+          "position": "Defensive Midfield",
+          "minutes": 87
+        },
+        {
+          "id": "21142",
+          "name": "Luca Ariatti",
+          "position": "Central Midfield",
+          "minutes": 3859
+        },
+        {
+          "id": "22131",
+          "name": "Jaime Valdés",
+          "position": "Central Midfield",
+          "minutes": 1929
+        },
+        {
+          "id": "15332",
+          "name": "Andrea Ardito",
+          "position": "Defensive Midfield",
+          "minutes": 3168
+        },
+        {
+          "id": "18914",
+          "name": "Ondrej Herzan",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "56685",
+          "name": "Vittorio Triarico",
+          "position": "Right Midfield",
+          "minutes": 13
+        },
+        {
+          "id": "42345",
+          "name": "Giuseppe Vives",
+          "position": "Defensive Midfield",
+          "minutes": 1760
+        },
+        {
+          "id": "566294",
+          "name": "Daniel Raschle",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "23163",
-          "name": "Elvis Abbruscato"
+          "name": "Elvis Abbruscato",
+          "position": "Centre-Forward",
+          "minutes": 2779
+        },
+        {
+          "id": "6429",
+          "name": "Axel Konan",
+          "position": "Left Winger",
+          "minutes": 96
+        },
+        {
+          "id": "16863",
+          "name": "Daniele Corvia",
+          "position": "Centre-Forward",
+          "minutes": 705
         },
         {
           "id": "21962",
-          "name": "Alessandro Tulli"
+          "name": "Alessandro Tulli",
+          "position": "Centre-Forward",
+          "minutes": 237
+        },
+        {
+          "id": "21700",
+          "name": "Simone Tiribocchi",
+          "position": "Centre-Forward",
+          "minutes": 3518
         }
       ]
     },
@@ -502,151 +740,225 @@
       "players": [
         {
           "id": "3527",
-          "name": "Massimo Taibi"
+          "name": "Massimo Taibi",
+          "position": "Goalkeeper",
+          "minutes": 3182
         },
         {
           "id": "38650",
-          "name": "Marco Paoloni"
-        },
-        {
-          "id": "38605",
-          "name": "Nicolás Bremec"
+          "name": "Marco Paoloni",
+          "position": "Goalkeeper",
+          "minutes": 674
         },
         {
           "id": "88775",
-          "name": "Mirko Pennesi"
+          "name": "Mirko Pennesi",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "482081",
-          "name": "Fabio Bizzarri"
-        },
-        {
-          "id": "22281",
-          "name": "Vittorio Micolucci"
-        },
-        {
-          "id": "57436",
-          "name": "Massimo Melucci"
-        },
-        {
-          "id": "22264",
-          "name": "Antonio Aquilanti"
-        },
-        {
-          "id": "21940",
-          "name": "Michelangelo Minieri"
-        },
-        {
-          "id": "32079",
-          "name": "Gabriele Cioffi"
-        },
-        {
-          "id": "57454",
-          "name": "Angelo Siniscalchi"
-        },
-        {
-          "id": "57354",
-          "name": "Giuseppe Bellusci"
-        },
-        {
-          "id": "41750",
-          "name": "Olivier N’Siabamfumu"
+          "id": "38605",
+          "name": "Nicolás Bremec",
+          "position": "Goalkeeper",
+          "minutes": 425
         },
         {
           "id": "21185",
-          "name": "Andrea Giallombardo"
+          "name": "Andrea Giallombardo",
+          "position": "Left-Back",
+          "minutes": 1941
         },
         {
-          "id": "44277",
-          "name": "Lorenzo Pasqualini"
+          "id": "21940",
+          "name": "Michelangelo Minieri",
+          "position": "Centre-Back",
+          "minutes": 326
+        },
+        {
+          "id": "57436",
+          "name": "Massimo Melucci",
+          "position": "Centre-Back",
+          "minutes": 2436
         },
         {
           "id": "22810",
-          "name": "Vangelis Nastos"
+          "name": "Vangelis Nastos",
+          "position": "Right-Back",
+          "minutes": 1666
+        },
+        {
+          "id": "22264",
+          "name": "Antonio Aquilanti",
+          "position": "Centre-Back",
+          "minutes": 2399
+        },
+        {
+          "id": "57454",
+          "name": "Angelo Siniscalchi",
+          "position": "Centre-Back",
+          "minutes": 598
+        },
+        {
+          "id": "22281",
+          "name": "Vittorio Micolucci",
+          "position": "Centre-Back",
+          "minutes": 3401
         },
         {
           "id": "15337",
-          "name": "Paolo Foglio"
+          "name": "Paolo Foglio",
+          "position": "Right-Back",
+          "minutes": 413
         },
         {
-          "id": "41312",
-          "name": "Simone Pesce"
+          "id": "32079",
+          "name": "Gabriele Cioffi",
+          "position": "Centre-Back",
+          "minutes": 1939
         },
         {
-          "id": "43271",
-          "name": "Andrea Luci"
+          "id": "44277",
+          "name": "Lorenzo Pasqualini",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "57354",
+          "name": "Giuseppe Bellusci",
+          "position": "Centre-Back",
+          "minutes": 417
+        },
+        {
+          "id": "41750",
+          "name": "Olivier N’Siabamfumu",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "482081",
+          "name": "Fabio Bizzarri",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "57470",
-          "name": "Francesco Uliano"
-        },
-        {
-          "id": "57473",
-          "name": "Leandro Vitiello"
-        },
-        {
-          "id": "20946",
-          "name": "Daniele Di Donato"
-        },
-        {
-          "id": "28864",
-          "name": "Luis Fernando Centi"
-        },
-        {
-          "id": "57389",
-          "name": "Luigi Giorgi"
-        },
-        {
-          "id": "57442",
-          "name": "Fabio Oretti"
-        },
-        {
-          "id": "57445",
-          "name": "Davide Raffaello"
+          "name": "Francesco Uliano",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "28818",
-          "name": "Luca Belingheri"
+          "name": "Luca Belingheri",
+          "position": "Attacking Midfield",
+          "minutes": 1720
         },
         {
           "id": "25507",
-          "name": "Davide Saverino"
+          "name": "Davide Saverino",
+          "position": "Attacking Midfield",
+          "minutes": 732
+        },
+        {
+          "id": "28864",
+          "name": "Luis Fernando Centi",
+          "position": "Central Midfield",
+          "minutes": 642
+        },
+        {
+          "id": "20946",
+          "name": "Daniele Di Donato",
+          "position": "Central Midfield",
+          "minutes": 3189
+        },
+        {
+          "id": "41312",
+          "name": "Simone Pesce",
+          "position": "Defensive Midfield",
+          "minutes": 2785
+        },
+        {
+          "id": "43271",
+          "name": "Andrea Luci",
+          "position": "Defensive Midfield",
+          "minutes": 2510
+        },
+        {
+          "id": "57389",
+          "name": "Luigi Giorgi",
+          "position": "Central Midfield",
+          "minutes": 161
+        },
+        {
+          "id": "57442",
+          "name": "Fabio Oretti",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "57445",
+          "name": "Davide Raffaello",
+          "position": "Central Midfield",
+          "minutes": 53
+        },
+        {
+          "id": "57473",
+          "name": "Leandro Vitiello",
+          "position": "Defensive Midfield",
+          "minutes": 52
         },
         {
           "id": "41310",
-          "name": "Stefano Guberti"
-        },
-        {
-          "id": "39985",
-          "name": "Giampietro Perrulli"
-        },
-        {
-          "id": "16897",
-          "name": "Thomas Job"
-        },
-        {
-          "id": "16854",
-          "name": "Vincenzo Sommese"
-        },
-        {
-          "id": "24292",
-          "name": "Marco Bernacci"
-        },
-        {
-          "id": "21157",
-          "name": "Andrea Soncin"
+          "name": "Stefano Guberti",
+          "position": "Left Winger",
+          "minutes": 3426
         },
         {
           "id": "52135",
-          "name": "Riccardo Maniero"
+          "name": "Riccardo Maniero",
+          "position": "Centre-Forward",
+          "minutes": 924
         },
         {
-          "id": "22317",
-          "name": "Antonio Gaeta"
+          "id": "39985",
+          "name": "Giampietro Perrulli",
+          "position": "Left Winger",
+          "minutes": 537
+        },
+        {
+          "id": "24292",
+          "name": "Marco Bernacci",
+          "position": "Centre-Forward",
+          "minutes": 3492
+        },
+        {
+          "id": "16854",
+          "name": "Vincenzo Sommese",
+          "position": "Right Winger",
+          "minutes": 1000
+        },
+        {
+          "id": "16897",
+          "name": "Thomas Job",
+          "position": "Right Winger",
+          "minutes": 2286
         },
         {
           "id": "44271",
-          "name": "Edgars Gauracs"
+          "name": "Edgars Gauracs",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "22317",
+          "name": "Antonio Gaeta",
+          "position": "Centre-Forward",
+          "minutes": 162
+        },
+        {
+          "id": "21157",
+          "name": "Andrea Soncin",
+          "position": "Centre-Forward",
+          "minutes": 3488
         }
       ]
     },
@@ -656,163 +968,243 @@
       "players": [
         {
           "id": "34339",
-          "name": "Gabriele Paoletti"
-        },
-        {
-          "id": "24327",
-          "name": "Emanuele Manitta"
+          "name": "Gabriele Paoletti",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "57136",
-          "name": "Giancarlo Petrocco"
+          "name": "Giancarlo Petrocco",
+          "position": "Goalkeeper",
+          "minutes": 990
+        },
+        {
+          "id": "24327",
+          "name": "Emanuele Manitta",
+          "position": "Goalkeeper",
+          "minutes": 2700
         },
         {
           "id": "57137",
-          "name": "Andrea Giordani"
-        },
-        {
-          "id": "5991",
-          "name": "Marco Zanchi"
-        },
-        {
-          "id": "24314",
-          "name": "Angelo Rea"
-        },
-        {
-          "id": "22112",
-          "name": "Antonio Giosa"
-        },
-        {
-          "id": "42882",
-          "name": "Enrico Morello"
-        },
-        {
-          "id": "24331",
-          "name": "Mariano Stendardo"
+          "name": "Andrea Giordani",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "39982",
-          "name": "Domenico Bombara"
-        },
-        {
-          "id": "34320",
-          "name": "Matthew Olorunleke"
-        },
-        {
-          "id": "76116",
-          "name": "Giuseppe Nastasi"
+          "name": "Domenico Bombara",
+          "position": "Centre-Back",
+          "minutes": 374
         },
         {
           "id": "76112",
-          "name": "Vincent Kouadio"
+          "name": "Vincent Kouadio",
+          "position": "Centre-Back",
+          "minutes": 45
+        },
+        {
+          "id": "24331",
+          "name": "Mariano Stendardo",
+          "position": "Centre-Back",
+          "minutes": 2820
+        },
+        {
+          "id": "24314",
+          "name": "Angelo Rea",
+          "position": "Centre-Back",
+          "minutes": 1486
+        },
+        {
+          "id": "5991",
+          "name": "Marco Zanchi",
+          "position": "Centre-Back",
+          "minutes": 2109
+        },
+        {
+          "id": "34320",
+          "name": "Matthew Olorunleke",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "22112",
+          "name": "Antonio Giosa",
+          "position": "Centre-Back",
+          "minutes": 2035
+        },
+        {
+          "id": "42882",
+          "name": "Enrico Morello",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
           "id": "19132",
-          "name": "Alessandro Parisi"
-        },
-        {
-          "id": "41064",
-          "name": "Andrea Gaveglia"
+          "name": "Alessandro Parisi",
+          "position": "Left-Back",
+          "minutes": 2760
         },
         {
           "id": "21924",
-          "name": "Antonio Ghomsi"
+          "name": "Antonio Ghomsi",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "41064",
+          "name": "Andrea Gaveglia",
+          "position": "Left-Back",
+          "minutes": 1403
         },
         {
           "id": "23357",
-          "name": "Francesco Galeoto"
+          "name": "Francesco Galeoto",
+          "position": "Right-Back",
+          "minutes": 3668
         },
         {
-          "id": "24312",
-          "name": "Manolo Pestrin"
-        },
-        {
-          "id": "46467",
-          "name": "Girolamo Provenzano"
-        },
-        {
-          "id": "345202",
-          "name": "Giuseppe De Salvo"
-        },
-        {
-          "id": "19203",
-          "name": "Carmine Coppola"
+          "id": "76116",
+          "name": "Giuseppe Nastasi",
+          "position": "Centre-Back",
+          "minutes": 28
         },
         {
           "id": "21147",
-          "name": "Daniele De Vezze"
+          "name": "Daniele De Vezze",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "24312",
+          "name": "Manolo Pestrin",
+          "position": "Defensive Midfield",
+          "minutes": 1616
         },
         {
           "id": "21230",
-          "name": "Nicolás Córdova"
+          "name": "Nicolás Córdova",
+          "position": "Central Midfield",
+          "minutes": 3092
         },
         {
-          "id": "21685",
-          "name": "Roberto D'Aversa"
-        },
-        {
-          "id": "76114",
-          "name": "Gaetano Mastroieni"
+          "id": "46467",
+          "name": "Girolamo Provenzano",
+          "position": "Defensive Midfield",
+          "minutes": 473
         },
         {
           "id": "33340",
-          "name": "Flavio Lazzari"
+          "name": "Flavio Lazzari",
+          "position": "Attacking Midfield",
+          "minutes": 1891
         },
         {
-          "id": "41056",
-          "name": "Davide Arigò"
+          "id": "21685",
+          "name": "Roberto D'Aversa",
+          "position": "Central Midfield",
+          "minutes": 1865
         },
         {
-          "id": "57139",
-          "name": "Antonio Schetter"
+          "id": "19203",
+          "name": "Carmine Coppola",
+          "position": "Central Midfield",
+          "minutes": 1359
         },
         {
-          "id": "23362",
-          "name": "Massimo Minetti"
+          "id": "76114",
+          "name": "Gaetano Mastroieni",
+          "position": "Central Midfield",
+          "minutes": 45
         },
         {
-          "id": "16892",
-          "name": "Daniele Degano"
+          "id": "345202",
+          "name": "Giuseppe De Salvo",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "44375",
-          "name": "Juan Surraco"
+          "name": "Juan Surraco",
+          "position": "Second Striker",
+          "minutes": 1103
         },
         {
-          "id": "61717",
-          "name": "Angelo Nolé"
-        },
-        {
-          "id": "3899",
-          "name": "Ibrahima Bakayoko"
-        },
-        {
-          "id": "21153",
-          "name": "Christian Riganò"
-        },
-        {
-          "id": "38559",
-          "name": "Salvatore Foti"
-        },
-        {
-          "id": "25486",
-          "name": "Raffaele Biancolino"
-        },
-        {
-          "id": "27684",
-          "name": "Vittorio Bernardo"
+          "id": "23362",
+          "name": "Massimo Minetti",
+          "position": "Second Striker",
+          "minutes": null
         },
         {
           "id": "56688",
-          "name": "Attilio Angotti"
+          "name": "Attilio Angotti",
+          "position": "Centre-Forward",
+          "minutes": 117
         },
         {
-          "id": "76118",
-          "name": "Antonino Tavilla"
+          "id": "21153",
+          "name": "Christian Riganò",
+          "position": "Centre-Forward",
+          "minutes": 7
         },
         {
           "id": "61713",
-          "name": "Marco Moro"
+          "name": "Marco Moro",
+          "position": "Centre-Forward",
+          "minutes": 1497
+        },
+        {
+          "id": "25486",
+          "name": "Raffaele Biancolino",
+          "position": "Centre-Forward",
+          "minutes": 2482
+        },
+        {
+          "id": "38559",
+          "name": "Salvatore Foti",
+          "position": "Centre-Forward",
+          "minutes": 1151
+        },
+        {
+          "id": "41056",
+          "name": "Davide Arigò",
+          "position": "Right Winger",
+          "minutes": 138
+        },
+        {
+          "id": "3899",
+          "name": "Ibrahima Bakayoko",
+          "position": "Centre-Forward",
+          "minutes": 83
+        },
+        {
+          "id": "16892",
+          "name": "Daniele Degano",
+          "position": "Second Striker",
+          "minutes": 2512
+        },
+        {
+          "id": "57139",
+          "name": "Antonio Schetter",
+          "position": "Right Winger",
+          "minutes": 2025
+        },
+        {
+          "id": "61717",
+          "name": "Angelo Nolé",
+          "position": "Second Striker",
+          "minutes": 107
+        },
+        {
+          "id": "27684",
+          "name": "Vittorio Bernardo",
+          "position": "Centre-Forward",
+          "minutes": 117
+        },
+        {
+          "id": "76118",
+          "name": "Antonino Tavilla",
+          "position": "Attack",
+          "minutes": 16
         }
       ]
     },
@@ -821,148 +1213,220 @@
       "name": "UC AlbinoLeffe",
       "players": [
         {
-          "id": "22318",
-          "name": "Federico Marchetti"
-        },
-        {
           "id": "23190",
-          "name": "Achille Coser"
-        },
-        {
-          "id": "61255",
-          "name": "Andrea Offredi"
+          "name": "Achille Coser",
+          "position": "Goalkeeper",
+          "minutes": 945
         },
         {
           "id": "93109",
-          "name": "Matteo Nodari"
+          "name": "Matteo Nodari",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
+          "id": "61255",
+          "name": "Andrea Offredi",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
+          "id": "22318",
+          "name": "Federico Marchetti",
+          "position": "Goalkeeper",
+          "minutes": 3286
         },
         {
           "id": "447176",
-          "name": "Francesco Speroni"
-        },
-        {
-          "id": "22293",
-          "name": "Carlo Gervasoni"
-        },
-        {
-          "id": "59657",
-          "name": "Mattia Serafini"
-        },
-        {
-          "id": "20917",
-          "name": "Kewullay Conteh"
-        },
-        {
-          "id": "30634",
-          "name": "Mario Donadoni"
-        },
-        {
-          "id": "21763",
-          "name": "Federico Peluso"
-        },
-        {
-          "id": "59653",
-          "name": "Daniel Bombardieri"
-        },
-        {
-          "id": "15337",
-          "name": "Paolo Foglio"
-        },
-        {
-          "id": "28817",
-          "name": "Gabriele Perico"
-        },
-        {
-          "id": "22240",
-          "name": "Ruben Garlini"
+          "name": "Francesco Speroni",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "150462",
-          "name": "Alessandro Salvi"
+          "name": "Alessandro Salvi",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "22238",
-          "name": "Ivan Del Prato"
+          "id": "20917",
+          "name": "Kewullay Conteh",
+          "position": "Centre-Back",
+          "minutes": 2898
         },
         {
-          "id": "355037",
-          "name": "Fabio Fiorentini"
+          "id": "30634",
+          "name": "Mario Donadoni",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
-          "id": "22235",
-          "name": "Filippo Carobbio"
+          "id": "21763",
+          "name": "Federico Peluso",
+          "position": "Left-Back",
+          "minutes": 3554
         },
         {
-          "id": "22241",
-          "name": "Marco Gori"
+          "id": "22240",
+          "name": "Ruben Garlini",
+          "position": "Right-Back",
+          "minutes": 2244
         },
         {
-          "id": "22247",
-          "name": "Mirco Poloni"
+          "id": "59653",
+          "name": "Daniel Bombardieri",
+          "position": "Left-Back",
+          "minutes": 96
         },
         {
-          "id": "23293",
-          "name": "Roberto Previtali"
+          "id": "28817",
+          "name": "Gabriele Perico",
+          "position": "Right-Back",
+          "minutes": 1295
         },
         {
-          "id": "43268",
-          "name": "Giulio Fogaroli"
+          "id": "15337",
+          "name": "Paolo Foglio",
+          "position": "Right-Back",
+          "minutes": 1153
+        },
+        {
+          "id": "22293",
+          "name": "Carlo Gervasoni",
+          "position": "Centre-Back",
+          "minutes": 3231
+        },
+        {
+          "id": "59657",
+          "name": "Mattia Serafini",
+          "position": "Centre-Back",
+          "minutes": 1639
         },
         {
           "id": "150442",
-          "name": "Luciano Gualdi"
+          "name": "Luciano Gualdi",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "38649",
-          "name": "Nicola Madonna"
+          "id": "22235",
+          "name": "Filippo Carobbio",
+          "position": "Central Midfield",
+          "minutes": 3347
         },
         {
-          "id": "22237",
-          "name": "Riccardo Colombo"
+          "id": "23293",
+          "name": "Roberto Previtali",
+          "position": "Central Midfield",
+          "minutes": 371
         },
         {
-          "id": "23191",
-          "name": "Andrea Cristiano"
+          "id": "22238",
+          "name": "Ivan Del Prato",
+          "position": "Defensive Midfield",
+          "minutes": 3511
         },
         {
           "id": "61444",
-          "name": "Alessandro Gherardi"
+          "name": "Alessandro Gherardi",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "38649",
+          "name": "Nicola Madonna",
+          "position": "Right Midfield",
+          "minutes": 906
+        },
+        {
+          "id": "23191",
+          "name": "Andrea Cristiano",
+          "position": "Left Midfield",
+          "minutes": 3257
+        },
+        {
+          "id": "22241",
+          "name": "Marco Gori",
+          "position": "Central Midfield",
+          "minutes": 2173
+        },
+        {
+          "id": "22247",
+          "name": "Mirco Poloni",
+          "position": "Central Midfield",
+          "minutes": 1414
+        },
+        {
+          "id": "22237",
+          "name": "Riccardo Colombo",
+          "position": "Right Midfield",
+          "minutes": 1873
         },
         {
           "id": "61256",
-          "name": "Gabriele Piantoni"
+          "name": "Gabriele Piantoni",
+          "position": "Attacking Midfield",
+          "minutes": 20
         },
         {
-          "id": "22307",
-          "name": "Filippo Antonelli Agomeri"
+          "id": "43268",
+          "name": "Giulio Fogaroli",
+          "position": "Central Midfield",
+          "minutes": 1
         },
         {
-          "id": "22234",
-          "name": "Roberto Bonazzi"
-        },
-        {
-          "id": "22312",
-          "name": "Roberto Colacone"
-        },
-        {
-          "id": "42190",
-          "name": "Marco Cellini"
-        },
-        {
-          "id": "25325",
-          "name": "Francesco Ruopolo"
-        },
-        {
-          "id": "38646",
-          "name": "Nicola Ferrari"
-        },
-        {
-          "id": "59658",
-          "name": "Omar Torri"
+          "id": "355037",
+          "name": "Fabio Fiorentini",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "101919",
-          "name": "Massimiliano Pesenti"
+          "name": "Massimiliano Pesenti",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "59658",
+          "name": "Omar Torri",
+          "position": "Centre-Forward",
+          "minutes": 1
+        },
+        {
+          "id": "42190",
+          "name": "Marco Cellini",
+          "position": "Centre-Forward",
+          "minutes": 3187
+        },
+        {
+          "id": "22234",
+          "name": "Roberto Bonazzi",
+          "position": "Right Winger",
+          "minutes": 666
+        },
+        {
+          "id": "38646",
+          "name": "Nicola Ferrari",
+          "position": "Centre-Forward",
+          "minutes": 935
+        },
+        {
+          "id": "22312",
+          "name": "Roberto Colacone",
+          "position": "Second Striker",
+          "minutes": 234
+        },
+        {
+          "id": "25325",
+          "name": "Francesco Ruopolo",
+          "position": "Centre-Forward",
+          "minutes": 3544
+        },
+        {
+          "id": "22307",
+          "name": "Filippo Antonelli Agomeri",
+          "position": "Right Winger",
+          "minutes": 533
         }
       ]
     },
@@ -971,164 +1435,244 @@
       "name": "Vicenza Calcio",
       "players": [
         {
-          "id": "21789",
-          "name": "Matteo Guardalben"
+          "id": "61756",
+          "name": "Giacomo Pozzer",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "6035",
-          "name": "Adriano Zancopè"
+          "name": "Adriano Zancopè",
+          "position": "Goalkeeper",
+          "minutes": 1397
         },
         {
           "id": "6808",
-          "name": "Marco Fortin"
+          "name": "Marco Fortin",
+          "position": "Goalkeeper",
+          "minutes": 1581
         },
         {
-          "id": "61756",
-          "name": "Giacomo Pozzer"
+          "id": "21789",
+          "name": "Matteo Guardalben",
+          "position": "Goalkeeper",
+          "minutes": 982
         },
         {
           "id": "61768",
-          "name": "Andrea Tecchio"
-        },
-        {
-          "id": "61746",
-          "name": "Federico Gabrieli"
-        },
-        {
-          "id": "36356",
-          "name": "Marco Andreolli"
-        },
-        {
-          "id": "21940",
-          "name": "Michelangelo Minieri"
-        },
-        {
-          "id": "22209",
-          "name": "Riccardo Fissore"
-        },
-        {
-          "id": "21761",
-          "name": "Daniele Martinelli"
-        },
-        {
-          "id": "21832",
-          "name": "David Giubilato"
-        },
-        {
-          "id": "8551",
-          "name": "Mirko Cudini"
+          "name": "Andrea Tecchio",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "22144",
-          "name": "Francesco Scardina"
-        },
-        {
-          "id": "29619",
-          "name": "Emanuele Pesoli"
-        },
-        {
-          "id": "146951",
-          "name": "Marco Zentil"
-        },
-        {
-          "id": "61770",
-          "name": "Emanuele Terranova"
+          "name": "Francesco Scardina",
+          "position": "Centre-Back",
+          "minutes": 3250
         },
         {
           "id": "21769",
-          "name": "Salvatore Masiello"
+          "name": "Salvatore Masiello",
+          "position": "Left-Back",
+          "minutes": 3193
         },
         {
-          "id": "38824",
-          "name": "Davide Brivio"
+          "id": "8551",
+          "name": "Mirko Cudini",
+          "position": "Centre-Back",
+          "minutes": 3061
         },
         {
           "id": "22810",
-          "name": "Vangelis Nastos"
+          "name": "Vangelis Nastos",
+          "position": "Right-Back",
+          "minutes": 1609
         },
         {
-          "id": "6812",
-          "name": "Giovanni Passiglia"
+          "id": "21761",
+          "name": "Daniele Martinelli",
+          "position": "Centre-Back",
+          "minutes": 2181
         },
         {
-          "id": "19436",
-          "name": "Antonino Bernardini"
+          "id": "146951",
+          "name": "Marco Zentil",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "16845",
-          "name": "Luis Helguera"
+          "id": "29619",
+          "name": "Emanuele Pesoli",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "75611",
-          "name": "Nicolás Gorobsov"
+          "id": "21832",
+          "name": "David Giubilato",
+          "position": "Centre-Back",
+          "minutes": 554
         },
         {
-          "id": "61757",
-          "name": "Nicola Rigoni"
+          "id": "38824",
+          "name": "Davide Brivio",
+          "position": "Left-Back",
+          "minutes": 2053
         },
         {
-          "id": "22210",
-          "name": "Luca Rigoni"
+          "id": "61770",
+          "name": "Emanuele Terranova",
+          "position": "Centre-Back",
+          "minutes": 1596
         },
         {
-          "id": "35864",
-          "name": "Piermario Morosini"
+          "id": "22209",
+          "name": "Riccardo Fissore",
+          "position": "Centre-Back",
+          "minutes": 180
         },
         {
-          "id": "22249",
-          "name": "Cristian Raimondi"
+          "id": "61746",
+          "name": "Federico Gabrieli",
+          "position": "Defender",
+          "minutes": null
         },
         {
-          "id": "55787",
-          "name": "Andrea Giacomini"
+          "id": "21940",
+          "name": "Michelangelo Minieri",
+          "position": "Centre-Back",
+          "minutes": 605
         },
         {
-          "id": "20729",
-          "name": "Andrea Capone"
-        },
-        {
-          "id": "22218",
-          "name": "Nicola Zanini"
+          "id": "36356",
+          "name": "Marco Andreolli",
+          "position": "Centre-Back",
+          "minutes": 187
         },
         {
           "id": "74642",
-          "name": "Mattia Minesso"
+          "name": "Mattia Minesso",
+          "position": "Attacking Midfield",
+          "minutes": 85
         },
         {
-          "id": "39985",
-          "name": "Giampietro Perrulli"
+          "id": "22210",
+          "name": "Luca Rigoni",
+          "position": "Central Midfield",
+          "minutes": 1178
         },
         {
-          "id": "29593",
-          "name": "Davide Matteini"
+          "id": "22249",
+          "name": "Cristian Raimondi",
+          "position": "Right Midfield",
+          "minutes": 3252
         },
         {
-          "id": "21691",
-          "name": "Mattia Marchesetti"
+          "id": "19436",
+          "name": "Antonino Bernardini",
+          "position": "Defensive Midfield",
+          "minutes": 988
         },
         {
-          "id": "20895",
-          "name": "Riccardo Zampagna"
+          "id": "22218",
+          "name": "Nicola Zanini",
+          "position": "Attacking Midfield",
+          "minutes": 5
         },
         {
-          "id": "33349",
-          "name": "Ferdinando Sforzini"
+          "id": "16845",
+          "name": "Luis Helguera",
+          "position": "Defensive Midfield",
+          "minutes": 2954
         },
         {
-          "id": "24301",
-          "name": "Simone Cavalli"
+          "id": "55787",
+          "name": "Andrea Giacomini",
+          "position": "Left Midfield",
+          "minutes": 284
         },
         {
-          "id": "22212",
-          "name": "Stefan Schwoch"
+          "id": "75611",
+          "name": "Nicolás Gorobsov",
+          "position": "Defensive Midfield",
+          "minutes": 13
+        },
+        {
+          "id": "6812",
+          "name": "Giovanni Passiglia",
+          "position": "Defensive Midfield",
+          "minutes": 353
+        },
+        {
+          "id": "61757",
+          "name": "Nicola Rigoni",
+          "position": "Defensive Midfield",
+          "minutes": 16
+        },
+        {
+          "id": "35864",
+          "name": "Piermario Morosini",
+          "position": "Central Midfield",
+          "minutes": 3189
+        },
+        {
+          "id": "20729",
+          "name": "Andrea Capone",
+          "position": "Attacking Midfield",
+          "minutes": 1951
         },
         {
           "id": "21698",
-          "name": "Matteo Serafini"
+          "name": "Matteo Serafini",
+          "position": "Centre-Forward",
+          "minutes": 1171
+        },
+        {
+          "id": "22212",
+          "name": "Stefan Schwoch",
+          "position": "Centre-Forward",
+          "minutes": 1635
+        },
+        {
+          "id": "29593",
+          "name": "Davide Matteini",
+          "position": "Left Winger",
+          "minutes": 1175
+        },
+        {
+          "id": "33349",
+          "name": "Ferdinando Sforzini",
+          "position": "Centre-Forward",
+          "minutes": 770
+        },
+        {
+          "id": "39985",
+          "name": "Giampietro Perrulli",
+          "position": "Left Winger",
+          "minutes": 307
         },
         {
           "id": "61772",
-          "name": "Nicola Dal Bosco"
+          "name": "Nicola Dal Bosco",
+          "position": "Centre-Forward",
+          "minutes": 84
+        },
+        {
+          "id": "20895",
+          "name": "Riccardo Zampagna",
+          "position": "Centre-Forward",
+          "minutes": 1270
+        },
+        {
+          "id": "24301",
+          "name": "Simone Cavalli",
+          "position": "Centre-Forward",
+          "minutes": 111
+        },
+        {
+          "id": "21691",
+          "name": "Mattia Marchesetti",
+          "position": "Left Winger",
+          "minutes": 186
         }
       ]
     },
@@ -1138,135 +1682,201 @@
       "players": [
         {
           "id": "5935",
-          "name": "Francesco Antonioli"
-        },
-        {
-          "id": "43411",
-          "name": "Roberto Colombo"
+          "name": "Francesco Antonioli",
+          "position": "Goalkeeper",
+          "minutes": 3960
         },
         {
           "id": "56845",
-          "name": "Mattia Ascani"
+          "name": "Mattia Ascani",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "5988",
-          "name": "Marcello Castellini"
-        },
-        {
-          "id": "9850",
-          "name": "Vangelis Moras"
-        },
-        {
-          "id": "34336",
-          "name": "Andrea Costa"
-        },
-        {
-          "id": "16873",
-          "name": "Claudio Terzi"
-        },
-        {
-          "id": "28030",
-          "name": "Luca Tedeschi"
-        },
-        {
-          "id": "21832",
-          "name": "David Giubilato"
+          "id": "43411",
+          "name": "Roberto Colombo",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "112457",
-          "name": "Alessandro Bassoli"
-        },
-        {
-          "id": "17173",
-          "name": "Riccardo Bonetto"
-        },
-        {
-          "id": "56841",
-          "name": "Michelangelo Albertazzi"
+          "name": "Alessandro Bassoli",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "15458",
-          "name": "Daniele Daino"
+          "name": "Daniele Daino",
+          "position": "Right-Back",
+          "minutes": 2801
         },
         {
-          "id": "21145",
-          "name": "Davide Carrus"
+          "id": "28030",
+          "name": "Luca Tedeschi",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "5995",
-          "name": "Christian Amoroso"
+          "id": "5988",
+          "name": "Marcello Castellini",
+          "position": "Centre-Back",
+          "minutes": 3254
         },
         {
-          "id": "19445",
-          "name": "Nicola Mingazzini"
+          "id": "9850",
+          "name": "Vangelis Moras",
+          "position": "Centre-Back",
+          "minutes": 1995
         },
         {
-          "id": "56889",
-          "name": "Francesco Della Rocca"
+          "id": "16873",
+          "name": "Claudio Terzi",
+          "position": "Centre-Back",
+          "minutes": 2895
         },
         {
-          "id": "24304",
-          "name": "Simone Confalone"
+          "id": "21832",
+          "name": "David Giubilato",
+          "position": "Centre-Back",
+          "minutes": 564
         },
         {
-          "id": "41989",
-          "name": "Francesco Valiani"
+          "id": "34336",
+          "name": "Andrea Costa",
+          "position": "Centre-Back",
+          "minutes": 517
+        },
+        {
+          "id": "56841",
+          "name": "Michelangelo Albertazzi",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "17173",
+          "name": "Riccardo Bonetto",
+          "position": "Left-Back",
+          "minutes": 2891
         },
         {
           "id": "56853",
-          "name": "Federico Casarini"
+          "name": "Federico Casarini",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "56866",
-          "name": "Luca Ferrari"
+          "id": "5995",
+          "name": "Christian Amoroso",
+          "position": "Central Midfield",
+          "minutes": 2546
         },
         {
-          "id": "19244",
-          "name": "Luigi Lavecchia"
+          "id": "41989",
+          "name": "Francesco Valiani",
+          "position": "Central Midfield",
+          "minutes": 1536
+        },
+        {
+          "id": "19445",
+          "name": "Nicola Mingazzini",
+          "position": "Central Midfield",
+          "minutes": 3256
         },
         {
           "id": "5956",
-          "name": "Davide Bombardini"
+          "name": "Davide Bombardini",
+          "position": "Left Midfield",
+          "minutes": 1617
         },
         {
-          "id": "56860",
-          "name": "Davide Colomba"
+          "id": "21145",
+          "name": "Davide Carrus",
+          "position": "Defensive Midfield",
+          "minutes": 3605
         },
         {
           "id": "52136",
-          "name": "Davide Di Gennaro"
+          "name": "Davide Di Gennaro",
+          "position": "Attacking Midfield",
+          "minutes": 761
+        },
+        {
+          "id": "56889",
+          "name": "Francesco Della Rocca",
+          "position": "Central Midfield",
+          "minutes": 315
+        },
+        {
+          "id": "56860",
+          "name": "Davide Colomba",
+          "position": "Left Midfield",
+          "minutes": 2
+        },
+        {
+          "id": "56866",
+          "name": "Luca Ferrari",
+          "position": "Central Midfield",
+          "minutes": 1
+        },
+        {
+          "id": "24304",
+          "name": "Simone Confalone",
+          "position": "Central Midfield",
+          "minutes": 809
+        },
+        {
+          "id": "19244",
+          "name": "Luigi Lavecchia",
+          "position": "Right Midfield",
+          "minutes": 1671
         },
         {
           "id": "56875",
-          "name": "Gabriele Paonessa"
+          "name": "Gabriele Paonessa",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
           "id": "21853",
-          "name": "Adaílton"
-        },
-        {
-          "id": "5930",
-          "name": "Massimo Marazzina"
-        },
-        {
-          "id": "16846",
-          "name": "Cristian Bucchi"
-        },
-        {
-          "id": "15418",
-          "name": "Dino Fava"
-        },
-        {
-          "id": "4049",
-          "name": "Tomas Danilevičius"
+          "name": "Adaílton",
+          "position": "Second Striker",
+          "minutes": 1945
         },
         {
           "id": "6007",
-          "name": "Giacomo Cipriani"
+          "name": "Giacomo Cipriani",
+          "position": "Centre-Forward",
+          "minutes": 72
+        },
+        {
+          "id": "4049",
+          "name": "Tomas Danilevičius",
+          "position": "Centre-Forward",
+          "minutes": 77
+        },
+        {
+          "id": "15418",
+          "name": "Dino Fava",
+          "position": "Centre-Forward",
+          "minutes": 1600
         },
         {
           "id": "67639",
-          "name": "Andrey Galabinov"
+          "name": "Andrey Galabinov",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "16846",
+          "name": "Cristian Bucchi",
+          "position": "Centre-Forward",
+          "minutes": 1305
+        },
+        {
+          "id": "5930",
+          "name": "Massimo Marazzina",
+          "position": "Centre-Forward",
+          "minutes": 3490
         }
       ]
     },
@@ -1275,180 +1885,268 @@
       "name": "Treviso FBC 1993",
       "players": [
         {
-          "id": "19452",
-          "name": "Alex Calderoni"
-        },
-        {
-          "id": "16633",
-          "name": "Alex Cordaz"
-        },
-        {
           "id": "57556",
-          "name": "Jefferson Leonardo Trazzi"
+          "name": "Jefferson Leonardo Trazzi",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
+          "id": "19452",
+          "name": "Alex Calderoni",
+          "position": "Goalkeeper",
+          "minutes": 3810
         },
         {
           "id": "44035",
-          "name": "Max"
+          "name": "Max",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "463650",
-          "name": "Francesco Marson"
-        },
-        {
-          "id": "24052",
-          "name": "Giuseppe Scurto"
-        },
-        {
-          "id": "5913",
-          "name": "Lorenzo D'Anna"
-        },
-        {
-          "id": "6082",
-          "name": "William Viali"
-        },
-        {
-          "id": "28030",
-          "name": "Luca Tedeschi"
-        },
-        {
-          "id": "39983",
-          "name": "Leonardo Bonucci"
-        },
-        {
-          "id": "67598",
-          "name": "Lorenzo Colavetta"
-        },
-        {
-          "id": "110747",
-          "name": "Ivan Merli Sala"
+          "id": "16633",
+          "name": "Alex Cordaz",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "24320",
-          "name": "Alessandro Dal Canto"
+          "name": "Alessandro Dal Canto",
+          "position": "Left-Back",
+          "minutes": 1570
         },
         {
           "id": "21156",
-          "name": "Massimiliano Scaglia"
+          "name": "Massimiliano Scaglia",
+          "position": "Left-Back",
+          "minutes": 3088
+        },
+        {
+          "id": "24052",
+          "name": "Giuseppe Scurto",
+          "position": "Centre-Back",
+          "minutes": 3144
+        },
+        {
+          "id": "28030",
+          "name": "Luca Tedeschi",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "67598",
+          "name": "Lorenzo Colavetta",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "39983",
+          "name": "Leonardo Bonucci",
+          "position": "Centre-Back",
+          "minutes": 1860
         },
         {
           "id": "5994",
-          "name": "Vlado Smit"
+          "name": "Vlado Smit",
+          "position": "Left-Back",
+          "minutes": 1793
+        },
+        {
+          "id": "5913",
+          "name": "Lorenzo D'Anna",
+          "position": "Centre-Back",
+          "minutes": 1051
         },
         {
           "id": "67595",
-          "name": "Thiago Soares"
+          "name": "Thiago Soares",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
           "id": "22600",
-          "name": "William Pianu"
+          "name": "William Pianu",
+          "position": "Right-Back",
+          "minutes": 1550
+        },
+        {
+          "id": "110747",
+          "name": "Ivan Merli Sala",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "6082",
+          "name": "William Viali",
+          "position": "Centre-Back",
+          "minutes": 1920
         },
         {
           "id": "15453",
-          "name": "Dario Baccin"
+          "name": "Dario Baccin",
+          "position": "Right-Back",
+          "minutes": 1842
         },
         {
-          "id": "5954",
-          "name": "Gianni Guigou"
-        },
-        {
-          "id": "6874",
-          "name": "Federico Giunti"
-        },
-        {
-          "id": "44393",
-          "name": "Nicolás Amodio"
-        },
-        {
-          "id": "28867",
-          "name": "Riccardo Gissi"
-        },
-        {
-          "id": "36358",
-          "name": "Daniel Maa Boumsong"
-        },
-        {
-          "id": "23356",
-          "name": "Divine Fonjock"
-        },
-        {
-          "id": "445777",
-          "name": "Nicola Orlandi"
+          "id": "463650",
+          "name": "Francesco Marson",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "29614",
-          "name": "Gionata Mingozzi"
+          "name": "Gionata Mingozzi",
+          "position": "Central Midfield",
+          "minutes": 808
         },
         {
-          "id": "144096",
-          "name": "Raffaele D'Esposito"
+          "id": "6874",
+          "name": "Federico Giunti",
+          "position": "Defensive Midfield",
+          "minutes": 780
         },
         {
           "id": "30665",
-          "name": "Ivano Trotta"
-        },
-        {
-          "id": "23353",
-          "name": "Antonino D'Agostino"
-        },
-        {
-          "id": "20590",
-          "name": "Andrea Russotto"
+          "name": "Ivano Trotta",
+          "position": "Right Midfield",
+          "minutes": 690
         },
         {
           "id": "57558",
-          "name": "Dario Venitucci"
+          "name": "Dario Venitucci",
+          "position": "Attacking Midfield",
+          "minutes": 2374
+        },
+        {
+          "id": "5954",
+          "name": "Gianni Guigou",
+          "position": "Defensive Midfield",
+          "minutes": 1584
+        },
+        {
+          "id": "23356",
+          "name": "Divine Fonjock",
+          "position": "Defensive Midfield",
+          "minutes": null
+        },
+        {
+          "id": "20590",
+          "name": "Andrea Russotto",
+          "position": "Attacking Midfield",
+          "minutes": 1661
+        },
+        {
+          "id": "23353",
+          "name": "Antonino D'Agostino",
+          "position": "Right Midfield",
+          "minutes": 232
+        },
+        {
+          "id": "44393",
+          "name": "Nicolás Amodio",
+          "position": "Defensive Midfield",
+          "minutes": 674
+        },
+        {
+          "id": "28867",
+          "name": "Riccardo Gissi",
+          "position": "Defensive Midfield",
+          "minutes": 3216
+        },
+        {
+          "id": "144096",
+          "name": "Raffaele D'Esposito",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "88687",
-          "name": "Jacopo Fortunato"
+          "name": "Jacopo Fortunato",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "40111",
-          "name": "Daniele Quadrini"
+          "id": "36358",
+          "name": "Daniel Maa Boumsong",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
-          "id": "23345",
-          "name": "Barreto"
-        },
-        {
-          "id": "21695",
-          "name": "Piá"
-        },
-        {
-          "id": "61596",
-          "name": "Daniel Bradaschia"
-        },
-        {
-          "id": "22227",
-          "name": "Arturo Lupoli"
-        },
-        {
-          "id": "15418",
-          "name": "Dino Fava"
-        },
-        {
-          "id": "5933",
-          "name": "Luigi Beghetto"
-        },
-        {
-          "id": "40001",
-          "name": "Wilker"
+          "id": "445777",
+          "name": "Nicola Orlandi",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "33763",
-          "name": "Massimo Coda"
-        },
-        {
-          "id": "44514",
-          "name": "Federico Piovaccari"
-        },
-        {
-          "id": "82837",
-          "name": "Riccardo Musetti"
+          "name": "Massimo Coda",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "72491",
-          "name": "Riccardo Bocalon"
+          "name": "Riccardo Bocalon",
+          "position": "Centre-Forward",
+          "minutes": 46
+        },
+        {
+          "id": "5933",
+          "name": "Luigi Beghetto",
+          "position": "Centre-Forward",
+          "minutes": 1863
+        },
+        {
+          "id": "15418",
+          "name": "Dino Fava",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "22227",
+          "name": "Arturo Lupoli",
+          "position": "Centre-Forward",
+          "minutes": 718
+        },
+        {
+          "id": "82837",
+          "name": "Riccardo Musetti",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "23345",
+          "name": "Barreto",
+          "position": "Second Striker",
+          "minutes": 2568
+        },
+        {
+          "id": "21695",
+          "name": "Piá",
+          "position": "Second Striker",
+          "minutes": 861
+        },
+        {
+          "id": "40111",
+          "name": "Daniele Quadrini",
+          "position": "Right Winger",
+          "minutes": 2664
+        },
+        {
+          "id": "61596",
+          "name": "Daniel Bradaschia",
+          "position": "Second Striker",
+          "minutes": null
+        },
+        {
+          "id": "40001",
+          "name": "Wilker",
+          "position": "Attack",
+          "minutes": null
+        },
+        {
+          "id": "44514",
+          "name": "Federico Piovaccari",
+          "position": "Centre-Forward",
+          "minutes": 1195
         }
       ]
     },
@@ -1458,171 +2156,255 @@
       "players": [
         {
           "id": "22149",
-          "name": "Jean-François Gillet"
+          "name": "Jean-François Gillet",
+          "position": "Goalkeeper",
+          "minutes": 3663
         },
         {
           "id": "61519",
-          "name": "Fabio Fusco"
+          "name": "Fabio Fusco",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "22125",
-          "name": "Vitangelo Spadavecchia"
+          "name": "Vitangelo Spadavecchia",
+          "position": "Goalkeeper",
+          "minutes": 387
         },
         {
           "id": "84440",
-          "name": "Paolino Corno"
+          "name": "Paolino Corno",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "16849",
-          "name": "Marco Esposito"
-        },
-        {
-          "id": "22213",
-          "name": "Cristian Stellini"
+          "name": "Marco Esposito",
+          "position": "Centre-Back",
+          "minutes": 1831
         },
         {
           "id": "46029",
-          "name": "Palmiro Di Dio"
-        },
-        {
-          "id": "61506",
-          "name": "Giacinto Allegrini"
-        },
-        {
-          "id": "43082",
-          "name": "Nicola Belmonte"
-        },
-        {
-          "id": "34198",
-          "name": "Andrea Masiello"
-        },
-        {
-          "id": "84541",
-          "name": "Christian Conti"
-        },
-        {
-          "id": "158460",
-          "name": "Fabio Grieco"
-        },
-        {
-          "id": "21887",
-          "name": "Giovanni Marchese"
+          "name": "Palmiro Di Dio",
+          "position": "Centre-Back",
+          "minutes": 760
         },
         {
           "id": "45565",
-          "name": "Luca Antonelli"
+          "name": "Luca Antonelli",
+          "position": "Left-Back",
+          "minutes": 1573
+        },
+        {
+          "id": "84541",
+          "name": "Christian Conti",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "61506",
+          "name": "Giacinto Allegrini",
+          "position": "Centre-Back",
+          "minutes": 185
         },
         {
           "id": "22113",
-          "name": "Giuseppe Ingrosso"
+          "name": "Giuseppe Ingrosso",
+          "position": "Left-Back",
+          "minutes": 584
         },
         {
-          "id": "61522",
-          "name": "Ivan Loseto"
-        },
-        {
-          "id": "38648",
-          "name": "Gianluca Galasso"
-        },
-        {
-          "id": "26444",
-          "name": "Santiago Ladino"
+          "id": "43082",
+          "name": "Nicola Belmonte",
+          "position": "Centre-Back",
+          "minutes": 2513
         },
         {
           "id": "22600",
-          "name": "William Pianu"
+          "name": "William Pianu",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "28827",
-          "name": "Alessandro Gazzi"
+          "id": "26444",
+          "name": "Santiago Ladino",
+          "position": "Right-Back",
+          "minutes": 1126
+        },
+        {
+          "id": "38648",
+          "name": "Gianluca Galasso",
+          "position": "Right-Back",
+          "minutes": 3179
+        },
+        {
+          "id": "22213",
+          "name": "Cristian Stellini",
+          "position": "Centre-Back",
+          "minutes": 2243
+        },
+        {
+          "id": "61522",
+          "name": "Ivan Loseto",
+          "position": "Left-Back",
+          "minutes": 459
+        },
+        {
+          "id": "158460",
+          "name": "Fabio Grieco",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "21887",
+          "name": "Giovanni Marchese",
+          "position": "Left-Back",
+          "minutes": 1710
+        },
+        {
+          "id": "34198",
+          "name": "Andrea Masiello",
+          "position": "Centre-Back",
+          "minutes": 1800
         },
         {
           "id": "22101",
-          "name": "Antonio Bellavista"
-        },
-        {
-          "id": "22269",
-          "name": "Andrea Carozza"
-        },
-        {
-          "id": "61538",
-          "name": "Daniele Fiorentino"
-        },
-        {
-          "id": "13909",
-          "name": "Tony Sergeant"
-        },
-        {
-          "id": "6093",
-          "name": "Massimiliano Fusani"
-        },
-        {
-          "id": "22146",
-          "name": "Pasquale Berardi"
-        },
-        {
-          "id": "16896",
-          "name": "Abderrazzak Jadid"
-        },
-        {
-          "id": "29566",
-          "name": "Ivan Rajcic"
+          "name": "Antonio Bellavista",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "30661",
-          "name": "Luca Tabbiani"
+          "name": "Luca Tabbiani",
+          "position": "Right Midfield",
+          "minutes": 995
         },
         {
-          "id": "74304",
-          "name": "Giuseppe Statella"
+          "id": "29566",
+          "name": "Ivan Rajcic",
+          "position": "Central Midfield",
+          "minutes": 2440
         },
         {
-          "id": "22188",
-          "name": "Massimo Bonanni"
+          "id": "22269",
+          "name": "Andrea Carozza",
+          "position": "Midfield",
+          "minutes": 664
+        },
+        {
+          "id": "28827",
+          "name": "Alessandro Gazzi",
+          "position": "Defensive Midfield",
+          "minutes": 3191
+        },
+        {
+          "id": "61538",
+          "name": "Daniele Fiorentino",
+          "position": "Defensive Midfield",
+          "minutes": 29
+        },
+        {
+          "id": "6093",
+          "name": "Massimiliano Fusani",
+          "position": "Central Midfield",
+          "minutes": 66
+        },
+        {
+          "id": "16896",
+          "name": "Abderrazzak Jadid",
+          "position": "Central Midfield",
+          "minutes": 493
         },
         {
           "id": "59655",
-          "name": "Mariano Donda"
+          "name": "Mariano Donda",
+          "position": "Attacking Midfield",
+          "minutes": 2287
         },
         {
-          "id": "4648",
-          "name": "Pedro Kamatà"
+          "id": "22146",
+          "name": "Pasquale Berardi",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "59654",
-          "name": "Davide Desideri"
+          "id": "13909",
+          "name": "Tony Sergeant",
+          "position": "Central Midfield",
+          "minutes": 318
         },
         {
-          "id": "61541",
-          "name": "Nicola Strambelli"
+          "id": "74304",
+          "name": "Giuseppe Statella",
+          "position": "Right Midfield",
+          "minutes": 108
+        },
+        {
+          "id": "22188",
+          "name": "Massimo Bonanni",
+          "position": "Left Midfield",
+          "minutes": 1900
         },
         {
           "id": "96766",
-          "name": "Cristian Galano"
+          "name": "Cristian Galano",
+          "position": "Right Winger",
+          "minutes": null
         },
         {
           "id": "61539",
-          "name": "Davide Lanzafame"
-        },
-        {
-          "id": "24301",
-          "name": "Simone Cavalli"
-        },
-        {
-          "id": "22155",
-          "name": "Daniele Vantaggiato"
-        },
-        {
-          "id": "28019",
-          "name": "Massimo Ganci"
+          "name": "Davide Lanzafame",
+          "position": "Centre-Forward",
+          "minutes": 2655
         },
         {
           "id": "28847",
-          "name": "Vincenzo Santoruvo"
+          "name": "Vincenzo Santoruvo",
+          "position": "Centre-Forward",
+          "minutes": 3229
+        },
+        {
+          "id": "28019",
+          "name": "Massimo Ganci",
+          "position": "Centre-Forward",
+          "minutes": 1055
+        },
+        {
+          "id": "4648",
+          "name": "Pedro Kamatà",
+          "position": "Left Winger",
+          "minutes": 272
+        },
+        {
+          "id": "61541",
+          "name": "Nicola Strambelli",
+          "position": "Right Winger",
+          "minutes": 570
+        },
+        {
+          "id": "24301",
+          "name": "Simone Cavalli",
+          "position": "Centre-Forward",
+          "minutes": 1970
+        },
+        {
+          "id": "22155",
+          "name": "Daniele Vantaggiato",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "59654",
+          "name": "Davide Desideri",
+          "position": "Left Winger",
+          "minutes": 143
         },
         {
           "id": "112070",
-          "name": "Antonio Infimo"
+          "name": "Antonio Infimo",
+          "position": "Centre-Forward",
+          "minutes": null
         }
       ]
     },
@@ -1631,136 +2413,202 @@
       "name": "AC Mantova 1911",
       "players": [
         {
-          "id": "21872",
-          "name": "Gianluca Pegolo"
+          "id": "32071",
+          "name": "Mirko Bellodi",
+          "position": "Goalkeeper",
+          "minutes": 461
         },
         {
-          "id": "32071",
-          "name": "Mirko Bellodi"
+          "id": "21872",
+          "name": "Gianluca Pegolo",
+          "position": "Goalkeeper",
+          "minutes": 2329
         },
         {
           "id": "47015",
-          "name": "Jasmin Handanovic"
+          "name": "Jasmin Handanovic",
+          "position": "Goalkeeper",
+          "minutes": 1080
         },
         {
           "id": "341213",
-          "name": "Nicolò Frongillo"
-        },
-        {
-          "id": "72840",
-          "name": "Damiano Zugno"
-        },
-        {
-          "id": "354013",
-          "name": "Yuri Gallo"
-        },
-        {
-          "id": "21784",
-          "name": "Filippo Cristante"
-        },
-        {
-          "id": "32119",
-          "name": "Mattia Notari"
-        },
-        {
-          "id": "3159",
-          "name": "Valerio Di Cesare"
-        },
-        {
-          "id": "6753",
-          "name": "Stefano Sacchetti"
+          "name": "Nicolò Frongillo",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "57365",
-          "name": "Simone Calori"
+          "name": "Simone Calori",
+          "position": "Centre-Back",
+          "minutes": 839
         },
         {
           "id": "6037",
-          "name": "Jacopo Balestri"
+          "name": "Jacopo Balestri",
+          "position": "Left-Back",
+          "minutes": 3145
+        },
+        {
+          "id": "32119",
+          "name": "Mattia Notari",
+          "position": "Centre-Back",
+          "minutes": 3510
         },
         {
           "id": "22110",
-          "name": "Luca Franchini"
-        },
-        {
-          "id": "41632",
-          "name": "Federico Rizzi"
+          "name": "Luca Franchini",
+          "position": "Left-Back",
+          "minutes": 1825
         },
         {
           "id": "21792",
-          "name": "Giorgio Lucenti"
+          "name": "Giorgio Lucenti",
+          "position": "Right-Back",
+          "minutes": 464
         },
         {
-          "id": "21233",
-          "name": "Claudio Grauso"
+          "id": "41632",
+          "name": "Federico Rizzi",
+          "position": "Left-Back",
+          "minutes": 196
+        },
+        {
+          "id": "3159",
+          "name": "Valerio Di Cesare",
+          "position": "Centre-Back",
+          "minutes": 2028
+        },
+        {
+          "id": "21784",
+          "name": "Filippo Cristante",
+          "position": "Centre-Back",
+          "minutes": 1787
+        },
+        {
+          "id": "6753",
+          "name": "Stefano Sacchetti",
+          "position": "Centre-Back",
+          "minutes": 2043
+        },
+        {
+          "id": "72840",
+          "name": "Damiano Zugno",
+          "position": "Defender",
+          "minutes": 34
+        },
+        {
+          "id": "354013",
+          "name": "Yuri Gallo",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "32122",
-          "name": "Manuel Spinale"
-        },
-        {
-          "id": "44393",
-          "name": "Nicolás Amodio"
-        },
-        {
-          "id": "76108",
-          "name": "Alberto Creati"
-        },
-        {
-          "id": "456655",
-          "name": "Jacopo Boni"
-        },
-        {
-          "id": "21234",
-          "name": "Dario Passoni"
-        },
-        {
-          "id": "57347",
-          "name": "Fabrizio Avanzini"
-        },
-        {
-          "id": "63348",
-          "name": "Davide Micheloni"
-        },
-        {
-          "id": "34914",
-          "name": "Stefano Mondini"
-        },
-        {
-          "id": "21232",
-          "name": "Alessandro Doga"
-        },
-        {
-          "id": "5842",
-          "name": "Stefano Fiore"
-        },
-        {
-          "id": "32116",
-          "name": "Gaetano Caridi"
+          "name": "Manuel Spinale",
+          "position": "Midfield",
+          "minutes": 3060
         },
         {
           "id": "22801",
-          "name": "Guly"
+          "name": "Guly",
+          "position": "Attacking Midfield",
+          "minutes": 598
         },
         {
-          "id": "21803",
-          "name": "Emiliano Tarana"
+          "id": "34914",
+          "name": "Stefano Mondini",
+          "position": "Central Midfield",
+          "minutes": 59
         },
         {
-          "id": "21926",
-          "name": "Denis Godeas"
+          "id": "32116",
+          "name": "Gaetano Caridi",
+          "position": "Attacking Midfield",
+          "minutes": 1649
         },
         {
-          "id": "24318",
-          "name": "Giorgio Corona"
+          "id": "21232",
+          "name": "Alessandro Doga",
+          "position": "Left Midfield",
+          "minutes": 635
         },
         {
-          "id": "21944",
-          "name": "Alessandro Noselli"
+          "id": "21233",
+          "name": "Claudio Grauso",
+          "position": "Defensive Midfield",
+          "minutes": 1507
+        },
+        {
+          "id": "5842",
+          "name": "Stefano Fiore",
+          "position": "Attacking Midfield",
+          "minutes": 1848
+        },
+        {
+          "id": "57347",
+          "name": "Fabrizio Avanzini",
+          "position": "Central Midfield",
+          "minutes": 45
+        },
+        {
+          "id": "76108",
+          "name": "Alberto Creati",
+          "position": "Defensive Midfield",
+          "minutes": 45
+        },
+        {
+          "id": "21234",
+          "name": "Dario Passoni",
+          "position": "Central Midfield",
+          "minutes": 1843
+        },
+        {
+          "id": "44393",
+          "name": "Nicolás Amodio",
+          "position": "Defensive Midfield",
+          "minutes": 954
+        },
+        {
+          "id": "63348",
+          "name": "Davide Micheloni",
+          "position": "Central Midfield",
+          "minutes": 19
+        },
+        {
+          "id": "456655",
+          "name": "Jacopo Boni",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "34907",
-          "name": "Cristian Altinier"
+          "name": "Cristian Altinier",
+          "position": "Centre-Forward",
+          "minutes": 37
+        },
+        {
+          "id": "24318",
+          "name": "Giorgio Corona",
+          "position": "Centre-Forward",
+          "minutes": 2183
+        },
+        {
+          "id": "21944",
+          "name": "Alessandro Noselli",
+          "position": "Centre-Forward",
+          "minutes": 1084
+        },
+        {
+          "id": "21803",
+          "name": "Emiliano Tarana",
+          "position": "Right Winger",
+          "minutes": 3354
+        },
+        {
+          "id": "21926",
+          "name": "Denis Godeas",
+          "position": "Centre-Forward",
+          "minutes": 3735
         }
       ]
     },
@@ -1769,176 +2617,262 @@
       "name": "US Triestina",
       "players": [
         {
-          "id": "6443",
-          "name": "Generoso Rossi"
-        },
-        {
           "id": "22136",
-          "name": "David Dei"
+          "name": "David Dei",
+          "position": "Goalkeeper",
+          "minutes": 2700
         },
         {
           "id": "22232",
-          "name": "Paolo Acerbis"
+          "name": "Paolo Acerbis",
+          "position": "Goalkeeper",
+          "minutes": 30
+        },
+        {
+          "id": "6443",
+          "name": "Generoso Rossi",
+          "position": "Goalkeeper",
+          "minutes": 1350
         },
         {
           "id": "61799",
-          "name": "Mauricio Jose Bastiera"
+          "name": "Mauricio Jose Bastiera",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "463630",
-          "name": "Luca Mosca"
-        },
-        {
-          "id": "354704",
-          "name": "Denis Tiziani"
-        },
-        {
-          "id": "463632",
-          "name": "Stefano Tisiot"
+          "name": "Luca Mosca",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "23246",
-          "name": "Georgios Kyriazis"
+          "name": "Georgios Kyriazis",
+          "position": "Centre-Back",
+          "minutes": 3614
         },
         {
-          "id": "21888",
-          "name": "Luca Mezzano"
-        },
-        {
-          "id": "21693",
-          "name": "Mauro Minelli"
-        },
-        {
-          "id": "38604",
-          "name": "Ildefons Lima"
-        },
-        {
-          "id": "35731",
-          "name": "Andrea Peana"
+          "id": "354704",
+          "name": "Denis Tiziani",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "61798",
-          "name": "Thierry Audel"
+          "name": "Thierry Audel",
+          "position": "Centre-Back",
+          "minutes": 13
         },
         {
-          "id": "61807",
-          "name": "Aldo Perricone"
+          "id": "21888",
+          "name": "Luca Mezzano",
+          "position": "Centre-Back",
+          "minutes": 829
         },
         {
           "id": "5840",
-          "name": "Emanuele Pesaresi"
+          "name": "Emanuele Pesaresi",
+          "position": "Left-Back",
+          "minutes": 2232
         },
         {
-          "id": "41632",
-          "name": "Federico Rizzi"
+          "id": "35731",
+          "name": "Andrea Peana",
+          "position": "Centre-Back",
+          "minutes": 573
         },
         {
-          "id": "9764",
-          "name": "Martin Petras"
+          "id": "61807",
+          "name": "Aldo Perricone",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "38598",
-          "name": "Andrea Milani"
+          "name": "Andrea Milani",
+          "position": "Right-Back",
+          "minutes": 2367
         },
         {
-          "id": "6440",
-          "name": "Luigi Piangerelli"
+          "id": "21693",
+          "name": "Mauro Minelli",
+          "position": "Centre-Back",
+          "minutes": 1786
         },
         {
-          "id": "236318",
-          "name": "Manuel Bianco"
+          "id": "41632",
+          "name": "Federico Rizzi",
+          "position": "Left-Back",
+          "minutes": 1122
         },
         {
-          "id": "432436",
-          "name": "Pereira Leandro De Los Santos"
+          "id": "9764",
+          "name": "Martin Petras",
+          "position": "Right-Back",
+          "minutes": 2471
         },
         {
-          "id": "480999",
-          "name": "Francesco Veneruso"
+          "id": "38604",
+          "name": "Ildefons Lima",
+          "position": "Centre-Back",
+          "minutes": 1647
         },
         {
-          "id": "17143",
-          "name": "Riccardo Allegretti"
-        },
-        {
-          "id": "19273",
-          "name": "Nicola Princivalli"
-        },
-        {
-          "id": "61801",
-          "name": "Paolo De Cristofaro"
-        },
-        {
-          "id": "75669",
-          "name": "Federico Maracchi"
-        },
-        {
-          "id": "24315",
-          "name": "Lorenzo Rossetti"
-        },
-        {
-          "id": "30661",
-          "name": "Luca Tabbiani"
+          "id": "463632",
+          "name": "Stefano Tisiot",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "22274",
-          "name": "Giorgio Gorgone"
-        },
-        {
-          "id": "61800",
-          "name": "Franco Da Dalt"
-        },
-        {
-          "id": "45113",
-          "name": "Patrick Kalambay"
+          "name": "Giorgio Gorgone",
+          "position": "Right Midfield",
+          "minutes": 1740
         },
         {
           "id": "32072",
-          "name": "Marco Benvenuto"
+          "name": "Marco Benvenuto",
+          "position": "Right Midfield",
+          "minutes": null
         },
         {
-          "id": "22091",
-          "name": "Jaroslav Sedivec"
+          "id": "75669",
+          "name": "Federico Maracchi",
+          "position": "Central Midfield",
+          "minutes": 8
         },
         {
-          "id": "22254",
-          "name": "Emiliano Testini"
+          "id": "17143",
+          "name": "Riccardo Allegretti",
+          "position": "Central Midfield",
+          "minutes": 3181
         },
         {
-          "id": "22307",
-          "name": "Filippo Antonelli Agomeri"
+          "id": "45113",
+          "name": "Patrick Kalambay",
+          "position": "Right Midfield",
+          "minutes": null
         },
         {
-          "id": "28008",
-          "name": "Babù"
+          "id": "24315",
+          "name": "Lorenzo Rossetti",
+          "position": "Right Midfield",
+          "minutes": 526
         },
         {
-          "id": "38642",
-          "name": "Alessandro Sgrigna"
+          "id": "30661",
+          "name": "Luca Tabbiani",
+          "position": "Right Midfield",
+          "minutes": 1313
+        },
+        {
+          "id": "61801",
+          "name": "Paolo De Cristofaro",
+          "position": "Central Midfield",
+          "minutes": 353
+        },
+        {
+          "id": "6440",
+          "name": "Luigi Piangerelli",
+          "position": "Defensive Midfield",
+          "minutes": 2575
+        },
+        {
+          "id": "61800",
+          "name": "Franco Da Dalt",
+          "position": "Right Midfield",
+          "minutes": 325
+        },
+        {
+          "id": "19273",
+          "name": "Nicola Princivalli",
+          "position": "Central Midfield",
+          "minutes": 1072
+        },
+        {
+          "id": "236318",
+          "name": "Manuel Bianco",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "432436",
+          "name": "Pereira Leandro De Los Santos",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "480999",
+          "name": "Francesco Veneruso",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "61803",
-          "name": "Pablo Granoche"
+          "name": "Pablo Granoche",
+          "position": "Centre-Forward",
+          "minutes": 3173
+        },
+        {
+          "id": "22307",
+          "name": "Filippo Antonelli Agomeri",
+          "position": "Right Winger",
+          "minutes": 658
+        },
+        {
+          "id": "28008",
+          "name": "Babù",
+          "position": "Right Winger",
+          "minutes": 96
+        },
+        {
+          "id": "38642",
+          "name": "Alessandro Sgrigna",
+          "position": "Second Striker",
+          "minutes": 2816
+        },
+        {
+          "id": "22091",
+          "name": "Jaroslav Sedivec",
+          "position": "Left Winger",
+          "minutes": 1507
         },
         {
           "id": "6395",
-          "name": "Mattia Graffiedi"
+          "name": "Mattia Graffiedi",
+          "position": "Centre-Forward",
+          "minutes": 1090
+        },
+        {
+          "id": "22254",
+          "name": "Emiliano Testini",
+          "position": "Left Winger",
+          "minutes": 2094
         },
         {
           "id": "6009",
-          "name": "Luigi Della Rocca"
+          "name": "Luigi Della Rocca",
+          "position": "Centre-Forward",
+          "minutes": 1265
         },
         {
           "id": "61806",
-          "name": "Michel Orneck"
-        },
-        {
-          "id": "75185",
-          "name": "Stefano Cannone"
+          "name": "Michel Orneck",
+          "position": "Attack",
+          "minutes": null
         },
         {
           "id": "408924",
-          "name": "Renan Pippi"
+          "name": "Renan Pippi",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "75185",
+          "name": "Stefano Cannone",
+          "position": "Attack",
+          "minutes": 1
         }
       ]
     },
@@ -1947,164 +2881,244 @@
       "name": "Piacenza FC",
       "players": [
         {
-          "id": "22305",
-          "name": "Roberto Maurantonio"
+          "id": "16748",
+          "name": "Mario Cassano",
+          "position": "Goalkeeper",
+          "minutes": 3508
         },
         {
-          "id": "16748",
-          "name": "Mario Cassano"
+          "id": "22305",
+          "name": "Roberto Maurantonio",
+          "position": "Goalkeeper",
+          "minutes": 542
         },
         {
           "id": "43088",
-          "name": "Fabrizio Capodici"
-        },
-        {
-          "id": "4945",
-          "name": "Alain Nef"
-        },
-        {
-          "id": "5913",
-          "name": "Lorenzo D'Anna"
-        },
-        {
-          "id": "21774",
-          "name": "Matteo Abbate"
-        },
-        {
-          "id": "21895",
-          "name": "Leonardo Migliónico"
-        },
-        {
-          "id": "21933",
-          "name": "Angelo Iorio"
-        },
-        {
-          "id": "22097",
-          "name": "Michele Anaclerio"
-        },
-        {
-          "id": "21976",
-          "name": "Samuele Olivi"
-        },
-        {
-          "id": "61733",
-          "name": "Pietro Zammuto"
-        },
-        {
-          "id": "61729",
-          "name": "Adrian Cuciula"
-        },
-        {
-          "id": "74357",
-          "name": "Francesco Bini"
-        },
-        {
-          "id": "735",
-          "name": "Giuseppe Gemiti"
-        },
-        {
-          "id": "110843",
-          "name": "Giacomo Menichetti"
+          "name": "Fabrizio Capodici",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "75327",
-          "name": "Marco Calderoni"
+          "name": "Marco Calderoni",
+          "position": "Left-Back",
+          "minutes": 29
+        },
+        {
+          "id": "21774",
+          "name": "Matteo Abbate",
+          "position": "Centre-Back",
+          "minutes": 588
+        },
+        {
+          "id": "4945",
+          "name": "Alain Nef",
+          "position": "Centre-Back",
+          "minutes": 3150
+        },
+        {
+          "id": "21976",
+          "name": "Samuele Olivi",
+          "position": "Centre-Back",
+          "minutes": 2022
         },
         {
           "id": "22088",
-          "name": "Marco Padalino"
+          "name": "Marco Padalino",
+          "position": "Right-Back",
+          "minutes": 1492
+        },
+        {
+          "id": "22097",
+          "name": "Michele Anaclerio",
+          "position": "Centre-Back",
+          "minutes": 2440
+        },
+        {
+          "id": "21895",
+          "name": "Leonardo Migliónico",
+          "position": "Centre-Back",
+          "minutes": 1274
+        },
+        {
+          "id": "61733",
+          "name": "Pietro Zammuto",
+          "position": "Centre-Back",
+          "minutes": 1702
+        },
+        {
+          "id": "735",
+          "name": "Giuseppe Gemiti",
+          "position": "Left-Back",
+          "minutes": 2274
+        },
+        {
+          "id": "5913",
+          "name": "Lorenzo D'Anna",
+          "position": "Centre-Back",
+          "minutes": 1307
+        },
+        {
+          "id": "21933",
+          "name": "Angelo Iorio",
+          "position": "Centre-Back",
+          "minutes": 1335
+        },
+        {
+          "id": "61729",
+          "name": "Adrian Cuciula",
+          "position": "Centre-Back",
+          "minutes": 285
+        },
+        {
+          "id": "74357",
+          "name": "Francesco Bini",
+          "position": "Centre-Back",
+          "minutes": 356
         },
         {
           "id": "146938",
-          "name": "Simone Menichetti"
+          "name": "Simone Menichetti",
+          "position": "Right-Back",
+          "minutes": 49
         },
         {
-          "id": "21799",
-          "name": "Bogdan Pătrașcu"
-        },
-        {
-          "id": "56693",
-          "name": "Raffaele Bianco"
-        },
-        {
-          "id": "120876",
-          "name": "Paolo Vignali"
-        },
-        {
-          "id": "460932",
-          "name": "Vincenzo Pipieri"
-        },
-        {
-          "id": "21822",
-          "name": "Houssine Kharja"
-        },
-        {
-          "id": "14534",
-          "name": "Jonathan Aspas"
-        },
-        {
-          "id": "21802",
-          "name": "Luigi Riccio"
-        },
-        {
-          "id": "8074",
-          "name": "Daniel Wolf"
+          "id": "110843",
+          "name": "Giacomo Menichetti",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
           "id": "41982",
-          "name": "Radja Nainggolan"
+          "name": "Radja Nainggolan",
+          "position": "Central Midfield",
+          "minutes": 490
+        },
+        {
+          "id": "14534",
+          "name": "Jonathan Aspas",
+          "position": "Central Midfield",
+          "minutes": 921
+        },
+        {
+          "id": "21822",
+          "name": "Houssine Kharja",
+          "position": "Central Midfield",
+          "minutes": 1316
+        },
+        {
+          "id": "21799",
+          "name": "Bogdan Pătrașcu",
+          "position": "Defensive Midfield",
+          "minutes": 2983
+        },
+        {
+          "id": "21802",
+          "name": "Luigi Riccio",
+          "position": "Central Midfield",
+          "minutes": 3250
+        },
+        {
+          "id": "56693",
+          "name": "Raffaele Bianco",
+          "position": "Defensive Midfield",
+          "minutes": 792
         },
         {
           "id": "43085",
-          "name": "Tommaso Bianchi"
-        },
-        {
-          "id": "76113",
-          "name": "Andrea Maccoppi"
+          "name": "Tommaso Bianchi",
+          "position": "Central Midfield",
+          "minutes": 1806
         },
         {
           "id": "41987",
-          "name": "Alessio Stamilla"
+          "name": "Alessio Stamilla",
+          "position": "Left Midfield",
+          "minutes": 204
+        },
+        {
+          "id": "76113",
+          "name": "Andrea Maccoppi",
+          "position": "Central Midfield",
+          "minutes": 67
         },
         {
           "id": "19228",
-          "name": "Tomás Guzmán"
+          "name": "Tomás Guzmán",
+          "position": "Attacking Midfield",
+          "minutes": 606
         },
         {
-          "id": "41986",
-          "name": "Antonio Piccolo"
+          "id": "8074",
+          "name": "Daniel Wolf",
+          "position": "Central Midfield",
+          "minutes": 1799
         },
         {
-          "id": "22208",
-          "name": "Julien Rantier"
+          "id": "120876",
+          "name": "Paolo Vignali",
+          "position": "Defensive Midfield",
+          "minutes": 14
         },
         {
-          "id": "21780",
-          "name": "Daniele Cacia"
-        },
-        {
-          "id": "21962",
-          "name": "Alessandro Tulli"
-        },
-        {
-          "id": "21698",
-          "name": "Matteo Serafini"
-        },
-        {
-          "id": "28835",
-          "name": "Zlatko Dedic"
-        },
-        {
-          "id": "33508",
-          "name": "Alessandro Ciarrocchi"
-        },
-        {
-          "id": "43107",
-          "name": "Lucas Simón"
+          "id": "460932",
+          "name": "Vincenzo Pipieri",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "76110",
-          "name": "Simone Guerra"
+          "name": "Simone Guerra",
+          "position": "Centre-Forward",
+          "minutes": 45
+        },
+        {
+          "id": "21698",
+          "name": "Matteo Serafini",
+          "position": "Centre-Forward",
+          "minutes": 1481
+        },
+        {
+          "id": "21780",
+          "name": "Daniele Cacia",
+          "position": "Centre-Forward",
+          "minutes": 431
+        },
+        {
+          "id": "28835",
+          "name": "Zlatko Dedic",
+          "position": "Centre-Forward",
+          "minutes": 1652
+        },
+        {
+          "id": "22208",
+          "name": "Julien Rantier",
+          "position": "Second Striker",
+          "minutes": 1382
+        },
+        {
+          "id": "41986",
+          "name": "Antonio Piccolo",
+          "position": "Right Winger",
+          "minutes": 45
+        },
+        {
+          "id": "21962",
+          "name": "Alessandro Tulli",
+          "position": "Centre-Forward",
+          "minutes": 969
+        },
+        {
+          "id": "33508",
+          "name": "Alessandro Ciarrocchi",
+          "position": "Centre-Forward",
+          "minutes": 105
+        },
+        {
+          "id": "43107",
+          "name": "Lucas Simón",
+          "position": "Centre-Forward",
+          "minutes": 1525
         }
       ]
     },
@@ -2113,152 +3127,226 @@
       "name": "Rimini FC",
       "players": [
         {
-          "id": "35865",
-          "name": "Andrea Consigli"
+          "id": "110342",
+          "name": "Gian Marco Pazzini",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "22285",
-          "name": "Maurizio Pugliesi"
+          "name": "Maurizio Pugliesi",
+          "position": "Goalkeeper",
+          "minutes": 750
+        },
+        {
+          "id": "35865",
+          "name": "Andrea Consigli",
+          "position": "Goalkeeper",
+          "minutes": 3330
         },
         {
           "id": "61052",
-          "name": "Marco Temeroli"
-        },
-        {
-          "id": "110342",
-          "name": "Gian Marco Pazzini"
-        },
-        {
-          "id": "22327",
-          "name": "Maurizio Peccarisi"
-        },
-        {
-          "id": "22142",
-          "name": "Sandro Porchia"
-        },
-        {
-          "id": "30645",
-          "name": "Emiliano Milone"
-        },
-        {
-          "id": "44666",
-          "name": "Michele Rinaldi"
-        },
-        {
-          "id": "91058",
-          "name": "Enrico Pezzi"
-        },
-        {
-          "id": "22250",
-          "name": "Pierre Regonesi"
-        },
-        {
-          "id": "30622",
-          "name": "Paolo Bravo"
-        },
-        {
-          "id": "22217",
-          "name": "Roberto Vitiello"
+          "name": "Marco Temeroli",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "61045",
-          "name": "Fabio Catacchini"
+          "name": "Fabio Catacchini",
+          "position": "Right-Back",
+          "minutes": 1067
         },
         {
-          "id": "26503",
-          "name": "Sorin Paraschiv"
+          "id": "30622",
+          "name": "Paolo Bravo",
+          "position": "Left-Back",
+          "minutes": 656
         },
         {
-          "id": "22314",
-          "name": "Domenico Cristiano"
+          "id": "30645",
+          "name": "Emiliano Milone",
+          "position": "Centre-Back",
+          "minutes": 2711
         },
         {
-          "id": "6004",
-          "name": "Alessandro Frara"
+          "id": "44666",
+          "name": "Michele Rinaldi",
+          "position": "Centre-Back",
+          "minutes": 669
         },
         {
-          "id": "61049",
-          "name": "Francesco Lunardini"
+          "id": "22327",
+          "name": "Maurizio Peccarisi",
+          "position": "Centre-Back",
+          "minutes": 1913
         },
         {
-          "id": "33042",
-          "name": "Migjen Basha"
+          "id": "22142",
+          "name": "Sandro Porchia",
+          "position": "Centre-Back",
+          "minutes": 2892
         },
         {
-          "id": "366333",
-          "name": "Luca Bezzi"
+          "id": "22217",
+          "name": "Roberto Vitiello",
+          "position": "Right-Back",
+          "minutes": 3204
         },
         {
-          "id": "463627",
-          "name": "Diego Pasqualone"
+          "id": "91058",
+          "name": "Enrico Pezzi",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "61048",
-          "name": "Giovanni La Camera"
+          "id": "22250",
+          "name": "Pierre Regonesi",
+          "position": "Left-Back",
+          "minutes": 3715
         },
         {
           "id": "22133",
-          "name": "Alfredo Cardinale"
+          "name": "Alfredo Cardinale",
+          "position": "Central Midfield",
+          "minutes": 2917
+        },
+        {
+          "id": "33042",
+          "name": "Migjen Basha",
+          "position": "Defensive Midfield",
+          "minutes": 304
+        },
+        {
+          "id": "6004",
+          "name": "Alessandro Frara",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "41989",
-          "name": "Francesco Valiani"
+          "name": "Francesco Valiani",
+          "position": "Central Midfield",
+          "minutes": 2047
+        },
+        {
+          "id": "61049",
+          "name": "Francesco Lunardini",
+          "position": "Defensive Midfield",
+          "minutes": 1509
         },
         {
           "id": "61046",
-          "name": "Giovanni Conti"
+          "name": "Giovanni Conti",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "55794",
-          "name": "Simone Palermo"
+          "name": "Simone Palermo",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "26503",
+          "name": "Sorin Paraschiv",
+          "position": "Defensive Midfield",
+          "minutes": 1737
+        },
+        {
+          "id": "366333",
+          "name": "Luca Bezzi",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "103516",
-          "name": "Alessandro Marchi"
+          "name": "Alessandro Marchi",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "16899",
-          "name": "Biagio Pagano"
+          "id": "22314",
+          "name": "Domenico Cristiano",
+          "position": "Defensive Midfield",
+          "minutes": 1761
         },
         {
-          "id": "21773",
-          "name": "Jeda"
+          "id": "61048",
+          "name": "Giovanni La Camera",
+          "position": "Central Midfield",
+          "minutes": 1204
         },
         {
-          "id": "30654",
-          "name": "Adrián Ricchiuti"
-        },
-        {
-          "id": "61717",
-          "name": "Angelo Nolé"
-        },
-        {
-          "id": "22155",
-          "name": "Daniele Vantaggiato"
+          "id": "463627",
+          "name": "Diego Pasqualone",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "21942",
-          "name": "Davide Moscardelli"
+          "name": "Davide Moscardelli",
+          "position": "Centre-Forward",
+          "minutes": 51
         },
         {
-          "id": "44137",
-          "name": "Giuseppe Greco"
+          "id": "22155",
+          "name": "Daniele Vantaggiato",
+          "position": "Centre-Forward",
+          "minutes": 1898
         },
         {
-          "id": "30633",
-          "name": "Emilio Docente"
+          "id": "30654",
+          "name": "Adrián Ricchiuti",
+          "position": "Second Striker",
+          "minutes": 3642
         },
         {
-          "id": "309831",
-          "name": "Antonio Pignataro"
+          "id": "61717",
+          "name": "Angelo Nolé",
+          "position": "Second Striker",
+          "minutes": 13
         },
         {
           "id": "99408",
-          "name": "Mattia Marchi"
+          "name": "Mattia Marchi",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "16899",
+          "name": "Biagio Pagano",
+          "position": "Right Winger",
+          "minutes": 3525
+        },
+        {
+          "id": "21773",
+          "name": "Jeda",
+          "position": "Second Striker",
+          "minutes": 1921
+        },
+        {
+          "id": "44137",
+          "name": "Giuseppe Greco",
+          "position": "Centre-Forward",
+          "minutes": 803
         },
         {
           "id": "456659",
-          "name": "Nicola Angeli"
+          "name": "Nicola Angeli",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "309831",
+          "name": "Antonio Pignataro",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "30633",
+          "name": "Emilio Docente",
+          "position": "Centre-Forward",
+          "minutes": 454
         }
       ]
     },
@@ -2268,199 +3356,297 @@
       "players": [
         {
           "id": "17159",
-          "name": "Nicola Santoni"
-        },
-        {
-          "id": "39155",
-          "name": "Rocco Pellegrino"
+          "name": "Nicola Santoni",
+          "position": "Goalkeeper",
+          "minutes": 2239
         },
         {
           "id": "61599",
-          "name": "Ivan Dazzi"
+          "name": "Ivan Dazzi",
+          "position": "Goalkeeper",
+          "minutes": 1091
+        },
+        {
+          "id": "39155",
+          "name": "Rocco Pellegrino",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "343092",
-          "name": "Francesco Maiorani"
-        },
-        {
-          "id": "6036",
-          "name": "Marco Zamboni"
-        },
-        {
-          "id": "21758",
-          "name": "Gennaro Scarlato"
-        },
-        {
-          "id": "21950",
-          "name": "Marco Pecorari"
-        },
-        {
-          "id": "28030",
-          "name": "Luca Tedeschi"
-        },
-        {
-          "id": "61595",
-          "name": "Alberto Bianchi"
-        },
-        {
-          "id": "39675",
-          "name": "Luca Ceccarelli"
-        },
-        {
-          "id": "22138",
-          "name": "Ferdinando Giuliano"
-        },
-        {
-          "id": "28875",
-          "name": "Marco Zaninelli"
-        },
-        {
-          "id": "67536",
-          "name": "Nicolò Barabino"
+          "name": "Francesco Maiorani",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "131075",
-          "name": "Francesco Acerbi"
+          "name": "Francesco Acerbi",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "22138",
+          "name": "Ferdinando Giuliano",
+          "position": "Centre-Back",
+          "minutes": 1731
         },
         {
           "id": "22243",
-          "name": "Marco Gorzegno"
+          "name": "Marco Gorzegno",
+          "position": "Left-Back",
+          "minutes": 2332
         },
         {
-          "id": "68304",
-          "name": "Cristian Fernández"
+          "id": "6036",
+          "name": "Marco Zamboni",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "21758",
+          "name": "Gennaro Scarlato",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "21950",
+          "name": "Marco Pecorari",
+          "position": "Centre-Back",
+          "minutes": 1147
         },
         {
           "id": "42115",
-          "name": "Davide Addona"
-        },
-        {
-          "id": "42090",
-          "name": "Giovanni Rossi"
+          "name": "Davide Addona",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
           "id": "60693",
-          "name": "Samuele Buda"
+          "name": "Samuele Buda",
+          "position": "Right-Back",
+          "minutes": 134
         },
         {
-          "id": "6004",
-          "name": "Alessandro Frara"
+          "id": "42090",
+          "name": "Giovanni Rossi",
+          "position": "Left-Back",
+          "minutes": 551
         },
         {
-          "id": "6047",
-          "name": "Paolo Ponzo"
+          "id": "39675",
+          "name": "Luca Ceccarelli",
+          "position": "Centre-Back",
+          "minutes": 2060
         },
         {
-          "id": "44758",
-          "name": "Nicola Padoin"
+          "id": "28875",
+          "name": "Marco Zaninelli",
+          "position": "Centre-Back",
+          "minutes": 1212
         },
         {
-          "id": "23354",
-          "name": "Giovanni Fietta"
+          "id": "67536",
+          "name": "Nicolò Barabino",
+          "position": "Centre-Back",
+          "minutes": 65
         },
         {
-          "id": "55773",
-          "name": "Salvatore Richard Fiandaca"
+          "id": "68304",
+          "name": "Cristian Fernández",
+          "position": "Left-Back",
+          "minutes": 568
         },
         {
-          "id": "75304",
-          "name": "Andrea Senese"
+          "id": "61595",
+          "name": "Alberto Bianchi",
+          "position": "Centre-Back",
+          "minutes": 3161
         },
         {
-          "id": "76121",
-          "name": "Gianmarco Dura"
-        },
-        {
-          "id": "22309",
-          "name": "Mattia Biso"
-        },
-        {
-          "id": "6419",
-          "name": "Alfonso Camorani"
-        },
-        {
-          "id": "18914",
-          "name": "Ondrej Herzan"
-        },
-        {
-          "id": "68307",
-          "name": "Fabrizio Romondini"
-        },
-        {
-          "id": "23022",
-          "name": "Alessio Manzoni"
-        },
-        {
-          "id": "68305",
-          "name": "Marco Iovine"
-        },
-        {
-          "id": "158463",
-          "name": "Lorenzo Lollo"
-        },
-        {
-          "id": "71403",
-          "name": "Alessio Del Padrone"
-        },
-        {
-          "id": "75299",
-          "name": "Antonio Esposito"
-        },
-        {
-          "id": "25507",
-          "name": "Davide Saverino"
+          "id": "28030",
+          "name": "Luca Tedeschi",
+          "position": "Centre-Back",
+          "minutes": 1378
         },
         {
           "id": "42116",
-          "name": "Giuseppe Alessi"
+          "name": "Giuseppe Alessi",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "6426",
-          "name": "Giorgio Di Vicino"
+          "id": "23354",
+          "name": "Giovanni Fietta",
+          "position": "Defensive Midfield",
+          "minutes": 651
+        },
+        {
+          "id": "158463",
+          "name": "Lorenzo Lollo",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "22309",
+          "name": "Mattia Biso",
+          "position": "Central Midfield",
+          "minutes": 1524
+        },
+        {
+          "id": "18914",
+          "name": "Ondrej Herzan",
+          "position": "Central Midfield",
+          "minutes": 1524
+        },
+        {
+          "id": "6419",
+          "name": "Alfonso Camorani",
+          "position": "Central Midfield",
+          "minutes": 2963
+        },
+        {
+          "id": "6047",
+          "name": "Paolo Ponzo",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "22801",
-          "name": "Guly"
+          "name": "Guly",
+          "position": "Attacking Midfield",
+          "minutes": 1511
         },
         {
-          "id": "32098",
-          "name": "Francesco Millesi"
+          "id": "55773",
+          "name": "Salvatore Richard Fiandaca",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
-          "id": "21903",
-          "name": "Eder Baù"
+          "id": "44758",
+          "name": "Nicola Padoin",
+          "position": "Defensive Midfield",
+          "minutes": 1896
         },
         {
-          "id": "42119",
-          "name": "Massimiliano Guidetti"
+          "id": "6426",
+          "name": "Giorgio Di Vicino",
+          "position": "Attacking Midfield",
+          "minutes": 897
         },
         {
-          "id": "18245",
-          "name": "Isah Eliakwu"
+          "id": "25507",
+          "name": "Davide Saverino",
+          "position": "Attacking Midfield",
+          "minutes": 1574
         },
         {
-          "id": "21231",
-          "name": "Corrado Colombo"
+          "id": "23022",
+          "name": "Alessio Manzoni",
+          "position": "Central Midfield",
+          "minutes": 570
         },
         {
-          "id": "68308",
-          "name": "Francesco Zizzari"
+          "id": "68305",
+          "name": "Marco Iovine",
+          "position": "Central Midfield",
+          "minutes": 240
         },
         {
-          "id": "29363",
-          "name": "Amadou Konté"
+          "id": "68307",
+          "name": "Fabrizio Romondini",
+          "position": "Central Midfield",
+          "minutes": 1561
+        },
+        {
+          "id": "6004",
+          "name": "Alessandro Frara",
+          "position": "Defensive Midfield",
+          "minutes": 1404
+        },
+        {
+          "id": "71403",
+          "name": "Alessio Del Padrone",
+          "position": "Right Midfield",
+          "minutes": 55
+        },
+        {
+          "id": "75299",
+          "name": "Antonio Esposito",
+          "position": "Left Midfield",
+          "minutes": 55
+        },
+        {
+          "id": "75304",
+          "name": "Andrea Senese",
+          "position": "Defensive Midfield",
+          "minutes": 1
+        },
+        {
+          "id": "76121",
+          "name": "Gianmarco Dura",
+          "position": "Defensive Midfield",
+          "minutes": 10
         },
         {
           "id": "45577",
-          "name": "Sebastián Ribas"
+          "name": "Sebastián Ribas",
+          "position": "Centre-Forward",
+          "minutes": 36
         },
         {
-          "id": "362857",
-          "name": "Salvatore Romeo"
+          "id": "68308",
+          "name": "Francesco Zizzari",
+          "position": "Centre-Forward",
+          "minutes": 868
+        },
+        {
+          "id": "29363",
+          "name": "Amadou Konté",
+          "position": "Centre-Forward",
+          "minutes": 38
+        },
+        {
+          "id": "42119",
+          "name": "Massimiliano Guidetti",
+          "position": "Second Striker",
+          "minutes": 3165
+        },
+        {
+          "id": "21231",
+          "name": "Corrado Colombo",
+          "position": "Centre-Forward",
+          "minutes": 1140
+        },
+        {
+          "id": "21903",
+          "name": "Eder Baù",
+          "position": "Right Winger",
+          "minutes": 24
+        },
+        {
+          "id": "18245",
+          "name": "Isah Eliakwu",
+          "position": "Centre-Forward",
+          "minutes": 1414
+        },
+        {
+          "id": "32098",
+          "name": "Francesco Millesi",
+          "position": "Left Winger",
+          "minutes": 1024
         },
         {
           "id": "144027",
-          "name": "Alessandro Triglia"
+          "name": "Alessandro Triglia",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "362857",
+          "name": "Salvatore Romeo",
+          "position": "Centre-Forward",
+          "minutes": null
         }
       ]
     },
@@ -2470,151 +3656,225 @@
       "players": [
         {
           "id": "21951",
-          "name": "Andrea Pinzan"
+          "name": "Andrea Pinzan",
+          "position": "Goalkeeper",
+          "minutes": 392
         },
         {
           "id": "38582",
-          "name": "Walter Bressan"
+          "name": "Walter Bressan",
+          "position": "Goalkeeper",
+          "minutes": 3478
         },
         {
           "id": "343207",
-          "name": "Claudio Scognamiglio"
-        },
-        {
-          "id": "342079",
-          "name": "Riccardo Terribile"
+          "name": "Claudio Scognamiglio",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "15339",
-          "name": "Michele Mignani"
-        },
-        {
-          "id": "6164",
-          "name": "Duccio Innocenti"
-        },
-        {
-          "id": "19441",
-          "name": "Natale Gonnella"
-        },
-        {
-          "id": "22095",
-          "name": "Ernesto Terra"
-        },
-        {
-          "id": "6417",
-          "name": "Giuseppe Abruzzese"
-        },
-        {
-          "id": "55803",
-          "name": "Emilio Dierna"
-        },
-        {
-          "id": "49323",
-          "name": "Gianluca Freddi"
-        },
-        {
-          "id": "61788",
-          "name": "Pablo Pallante"
+          "name": "Michele Mignani",
+          "position": "Centre-Back",
+          "minutes": 2536
         },
         {
           "id": "23171",
-          "name": "Mirko Barbagli"
+          "name": "Mirko Barbagli",
+          "position": "Left-Back",
+          "minutes": 204
         },
         {
-          "id": "21981",
-          "name": "Agostino Garofalo"
+          "id": "61788",
+          "name": "Pablo Pallante",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "19441",
+          "name": "Natale Gonnella",
+          "position": "Centre-Back",
+          "minutes": 315
+        },
+        {
+          "id": "6164",
+          "name": "Duccio Innocenti",
+          "position": "Centre-Back",
+          "minutes": 3155
         },
         {
           "id": "24062",
-          "name": "Valerio Virga"
+          "name": "Valerio Virga",
+          "position": "Right-Back",
+          "minutes": 1151
+        },
+        {
+          "id": "21981",
+          "name": "Agostino Garofalo",
+          "position": "Left-Back",
+          "minutes": 3415
+        },
+        {
+          "id": "22095",
+          "name": "Ernesto Terra",
+          "position": "Centre-Back",
+          "minutes": 2810
+        },
+        {
+          "id": "6417",
+          "name": "Giuseppe Abruzzese",
+          "position": "Centre-Back",
+          "minutes": 3141
+        },
+        {
+          "id": "49323",
+          "name": "Gianluca Freddi",
+          "position": "Centre-Back",
+          "minutes": 755
         },
         {
           "id": "55805",
-          "name": "Alì Lolli"
+          "name": "Alì Lolli",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "3925",
-          "name": "Sébastien Piocelle"
+          "id": "55803",
+          "name": "Emilio Dierna",
+          "position": "Centre-Back",
+          "minutes": 10
         },
         {
-          "id": "39849",
-          "name": "Alessandro Moro"
-        },
-        {
-          "id": "343208",
-          "name": "Alessandro Corina"
-        },
-        {
-          "id": "19442",
-          "name": "Andrea Lazzari"
-        },
-        {
-          "id": "45576",
-          "name": "Attila Filkor"
+          "id": "342079",
+          "name": "Riccardo Terribile",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "22130",
-          "name": "Carl Valeri"
+          "name": "Carl Valeri",
+          "position": "Central Midfield",
+          "minutes": 3355
+        },
+        {
+          "id": "45576",
+          "name": "Attila Filkor",
+          "position": "Central Midfield",
+          "minutes": 537
         },
         {
           "id": "55812",
-          "name": "Luca Giunchi"
+          "name": "Luca Giunchi",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "30627",
-          "name": "Luigi Consonni"
+          "name": "Luigi Consonni",
+          "position": "Central Midfield",
+          "minutes": 2330
+        },
+        {
+          "id": "3925",
+          "name": "Sébastien Piocelle",
+          "position": "Defensive Midfield",
+          "minutes": 201
+        },
+        {
+          "id": "39849",
+          "name": "Alessandro Moro",
+          "position": "Defensive Midfield",
+          "minutes": 1078
         },
         {
           "id": "55811",
-          "name": "Andrea Gessa"
+          "name": "Andrea Gessa",
+          "position": "Right Midfield",
+          "minutes": 2180
+        },
+        {
+          "id": "19442",
+          "name": "Andrea Lazzari",
+          "position": "Central Midfield",
+          "minutes": 3219
         },
         {
           "id": "61796",
-          "name": "Gianpietro Zecchin"
+          "name": "Gianpietro Zecchin",
+          "position": "Right Midfield",
+          "minutes": 627
         },
         {
           "id": "125024",
-          "name": "Leonardo Longo"
+          "name": "Leonardo Longo",
+          "position": "Right Midfield",
+          "minutes": null
         },
         {
           "id": "61776",
-          "name": "Matteo Fasciani"
+          "name": "Matteo Fasciani",
+          "position": "Left Midfield",
+          "minutes": null
         },
         {
-          "id": "55808",
-          "name": "Enrico Maria Amore"
-        },
-        {
-          "id": "55809",
-          "name": "Salvatore Carboni"
+          "id": "343208",
+          "name": "Alessandro Corina",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "29603",
-          "name": "Marco Carparelli"
-        },
-        {
-          "id": "29424",
-          "name": "Paulinho"
+          "name": "Marco Carparelli",
+          "position": "Second Striker",
+          "minutes": 1317
         },
         {
           "id": "6395",
-          "name": "Mattia Graffiedi"
-        },
-        {
-          "id": "4049",
-          "name": "Tomas Danilevičius"
-        },
-        {
-          "id": "13925",
-          "name": "Thomas Pichlmann"
+          "name": "Mattia Graffiedi",
+          "position": "Centre-Forward",
+          "minutes": 1312
         },
         {
           "id": "102267",
-          "name": "Giovanni Cipolla"
+          "name": "Giovanni Cipolla",
+          "position": "Attack",
+          "minutes": null
+        },
+        {
+          "id": "13925",
+          "name": "Thomas Pichlmann",
+          "position": "Centre-Forward",
+          "minutes": 463
+        },
+        {
+          "id": "55808",
+          "name": "Enrico Maria Amore",
+          "position": "Left Winger",
+          "minutes": null
+        },
+        {
+          "id": "55809",
+          "name": "Salvatore Carboni",
+          "position": "Right Winger",
+          "minutes": 579
+        },
+        {
+          "id": "29424",
+          "name": "Paulinho",
+          "position": "Centre-Forward",
+          "minutes": 1372
+        },
+        {
+          "id": "4049",
+          "name": "Tomas Danilevičius",
+          "position": "Centre-Forward",
+          "minutes": 1583
         },
         {
           "id": "23352",
-          "name": "Stefano Dall'Acqua"
+          "name": "Stefano Dall'Acqua",
+          "position": "Centre-Forward",
+          "minutes": 781
         }
       ]
     },
@@ -2623,152 +3883,226 @@
       "name": "AC Pisa 1909",
       "players": [
         {
-          "id": "56595",
-          "name": "Davide Morello"
+          "id": "27807",
+          "name": "Daniele Padelli",
+          "position": "Goalkeeper",
+          "minutes": 705
         },
         {
-          "id": "27807",
-          "name": "Daniele Padelli"
+          "id": "56595",
+          "name": "Davide Morello",
+          "position": "Goalkeeper",
+          "minutes": 3465
         },
         {
           "id": "341508",
-          "name": "Alessio Battini"
-        },
-        {
-          "id": "5914",
-          "name": "Stefano Lorenzi"
-        },
-        {
-          "id": "28876",
-          "name": "Alessandro Zoppetti"
-        },
-        {
-          "id": "56610",
-          "name": "Gabriel Raimondi"
-        },
-        {
-          "id": "41033",
-          "name": "Federico Viviani"
-        },
-        {
-          "id": "12568",
-          "name": "Daniele Chiarini"
-        },
-        {
-          "id": "38641",
-          "name": "Trevor Trevisan"
-        },
-        {
-          "id": "229248",
-          "name": "Lorenzo Biagini"
-        },
-        {
-          "id": "13502",
-          "name": "Luciano Zavagno"
-        },
-        {
-          "id": "235940",
-          "name": "Andrea Nieri"
+          "name": "Alessio Battini",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "56609",
-          "name": "Eros Pisano"
+          "name": "Eros Pisano",
+          "position": "Right-Back",
+          "minutes": 283
+        },
+        {
+          "id": "28876",
+          "name": "Alessandro Zoppetti",
+          "position": "Centre-Back",
+          "minutes": 2625
+        },
+        {
+          "id": "229248",
+          "name": "Lorenzo Biagini",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "56610",
+          "name": "Gabriel Raimondi",
+          "position": "Centre-Back",
+          "minutes": 3959
+        },
+        {
+          "id": "38641",
+          "name": "Trevor Trevisan",
+          "position": "Centre-Back",
+          "minutes": 3007
+        },
+        {
+          "id": "5914",
+          "name": "Stefano Lorenzi",
+          "position": "Centre-Back",
+          "minutes": 1338
+        },
+        {
+          "id": "13502",
+          "name": "Luciano Zavagno",
+          "position": "Left-Back",
+          "minutes": 3561
+        },
+        {
+          "id": "41033",
+          "name": "Federico Viviani",
+          "position": "Centre-Back",
+          "minutes": 494
+        },
+        {
+          "id": "12568",
+          "name": "Daniele Chiarini",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "21921",
-          "name": "Patrice Feussi"
+          "name": "Patrice Feussi",
+          "position": "Right-Back",
+          "minutes": 1387
         },
         {
-          "id": "6812",
-          "name": "Giovanni Passiglia"
-        },
-        {
-          "id": "35717",
-          "name": "Daniele Buzzegoli"
-        },
-        {
-          "id": "22805",
-          "name": "Gaël Genevier"
-        },
-        {
-          "id": "67500",
-          "name": "Adriano Mezavilla"
-        },
-        {
-          "id": "56602",
-          "name": "Edoardo Braiati"
-        },
-        {
-          "id": "44773",
-          "name": "Juliano"
-        },
-        {
-          "id": "21894",
-          "name": "Carlo Luisi"
-        },
-        {
-          "id": "56593",
-          "name": "Cristiano Caleri"
-        },
-        {
-          "id": "67497",
-          "name": "Simone Caciagli"
-        },
-        {
-          "id": "56605",
-          "name": "Emanuele D'Anna"
+          "id": "235940",
+          "name": "Andrea Nieri",
+          "position": "Left-Back",
+          "minutes": null
         },
         {
           "id": "74729",
-          "name": "Stefano Vezzosi"
+          "name": "Stefano Vezzosi",
+          "position": "Left Midfield",
+          "minutes": 94
         },
         {
-          "id": "56604",
-          "name": "Nicola Ciotola"
+          "id": "22805",
+          "name": "Gaël Genevier",
+          "position": "Defensive Midfield",
+          "minutes": 2630
         },
         {
-          "id": "56603",
-          "name": "Alessandro Carrozza"
+          "id": "56605",
+          "name": "Emanuele D'Anna",
+          "position": "Right Midfield",
+          "minutes": 2867
         },
         {
-          "id": "21748",
-          "name": "Alessio Cerci"
+          "id": "35717",
+          "name": "Daniele Buzzegoli",
+          "position": "Defensive Midfield",
+          "minutes": 179
         },
         {
-          "id": "67505",
-          "name": "Mario Titone"
+          "id": "56602",
+          "name": "Edoardo Braiati",
+          "position": "Central Midfield",
+          "minutes": 2666
         },
         {
-          "id": "71744",
-          "name": "Denilson Gabionetta"
+          "id": "67497",
+          "name": "Simone Caciagli",
+          "position": "Central Midfield",
+          "minutes": 30
         },
         {
-          "id": "6506",
-          "name": "Vitaliy Kutuzov"
+          "id": "44773",
+          "name": "Juliano",
+          "position": "Central Midfield",
+          "minutes": 1534
         },
         {
-          "id": "21231",
-          "name": "Corrado Colombo"
+          "id": "6812",
+          "name": "Giovanni Passiglia",
+          "position": "Defensive Midfield",
+          "minutes": 563
         },
         {
-          "id": "22699",
-          "name": "Péter Rajczi"
+          "id": "67500",
+          "name": "Adriano Mezavilla",
+          "position": "Defensive Midfield",
+          "minutes": 829
         },
         {
-          "id": "44376",
-          "name": "Christian Tiboni"
+          "id": "21894",
+          "name": "Carlo Luisi",
+          "position": "Central Midfield",
+          "minutes": 311
+        },
+        {
+          "id": "56593",
+          "name": "Cristiano Caleri",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "41561",
-          "name": "José Castillo"
+          "name": "José Castillo",
+          "position": "Centre-Forward",
+          "minutes": 3892
+        },
+        {
+          "id": "56604",
+          "name": "Nicola Ciotola",
+          "position": "Left Winger",
+          "minutes": 1314
+        },
+        {
+          "id": "21748",
+          "name": "Alessio Cerci",
+          "position": "Right Winger",
+          "minutes": 2056
+        },
+        {
+          "id": "6506",
+          "name": "Vitaliy Kutuzov",
+          "position": "Centre-Forward",
+          "minutes": 3169
+        },
+        {
+          "id": "67505",
+          "name": "Mario Titone",
+          "position": "Right Winger",
+          "minutes": 161
+        },
+        {
+          "id": "21231",
+          "name": "Corrado Colombo",
+          "position": "Centre-Forward",
+          "minutes": 646
+        },
+        {
+          "id": "71744",
+          "name": "Denilson Gabionetta",
+          "position": "Right Winger",
+          "minutes": 1047
         },
         {
           "id": "75614",
-          "name": "Lorenzo Spanu"
+          "name": "Lorenzo Spanu",
+          "position": "Centre-Forward",
+          "minutes": 90
+        },
+        {
+          "id": "44376",
+          "name": "Christian Tiboni",
+          "position": "Centre-Forward",
+          "minutes": 63
+        },
+        {
+          "id": "22699",
+          "name": "Péter Rajczi",
+          "position": "Centre-Forward",
+          "minutes": 240
+        },
+        {
+          "id": "56603",
+          "name": "Alessandro Carrozza",
+          "position": "Left Winger",
+          "minutes": 497
         },
         {
           "id": "355032",
-          "name": "Tommaso Cosi"
+          "name": "Tommaso Cosi",
+          "position": "Attack",
+          "minutes": null
         }
       ]
     },
@@ -2777,132 +4111,196 @@
       "name": "Modena FC",
       "players": [
         {
-          "id": "7102",
-          "name": "Giorgio Frezzolini"
+          "id": "38599",
+          "name": "Antonio Narciso",
+          "position": "Goalkeeper",
+          "minutes": 900
         },
         {
-          "id": "38599",
-          "name": "Antonio Narciso"
+          "id": "7102",
+          "name": "Giorgio Frezzolini",
+          "position": "Goalkeeper",
+          "minutes": 2970
         },
         {
           "id": "57119",
-          "name": "Edoardo Rolli"
-        },
-        {
-          "id": "6041",
-          "name": "Luca Ungari"
-        },
-        {
-          "id": "39829",
-          "name": "Alessandro Bastrini"
-        },
-        {
-          "id": "21188",
-          "name": "Armando Perna"
-        },
-        {
-          "id": "57099",
-          "name": "Simone Gozzi"
-        },
-        {
-          "id": "15462",
-          "name": "Stefano Lombardi"
-        },
-        {
-          "id": "306579",
-          "name": "Claudio Cola"
-        },
-        {
-          "id": "28848",
-          "name": "Juri Tamburini"
-        },
-        {
-          "id": "38577",
-          "name": "Angelo Antonazzo"
+          "name": "Edoardo Rolli",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "57118",
-          "name": "Paolo Ricchi"
+          "name": "Paolo Ricchi",
+          "position": "Right-Back",
+          "minutes": 107
+        },
+        {
+          "id": "21188",
+          "name": "Armando Perna",
+          "position": "Centre-Back",
+          "minutes": 1941
+        },
+        {
+          "id": "6041",
+          "name": "Luca Ungari",
+          "position": "Centre-Back",
+          "minutes": 1712
+        },
+        {
+          "id": "38577",
+          "name": "Angelo Antonazzo",
+          "position": "Right-Back",
+          "minutes": 3192
+        },
+        {
+          "id": "57099",
+          "name": "Simone Gozzi",
+          "position": "Centre-Back",
+          "minutes": 2229
         },
         {
           "id": "38591",
-          "name": "Nicolas Frey"
+          "name": "Nicolas Frey",
+          "position": "Right-Back",
+          "minutes": 3072
         },
         {
-          "id": "19448",
-          "name": "Alex Pinardi"
+          "id": "306579",
+          "name": "Claudio Cola",
+          "position": "Centre-Back",
+          "minutes": 18
         },
         {
-          "id": "22804",
-          "name": "Fabio Gatti"
+          "id": "28848",
+          "name": "Juri Tamburini",
+          "position": "Left-Back",
+          "minutes": 2938
         },
         {
-          "id": "35730",
-          "name": "Claudio Pani"
+          "id": "15462",
+          "name": "Stefano Lombardi",
+          "position": "Centre-Back",
+          "minutes": 334
         },
         {
-          "id": "84838",
-          "name": "Ahmed Guilouzi"
+          "id": "39829",
+          "name": "Alessandro Bastrini",
+          "position": "Centre-Back",
+          "minutes": 950
         },
         {
           "id": "16974",
-          "name": "Jorge Bolaño"
+          "name": "Jorge Bolaño",
+          "position": "Central Midfield",
+          "minutes": 1578
         },
         {
           "id": "21986",
-          "name": "Raffaele Longo"
+          "name": "Raffaele Longo",
+          "position": "Central Midfield",
+          "minutes": 1371
         },
         {
           "id": "21894",
-          "name": "Carlo Luisi"
+          "name": "Carlo Luisi",
+          "position": "Central Midfield",
+          "minutes": 1114
         },
         {
-          "id": "29615",
-          "name": "Marco Nicoletti"
+          "id": "19448",
+          "name": "Alex Pinardi",
+          "position": "Defensive Midfield",
+          "minutes": 2284
         },
         {
-          "id": "355034",
-          "name": "Alessandro Giovanardi"
+          "id": "35730",
+          "name": "Claudio Pani",
+          "position": "Defensive Midfield",
+          "minutes": 2008
+        },
+        {
+          "id": "22804",
+          "name": "Fabio Gatti",
+          "position": "Defensive Midfield",
+          "minutes": 1332
         },
         {
           "id": "19124",
-          "name": "Domenico Giampà"
+          "name": "Domenico Giampà",
+          "position": "Right Midfield",
+          "minutes": 2289
+        },
+        {
+          "id": "84838",
+          "name": "Ahmed Guilouzi",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "44312",
-          "name": "Cris Gilioli"
+          "name": "Cris Gilioli",
+          "position": "Right Midfield",
+          "minutes": 1620
         },
         {
-          "id": "45567",
-          "name": "Jonathan Biabiany"
+          "id": "29615",
+          "name": "Marco Nicoletti",
+          "position": "Central Midfield",
+          "minutes": 155
         },
         {
-          "id": "22312",
-          "name": "Roberto Colacone"
+          "id": "355034",
+          "name": "Alessandro Giovanardi",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "35249",
-          "name": "Stefano Okaka"
+          "name": "Stefano Okaka",
+          "position": "Centre-Forward",
+          "minutes": 1764
+        },
+        {
+          "id": "45567",
+          "name": "Jonathan Biabiany",
+          "position": "Right Winger",
+          "minutes": 891
         },
         {
           "id": "7108",
-          "name": "Salvatore Bruno"
-        },
-        {
-          "id": "21149",
-          "name": "Enrico Fantini"
+          "name": "Salvatore Bruno",
+          "position": "Centre-Forward",
+          "minutes": 3180
         },
         {
           "id": "57124",
-          "name": "Francesco Stanco"
+          "name": "Francesco Stanco",
+          "position": "Centre-Forward",
+          "minutes": 12
         },
         {
-          "id": "57121",
-          "name": "Antonio Russo"
+          "id": "22312",
+          "name": "Roberto Colacone",
+          "position": "Second Striker",
+          "minutes": 438
         },
         {
           "id": "61758",
-          "name": "Kevin Koffi"
+          "name": "Kevin Koffi",
+          "position": "Centre-Forward",
+          "minutes": 578
+        },
+        {
+          "id": "21149",
+          "name": "Enrico Fantini",
+          "position": "Centre-Forward",
+          "minutes": 1287
+        },
+        {
+          "id": "57121",
+          "name": "Antonio Russo",
+          "position": "Centre-Forward",
+          "minutes": null
         }
       ]
     },
@@ -2912,159 +4310,237 @@
       "players": [
         {
           "id": "16978",
-          "name": "Vincenzo Sicignano"
-        },
-        {
-          "id": "482089",
-          "name": "Gianmarco De Robertis"
+          "name": "Vincenzo Sicignano",
+          "position": "Goalkeeper",
+          "minutes": 3275
         },
         {
           "id": "43207",
-          "name": "Mauro Chiodini"
+          "name": "Mauro Chiodini",
+          "position": "Goalkeeper",
+          "minutes": 585
         },
         {
           "id": "43217",
-          "name": "Pierluigi Frattali"
+          "name": "Pierluigi Frattali",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "346118",
-          "name": "Valerio De Angelis"
-        },
-        {
-          "id": "482090",
-          "name": "Daniele Mari"
-        },
-        {
-          "id": "354709",
-          "name": "Yari Testa"
-        },
-        {
-          "id": "42678",
-          "name": "Salvatore Bocchetti"
-        },
-        {
-          "id": "21758",
-          "name": "Gennaro Scarlato"
-        },
-        {
-          "id": "15333",
-          "name": "Stefano Argilli"
-        },
-        {
-          "id": "60895",
-          "name": "Fabio Prosperi"
-        },
-        {
-          "id": "43221",
-          "name": "Michele Ischia"
-        },
-        {
-          "id": "43213",
-          "name": "Vito Di Bari"
-        },
-        {
-          "id": "43225",
-          "name": "Nicola Carlo Pagani"
-        },
-        {
-          "id": "21779",
-          "name": "Antonio Bocchetti"
-        },
-        {
-          "id": "28011",
-          "name": "Juriy Cannarsa"
-        },
-        {
-          "id": "21792",
-          "name": "Giorgio Lucenti"
+          "id": "482089",
+          "name": "Gianmarco De Robertis",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "18313",
-          "name": "Zsolt Bognár"
+          "name": "Zsolt Bognár",
+          "position": "Right-Back",
+          "minutes": 689
         },
         {
-          "id": "6033",
-          "name": "Francesco Lodi"
+          "id": "21758",
+          "name": "Gennaro Scarlato",
+          "position": "Centre-Back",
+          "minutes": 1588
         },
         {
-          "id": "343013",
-          "name": "Giuseppe Gemmiti"
+          "id": "60895",
+          "name": "Fabio Prosperi",
+          "position": "Centre-Back",
+          "minutes": 372
         },
         {
-          "id": "22262",
-          "name": "Daniele Amerini"
+          "id": "42678",
+          "name": "Salvatore Bocchetti",
+          "position": "Centre-Back",
+          "minutes": 3233
         },
         {
-          "id": "22309",
-          "name": "Mattia Biso"
+          "id": "43221",
+          "name": "Michele Ischia",
+          "position": "Centre-Back",
+          "minutes": 2726
         },
         {
-          "id": "16871",
-          "name": "Fabio Pecchia"
+          "id": "21779",
+          "name": "Antonio Bocchetti",
+          "position": "Left-Back",
+          "minutes": 3021
         },
         {
-          "id": "25492",
-          "name": "David D'Antoni"
+          "id": "43213",
+          "name": "Vito Di Bari",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "43225",
+          "name": "Nicola Carlo Pagani",
+          "position": "Centre-Back",
+          "minutes": 2349
+        },
+        {
+          "id": "21792",
+          "name": "Giorgio Lucenti",
+          "position": "Right-Back",
+          "minutes": 1180
+        },
+        {
+          "id": "28011",
+          "name": "Juriy Cannarsa",
+          "position": "Right-Back",
+          "minutes": 826
+        },
+        {
+          "id": "15333",
+          "name": "Stefano Argilli",
+          "position": "Centre-Back",
+          "minutes": 36
+        },
+        {
+          "id": "346118",
+          "name": "Valerio De Angelis",
+          "position": "Defender",
+          "minutes": null
+        },
+        {
+          "id": "482090",
+          "name": "Daniele Mari",
+          "position": "Defender",
+          "minutes": null
+        },
+        {
+          "id": "354709",
+          "name": "Yari Testa",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "96133",
-          "name": "Fabio Scarsella"
+          "name": "Fabio Scarsella",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "75187",
-          "name": "Luigi Lucchese"
+          "id": "22262",
+          "name": "Daniele Amerini",
+          "position": "Central Midfield",
+          "minutes": 2320
         },
         {
-          "id": "43227",
-          "name": "Massimo Perra"
+          "id": "25492",
+          "name": "David D'Antoni",
+          "position": "Central Midfield",
+          "minutes": 1582
         },
         {
-          "id": "16981",
-          "name": "Alfredo Cariello"
+          "id": "22309",
+          "name": "Mattia Biso",
+          "position": "Central Midfield",
+          "minutes": 1092
         },
         {
           "id": "43216",
-          "name": "Jimmy Fialdini"
+          "name": "Jimmy Fialdini",
+          "position": "Left Midfield",
+          "minutes": 351
         },
         {
-          "id": "43206",
-          "name": "Massimiliano Carlini"
+          "id": "43227",
+          "name": "Massimo Perra",
+          "position": "Right Midfield",
+          "minutes": 673
         },
         {
-          "id": "60894",
-          "name": "Gennaro Troianiello"
+          "id": "16981",
+          "name": "Alfredo Cariello",
+          "position": "Left Midfield",
+          "minutes": 2687
         },
         {
-          "id": "22201",
-          "name": "Massimo Margiotta"
+          "id": "16871",
+          "name": "Fabio Pecchia",
+          "position": "Central Midfield",
+          "minutes": 2069
         },
         {
-          "id": "5852",
-          "name": "Felice Evacuo"
+          "id": "6033",
+          "name": "Francesco Lodi",
+          "position": "Defensive Midfield",
+          "minutes": 3561
+        },
+        {
+          "id": "75187",
+          "name": "Luigi Lucchese",
+          "position": "Central Midfield",
+          "minutes": 6
+        },
+        {
+          "id": "343013",
+          "name": "Giuseppe Gemmiti",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "28835",
-          "name": "Zlatko Dedic"
+          "name": "Zlatko Dedic",
+          "position": "Centre-Forward",
+          "minutes": 724
         },
         {
           "id": "37418",
-          "name": "Éder"
+          "name": "Éder",
+          "position": "Centre-Forward",
+          "minutes": 1133
+        },
+        {
+          "id": "43206",
+          "name": "Massimiliano Carlini",
+          "position": "Right Winger",
+          "minutes": 242
         },
         {
           "id": "42880",
-          "name": "Marco Martini"
+          "name": "Marco Martini",
+          "position": "Centre-Forward",
+          "minutes": 1617
+        },
+        {
+          "id": "60894",
+          "name": "Gennaro Troianiello",
+          "position": "Right Winger",
+          "minutes": 201
+        },
+        {
+          "id": "22201",
+          "name": "Massimo Margiotta",
+          "position": "Second Striker",
+          "minutes": 1009
+        },
+        {
+          "id": "5852",
+          "name": "Felice Evacuo",
+          "position": "Centre-Forward",
+          "minutes": 3241
         },
         {
           "id": "354708",
-          "name": "Pio Crisci"
+          "name": "Pio Crisci",
+          "position": "Attack",
+          "minutes": null
         },
         {
           "id": "512932",
-          "name": "Claudio Massari"
+          "name": "Claudio Massari",
+          "position": "Attack",
+          "minutes": null
         },
         {
           "id": "427989",
-          "name": "Aldo Raffa"
+          "name": "Aldo Raffa",
+          "position": "Centre-Forward",
+          "minutes": null
         }
       ]
     },
@@ -3073,188 +4549,280 @@
       "name": "AC Cesena",
       "players": [
         {
-          "id": "20394",
-          "name": "Artur Moraes"
+          "id": "6010",
+          "name": "Gianluca Berti",
+          "position": "Goalkeeper",
+          "minutes": 1124
         },
         {
-          "id": "38653",
-          "name": "Alessio Sarti"
+          "id": "20394",
+          "name": "Artur Moraes",
+          "position": "Goalkeeper",
+          "minutes": 1620
         },
         {
           "id": "60727",
-          "name": "Andrea Rossini"
-        },
-        {
-          "id": "6010",
-          "name": "Gianluca Berti"
+          "name": "Andrea Rossini",
+          "position": "Goalkeeper",
+          "minutes": 401
         },
         {
           "id": "67547",
-          "name": "Mariano Renna"
+          "name": "Mariano Renna",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "28823",
-          "name": "Maurizio Lauro"
-        },
-        {
-          "id": "38658",
-          "name": "Daniel Ola"
-        },
-        {
-          "id": "24294",
-          "name": "Roberto Biserni"
-        },
-        {
-          "id": "21999",
-          "name": "Marco Turati"
-        },
-        {
-          "id": "21856",
-          "name": "Dario Biasi"
-        },
-        {
-          "id": "22108",
-          "name": "Diaw Doudou"
+          "id": "38653",
+          "name": "Alessio Sarti",
+          "position": "Goalkeeper",
+          "minutes": 724
         },
         {
           "id": "60732",
-          "name": "Denis Tonucci"
-        },
-        {
-          "id": "74037",
-          "name": "Fabio Cusaro"
-        },
-        {
-          "id": "35742",
-          "name": "Fabio Vignati"
-        },
-        {
-          "id": "60694",
-          "name": "Nebil Caidi"
+          "name": "Denis Tonucci",
+          "position": "Centre-Back",
+          "minutes": 383
         },
         {
           "id": "75613",
-          "name": "Luca Ricci"
-        },
-        {
-          "id": "72274",
-          "name": "Vasco Regini"
-        },
-        {
-          "id": "16811",
-          "name": "Giuseppe Cardone"
-        },
-        {
-          "id": "60693",
-          "name": "Samuele Buda"
+          "name": "Luca Ricci",
+          "position": "Centre-Back",
+          "minutes": 10
         },
         {
           "id": "42768",
-          "name": "Christian Jidayi"
+          "name": "Christian Jidayi",
+          "position": "Right-Back",
+          "minutes": 228
         },
         {
-          "id": "24305",
-          "name": "Giuseppe De Feudis"
+          "id": "28823",
+          "name": "Maurizio Lauro",
+          "position": "Centre-Back",
+          "minutes": 1491
         },
         {
-          "id": "22823",
-          "name": "Gennaro Esposito"
+          "id": "35742",
+          "name": "Fabio Vignati",
+          "position": "Centre-Back",
+          "minutes": 179
         },
         {
-          "id": "44540",
-          "name": "Andrea Paolucci"
+          "id": "74037",
+          "name": "Fabio Cusaro",
+          "position": "Centre-Back",
+          "minutes": 438
         },
         {
-          "id": "60722",
-          "name": "Nicola Mazzotti"
+          "id": "72274",
+          "name": "Vasco Regini",
+          "position": "Left-Back",
+          "minutes": 461
         },
         {
-          "id": "355031",
-          "name": "Claudio Candoli"
+          "id": "60693",
+          "name": "Samuele Buda",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "67500",
-          "name": "Adriano Mezavilla"
+          "id": "21999",
+          "name": "Marco Turati",
+          "position": "Centre-Back",
+          "minutes": 1755
         },
         {
-          "id": "22749",
-          "name": "Daniele Croce"
+          "id": "24294",
+          "name": "Roberto Biserni",
+          "position": "Centre-Back",
+          "minutes": 2623
         },
         {
-          "id": "20188",
-          "name": "Stefano Botta"
+          "id": "21856",
+          "name": "Dario Biasi",
+          "position": "Centre-Back",
+          "minutes": 2381
         },
         {
-          "id": "40712",
-          "name": "Luiz Sacilotto"
+          "id": "38658",
+          "name": "Daniel Ola",
+          "position": "Centre-Back",
+          "minutes": 2440
         },
         {
-          "id": "28760",
-          "name": "Stefano Fattori"
+          "id": "22108",
+          "name": "Diaw Doudou",
+          "position": "Centre-Back",
+          "minutes": 1553
         },
         {
-          "id": "6044",
-          "name": "Nicola Campedelli"
+          "id": "60694",
+          "name": "Nebil Caidi",
+          "position": "Centre-Back",
+          "minutes": 34
         },
         {
-          "id": "38656",
-          "name": "Francesco Ferrini"
+          "id": "16811",
+          "name": "Giuseppe Cardone",
+          "position": "Right-Back",
+          "minutes": 1162
         },
         {
           "id": "23350",
-          "name": "Roberto Cortellini"
+          "name": "Roberto Cortellini",
+          "position": "Left Midfield",
+          "minutes": 1715
         },
         {
-          "id": "34434",
-          "name": "Blazej Vascak"
+          "id": "22749",
+          "name": "Daniele Croce",
+          "position": "Central Midfield",
+          "minutes": 1827
+        },
+        {
+          "id": "22823",
+          "name": "Gennaro Esposito",
+          "position": "Defensive Midfield",
+          "minutes": 457
+        },
+        {
+          "id": "40712",
+          "name": "Luiz Sacilotto",
+          "position": "Central Midfield",
+          "minutes": 635
         },
         {
           "id": "6001",
-          "name": "Emiliano Salvetti"
+          "name": "Emiliano Salvetti",
+          "position": "Attacking Midfield",
+          "minutes": 2354
+        },
+        {
+          "id": "28760",
+          "name": "Stefano Fattori",
+          "position": "Central Midfield",
+          "minutes": 24
+        },
+        {
+          "id": "44540",
+          "name": "Andrea Paolucci",
+          "position": "Defensive Midfield",
+          "minutes": 161
+        },
+        {
+          "id": "34434",
+          "name": "Blazej Vascak",
+          "position": "Attacking Midfield",
+          "minutes": 1149
+        },
+        {
+          "id": "20188",
+          "name": "Stefano Botta",
+          "position": "Central Midfield",
+          "minutes": 2130
+        },
+        {
+          "id": "24305",
+          "name": "Giuseppe De Feudis",
+          "position": "Defensive Midfield",
+          "minutes": 3347
         },
         {
           "id": "42813",
-          "name": "Ricardo Villar"
+          "name": "Ricardo Villar",
+          "position": "Attacking Midfield",
+          "minutes": 334
         },
         {
-          "id": "24313",
-          "name": "Ivan Piccoli"
+          "id": "60722",
+          "name": "Nicola Mazzotti",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
-          "id": "38579",
-          "name": "Salvatore Aurelio"
+          "id": "38656",
+          "name": "Francesco Ferrini",
+          "position": "Right Midfield",
+          "minutes": null
         },
         {
-          "id": "21998",
-          "name": "Luigi Pagliuca"
+          "id": "67500",
+          "name": "Adriano Mezavilla",
+          "position": "Defensive Midfield",
+          "minutes": 837
         },
         {
-          "id": "75305",
-          "name": "Alessio Ambrogetti"
+          "id": "6044",
+          "name": "Nicola Campedelli",
+          "position": "Right Midfield",
+          "minutes": 1206
         },
         {
-          "id": "21942",
-          "name": "Davide Moscardelli"
-        },
-        {
-          "id": "35853",
-          "name": "Daniele Paponi"
-        },
-        {
-          "id": "37234",
-          "name": "Andrea Ferretti"
+          "id": "355031",
+          "name": "Claudio Candoli",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "67556",
-          "name": "Milan Djuric"
+          "name": "Milan Djuric",
+          "position": "Centre-Forward",
+          "minutes": 1113
         },
         {
-          "id": "60698",
-          "name": "Cristian Cristea"
+          "id": "21942",
+          "name": "Davide Moscardelli",
+          "position": "Centre-Forward",
+          "minutes": 3473
+        },
+        {
+          "id": "38579",
+          "name": "Salvatore Aurelio",
+          "position": "Left Winger",
+          "minutes": 68
+        },
+        {
+          "id": "21998",
+          "name": "Luigi Pagliuca",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "37234",
+          "name": "Andrea Ferretti",
+          "position": "Centre-Forward",
+          "minutes": 735
         },
         {
           "id": "489721",
-          "name": "Andrea Zanigni"
+          "name": "Andrea Zanigni",
+          "position": "Attack",
+          "minutes": null
+        },
+        {
+          "id": "75305",
+          "name": "Alessio Ambrogetti",
+          "position": "Second Striker",
+          "minutes": 26
+        },
+        {
+          "id": "60698",
+          "name": "Cristian Cristea",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "35853",
+          "name": "Daniele Paponi",
+          "position": "Centre-Forward",
+          "minutes": 1339
+        },
+        {
+          "id": "24313",
+          "name": "Ivan Piccoli",
+          "position": "Left Winger",
+          "minutes": 506
         }
       ]
     },
@@ -3263,148 +4831,220 @@
       "name": "Ravenna Calcio",
       "players": [
         {
-          "id": "57786",
-          "name": "Luca Capecchi"
+          "id": "57815",
+          "name": "Luca Liverani",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "55799",
-          "name": "Vincenzo Marruocco"
+          "id": "57786",
+          "name": "Luca Capecchi",
+          "position": "Goalkeeper",
+          "minutes": 1620
         },
         {
           "id": "57837",
-          "name": "Gian Maria Rossi"
+          "name": "Gian Maria Rossi",
+          "position": "Goalkeeper",
+          "minutes": 374
         },
         {
           "id": "57833",
-          "name": "Stefano Pardini"
+          "name": "Stefano Pardini",
+          "position": "Goalkeeper",
+          "minutes": 495
         },
         {
-          "id": "57815",
-          "name": "Luca Liverani"
-        },
-        {
-          "id": "342394",
-          "name": "Stefano Bevoni"
-        },
-        {
-          "id": "21950",
-          "name": "Marco Pecorari"
-        },
-        {
-          "id": "57794",
-          "name": "Francesco Cosenza"
-        },
-        {
-          "id": "57775",
-          "name": "Fabrizio Anzalone"
-        },
-        {
-          "id": "38647",
-          "name": "Stefano Ferrario"
-        },
-        {
-          "id": "5750",
-          "name": "Mark Iuliano"
-        },
-        {
-          "id": "32074",
-          "name": "Fabio Buscaroli"
-        },
-        {
-          "id": "57853",
-          "name": "Francesco Larosa"
-        },
-        {
-          "id": "22104",
-          "name": "Matteo Centurioni"
-        },
-        {
-          "id": "22113",
-          "name": "Giuseppe Ingrosso"
+          "id": "55799",
+          "name": "Vincenzo Marruocco",
+          "position": "Goalkeeper",
+          "minutes": 1470
         },
         {
           "id": "57799",
-          "name": "Gianluca Fasano"
+          "name": "Gianluca Fasano",
+          "position": "Left-Back",
+          "minutes": 2081
+        },
+        {
+          "id": "57775",
+          "name": "Fabrizio Anzalone",
+          "position": "Centre-Back",
+          "minutes": 2602
+        },
+        {
+          "id": "21950",
+          "name": "Marco Pecorari",
+          "position": "Centre-Back",
+          "minutes": 1220
+        },
+        {
+          "id": "22104",
+          "name": "Matteo Centurioni",
+          "position": "Centre-Back",
+          "minutes": 388
+        },
+        {
+          "id": "57794",
+          "name": "Francesco Cosenza",
+          "position": "Centre-Back",
+          "minutes": 2047
         },
         {
           "id": "21826",
-          "name": "Davide Nicola"
+          "name": "Davide Nicola",
+          "position": "Right-Back",
+          "minutes": 1472
+        },
+        {
+          "id": "32074",
+          "name": "Fabio Buscaroli",
+          "position": "Centre-Back",
+          "minutes": 674
         },
         {
           "id": "17150",
-          "name": "Matteo Pivotto"
+          "name": "Matteo Pivotto",
+          "position": "Right-Back",
+          "minutes": 2780
         },
         {
-          "id": "57784",
-          "name": "Giampaolo Calzi"
+          "id": "5750",
+          "name": "Mark Iuliano",
+          "position": "Centre-Back",
+          "minutes": 701
         },
         {
-          "id": "342118",
-          "name": "Francesco Ruggiero"
+          "id": "22113",
+          "name": "Giuseppe Ingrosso",
+          "position": "Left-Back",
+          "minutes": 1278
         },
         {
-          "id": "373281",
-          "name": "Angelo Affatigato"
+          "id": "57853",
+          "name": "Francesco Larosa",
+          "position": "Centre-Back",
+          "minutes": 604
+        },
+        {
+          "id": "38647",
+          "name": "Stefano Ferrario",
+          "position": "Centre-Back",
+          "minutes": 496
+        },
+        {
+          "id": "342394",
+          "name": "Stefano Bevoni",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "39828",
-          "name": "Antonino Barillà"
-        },
-        {
-          "id": "57835",
-          "name": "Nicola Pizzolla"
+          "name": "Antonino Barillà",
+          "position": "Central Midfield",
+          "minutes": 1038
         },
         {
           "id": "5998",
-          "name": "Renato Olive"
+          "name": "Renato Olive",
+          "position": "Central Midfield",
+          "minutes": 1404
+        },
+        {
+          "id": "57835",
+          "name": "Nicola Pizzolla",
+          "position": "Central Midfield",
+          "minutes": 2052
         },
         {
           "id": "57843",
-          "name": "Paolo Sciaccaluga"
+          "name": "Paolo Sciaccaluga",
+          "position": "Central Midfield",
+          "minutes": 3192
+        },
+        {
+          "id": "342118",
+          "name": "Francesco Ruggiero",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "57784",
+          "name": "Giampaolo Calzi",
+          "position": "Defensive Midfield",
+          "minutes": 1039
         },
         {
           "id": "24315",
-          "name": "Lorenzo Rossetti"
+          "name": "Lorenzo Rossetti",
+          "position": "Right Midfield",
+          "minutes": 1869
         },
         {
           "id": "30665",
-          "name": "Ivano Trotta"
+          "name": "Ivano Trotta",
+          "position": "Right Midfield",
+          "minutes": 1165
         },
         {
-          "id": "25540",
-          "name": "Toledo"
+          "id": "373281",
+          "name": "Angelo Affatigato",
+          "position": "Midfield",
+          "minutes": null
         },
         {
           "id": "39981",
-          "name": "Ilario Aloe"
-        },
-        {
-          "id": "33349",
-          "name": "Ferdinando Sforzini"
-        },
-        {
-          "id": "29208",
-          "name": "Davide Succi"
+          "name": "Ilario Aloe",
+          "position": "Right Winger",
+          "minutes": 1150
         },
         {
           "id": "57793",
-          "name": "Vincenzo Chianese"
+          "name": "Vincenzo Chianese",
+          "position": "Centre-Forward",
+          "minutes": 1421
         },
         {
-          "id": "57802",
-          "name": "Mohamed Fofana"
+          "id": "29208",
+          "name": "Davide Succi",
+          "position": "Centre-Forward",
+          "minutes": 3268
         },
         {
           "id": "42814",
-          "name": "Francesco Virdis"
+          "name": "Francesco Virdis",
+          "position": "Centre-Forward",
+          "minutes": 142
         },
         {
           "id": "85478",
-          "name": "Luca Gerbino Polo"
+          "name": "Luca Gerbino Polo",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "57802",
+          "name": "Mohamed Fofana",
+          "position": "Centre-Forward",
+          "minutes": 786
+        },
+        {
+          "id": "25540",
+          "name": "Toledo",
+          "position": "Left Winger",
+          "minutes": 2552
+        },
+        {
+          "id": "33349",
+          "name": "Ferdinando Sforzini",
+          "position": "Centre-Forward",
+          "minutes": 1779
         },
         {
           "id": "463642",
-          "name": "Mattia Biondini"
+          "name": "Mattia Biondini",
+          "position": "Attack",
+          "minutes": null
         }
       ]
     },
@@ -3413,172 +5053,256 @@
       "name": "US Avellino",
       "players": [
         {
-          "id": "20745",
-          "name": "Armando Pantanelli"
-        },
-        {
           "id": "61354",
-          "name": "Raffaele Gragnaniello"
-        },
-        {
-          "id": "28828",
-          "name": "Gabriele Aldegani"
+          "name": "Raffaele Gragnaniello",
+          "position": "Goalkeeper",
+          "minutes": 1800
         },
         {
           "id": "32083",
-          "name": "Juri De Marco"
+          "name": "Juri De Marco",
+          "position": "Goalkeeper",
+          "minutes": 13
         },
         {
-          "id": "110945",
-          "name": "Gabriele Ulivi"
+          "id": "20745",
+          "name": "Armando Pantanelli",
+          "position": "Goalkeeper",
+          "minutes": 2057
         },
         {
-          "id": "38657",
-          "name": "Andrea Mengoni"
+          "id": "28828",
+          "name": "Gabriele Aldegani",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "22313",
-          "name": "Riccardo Corallo"
+          "name": "Riccardo Corallo",
+          "position": "Centre-Back",
+          "minutes": 1769
         },
         {
-          "id": "22140",
-          "name": "Domenico Maietta"
-        },
-        {
-          "id": "61360",
-          "name": "Ciro Sirignano"
+          "id": "38657",
+          "name": "Andrea Mengoni",
+          "position": "Centre-Back",
+          "minutes": 3371
         },
         {
           "id": "32105",
-          "name": "Simone Puleo"
-        },
-        {
-          "id": "56854",
-          "name": "Nicolò Cherubin"
-        },
-        {
-          "id": "18981",
-          "name": "Rodrigo Defendi"
-        },
-        {
-          "id": "32085",
-          "name": "Alessio D'Andrea"
-        },
-        {
-          "id": "75666",
-          "name": "Francesco Campanella"
+          "name": "Simone Puleo",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "54918",
-          "name": "Alessio Tombesi"
+          "name": "Alessio Tombesi",
+          "position": "Left-Back",
+          "minutes": 606
         },
         {
-          "id": "21970",
-          "name": "Stefano De Angelis"
-        },
-        {
-          "id": "7106",
-          "name": "Francesco Carbone"
+          "id": "61360",
+          "name": "Ciro Sirignano",
+          "position": "Centre-Back",
+          "minutes": 1375
         },
         {
           "id": "41913",
-          "name": "Ivano Baldanzeddu"
+          "name": "Ivano Baldanzeddu",
+          "position": "Right-Back",
+          "minutes": 12
+        },
+        {
+          "id": "22140",
+          "name": "Domenico Maietta",
+          "position": "Centre-Back",
+          "minutes": 2396
+        },
+        {
+          "id": "32085",
+          "name": "Alessio D'Andrea",
+          "position": "Centre-Back",
+          "minutes": 90
+        },
+        {
+          "id": "7106",
+          "name": "Francesco Carbone",
+          "position": "Right-Back",
+          "minutes": 2509
+        },
+        {
+          "id": "21970",
+          "name": "Stefano De Angelis",
+          "position": "Left-Back",
+          "minutes": 2522
+        },
+        {
+          "id": "18981",
+          "name": "Rodrigo Defendi",
+          "position": "Centre-Back",
+          "minutes": 18
+        },
+        {
+          "id": "56854",
+          "name": "Nicolò Cherubin",
+          "position": "Centre-Back",
+          "minutes": 720
+        },
+        {
+          "id": "75666",
+          "name": "Francesco Campanella",
+          "position": "Centre-Back",
+          "minutes": 41
+        },
+        {
+          "id": "110945",
+          "name": "Gabriele Ulivi",
+          "position": "Defender",
+          "minutes": 11
         },
         {
           "id": "102544",
-          "name": "Nicola Diliso"
-        },
-        {
-          "id": "61358",
-          "name": "Filippo Porcari"
-        },
-        {
-          "id": "22098",
-          "name": "Maurizio Anastasi"
-        },
-        {
-          "id": "40482",
-          "name": "Alberto Quadri"
-        },
-        {
-          "id": "38600",
-          "name": "Riccardo Nardini"
+          "name": "Nicola Diliso",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
           "id": "61350",
-          "name": "Domenico Di Cecco"
+          "name": "Domenico Di Cecco",
+          "position": "Central Midfield",
+          "minutes": 3007
+        },
+        {
+          "id": "38600",
+          "name": "Riccardo Nardini",
+          "position": "Central Midfield",
+          "minutes": 1049
         },
         {
           "id": "21879",
-          "name": "Alessandro Conticchio"
-        },
-        {
-          "id": "56889",
-          "name": "Francesco Della Rocca"
+          "name": "Alessandro Conticchio",
+          "position": "Central Midfield",
+          "minutes": 636
         },
         {
           "id": "21898",
-          "name": "Marco Stella"
+          "name": "Marco Stella",
+          "position": "Right Midfield",
+          "minutes": 145
+        },
+        {
+          "id": "61358",
+          "name": "Filippo Porcari",
+          "position": "Defensive Midfield",
+          "minutes": 2465
         },
         {
           "id": "61352",
-          "name": "Michele Forani"
-        },
-        {
-          "id": "61355",
-          "name": "Diego Matarazzo"
+          "name": "Michele Forani",
+          "position": "Right Midfield",
+          "minutes": 31
         },
         {
           "id": "69433",
-          "name": "Ludovico Moresi"
-        },
-        {
-          "id": "56875",
-          "name": "Gabriele Paonessa"
-        },
-        {
-          "id": "38655",
-          "name": "Andrea Bracaletti"
+          "name": "Ludovico Moresi",
+          "position": "Left Midfield",
+          "minutes": null
         },
         {
           "id": "19291",
-          "name": "Salvatore Sullo"
+          "name": "Salvatore Sullo",
+          "position": "Attacking Midfield",
+          "minutes": 90
         },
         {
-          "id": "59601",
-          "name": "Arcangelo Ragosta"
+          "id": "40482",
+          "name": "Alberto Quadri",
+          "position": "Defensive Midfield",
+          "minutes": 214
         },
         {
-          "id": "347803",
-          "name": "Fabio Sperandeo"
+          "id": "56889",
+          "name": "Francesco Della Rocca",
+          "position": "Central Midfield",
+          "minutes": 818
         },
         {
-          "id": "23367",
-          "name": "Alessio Sestu"
+          "id": "22098",
+          "name": "Maurizio Anastasi",
+          "position": "Defensive Midfield",
+          "minutes": 2055
         },
         {
-          "id": "39682",
-          "name": "Alessandro Pellicori"
+          "id": "56875",
+          "name": "Gabriele Paonessa",
+          "position": "Attacking Midfield",
+          "minutes": 1367
         },
         {
-          "id": "5984",
-          "name": "Mario Salgado"
+          "id": "38655",
+          "name": "Andrea Bracaletti",
+          "position": "Attacking Midfield",
+          "minutes": 638
         },
         {
-          "id": "6007",
-          "name": "Giacomo Cipriani"
-        },
-        {
-          "id": "59593",
-          "name": "Krisztián Kenesei"
+          "id": "61355",
+          "name": "Diego Matarazzo",
+          "position": "Right Midfield",
+          "minutes": 18
         },
         {
           "id": "22308",
-          "name": "Marco Ascenzi"
+          "name": "Marco Ascenzi",
+          "position": "Centre-Forward",
+          "minutes": 90
+        },
+        {
+          "id": "39682",
+          "name": "Alessandro Pellicori",
+          "position": "Centre-Forward",
+          "minutes": 2969
+        },
+        {
+          "id": "23367",
+          "name": "Alessio Sestu",
+          "position": "Right Winger",
+          "minutes": 3462
+        },
+        {
+          "id": "347803",
+          "name": "Fabio Sperandeo",
+          "position": "Left Winger",
+          "minutes": null
+        },
+        {
+          "id": "6007",
+          "name": "Giacomo Cipriani",
+          "position": "Centre-Forward",
+          "minutes": 858
+        },
+        {
+          "id": "59593",
+          "name": "Krisztián Kenesei",
+          "position": "Centre-Forward",
+          "minutes": 801
+        },
+        {
+          "id": "59601",
+          "name": "Arcangelo Ragosta",
+          "position": "Left Winger",
+          "minutes": 15
         },
         {
           "id": "59591",
-          "name": "Alessandro Belleri"
+          "name": "Alessandro Belleri",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "5984",
+          "name": "Mario Salgado",
+          "position": "Centre-Forward",
+          "minutes": 2381
         }
       ]
     }

@@ -8,191 +8,285 @@
       "players": [
         {
           "id": "238223",
-          "name": "Ederson"
-        },
-        {
-          "id": "243555",
-          "name": "Miguel Santos"
+          "name": "Ederson",
+          "position": "Goalkeeper",
+          "minutes": 360
         },
         {
           "id": "282654",
-          "name": "Ivan Zlobin"
+          "name": "Ivan Zlobin",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "290346",
-          "name": "André Ferreira"
+          "name": "André Ferreira",
+          "position": "Goalkeeper",
+          "minutes": 540
+        },
+        {
+          "id": "243555",
+          "name": "Miguel Santos",
+          "position": "Goalkeeper",
+          "minutes": 3600
         },
         {
           "id": "312739",
-          "name": "Thierry Graça"
-        },
-        {
-          "id": "184573",
-          "name": "Victor Lindelöf"
-        },
-        {
-          "id": "248732",
-          "name": "Paweł Dawidowicz"
-        },
-        {
-          "id": "198021",
-          "name": "João Nunes"
-        },
-        {
-          "id": "207519",
-          "name": "Vitaliy Lystsov"
-        },
-        {
-          "id": "54716",
-          "name": "Steven Vitória"
+          "name": "Thierry Graça",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "258004",
-          "name": "Rúben Dias"
-        },
-        {
-          "id": "290337",
-          "name": "Gilson Costa"
-        },
-        {
-          "id": "197867",
-          "name": "Alexandre Alfaiate"
-        },
-        {
-          "id": "161451",
-          "name": "João Lima"
-        },
-        {
-          "id": "225123",
-          "name": "Ricardo Carvalho"
-        },
-        {
-          "id": "396428",
-          "name": "Rodrigo Escoval"
-        },
-        {
-          "id": "294321",
-          "name": "Ferro"
-        },
-        {
-          "id": "197860",
-          "name": "Pedro Rebocho"
-        },
-        {
-          "id": "290391",
-          "name": "Nuno Santos"
-        },
-        {
-          "id": "258032",
-          "name": "Yuri Ribeiro"
-        },
-        {
-          "id": "200796",
-          "name": "Alexis Scholl"
-        },
-        {
-          "id": "240692",
-          "name": "Reinildo Mandava"
+          "name": "Rúben Dias",
+          "position": "Centre-Back",
+          "minutes": 2288
         },
         {
           "id": "231572",
-          "name": "Nélson Semedo"
+          "name": "Nélson Semedo",
+          "position": "Right-Back",
+          "minutes": 341
+        },
+        {
+          "id": "184573",
+          "name": "Victor Lindelöf",
+          "position": "Centre-Back",
+          "minutes": 594
+        },
+        {
+          "id": "240692",
+          "name": "Reinildo Mandava",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "290391",
+          "name": "Nuno Santos",
+          "position": "Left-Back",
+          "minutes": 484
+        },
+        {
+          "id": "294321",
+          "name": "Ferro",
+          "position": "Centre-Back",
+          "minutes": 592
+        },
+        {
+          "id": "396428",
+          "name": "Rodrigo Escoval",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "258032",
+          "name": "Yuri Ribeiro",
+          "position": "Left-Back",
+          "minutes": 1497
+        },
+        {
+          "id": "197860",
+          "name": "Pedro Rebocho",
+          "position": "Left-Back",
+          "minutes": 2664
+        },
+        {
+          "id": "198021",
+          "name": "João Nunes",
+          "position": "Centre-Back",
+          "minutes": 2875
+        },
+        {
+          "id": "248732",
+          "name": "Paweł Dawidowicz",
+          "position": "Centre-Back",
+          "minutes": 3564
         },
         {
           "id": "344676",
-          "name": "Alan Benítez"
+          "name": "Alan Benítez",
+          "position": "Right-Back",
+          "minutes": 641
         },
         {
-          "id": "189457",
-          "name": "Jim Morrison Varela"
+          "id": "207519",
+          "name": "Vitaliy Lystsov",
+          "position": "Centre-Back",
+          "minutes": 2603
         },
         {
-          "id": "314707",
-          "name": "Pipo"
+          "id": "290337",
+          "name": "Gilson Costa",
+          "position": "Centre-Back",
+          "minutes": 1817
         },
         {
-          "id": "258027",
-          "name": "Renato Sanches"
+          "id": "54716",
+          "name": "Steven Vitória",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "45287",
-          "name": "Adel Taarabt"
+          "id": "200796",
+          "name": "Alexis Scholl",
+          "position": "Left-Back",
+          "minutes": 68
         },
         {
-          "id": "197880",
-          "name": "Raphael Guzzo"
+          "id": "225123",
+          "name": "Ricardo Carvalho",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "182710",
-          "name": "João Teixeira"
+          "id": "197867",
+          "name": "Alexandre Alfaiate",
+          "position": "Centre-Back",
+          "minutes": 1975
         },
         {
-          "id": "323589",
-          "name": "Dálcio"
-        },
-        {
-          "id": "258018",
-          "name": "Pêpê"
+          "id": "161451",
+          "name": "João Lima",
+          "position": "Centre-Back",
+          "minutes": 18
         },
         {
           "id": "258005",
-          "name": "João Carvalho"
+          "name": "João Carvalho",
+          "position": "Attacking Midfield",
+          "minutes": 3081
+        },
+        {
+          "id": "258018",
+          "name": "Pêpê",
+          "position": "Central Midfield",
+          "minutes": 985
+        },
+        {
+          "id": "258027",
+          "name": "Renato Sanches",
+          "position": "Central Midfield",
+          "minutes": 1007
+        },
+        {
+          "id": "323589",
+          "name": "Dálcio",
+          "position": "Central Midfield",
+          "minutes": 1147
+        },
+        {
+          "id": "45287",
+          "name": "Adel Taarabt",
+          "position": "Central Midfield",
+          "minutes": 513
+        },
+        {
+          "id": "197880",
+          "name": "Raphael Guzzo",
+          "position": "Central Midfield",
+          "minutes": 837
         },
         {
           "id": "293258",
-          "name": "Oliver Sarkic"
+          "name": "Oliver Sarkic",
+          "position": "Attacking Midfield",
+          "minutes": 1389
+        },
+        {
+          "id": "182710",
+          "name": "João Teixeira",
+          "position": "Central Midfield",
+          "minutes": 1046
+        },
+        {
+          "id": "189457",
+          "name": "Jim Morrison Varela",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "189412",
-          "name": "Elbio Álvarez"
+          "name": "Elbio Álvarez",
+          "position": "Attacking Midfield",
+          "minutes": 161
         },
         {
-          "id": "225122",
-          "name": "Gonçalo Guedes"
-        },
-        {
-          "id": "203323",
-          "name": "Victor Andrade"
-        },
-        {
-          "id": "258015",
-          "name": "Diogo Gonçalves"
-        },
-        {
-          "id": "149654",
-          "name": "Sancidino"
-        },
-        {
-          "id": "241324",
-          "name": "Bilal Ould-Chikh"
-        },
-        {
-          "id": "290384",
-          "name": "Berto"
-        },
-        {
-          "id": "211796",
-          "name": "Clésio Baúque"
-        },
-        {
-          "id": "397379",
-          "name": "Bruno Rodrigues"
+          "id": "314707",
+          "name": "Pipo",
+          "position": "Defensive Midfield",
+          "minutes": 397
         },
         {
           "id": "257462",
-          "name": "Luka Jović"
+          "name": "Luka Jović",
+          "position": "Centre-Forward",
+          "minutes": 521
+        },
+        {
+          "id": "225122",
+          "name": "Gonçalo Guedes",
+          "position": "Left Winger",
+          "minutes": 425
+        },
+        {
+          "id": "258015",
+          "name": "Diogo Gonçalves",
+          "position": "Left Winger",
+          "minutes": 2785
+        },
+        {
+          "id": "241324",
+          "name": "Bilal Ould-Chikh",
+          "position": "Right Winger",
+          "minutes": 332
+        },
+        {
+          "id": "203323",
+          "name": "Victor Andrade",
+          "position": "Left Winger",
+          "minutes": 769
         },
         {
           "id": "274347",
-          "name": "Ivan Saponjic"
+          "name": "Ivan Saponjic",
+          "position": "Centre-Forward",
+          "minutes": 1264
         },
         {
-          "id": "379188",
-          "name": "Francisco Vera"
+          "id": "290384",
+          "name": "Berto",
+          "position": "Right Winger",
+          "minutes": 2757
+        },
+        {
+          "id": "211796",
+          "name": "Clésio Baúque",
+          "position": "Right Winger",
+          "minutes": 475
         },
         {
           "id": "189450",
-          "name": "Juan San Martín"
+          "name": "Juan San Martín",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "397379",
+          "name": "Bruno Rodrigues",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "379188",
+          "name": "Francisco Vera",
+          "position": "Centre-Forward",
+          "minutes": 560
+        },
+        {
+          "id": "149654",
+          "name": "Sancidino",
+          "position": "Left Winger",
+          "minutes": 2297
         }
       ]
     },
@@ -201,180 +295,268 @@
       "name": "Sporting CP B",
       "players": [
         {
-          "id": "258029",
-          "name": "Pedro Silva"
+          "id": "265454",
+          "name": "Vladimir Stojković",
+          "position": "Goalkeeper",
+          "minutes": 1216
         },
         {
           "id": "257369",
-          "name": "Guilherme Oliveira"
+          "name": "Guilherme Oliveira",
+          "position": "Goalkeeper",
+          "minutes": 249
         },
         {
-          "id": "265454",
-          "name": "Vladimir Stojković"
-        },
-        {
-          "id": "139336",
-          "name": "Paulo Oliveira"
-        },
-        {
-          "id": "148666",
-          "name": "Naldo"
-        },
-        {
-          "id": "122077",
-          "name": "Tobias Figueiredo"
+          "id": "258029",
+          "name": "Pedro Silva",
+          "position": "Goalkeeper",
+          "minutes": 2700
         },
         {
           "id": "257376",
-          "name": "Domingos Duarte"
-        },
-        {
-          "id": "276899",
-          "name": "Sambinha"
-        },
-        {
-          "id": "340524",
-          "name": "Ivanildo Fernandes"
-        },
-        {
-          "id": "300110",
-          "name": "Tomas Rukas"
+          "name": "Domingos Duarte",
+          "position": "Centre-Back",
+          "minutes": 3853
         },
         {
           "id": "340521",
-          "name": "Gui Ramos"
-        },
-        {
-          "id": "177866",
-          "name": "Mica Pinto"
-        },
-        {
-          "id": "192541",
-          "name": "Seejou King"
-        },
-        {
-          "id": "257391",
-          "name": "Rúben Ribeiro"
+          "name": "Gui Ramos",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "139395",
-          "name": "Ricardo Esgaio"
+          "name": "Ricardo Esgaio",
+          "position": "Right-Back",
+          "minutes": 180
         },
         {
-          "id": "257380",
-          "name": "Mauro Riquicho"
+          "id": "122077",
+          "name": "Tobias Figueiredo",
+          "position": "Centre-Back",
+          "minutes": 450
         },
         {
           "id": "329721",
-          "name": "Jorge Silva"
+          "name": "Jorge Silva",
+          "position": "Right-Back",
+          "minutes": 491
         },
         {
-          "id": "343602",
-          "name": "Bruno Paulista"
+          "id": "139336",
+          "name": "Paulo Oliveira",
+          "position": "Centre-Back",
+          "minutes": 180
         },
         {
-          "id": "234449",
-          "name": "Fabrice Fokobo"
+          "id": "177866",
+          "name": "Mica Pinto",
+          "position": "Left-Back",
+          "minutes": 420
         },
         {
-          "id": "340529",
-          "name": "Bubacar Djaló"
+          "id": "340524",
+          "name": "Ivanildo Fernandes",
+          "position": "Centre-Back",
+          "minutes": 1276
         },
         {
-          "id": "435306",
-          "name": "Paulo Lima"
+          "id": "276899",
+          "name": "Sambinha",
+          "position": "Centre-Back",
+          "minutes": 1769
         },
         {
-          "id": "314963",
-          "name": "Bruno Paz"
+          "id": "300110",
+          "name": "Tomas Rukas",
+          "position": "Centre-Back",
+          "minutes": 540
         },
         {
-          "id": "90367",
-          "name": "André Martins"
+          "id": "148666",
+          "name": "Naldo",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
-          "id": "118324",
-          "name": "Zezinho"
+          "id": "257391",
+          "name": "Rúben Ribeiro",
+          "position": "Left-Back",
+          "minutes": 2336
         },
         {
-          "id": "123349",
-          "name": "Zakaria Labyad"
+          "id": "257380",
+          "name": "Mauro Riquicho",
+          "position": "Right-Back",
+          "minutes": 605
+        },
+        {
+          "id": "192541",
+          "name": "Seejou King",
+          "position": "Left-Back",
+          "minutes": 1178
         },
         {
           "id": "225984",
-          "name": "Matheus Pereira"
+          "name": "Matheus Pereira",
+          "position": "Attacking Midfield",
+          "minutes": 1059
         },
         {
           "id": "193081",
-          "name": "Ryan Gauld"
+          "name": "Ryan Gauld",
+          "position": "Attacking Midfield",
+          "minutes": 3201
         },
         {
           "id": "257456",
-          "name": "Chico Geraldes"
+          "name": "Chico Geraldes",
+          "position": "Attacking Midfield",
+          "minutes": 2886
         },
         {
-          "id": "197604",
-          "name": "Filipe Chaby"
+          "id": "123349",
+          "name": "Zakaria Labyad",
+          "position": "Attacking Midfield",
+          "minutes": 1058
+        },
+        {
+          "id": "314963",
+          "name": "Bruno Paz",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "225151",
-          "name": "Rafael Barbosa"
+          "name": "Rafael Barbosa",
+          "position": "Attacking Midfield",
+          "minutes": 1108
+        },
+        {
+          "id": "435306",
+          "name": "Paulo Lima",
+          "position": "Defensive Midfield",
+          "minutes": null
+        },
+        {
+          "id": "340529",
+          "name": "Bubacar Djaló",
+          "position": "Defensive Midfield",
+          "minutes": 324
+        },
+        {
+          "id": "197604",
+          "name": "Filipe Chaby",
+          "position": "Attacking Midfield",
+          "minutes": 769
+        },
+        {
+          "id": "90367",
+          "name": "André Martins",
+          "position": "Central Midfield",
+          "minutes": 76
+        },
+        {
+          "id": "343602",
+          "name": "Bruno Paulista",
+          "position": "Defensive Midfield",
+          "minutes": 138
         },
         {
           "id": "100130",
-          "name": "Kikas"
+          "name": "Kikas",
+          "position": "Attacking Midfield",
+          "minutes": 1325
         },
         {
-          "id": "150568",
-          "name": "Valentín Viola"
+          "id": "234449",
+          "name": "Fabrice Fokobo",
+          "position": "Defensive Midfield",
+          "minutes": 1851
+        },
+        {
+          "id": "118324",
+          "name": "Zezinho",
+          "position": "Central Midfield",
+          "minutes": 1284
         },
         {
           "id": "256977",
-          "name": "Daniel Podence"
-        },
-        {
-          "id": "167317",
-          "name": "Ousmane Dramé"
-        },
-        {
-          "id": "340526",
-          "name": "Fabinho"
-        },
-        {
-          "id": "198728",
-          "name": "Hadi Sacko"
-        },
-        {
-          "id": "145918",
-          "name": "Diogo Salomão"
-        },
-        {
-          "id": "198005",
-          "name": "Cristian Ponde"
-        },
-        {
-          "id": "330468",
-          "name": "Luís Elói"
-        },
-        {
-          "id": "236541",
-          "name": "Salim Cissé"
-        },
-        {
-          "id": "149717",
-          "name": "Betinho"
-        },
-        {
-          "id": "179308",
-          "name": "Diego Rubio"
+          "name": "Daniel Podence",
+          "position": "Left Winger",
+          "minutes": 2865
         },
         {
           "id": "325223",
-          "name": "Mama Baldé"
+          "name": "Mama Baldé",
+          "position": "Centre-Forward",
+          "minutes": 2999
         },
         {
           "id": "340531",
-          "name": "Ronaldo Tavares"
+          "name": "Ronaldo Tavares",
+          "position": "Centre-Forward",
+          "minutes": 56
+        },
+        {
+          "id": "179308",
+          "name": "Diego Rubio",
+          "position": "Centre-Forward",
+          "minutes": 378
+        },
+        {
+          "id": "198005",
+          "name": "Cristian Ponde",
+          "position": "Right Winger",
+          "minutes": 2048
+        },
+        {
+          "id": "149717",
+          "name": "Betinho",
+          "position": "Centre-Forward",
+          "minutes": 713
+        },
+        {
+          "id": "150568",
+          "name": "Valentín Viola",
+          "position": "Left Winger",
+          "minutes": 659
+        },
+        {
+          "id": "198728",
+          "name": "Hadi Sacko",
+          "position": "Right Winger",
+          "minutes": 821
+        },
+        {
+          "id": "145918",
+          "name": "Diogo Salomão",
+          "position": "Right Winger",
+          "minutes": 558
+        },
+        {
+          "id": "330468",
+          "name": "Luís Elói",
+          "position": "Right Winger",
+          "minutes": 94
+        },
+        {
+          "id": "340526",
+          "name": "Fabinho",
+          "position": "Left Winger",
+          "minutes": 462
+        },
+        {
+          "id": "236541",
+          "name": "Salim Cissé",
+          "position": "Centre-Forward",
+          "minutes": 147
+        },
+        {
+          "id": "167317",
+          "name": "Ousmane Dramé",
+          "position": "Left Winger",
+          "minutes": 822
         }
       ]
     },
@@ -384,231 +566,309 @@
       "players": [
         {
           "id": "336756",
-          "name": "Miguel Silva"
-        },
-        {
-          "id": "91296",
-          "name": "Assis"
-        },
-        {
-          "id": "199659",
-          "name": "Miguel Palha"
+          "name": "Miguel Silva",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "237297",
-          "name": "Miguel Oliveira"
+          "name": "Miguel Oliveira",
+          "position": "Goalkeeper",
+          "minutes": 2129
         },
         {
-          "id": "211107",
-          "name": "João Afonso"
+          "id": "91296",
+          "name": "Assis",
+          "position": "Goalkeeper",
+          "minutes": 389
         },
         {
-          "id": "164015",
-          "name": "Pedro Henrique"
-        },
-        {
-          "id": "352815",
-          "name": "Dénis Duarte"
-        },
-        {
-          "id": "13147",
-          "name": "Moreno"
-        },
-        {
-          "id": "235291",
-          "name": "Lima Pereira"
-        },
-        {
-          "id": "329811",
-          "name": "Serginho"
-        },
-        {
-          "id": "294325",
-          "name": "Dénis Martins"
-        },
-        {
-          "id": "225123",
-          "name": "Ricardo Carvalho"
-        },
-        {
-          "id": "235639",
-          "name": "Luís Rocha"
-        },
-        {
-          "id": "312862",
-          "name": "Dalbert"
-        },
-        {
-          "id": "336735",
-          "name": "João Vigário"
-        },
-        {
-          "id": "324315",
-          "name": "Cheick Dabo"
-        },
-        {
-          "id": "422850",
-          "name": "Ghislain Konan"
-        },
-        {
-          "id": "397380",
-          "name": "Tiago Francisco"
-        },
-        {
-          "id": "230457",
-          "name": "Bruno Gaspar"
-        },
-        {
-          "id": "127184",
-          "name": "Alvin Arrondel"
-        },
-        {
-          "id": "55837",
-          "name": "Pedro Correia"
-        },
-        {
-          "id": "364857",
-          "name": "Falaye Sacko"
+          "id": "199659",
+          "name": "Miguel Palha",
+          "position": "Goalkeeper",
+          "minutes": 1080
         },
         {
           "id": "225165",
-          "name": "Joel Pereira"
+          "name": "Joel Pereira",
+          "position": "Right-Back",
+          "minutes": 990
         },
         {
-          "id": "166628",
-          "name": "Uri Rosell"
+          "id": "364857",
+          "name": "Falaye Sacko",
+          "position": "Right-Back",
+          "minutes": 480
         },
         {
-          "id": "388581",
-          "name": "Cafú Phete"
+          "id": "230457",
+          "name": "Bruno Gaspar",
+          "position": "Right-Back",
+          "minutes": 90
         },
         {
-          "id": "256671",
-          "name": "Júnior Franco"
+          "id": "312862",
+          "name": "Dalbert",
+          "position": "Left-Back",
+          "minutes": 714
         },
         {
-          "id": "45465",
-          "name": "Bakary Bouba Saré"
+          "id": "164015",
+          "name": "Pedro Henrique",
+          "position": "Centre-Back",
+          "minutes": 720
         },
         {
-          "id": "235643",
-          "name": "Bruno Alves"
+          "id": "235639",
+          "name": "Luís Rocha",
+          "position": "Left-Back",
+          "minutes": 900
         },
         {
-          "id": "301823",
-          "name": "Helinho"
+          "id": "211107",
+          "name": "João Afonso",
+          "position": "Centre-Back",
+          "minutes": 270
         },
         {
-          "id": "235568",
-          "name": "João Pedro"
+          "id": "235291",
+          "name": "Lima Pereira",
+          "position": "Centre-Back",
+          "minutes": 1421
         },
         {
-          "id": "358200",
-          "name": "Tiago Castro"
+          "id": "13147",
+          "name": "Moreno",
+          "position": "Centre-Back",
+          "minutes": 702
         },
         {
-          "id": "358719",
-          "name": "Joseph Amoah"
+          "id": "55837",
+          "name": "Pedro Correia",
+          "position": "Right-Back",
+          "minutes": 573
         },
         {
-          "id": "415151",
-          "name": "Michael Segun"
+          "id": "324315",
+          "name": "Cheick Dabo",
+          "position": "Left-Back",
+          "minutes": 1631
+        },
+        {
+          "id": "127184",
+          "name": "Alvin Arrondel",
+          "position": "Right-Back",
+          "minutes": 2211
+        },
+        {
+          "id": "336735",
+          "name": "João Vigário",
+          "position": "Left-Back",
+          "minutes": 2023
+        },
+        {
+          "id": "352815",
+          "name": "Dénis Duarte",
+          "position": "Centre-Back",
+          "minutes": 3482
+        },
+        {
+          "id": "225123",
+          "name": "Ricardo Carvalho",
+          "position": "Centre-Back",
+          "minutes": 450
+        },
+        {
+          "id": "329811",
+          "name": "Serginho",
+          "position": "Centre-Back",
+          "minutes": 540
+        },
+        {
+          "id": "294325",
+          "name": "Dénis Martins",
+          "position": "Centre-Back",
+          "minutes": 690
         },
         {
           "id": "231289",
-          "name": "Otávio"
+          "name": "Otávio",
+          "position": "Attacking Midfield",
+          "minutes": 109
         },
         {
           "id": "203654",
-          "name": "Tozé"
+          "name": "Tozé",
+          "position": "Attacking Midfield",
+          "minutes": 265
         },
         {
-          "id": "237468",
-          "name": "Santiago Montoya"
+          "id": "358200",
+          "name": "Tiago Castro",
+          "position": "Central Midfield",
+          "minutes": 837
         },
         {
           "id": "184310",
-          "name": "Inters Gui"
+          "name": "Inters Gui",
+          "position": "Attacking Midfield",
+          "minutes": 1153
         },
         {
           "id": "241160",
-          "name": "Nassim Zitouni"
+          "name": "Nassim Zitouni",
+          "position": "Attacking Midfield",
+          "minutes": 705
+        },
+        {
+          "id": "237468",
+          "name": "Santiago Montoya",
+          "position": "Attacking Midfield",
+          "minutes": 766
         },
         {
           "id": "249664",
-          "name": "Fábio Vieira"
+          "name": "Fábio Vieira",
+          "position": "Attacking Midfield",
+          "minutes": 904
         },
         {
-          "id": "203323",
-          "name": "Victor Andrade"
+          "id": "166628",
+          "name": "Uri Rosell",
+          "position": "Defensive Midfield",
+          "minutes": 180
         },
         {
-          "id": "86811",
-          "name": "Alex"
+          "id": "256671",
+          "name": "Júnior Franco",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
-          "id": "258011",
-          "name": "Xande Silva"
+          "id": "301823",
+          "name": "Helinho",
+          "position": "Central Midfield",
+          "minutes": 2038
         },
         {
-          "id": "203330",
-          "name": "Tyler Boyd"
+          "id": "235643",
+          "name": "Bruno Alves",
+          "position": "Central Midfield",
+          "minutes": 1123
         },
         {
-          "id": "411295",
-          "name": "Raphinha"
+          "id": "358719",
+          "name": "Joseph Amoah",
+          "position": "Central Midfield",
+          "minutes": 392
         },
         {
-          "id": "257320",
-          "name": "Rômulo Santos"
+          "id": "235568",
+          "name": "João Pedro",
+          "position": "Central Midfield",
+          "minutes": 2442
         },
         {
-          "id": "364403",
-          "name": "Rui Gomes"
+          "id": "45465",
+          "name": "Bakary Bouba Saré",
+          "position": "Central Midfield",
+          "minutes": 90
         },
         {
           "id": "383654",
-          "name": "João Correia"
-        },
-        {
-          "id": "350311",
-          "name": "Hélder Ferreira"
-        },
-        {
-          "id": "270959",
-          "name": "Henrique Dourado"
+          "name": "João Correia",
+          "position": "Right Winger",
+          "minutes": 925
         },
         {
           "id": "258835",
-          "name": "Ricardo Gomes"
+          "name": "Ricardo Gomes",
+          "position": "Centre-Forward",
+          "minutes": 49
         },
         {
-          "id": "216131",
-          "name": "Bruno Mendes"
+          "id": "350311",
+          "name": "Hélder Ferreira",
+          "position": "Right Winger",
+          "minutes": 158
+        },
+        {
+          "id": "258011",
+          "name": "Xande Silva",
+          "position": "Left Winger",
+          "minutes": 559
+        },
+        {
+          "id": "203330",
+          "name": "Tyler Boyd",
+          "position": "Left Winger",
+          "minutes": 2285
+        },
+        {
+          "id": "203323",
+          "name": "Victor Andrade",
+          "position": "Left Winger",
+          "minutes": 134
         },
         {
           "id": "235634",
-          "name": "Rui Areias"
+          "name": "Rui Areias",
+          "position": "Centre-Forward",
+          "minutes": 2514
         },
         {
-          "id": "270648",
-          "name": "Francis Campos"
+          "id": "216131",
+          "name": "Bruno Mendes",
+          "position": "Centre-Forward",
+          "minutes": 2339
         },
         {
-          "id": "325175",
-          "name": "Isaac Cissé"
-        },
-        {
-          "id": "337978",
-          "name": "Ká Semedo"
+          "id": "364403",
+          "name": "Rui Gomes",
+          "position": "Left Winger",
+          "minutes": 25
         },
         {
           "id": "422316",
-          "name": "José Xavier"
+          "name": "José Xavier",
+          "position": "Centre-Forward",
+          "minutes": 29
         },
         {
-          "id": "432978",
-          "name": "Bruno Cosendey"
+          "id": "86811",
+          "name": "Alex",
+          "position": "Left Winger",
+          "minutes": null
+        },
+        {
+          "id": "325175",
+          "name": "Isaac Cissé",
+          "position": "Centre-Forward",
+          "minutes": 27
+        },
+        {
+          "id": "337978",
+          "name": "Ká Semedo",
+          "position": "Centre-Forward",
+          "minutes": 261
+        },
+        {
+          "id": "257320",
+          "name": "Rômulo Santos",
+          "position": "Left Winger",
+          "minutes": 93
+        },
+        {
+          "id": "270648",
+          "name": "Francis Campos",
+          "position": "Centre-Forward",
+          "minutes": 299
+        },
+        {
+          "id": "270959",
+          "name": "Henrique Dourado",
+          "position": "Centre-Forward",
+          "minutes": 180
         }
       ]
     },
@@ -618,163 +878,243 @@
       "players": [
         {
           "id": "249994",
-          "name": "José Sá"
-        },
-        {
-          "id": "295400",
-          "name": "Raúl Gudiño"
+          "name": "José Sá",
+          "position": "Goalkeeper",
+          "minutes": 1530
         },
         {
           "id": "198638",
-          "name": "João Costa"
+          "name": "João Costa",
+          "position": "Goalkeeper",
+          "minutes": 630
+        },
+        {
+          "id": "295400",
+          "name": "Raúl Gudiño",
+          "position": "Goalkeeper",
+          "minutes": 2250
         },
         {
           "id": "225144",
-          "name": "Filipe Ferreira"
+          "name": "Filipe Ferreira",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "277759",
-          "name": "André Caio"
+          "name": "André Caio",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "358143",
-          "name": "Chidozie Awaziem"
-        },
-        {
-          "id": "209513",
-          "name": "Igor Lichnovsky"
-        },
-        {
-          "id": "340557",
-          "name": "Maurício Antônio"
-        },
-        {
-          "id": "225162",
-          "name": "Diogo Verdasca"
+          "name": "Chidozie Awaziem",
+          "position": "Centre-Back",
+          "minutes": 1932
         },
         {
           "id": "282199",
-          "name": "Erik Palmer-Brown"
+          "name": "Erik Palmer-Brown",
+          "position": "Centre-Back",
+          "minutes": 1035
         },
         {
           "id": "344395",
-          "name": "Jorge Fernandes"
-        },
-        {
-          "id": "258037",
-          "name": "Sandro Fonseca"
+          "name": "Jorge Fernandes",
+          "position": "Centre-Back",
+          "minutes": 235
         },
         {
           "id": "198006",
-          "name": "Rafa Soares"
+          "name": "Rafa Soares",
+          "position": "Left-Back",
+          "minutes": 1947
         },
         {
-          "id": "281403",
-          "name": "Ronan"
-        },
-        {
-          "id": "258002",
-          "name": "Luís Mata"
-        },
-        {
-          "id": "195762",
-          "name": "Víctor García"
+          "id": "209513",
+          "name": "Igor Lichnovsky",
+          "position": "Centre-Back",
+          "minutes": 360
         },
         {
           "id": "388236",
-          "name": "Rodrigo Soares"
+          "name": "Rodrigo Soares",
+          "position": "Right-Back",
+          "minutes": 1595
         },
         {
-          "id": "148489",
-          "name": "Mikel Agu"
+          "id": "225162",
+          "name": "Diogo Verdasca",
+          "position": "Centre-Back",
+          "minutes": 2909
         },
         {
-          "id": "182718",
-          "name": "Tomás Podstawski"
+          "id": "258002",
+          "name": "Luís Mata",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "195762",
+          "name": "Víctor García",
+          "position": "Right-Back",
+          "minutes": 3769
+        },
+        {
+          "id": "258037",
+          "name": "Sandro Fonseca",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "340557",
+          "name": "Maurício Antônio",
+          "position": "Centre-Back",
+          "minutes": 1478
+        },
+        {
+          "id": "281403",
+          "name": "Ronan",
+          "position": "Left-Back",
+          "minutes": 55
         },
         {
           "id": "282927",
-          "name": "Omar Govea"
-        },
-        {
-          "id": "198007",
-          "name": "Francisco Ramos"
-        },
-        {
-          "id": "257707",
-          "name": "João Graça"
-        },
-        {
-          "id": "225095",
-          "name": "Rui Moreira"
-        },
-        {
-          "id": "290746",
-          "name": "Moreto Cassamá"
+          "name": "Omar Govea",
+          "position": "Defensive Midfield",
+          "minutes": 2842
         },
         {
           "id": "344519",
-          "name": "Bruno Costa"
-        },
-        {
-          "id": "291402",
-          "name": "Pité"
-        },
-        {
-          "id": "241160",
-          "name": "Nassim Zitouni"
-        },
-        {
-          "id": "309980",
-          "name": "Federico Varela"
-        },
-        {
-          "id": "416075",
-          "name": "Enrick"
-        },
-        {
-          "id": "290603",
-          "name": "Haykeul Chikhaoui"
+          "name": "Bruno Costa",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "328943",
-          "name": "Rui Pedro"
+          "name": "Rui Pedro",
+          "position": "Attacking Midfield",
+          "minutes": 73
         },
         {
-          "id": "243298",
-          "name": "Ismael Díaz"
+          "id": "309980",
+          "name": "Federico Varela",
+          "position": "Attacking Midfield",
+          "minutes": 478
         },
         {
-          "id": "225119",
-          "name": "Rúben Macedo"
+          "id": "257707",
+          "name": "João Graça",
+          "position": "Central Midfield",
+          "minutes": 3688
         },
         {
-          "id": "265519",
-          "name": "Cláudio Ribeiro"
+          "id": "198007",
+          "name": "Francisco Ramos",
+          "position": "Central Midfield",
+          "minutes": 3573
         },
         {
-          "id": "355469",
-          "name": "Gleison Moreira"
+          "id": "225095",
+          "name": "Rui Moreira",
+          "position": "Central Midfield",
+          "minutes": 1732
         },
         {
-          "id": "223997",
-          "name": "Sérgio Ribeiro"
+          "id": "291402",
+          "name": "Pité",
+          "position": "Attacking Midfield",
+          "minutes": 1257
         },
         {
-          "id": "290761",
-          "name": "Idrisa Sambú"
+          "id": "290746",
+          "name": "Moreto Cassamá",
+          "position": "Central Midfield",
+          "minutes": 32
         },
         {
-          "id": "303599",
-          "name": "André Mesquita"
+          "id": "148489",
+          "name": "Mikel Agu",
+          "position": "Defensive Midfield",
+          "minutes": 90
+        },
+        {
+          "id": "241160",
+          "name": "Nassim Zitouni",
+          "position": "Attacking Midfield",
+          "minutes": 156
+        },
+        {
+          "id": "182718",
+          "name": "Tomás Podstawski",
+          "position": "Defensive Midfield",
+          "minutes": 2695
+        },
+        {
+          "id": "416075",
+          "name": "Enrick",
+          "position": "Attacking Midfield",
+          "minutes": 60
+        },
+        {
+          "id": "290603",
+          "name": "Haykeul Chikhaoui",
+          "position": "Attacking Midfield",
+          "minutes": 183
         },
         {
           "id": "198008",
-          "name": "André Silva"
+          "name": "André Silva",
+          "position": "Centre-Forward",
+          "minutes": 2720
+        },
+        {
+          "id": "243298",
+          "name": "Ismael Díaz",
+          "position": "Left Winger",
+          "minutes": 3305
         },
         {
           "id": "344399",
-          "name": "Leonardo Ruiz"
+          "name": "Leonardo Ruiz",
+          "position": "Centre-Forward",
+          "minutes": 1502
+        },
+        {
+          "id": "225119",
+          "name": "Rúben Macedo",
+          "position": "Left Winger",
+          "minutes": 1584
+        },
+        {
+          "id": "223997",
+          "name": "Sérgio Ribeiro",
+          "position": "Right Winger",
+          "minutes": 416
+        },
+        {
+          "id": "355469",
+          "name": "Gleison Moreira",
+          "position": "Right Winger",
+          "minutes": 3088
+        },
+        {
+          "id": "265519",
+          "name": "Cláudio Ribeiro",
+          "position": "Left Winger",
+          "minutes": 855
+        },
+        {
+          "id": "290761",
+          "name": "Idrisa Sambú",
+          "position": "Right Winger",
+          "minutes": 61
+        },
+        {
+          "id": "303599",
+          "name": "André Mesquita",
+          "position": "Right Winger",
+          "minutes": null
         }
       ]
     },
@@ -784,159 +1124,237 @@
       "players": [
         {
           "id": "286908",
-          "name": "Tiago Sá"
-        },
-        {
-          "id": "155020",
-          "name": "José Costa"
-        },
-        {
-          "id": "397381",
-          "name": "Tiago Pereira"
+          "name": "Tiago Sá",
+          "position": "Goalkeeper",
+          "minutes": 3150
         },
         {
           "id": "371502",
-          "name": "Daniel Clemente"
+          "name": "Daniel Clemente",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "339559",
-          "name": "Pedro Monteiro"
+          "id": "155020",
+          "name": "José Costa",
+          "position": "Goalkeeper",
+          "minutes": 810
         },
         {
-          "id": "276030",
-          "name": "Artur Jorge"
+          "id": "397381",
+          "name": "Tiago Pereira",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "355496",
-          "name": "Lucas Cunha"
-        },
-        {
-          "id": "71830",
-          "name": "Bruno Wilson"
-        },
-        {
-          "id": "326738",
-          "name": "Vasco Coelho"
-        },
-        {
-          "id": "290261",
-          "name": "Núrio Fortuna"
-        },
-        {
-          "id": "292281",
-          "name": "Simãozinho"
+          "name": "Lucas Cunha",
+          "position": "Centre-Back",
+          "minutes": 810
         },
         {
           "id": "305946",
-          "name": "José Gomes"
+          "name": "José Gomes",
+          "position": "Left-Back",
+          "minutes": 557
+        },
+        {
+          "id": "71830",
+          "name": "Bruno Wilson",
+          "position": "Centre-Back",
+          "minutes": 1502
+        },
+        {
+          "id": "290261",
+          "name": "Núrio Fortuna",
+          "position": "Left-Back",
+          "minutes": 3049
+        },
+        {
+          "id": "339559",
+          "name": "Pedro Monteiro",
+          "position": "Centre-Back",
+          "minutes": 2065
+        },
+        {
+          "id": "276030",
+          "name": "Artur Jorge",
+          "position": "Centre-Back",
+          "minutes": 3870
+        },
+        {
+          "id": "292281",
+          "name": "Simãozinho",
+          "position": "Left-Back",
+          "minutes": 3181
         },
         {
           "id": "293523",
-          "name": "Junior Oto'o"
+          "name": "Junior Oto'o",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "157387",
-          "name": "Anthony D'Alberto"
-        },
-        {
-          "id": "290250",
-          "name": "Thales Oleques"
+          "id": "326738",
+          "name": "Vasco Coelho",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "239279",
-          "name": "Muhsin El Yazidi"
+          "name": "Muhsin El Yazidi",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "261459",
-          "name": "Alef"
+          "id": "290250",
+          "name": "Thales Oleques",
+          "position": "Right-Back",
+          "minutes": 1639
         },
         {
-          "id": "280398",
-          "name": "Didi"
-        },
-        {
-          "id": "364406",
-          "name": "João Gamboa"
-        },
-        {
-          "id": "364237",
-          "name": "Mamadou Loum"
-        },
-        {
-          "id": "301824",
-          "name": "Nené"
-        },
-        {
-          "id": "184953",
-          "name": "Chidi Osuchukwu"
-        },
-        {
-          "id": "290262",
-          "name": "Reko"
-        },
-        {
-          "id": "72772",
-          "name": "Josué"
-        },
-        {
-          "id": "225150",
-          "name": "Pedro Alves"
+          "id": "157387",
+          "name": "Anthony D'Alberto",
+          "position": "Right-Back",
+          "minutes": 2690
         },
         {
           "id": "345345",
-          "name": "Xadas"
+          "name": "Xadas",
+          "position": "Attacking Midfield",
+          "minutes": 142
+        },
+        {
+          "id": "301824",
+          "name": "Nené",
+          "position": "Defensive Midfield",
+          "minutes": 320
+        },
+        {
+          "id": "364237",
+          "name": "Mamadou Loum",
+          "position": "Defensive Midfield",
+          "minutes": 965
+        },
+        {
+          "id": "364406",
+          "name": "João Gamboa",
+          "position": "Defensive Midfield",
+          "minutes": 2709
+        },
+        {
+          "id": "72772",
+          "name": "Josué",
+          "position": "Attacking Midfield",
+          "minutes": null
+        },
+        {
+          "id": "290262",
+          "name": "Reko",
+          "position": "Central Midfield",
+          "minutes": 170
+        },
+        {
+          "id": "184953",
+          "name": "Chidi Osuchukwu",
+          "position": "Central Midfield",
+          "minutes": 2548
+        },
+        {
+          "id": "225150",
+          "name": "Pedro Alves",
+          "position": "Attacking Midfield",
+          "minutes": 155
+        },
+        {
+          "id": "261459",
+          "name": "Alef",
+          "position": "Defensive Midfield",
+          "minutes": 578
+        },
+        {
+          "id": "280398",
+          "name": "Didi",
+          "position": "Defensive Midfield",
+          "minutes": 3018
         },
         {
           "id": "412669",
-          "name": "Francisco Trincão"
-        },
-        {
-          "id": "355483",
-          "name": "Emmanuel Oti"
+          "name": "Francisco Trincão",
+          "position": "Right Winger",
+          "minutes": 80
         },
         {
           "id": "340491",
-          "name": "Joca"
+          "name": "Joca",
+          "position": "Right Winger",
+          "minutes": 3045
         },
         {
           "id": "199472",
-          "name": "William Pottker"
-        },
-        {
-          "id": "236950",
-          "name": "Piqueti"
-        },
-        {
-          "id": "419530",
-          "name": "Alex Alcântara"
-        },
-        {
-          "id": "297467",
-          "name": "Carlos Fortes"
+          "name": "William Pottker",
+          "position": "Right Winger",
+          "minutes": 579
         },
         {
           "id": "366278",
-          "name": "Rodrigo Pinho"
-        },
-        {
-          "id": "400073",
-          "name": "Ogana Louis"
+          "name": "Rodrigo Pinho",
+          "position": "Centre-Forward",
+          "minutes": 74
         },
         {
           "id": "320092",
-          "name": "Agdon"
+          "name": "Agdon",
+          "position": "Centre-Forward",
+          "minutes": 821
         },
         {
-          "id": "388603",
-          "name": "Fabián Cuero"
-        },
-        {
-          "id": "340255",
-          "name": "Rui Li"
+          "id": "297467",
+          "name": "Carlos Fortes",
+          "position": "Centre-Forward",
+          "minutes": 2314
         },
         {
           "id": "375534",
-          "name": "Onyeka Osemene"
+          "name": "Onyeka Osemene",
+          "position": "Centre-Forward",
+          "minutes": 18
+        },
+        {
+          "id": "340255",
+          "name": "Rui Li",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "400073",
+          "name": "Ogana Louis",
+          "position": "Centre-Forward",
+          "minutes": 2102
+        },
+        {
+          "id": "419530",
+          "name": "Alex Alcântara",
+          "position": "Right Winger",
+          "minutes": 268
+        },
+        {
+          "id": "388603",
+          "name": "Fabián Cuero",
+          "position": "Centre-Forward",
+          "minutes": 158
+        },
+        {
+          "id": "355483",
+          "name": "Emmanuel Oti",
+          "position": "Left Winger",
+          "minutes": 777
+        },
+        {
+          "id": "236950",
+          "name": "Piqueti",
+          "position": "Right Winger",
+          "minutes": 1065
         }
       ]
     },
@@ -946,123 +1364,183 @@
       "players": [
         {
           "id": "25289",
-          "name": "António Filipe"
+          "name": "António Filipe",
+          "position": "Goalkeeper",
+          "minutes": 2790
         },
         {
           "id": "24205",
-          "name": "Paulo Ribeiro"
-        },
-        {
-          "id": "215525",
-          "name": "Diogo Coelho"
-        },
-        {
-          "id": "241961",
-          "name": "Fábio Santos"
-        },
-        {
-          "id": "36210",
-          "name": "Miguel Oliveira"
-        },
-        {
-          "id": "33255",
-          "name": "Miguel Ângelo"
+          "name": "Paulo Ribeiro",
+          "position": "Goalkeeper",
+          "minutes": 1740
         },
         {
           "id": "172066",
-          "name": "João Reis"
+          "name": "João Reis",
+          "position": "Left-Back",
+          "minutes": 1094
         },
         {
-          "id": "58181",
-          "name": "Nélson Lenho"
-        },
-        {
-          "id": "78813",
-          "name": "Stéphane Dasse"
+          "id": "215525",
+          "name": "Diogo Coelho",
+          "position": "Centre-Back",
+          "minutes": 2192
         },
         {
           "id": "92042",
-          "name": "Tiago Almeida"
+          "name": "Tiago Almeida",
+          "position": "Right-Back",
+          "minutes": 2070
         },
         {
           "id": "200985",
-          "name": "Arnold"
+          "name": "Arnold",
+          "position": "Right-Back",
+          "minutes": 54
         },
         {
           "id": "144927",
-          "name": "Edu Machado"
+          "name": "Edu Machado",
+          "position": "Right-Back",
+          "minutes": 720
+        },
+        {
+          "id": "241961",
+          "name": "Fábio Santos",
+          "position": "Centre-Back",
+          "minutes": 2801
+        },
+        {
+          "id": "58181",
+          "name": "Nélson Lenho",
+          "position": "Left-Back",
+          "minutes": 3032
         },
         {
           "id": "292363",
-          "name": "Mike"
+          "name": "Mike",
+          "position": "Right-Back",
+          "minutes": 1719
         },
         {
-          "id": "334632",
-          "name": "Rafael Assis"
+          "id": "36210",
+          "name": "Miguel Oliveira",
+          "position": "Centre-Back",
+          "minutes": 2454
         },
         {
-          "id": "122498",
-          "name": "Siaka Bamba"
+          "id": "78813",
+          "name": "Stéphane Dasse",
+          "position": "Left-Back",
+          "minutes": 1383
+        },
+        {
+          "id": "33255",
+          "name": "Miguel Ângelo",
+          "position": "Centre-Back",
+          "minutes": 2025
         },
         {
           "id": "193319",
-          "name": "Luís Silva"
+          "name": "Luís Silva",
+          "position": "Central Midfield",
+          "minutes": 3289
         },
         {
-          "id": "183247",
-          "name": "João Patrão"
-        },
-        {
-          "id": "121209",
-          "name": "André Fontes"
-        },
-        {
-          "id": "48785",
-          "name": "Bruno Magalhães"
+          "id": "334632",
+          "name": "Rafael Assis",
+          "position": "Defensive Midfield",
+          "minutes": 3170
         },
         {
           "id": "48699",
-          "name": "Diogo Cunha"
+          "name": "Diogo Cunha",
+          "position": "Attacking Midfield",
+          "minutes": 2545
         },
         {
-          "id": "79128",
-          "name": "Braga"
+          "id": "183247",
+          "name": "João Patrão",
+          "position": "Central Midfield",
+          "minutes": 2613
         },
         {
           "id": "158401",
-          "name": "Luís Pinto"
+          "name": "Luís Pinto",
+          "position": "Attacking Midfield",
+          "minutes": 2078
         },
         {
-          "id": "124482",
-          "name": "Ludovic"
+          "id": "122498",
+          "name": "Siaka Bamba",
+          "position": "Defensive Midfield",
+          "minutes": 493
         },
         {
-          "id": "256696",
-          "name": "Perdigão"
+          "id": "48785",
+          "name": "Bruno Magalhães",
+          "position": "Central Midfield",
+          "minutes": 283
         },
         {
-          "id": "57226",
-          "name": "Tozé Marreco"
+          "id": "79128",
+          "name": "Braga",
+          "position": "Attacking Midfield",
+          "minutes": 3494
         },
         {
-          "id": "284739",
-          "name": "Sandro Lima"
+          "id": "121209",
+          "name": "André Fontes",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "227436",
-          "name": "João Mário"
+          "name": "João Mário",
+          "position": "Centre-Forward",
+          "minutes": 857
         },
         {
-          "id": "214276",
-          "name": "Barry"
-        },
-        {
-          "id": "48704",
-          "name": "Gustavo Souza"
+          "id": "284739",
+          "name": "Sandro Lima",
+          "position": "Centre-Forward",
+          "minutes": 1497
         },
         {
           "id": "292739",
-          "name": "Alioune Fall"
+          "name": "Alioune Fall",
+          "position": "Centre-Forward",
+          "minutes": 393
+        },
+        {
+          "id": "124482",
+          "name": "Ludovic",
+          "position": "Right Winger",
+          "minutes": 393
+        },
+        {
+          "id": "214276",
+          "name": "Barry",
+          "position": "Centre-Forward",
+          "minutes": 2730
+        },
+        {
+          "id": "48704",
+          "name": "Gustavo Souza",
+          "position": "Centre-Forward",
+          "minutes": 55
+        },
+        {
+          "id": "256696",
+          "name": "Perdigão",
+          "position": "Right Winger",
+          "minutes": 1381
+        },
+        {
+          "id": "57226",
+          "name": "Tozé Marreco",
+          "position": "Centre-Forward",
+          "minutes": 313
         }
       ]
     },
@@ -1072,151 +1550,225 @@
       "players": [
         {
           "id": "55977",
-          "name": "Giorgi Makaridze"
-        },
-        {
-          "id": "295310",
-          "name": "Dele Alampasu"
-        },
-        {
-          "id": "118319",
-          "name": "Luís Ribeiro"
+          "name": "Giorgi Makaridze",
+          "position": "Goalkeeper",
+          "minutes": 3602
         },
         {
           "id": "380985",
-          "name": "Otávio Guariente"
+          "name": "Otávio Guariente",
+          "position": "Goalkeeper",
+          "minutes": 268
+        },
+        {
+          "id": "295310",
+          "name": "Dele Alampasu",
+          "position": "Goalkeeper",
+          "minutes": 180
+        },
+        {
+          "id": "118319",
+          "name": "Luís Ribeiro",
+          "position": "Goalkeeper",
+          "minutes": 810
         },
         {
           "id": "408685",
-          "name": "Ima Lino"
-        },
-        {
-          "id": "292733",
-          "name": "Ícaro"
-        },
-        {
-          "id": "238059",
-          "name": "Agostinho Carvalho"
-        },
-        {
-          "id": "100220",
-          "name": "Mika"
-        },
-        {
-          "id": "292722",
-          "name": "Pedro Santos"
-        },
-        {
-          "id": "22551",
-          "name": "Nuno Diogo"
-        },
-        {
-          "id": "255243",
-          "name": "Alex Kakuba"
-        },
-        {
-          "id": "24943",
-          "name": "Serginho"
-        },
-        {
-          "id": "385588",
-          "name": "Nandinho"
-        },
-        {
-          "id": "24956",
-          "name": "Sérgio Barge"
-        },
-        {
-          "id": "336992",
-          "name": "Mica"
+          "name": "Ima Lino",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "419458",
-          "name": "Diga"
+          "name": "Diga",
+          "position": "Right-Back",
+          "minutes": 70
         },
         {
-          "id": "138649",
-          "name": "Sérgio Semedo"
+          "id": "292733",
+          "name": "Ícaro",
+          "position": "Centre-Back",
+          "minutes": 3590
         },
         {
-          "id": "130845",
-          "name": "Vasco Rocha"
+          "id": "238059",
+          "name": "Agostinho Carvalho",
+          "position": "Centre-Back",
+          "minutes": 1115
         },
         {
-          "id": "24946",
-          "name": "Cris"
+          "id": "292722",
+          "name": "Pedro Santos",
+          "position": "Centre-Back",
+          "minutes": 329
         },
         {
-          "id": "409106",
-          "name": "Peter Etebo"
+          "id": "385588",
+          "name": "Nandinho",
+          "position": "Left-Back",
+          "minutes": 257
         },
         {
-          "id": "292749",
-          "name": "Fabinho"
+          "id": "100220",
+          "name": "Mika",
+          "position": "Centre-Back",
+          "minutes": 1851
         },
         {
-          "id": "275287",
-          "name": "Rúben Oliveira"
+          "id": "336992",
+          "name": "Mica",
+          "position": "Right-Back",
+          "minutes": 788
         },
         {
-          "id": "73321",
-          "name": "Jony Ñiguez"
+          "id": "24943",
+          "name": "Serginho",
+          "position": "Left-Back",
+          "minutes": 3859
         },
         {
-          "id": "239850",
-          "name": "Tiago Jogo"
+          "id": "24956",
+          "name": "Sérgio Barge",
+          "position": "Right-Back",
+          "minutes": 4157
+        },
+        {
+          "id": "22551",
+          "name": "Nuno Diogo",
+          "position": "Centre-Back",
+          "minutes": 2812
+        },
+        {
+          "id": "255243",
+          "name": "Alex Kakuba",
+          "position": "Left-Back",
+          "minutes": 612
         },
         {
           "id": "385593",
-          "name": "Vieirinha"
+          "name": "Vieirinha",
+          "position": "Attacking Midfield",
+          "minutes": 250
+        },
+        {
+          "id": "409106",
+          "name": "Peter Etebo",
+          "position": "Defensive Midfield",
+          "minutes": 322
+        },
+        {
+          "id": "292749",
+          "name": "Fabinho",
+          "position": "Central Midfield",
+          "minutes": 2808
+        },
+        {
+          "id": "138649",
+          "name": "Sérgio Semedo",
+          "position": "Defensive Midfield",
+          "minutes": 2569
+        },
+        {
+          "id": "239850",
+          "name": "Tiago Jogo",
+          "position": "Central Midfield",
+          "minutes": 507
+        },
+        {
+          "id": "275287",
+          "name": "Rúben Oliveira",
+          "position": "Central Midfield",
+          "minutes": 3287
+        },
+        {
+          "id": "73321",
+          "name": "Jony Ñiguez",
+          "position": "Central Midfield",
+          "minutes": 72
+        },
+        {
+          "id": "24946",
+          "name": "Cris",
+          "position": "Defensive Midfield",
+          "minutes": 2883
         },
         {
           "id": "62634",
-          "name": "Hélder Castro"
+          "name": "Hélder Castro",
+          "position": "Attacking Midfield",
+          "minutes": 185
         },
         {
-          "id": "214007",
-          "name": "Magique"
-        },
-        {
-          "id": "195308",
-          "name": "Luís Machado"
-        },
-        {
-          "id": "336874",
-          "name": "Emmanuel Sunday"
+          "id": "130845",
+          "name": "Vasco Rocha",
+          "position": "Defensive Midfield",
+          "minutes": 3758
         },
         {
           "id": "267556",
-          "name": "Shihao Wei"
-        },
-        {
-          "id": "290269",
-          "name": "Eri"
-        },
-        {
-          "id": "248901",
-          "name": "Platiny"
-        },
-        {
-          "id": "222119",
-          "name": "Luwagga William Kizito"
-        },
-        {
-          "id": "237663",
-          "name": "Kukula"
-        },
-        {
-          "id": "225770",
-          "name": "João Vieira"
-        },
-        {
-          "id": "109624",
-          "name": "Rafael Porcellis"
+          "name": "Shihao Wei",
+          "position": "Left Winger",
+          "minutes": 18
         },
         {
           "id": "235718",
-          "name": "José Alí Meza"
+          "name": "José Alí Meza",
+          "position": "Centre-Forward",
+          "minutes": 830
+        },
+        {
+          "id": "195308",
+          "name": "Luís Machado",
+          "position": "Left Winger",
+          "minutes": 187
+        },
+        {
+          "id": "336874",
+          "name": "Emmanuel Sunday",
+          "position": "Left Winger",
+          "minutes": 616
+        },
+        {
+          "id": "109624",
+          "name": "Rafael Porcellis",
+          "position": "Centre-Forward",
+          "minutes": 1090
+        },
+        {
+          "id": "290269",
+          "name": "Eri",
+          "position": "Right Winger",
+          "minutes": 1905
+        },
+        {
+          "id": "237663",
+          "name": "Kukula",
+          "position": "Centre-Forward",
+          "minutes": 2564
+        },
+        {
+          "id": "214007",
+          "name": "Magique",
+          "position": "Left Winger",
+          "minutes": 162
+        },
+        {
+          "id": "225770",
+          "name": "João Vieira",
+          "position": "Centre-Forward",
+          "minutes": 256
+        },
+        {
+          "id": "222119",
+          "name": "Luwagga Kizito",
+          "position": "Centre-Forward",
+          "minutes": 967
+        },
+        {
+          "id": "248901",
+          "name": "Platiny",
+          "position": "Centre-Forward",
+          "minutes": 3652
         }
       ]
     },
@@ -1225,156 +1777,232 @@
       "name": "Desportivo Aves (- 2020)",
       "players": [
         {
-          "id": "87832",
-          "name": "Diogo Freire"
+          "id": "92048",
+          "name": "Fábio Pereira",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "13957",
-          "name": "Quim"
+          "name": "Quim",
+          "position": "Goalkeeper",
+          "minutes": 3762
         },
         {
-          "id": "92048",
-          "name": "Fábio Pereira"
+          "id": "87832",
+          "name": "Diogo Freire",
+          "position": "Goalkeeper",
+          "minutes": 530
         },
         {
           "id": "412925",
-          "name": "Rui Neves"
-        },
-        {
-          "id": "260321",
-          "name": "Marcos Valente"
-        },
-        {
-          "id": "117625",
-          "name": "Bosson Romaric"
-        },
-        {
-          "id": "127771",
-          "name": "Emmanuel Edet"
-        },
-        {
-          "id": "61351",
-          "name": "Vítor Alves"
+          "name": "Rui Neves",
+          "position": "Goalkeeper",
+          "minutes": 26
         },
         {
           "id": "402874",
-          "name": "Dmytro Lytvyn"
-        },
-        {
-          "id": "96731",
-          "name": "Nélson Pedroso"
-        },
-        {
-          "id": "199099",
-          "name": "Jander"
-        },
-        {
-          "id": "188689",
-          "name": "André Dias"
-        },
-        {
-          "id": "172173",
-          "name": "Chico"
-        },
-        {
-          "id": "244294",
-          "name": "André Costa"
+          "name": "Dmytro Lytvyn",
+          "position": "Centre-Back",
+          "minutes": 45
         },
         {
           "id": "156074",
-          "name": "Jianfeng Zheng"
+          "name": "Jianfeng Zheng",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "140160",
-          "name": "Ericson"
+          "id": "188689",
+          "name": "André Dias",
+          "position": "Left-Back",
+          "minutes": 1091
         },
         {
-          "id": "123217",
-          "name": "Anton Dolgyi"
+          "id": "172173",
+          "name": "Chico",
+          "position": "Right-Back",
+          "minutes": 1497
         },
         {
-          "id": "255641",
-          "name": "Sergiy Syzyi"
+          "id": "117625",
+          "name": "Bosson Romaric",
+          "position": "Centre-Back",
+          "minutes": 2985
         },
         {
-          "id": "85652",
-          "name": "Tarcísio"
+          "id": "199099",
+          "name": "Jander",
+          "position": "Left-Back",
+          "minutes": 1203
         },
         {
-          "id": "100128",
-          "name": "João Amorim"
+          "id": "61351",
+          "name": "Vítor Alves",
+          "position": "Centre-Back",
+          "minutes": 2066
         },
         {
-          "id": "210057",
-          "name": "Pedró"
+          "id": "244294",
+          "name": "André Costa",
+          "position": "Right-Back",
+          "minutes": 250
+        },
+        {
+          "id": "127771",
+          "name": "Emmanuel Edet",
+          "position": "Centre-Back",
+          "minutes": 2892
+        },
+        {
+          "id": "96731",
+          "name": "Nélson Pedroso",
+          "position": "Left-Back",
+          "minutes": 3361
+        },
+        {
+          "id": "260321",
+          "name": "Marcos Valente",
+          "position": "Centre-Back",
+          "minutes": 3755
         },
         {
           "id": "292452",
-          "name": "Zé Valente"
+          "name": "Zé Valente",
+          "position": "Attacking Midfield",
+          "minutes": 846
+        },
+        {
+          "id": "123217",
+          "name": "Anton Dolgyi",
+          "position": "Defensive Midfield",
+          "minutes": 543
         },
         {
           "id": "223486",
-          "name": "Fernando Silva"
+          "name": "Fernando Silva",
+          "position": "Attacking Midfield",
+          "minutes": 586
         },
         {
-          "id": "291943",
-          "name": "Theo Mendy"
+          "id": "255641",
+          "name": "Sergiy Syzyi",
+          "position": "Defensive Midfield",
+          "minutes": 269
         },
         {
-          "id": "359678",
-          "name": "Ernest Antwi"
+          "id": "100128",
+          "name": "João Amorim",
+          "position": "Central Midfield",
+          "minutes": 482
         },
         {
-          "id": "118330",
-          "name": "Renato Santos"
+          "id": "85652",
+          "name": "Tarcísio",
+          "position": "Central Midfield",
+          "minutes": 3414
         },
         {
-          "id": "194172",
-          "name": "Renato Reis"
+          "id": "210057",
+          "name": "Pedró",
+          "position": "Attacking Midfield",
+          "minutes": 3841
         },
         {
-          "id": "256696",
-          "name": "Perdigão"
-        },
-        {
-          "id": "205022",
-          "name": "Rafinha"
-        },
-        {
-          "id": "402205",
-          "name": "Anas Al-Aji"
-        },
-        {
-          "id": "255194",
-          "name": "Jorginho"
+          "id": "140160",
+          "name": "Ericson",
+          "position": "Defensive Midfield",
+          "minutes": 3217
         },
         {
           "id": "197613",
-          "name": "Alexandre Guedes"
-        },
-        {
-          "id": "211083",
-          "name": "Joel Silva"
-        },
-        {
-          "id": "273982",
-          "name": "Felipe Martins"
-        },
-        {
-          "id": "34953",
-          "name": "Cássio"
-        },
-        {
-          "id": "347331",
-          "name": "Steve Ekedi"
-        },
-        {
-          "id": "340255",
-          "name": "Rui Li"
+          "name": "Alexandre Guedes",
+          "position": "Centre-Forward",
+          "minutes": 2942
         },
         {
           "id": "415271",
-          "name": "Abdoulaye Diallo"
+          "name": "Abdoulaye Diallo",
+          "position": "Centre-Forward",
+          "minutes": 198
+        },
+        {
+          "id": "34953",
+          "name": "Cássio",
+          "position": "Centre-Forward",
+          "minutes": 192
+        },
+        {
+          "id": "118330",
+          "name": "Renato Santos",
+          "position": "Right Winger",
+          "minutes": 45
+        },
+        {
+          "id": "205022",
+          "name": "Rafinha",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "211083",
+          "name": "Joel Silva",
+          "position": "Centre-Forward",
+          "minutes": 686
+        },
+        {
+          "id": "256696",
+          "name": "Perdigão",
+          "position": "Right Winger",
+          "minutes": 629
+        },
+        {
+          "id": "340255",
+          "name": "Rui Li",
+          "position": "Centre-Forward",
+          "minutes": 31
+        },
+        {
+          "id": "347331",
+          "name": "Steve Ekedi",
+          "position": "Centre-Forward",
+          "minutes": 68
+        },
+        {
+          "id": "359678",
+          "name": "Ernest Antwi",
+          "position": "Left Winger",
+          "minutes": 584
+        },
+        {
+          "id": "273982",
+          "name": "Felipe Martins",
+          "position": "Centre-Forward",
+          "minutes": 901
+        },
+        {
+          "id": "194172",
+          "name": "Renato Reis",
+          "position": "Right Winger",
+          "minutes": 2490
+        },
+        {
+          "id": "402205",
+          "name": "Anas Al-Aji",
+          "position": "Right Winger",
+          "minutes": 1
+        },
+        {
+          "id": "255194",
+          "name": "Jorginho",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "291943",
+          "name": "Theo Mendy",
+          "position": "Left Winger",
+          "minutes": 3645
         }
       ]
     },
@@ -1384,115 +2012,171 @@
       "players": [
         {
           "id": "14280",
-          "name": "Júlio Coelho"
+          "name": "Coelho",
+          "position": "Goalkeeper",
+          "minutes": 2340
         },
         {
           "id": "45243",
-          "name": "Ivo Gonçalves"
+          "name": "Ivo Gonçalves",
+          "position": "Goalkeeper",
+          "minutes": 2370
         },
         {
           "id": "129256",
-          "name": "Tiago Rocha"
+          "name": "Tiago Rocha",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "284741",
-          "name": "Ângelo Meneses"
-        },
-        {
-          "id": "14262",
-          "name": "Amoreirinha"
-        },
-        {
-          "id": "35246",
-          "name": "Pedro Ribeiro"
-        },
-        {
-          "id": "175087",
-          "name": "João Paulo"
-        },
-        {
-          "id": "379748",
-          "name": "Paulo Bessa"
-        },
-        {
-          "id": "149655",
-          "name": "Daniel Martins"
-        },
-        {
-          "id": "33237",
-          "name": "Pedro Araújo"
+          "name": "Ângelo Meneses",
+          "position": "Centre-Back",
+          "minutes": 1449
         },
         {
           "id": "37574",
-          "name": "Luís Dias"
+          "name": "Luís Dias",
+          "position": "Right-Back",
+          "minutes": 1833
+        },
+        {
+          "id": "379748",
+          "name": "Paulo Bessa",
+          "position": "Centre-Back",
+          "minutes": 2
+        },
+        {
+          "id": "35246",
+          "name": "Pedro Ribeiro",
+          "position": "Centre-Back",
+          "minutes": 3450
+        },
+        {
+          "id": "149655",
+          "name": "Daniel Martins",
+          "position": "Left-Back",
+          "minutes": 2567
         },
         {
           "id": "379377",
-          "name": "Kalindi"
+          "name": "Kalindi",
+          "position": "Right-Back",
+          "minutes": 2294
         },
         {
           "id": "34380",
-          "name": "Tiago Rosa"
+          "name": "Tiago Rosa",
+          "position": "Right-Back",
+          "minutes": 361
+        },
+        {
+          "id": "175087",
+          "name": "João Paulo",
+          "position": "Centre-Back",
+          "minutes": 2707
+        },
+        {
+          "id": "14262",
+          "name": "Amoreirinha",
+          "position": "Centre-Back",
+          "minutes": 2743
+        },
+        {
+          "id": "33237",
+          "name": "Pedro Araújo",
+          "position": "Left-Back",
+          "minutes": 2071
         },
         {
           "id": "257321",
-          "name": "Djibril Zidnaba"
-        },
-        {
-          "id": "59868",
-          "name": "Diogo Melo"
-        },
-        {
-          "id": "158529",
-          "name": "Tiago Barros"
+          "name": "Djibril Zidnaba",
+          "position": "Defensive Midfield",
+          "minutes": 3385
         },
         {
           "id": "52214",
-          "name": "João Martins"
-        },
-        {
-          "id": "192761",
-          "name": "Edú"
+          "name": "João Martins",
+          "position": "Central Midfield",
+          "minutes": 1784
         },
         {
           "id": "379749",
-          "name": "César Gomes"
+          "name": "César Gomes",
+          "position": "Central Midfield",
+          "minutes": 308
         },
         {
           "id": "85774",
-          "name": "Caetano"
+          "name": "Caetano",
+          "position": "Attacking Midfield",
+          "minutes": 2832
+        },
+        {
+          "id": "192761",
+          "name": "Edú",
+          "position": "Central Midfield",
+          "minutes": 415
+        },
+        {
+          "id": "59868",
+          "name": "Diogo Melo",
+          "position": "Defensive Midfield",
+          "minutes": 1031
+        },
+        {
+          "id": "158529",
+          "name": "Tiago Barros",
+          "position": "Central Midfield",
+          "minutes": 3136
         },
         {
           "id": "238499",
-          "name": "Davi Mbala"
-        },
-        {
-          "id": "194603",
-          "name": "Aldair"
-        },
-        {
-          "id": "292351",
-          "name": "Bata"
-        },
-        {
-          "id": "51099",
-          "name": "Gonçalo Abreu"
+          "name": "Davi Mbala",
+          "position": "Left Winger",
+          "minutes": 2597
         },
         {
           "id": "130666",
-          "name": "Bruninho"
-        },
-        {
-          "id": "98320",
-          "name": "Kalidou Yero"
-        },
-        {
-          "id": "33235",
-          "name": "Rui Miguel"
+          "name": "Bruninho",
+          "position": "Right Winger",
+          "minutes": 375
         },
         {
           "id": "380793",
-          "name": "Vieira"
+          "name": "Vieira",
+          "position": "Centre-Forward",
+          "minutes": 758
+        },
+        {
+          "id": "194603",
+          "name": "Aldair",
+          "position": "Left Winger",
+          "minutes": 3251
+        },
+        {
+          "id": "33235",
+          "name": "Rui Miguel",
+          "position": "Centre-Forward",
+          "minutes": 1205
+        },
+        {
+          "id": "292351",
+          "name": "Bata",
+          "position": "Right Winger",
+          "minutes": 1069
+        },
+        {
+          "id": "51099",
+          "name": "Gonçalo Abreu",
+          "position": "Right Winger",
+          "minutes": 2551
+        },
+        {
+          "id": "98320",
+          "name": "Kalidou Yero",
+          "position": "Centre-Forward",
+          "minutes": 2705
         }
       ]
     },
@@ -1502,127 +2186,189 @@
       "players": [
         {
           "id": "40555",
-          "name": "Serginho"
-        },
-        {
-          "id": "340914",
-          "name": "Júlio Neiva"
+          "name": "Serginho",
+          "position": "Goalkeeper",
+          "minutes": 4710
         },
         {
           "id": "340915",
-          "name": "Iván Cruz"
+          "name": "Iván Cruz",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
-          "id": "237678",
-          "name": "Pecks"
-        },
-        {
-          "id": "316126",
-          "name": "Sandro Costa"
-        },
-        {
-          "id": "14274",
-          "name": "Cadú"
-        },
-        {
-          "id": "388605",
-          "name": "Renan Alves"
-        },
-        {
-          "id": "386011",
-          "name": "Lucas Maciel"
-        },
-        {
-          "id": "270055",
-          "name": "Kiki"
-        },
-        {
-          "id": "405833",
-          "name": "Bruno Silva"
-        },
-        {
-          "id": "251961",
-          "name": "Pedro Galvão"
+          "id": "340914",
+          "name": "Júlio Neiva",
+          "position": "Goalkeeper",
+          "minutes": 122
         },
         {
           "id": "337537",
-          "name": "Ricardinho"
+          "name": "Ricardinho",
+          "position": "Right-Back",
+          "minutes": 3069
         },
         {
-          "id": "235655",
-          "name": "Pedro Lemos"
+          "id": "270055",
+          "name": "Kiki",
+          "position": "Left-Back",
+          "minutes": 1660
+        },
+        {
+          "id": "388605",
+          "name": "Renan Alves",
+          "position": "Centre-Back",
+          "minutes": 2157
         },
         {
           "id": "386501",
-          "name": "Bong-hun Yeo"
+          "name": "Bong-hun Yeo",
+          "position": "Right-Back",
+          "minutes": 874
+        },
+        {
+          "id": "405833",
+          "name": "Bruno Silva",
+          "position": "Left-Back",
+          "minutes": 2878
         },
         {
           "id": "385574",
-          "name": "Gabi Faria"
+          "name": "Gabi Faria",
+          "position": "Right-Back",
+          "minutes": 180
         },
         {
-          "id": "100240",
-          "name": "Djamal"
+          "id": "386011",
+          "name": "Lucas Maciel",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "312090",
-          "name": "Nanissio Soares"
+          "id": "251961",
+          "name": "Pedro Galvão",
+          "position": "Left-Back",
+          "minutes": 171
         },
         {
-          "id": "194547",
-          "name": "Vítor Gonçalves"
+          "id": "316126",
+          "name": "Sandro Costa",
+          "position": "Centre-Back",
+          "minutes": 3207
         },
         {
-          "id": "257135",
-          "name": "Kódjo Alphonse"
+          "id": "14274",
+          "name": "Cadú",
+          "position": "Centre-Back",
+          "minutes": 2789
+        },
+        {
+          "id": "235655",
+          "name": "Pedro Lemos",
+          "position": "Right-Back",
+          "minutes": 2114
+        },
+        {
+          "id": "237678",
+          "name": "Pecks",
+          "position": "Centre-Back",
+          "minutes": 1508
         },
         {
           "id": "131014",
-          "name": "André Soares"
+          "name": "André Soares",
+          "position": "Attacking Midfield",
+          "minutes": 108
+        },
+        {
+          "id": "100240",
+          "name": "Djamal",
+          "position": "Defensive Midfield",
+          "minutes": 3863
         },
         {
           "id": "353213",
-          "name": "Platiny"
+          "name": "Platiny",
+          "position": "Attacking Midfield",
+          "minutes": 885
+        },
+        {
+          "id": "194547",
+          "name": "Vítor Gonçalves",
+          "position": "Central Midfield",
+          "minutes": 2376
+        },
+        {
+          "id": "312090",
+          "name": "Nanissio Soares",
+          "position": "Defensive Midfield",
+          "minutes": 733
+        },
+        {
+          "id": "257135",
+          "name": "Kódjo Alphonse",
+          "position": "Central Midfield",
+          "minutes": 3279
         },
         {
           "id": "382773",
-          "name": "Jonathan Rubio Toro"
-        },
-        {
-          "id": "209012",
-          "name": "Avto"
-        },
-        {
-          "id": "292488",
-          "name": "Ely Fernandes"
-        },
-        {
-          "id": "353211",
-          "name": "Vágner Dias"
-        },
-        {
-          "id": "118940",
-          "name": "Ishmael Yartey"
-        },
-        {
-          "id": "375854",
-          "name": "Sodiq Fatai"
-        },
-        {
-          "id": "194549",
-          "name": "Simy"
+          "name": "Jonathan Rubio Toro",
+          "position": "Attacking Midfield",
+          "minutes": 524
         },
         {
           "id": "211072",
-          "name": "Paulinho"
-        },
-        {
-          "id": "352916",
-          "name": "Goba Zakpa"
+          "name": "Paulinho",
+          "position": "Centre-Forward",
+          "minutes": 3035
         },
         {
           "id": "298410",
-          "name": "João Pedro"
+          "name": "João Pedro",
+          "position": "Centre-Forward",
+          "minutes": 361
+        },
+        {
+          "id": "194549",
+          "name": "Simy",
+          "position": "Centre-Forward",
+          "minutes": 3398
+        },
+        {
+          "id": "353211",
+          "name": "Vágner Dias",
+          "position": "Left Winger",
+          "minutes": 1538
+        },
+        {
+          "id": "375854",
+          "name": "Sodiq Fatai",
+          "position": "Right Winger",
+          "minutes": 840
+        },
+        {
+          "id": "292488",
+          "name": "Ely Fernandes",
+          "position": "Left Winger",
+          "minutes": 164
+        },
+        {
+          "id": "209012",
+          "name": "Avto",
+          "position": "Left Winger",
+          "minutes": 3537
+        },
+        {
+          "id": "352916",
+          "name": "Goba Zakpa",
+          "position": "Centre-Forward",
+          "minutes": 1435
+        },
+        {
+          "id": "118940",
+          "name": "Ishmael Yartey",
+          "position": "Right Winger",
+          "minutes": 1572
         }
       ]
     },
@@ -1631,144 +2377,214 @@
       "name": "Portimonense SAD",
       "players": [
         {
-          "id": "59508",
-          "name": "Ricardo Ferreira"
+          "id": "192507",
+          "name": "Léo Navacchio",
+          "position": "Goalkeeper",
+          "minutes": 360
         },
         {
           "id": "194507",
-          "name": "Carlos Henriques"
+          "name": "Carlos Henriques",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
-          "id": "192507",
-          "name": "Léo Navacchio"
-        },
-        {
-          "id": "388588",
-          "name": "Jadson"
+          "id": "59508",
+          "name": "Ricardo Ferreira",
+          "position": "Goalkeeper",
+          "minutes": 4140
         },
         {
           "id": "312123",
-          "name": "Lucas Possignolo"
-        },
-        {
-          "id": "24737",
-          "name": "Ivo Nicolau"
-        },
-        {
-          "id": "292004",
-          "name": "André Luís"
-        },
-        {
-          "id": "340561",
-          "name": "Fabrício Paraíba"
-        },
-        {
-          "id": "344393",
-          "name": "Lumor Agbenyenu"
-        },
-        {
-          "id": "166379",
-          "name": "Muhammad Candé"
-        },
-        {
-          "id": "17372",
-          "name": "Ricardo Pessoa"
-        },
-        {
-          "id": "385662",
-          "name": "Antonieliton Ferreira"
+          "name": "Lucas Possignolo",
+          "position": "Centre-Back",
+          "minutes": 3468
         },
         {
           "id": "256013",
-          "name": "Jean Felipe"
+          "name": "Jean Felipe",
+          "position": "Right-Back",
+          "minutes": 74
         },
         {
-          "id": "346879",
-          "name": "Marcel"
+          "id": "344393",
+          "name": "Lumor Agbenyenu",
+          "position": "Left-Back",
+          "minutes": 3190
         },
         {
-          "id": "344394",
-          "name": "Fidelis Irhene"
+          "id": "24737",
+          "name": "Ivo Nicolau",
+          "position": "Centre-Back",
+          "minutes": 2098
         },
         {
-          "id": "399013",
-          "name": "Erick Varão"
+          "id": "17372",
+          "name": "Ricardo Pessoa",
+          "position": "Right-Back",
+          "minutes": 4680
         },
         {
-          "id": "290916",
-          "name": "Filipinho"
+          "id": "292004",
+          "name": "André Luís",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "166379",
+          "name": "Muhammad Candé",
+          "position": "Left-Back",
+          "minutes": 2201
+        },
+        {
+          "id": "340561",
+          "name": "Fabrício Paraíba",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "388588",
+          "name": "Jadson",
+          "position": "Centre-Back",
+          "minutes": 3439
+        },
+        {
+          "id": "385662",
+          "name": "Antonieliton Ferreira",
+          "position": "Right-Back",
+          "minutes": 827
         },
         {
           "id": "214070",
-          "name": "Ewerton"
-        },
-        {
-          "id": "190543",
-          "name": "Dener"
-        },
-        {
-          "id": "292401",
-          "name": "Fernandinho"
-        },
-        {
-          "id": "304416",
-          "name": "Chace Jacquart"
+          "name": "Ewerton",
+          "position": "Central Midfield",
+          "minutes": 4287
         },
         {
           "id": "295367",
-          "name": "Musa Yahaya"
+          "name": "Musa Yahaya",
+          "position": "Central Midfield",
+          "minutes": 482
         },
         {
           "id": "58981",
-          "name": "André Carvalhas"
+          "name": "André Carvalhas",
+          "position": "Attacking Midfield",
+          "minutes": 1979
         },
         {
           "id": "291997",
-          "name": "Theo Ryuki"
+          "name": "Theo Ryuki",
+          "position": "Attacking Midfield",
+          "minutes": 2058
+        },
+        {
+          "id": "292401",
+          "name": "Fernandinho",
+          "position": "Central Midfield",
+          "minutes": 101
+        },
+        {
+          "id": "190543",
+          "name": "Dener",
+          "position": "Central Midfield",
+          "minutes": 2033
+        },
+        {
+          "id": "344394",
+          "name": "Fidelis Irhene",
+          "position": "Defensive Midfield",
+          "minutes": 1608
+        },
+        {
+          "id": "304416",
+          "name": "Chace Jacquart",
+          "position": "Central Midfield",
+          "minutes": 90
+        },
+        {
+          "id": "399013",
+          "name": "Erick Varão",
+          "position": "Defensive Midfield",
+          "minutes": 152
+        },
+        {
+          "id": "290916",
+          "name": "Filipinho",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "346879",
+          "name": "Marcel",
+          "position": "Defensive Midfield",
+          "minutes": 4196
         },
         {
           "id": "427209",
-          "name": "Juninho"
-        },
-        {
-          "id": "62076",
-          "name": "Zambujo"
-        },
-        {
-          "id": "237665",
-          "name": "André Ferreira"
-        },
-        {
-          "id": "292409",
-          "name": "Buba"
-        },
-        {
-          "id": "86172",
-          "name": "Mu Kanazaki"
-        },
-        {
-          "id": "173617",
-          "name": "Fabrício"
-        },
-        {
-          "id": "112991",
-          "name": "Fidelis"
-        },
-        {
-          "id": "133976",
-          "name": "Alfredo"
-        },
-        {
-          "id": "85602",
-          "name": "Pires"
-        },
-        {
-          "id": "344618",
-          "name": "Jorge Teixeira"
+          "name": "Juninho",
+          "position": "Attacking Midfield",
+          "minutes": 20
         },
         {
           "id": "424676",
-          "name": "Juninho"
+          "name": "Juninho",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "86172",
+          "name": "Mu Kanazaki",
+          "position": "Centre-Forward",
+          "minutes": 270
+        },
+        {
+          "id": "112991",
+          "name": "Fidelis",
+          "position": "Centre-Forward",
+          "minutes": 2068
+        },
+        {
+          "id": "173617",
+          "name": "Fabrício",
+          "position": "Centre-Forward",
+          "minutes": 4162
+        },
+        {
+          "id": "133976",
+          "name": "Alfredo",
+          "position": "Centre-Forward",
+          "minutes": 150
+        },
+        {
+          "id": "85602",
+          "name": "Pires",
+          "position": "Centre-Forward",
+          "minutes": 4177
+        },
+        {
+          "id": "62076",
+          "name": "Zambujo",
+          "position": "Right Winger",
+          "minutes": 1782
+        },
+        {
+          "id": "344618",
+          "name": "Jorge Teixeira",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "292409",
+          "name": "Buba",
+          "position": "Second Striker",
+          "minutes": 433
+        },
+        {
+          "id": "237665",
+          "name": "André Ferreira",
+          "position": "Right Winger",
+          "minutes": 201
         }
       ]
     },
@@ -1777,116 +2593,172 @@
       "name": "SC Freamunde",
       "players": [
         {
-          "id": "74689",
-          "name": "Marco Pereira"
+          "id": "235762",
+          "name": "Danny",
+          "position": "Goalkeeper",
+          "minutes": 172
         },
         {
           "id": "35364",
-          "name": "Rui Nereu"
+          "name": "Rui Nereu",
+          "position": "Goalkeeper",
+          "minutes": 837
         },
         {
-          "id": "235762",
-          "name": "Danny"
-        },
-        {
-          "id": "74449",
-          "name": "Luís Pedro"
-        },
-        {
-          "id": "131658",
-          "name": "Luís Rocha"
-        },
-        {
-          "id": "183482",
-          "name": "Eridson"
-        },
-        {
-          "id": "352978",
-          "name": "Amadeu"
-        },
-        {
-          "id": "296436",
-          "name": "Rui Raínho"
-        },
-        {
-          "id": "268729",
-          "name": "Huguinho"
+          "id": "74689",
+          "name": "Marco Pereira",
+          "position": "Goalkeeper",
+          "minutes": 3219
         },
         {
           "id": "126964",
-          "name": "David Bruno"
+          "name": "David Bruno",
+          "position": "Right-Back",
+          "minutes": 3337
+        },
+        {
+          "id": "131658",
+          "name": "Luís Rocha",
+          "position": "Centre-Back",
+          "minutes": 3681
         },
         {
           "id": "118320",
-          "name": "Leandro Albano"
+          "name": "Leandro Albano",
+          "position": "Right-Back",
+          "minutes": 775
         },
         {
-          "id": "156965",
-          "name": "Paulo Grilo"
+          "id": "352978",
+          "name": "Amadeu",
+          "position": "Centre-Back",
+          "minutes": 154
         },
         {
-          "id": "58183",
-          "name": "Daniel Barbosa"
+          "id": "296436",
+          "name": "Rui Raínho",
+          "position": "Left-Back",
+          "minutes": 3765
+        },
+        {
+          "id": "183482",
+          "name": "Eridson",
+          "position": "Centre-Back",
+          "minutes": 614
+        },
+        {
+          "id": "268729",
+          "name": "Huguinho",
+          "position": "Left-Back",
+          "minutes": 438
+        },
+        {
+          "id": "74449",
+          "name": "Luís Pedro",
+          "position": "Centre-Back",
+          "minutes": 4050
         },
         {
           "id": "197981",
-          "name": "Pedrinho"
+          "name": "Pedrinho",
+          "position": "Central Midfield",
+          "minutes": 3891
         },
         {
           "id": "72834",
-          "name": "Leandro Pimenta"
-        },
-        {
-          "id": "69466",
-          "name": "Iván Pérez"
+          "name": "Leandro Pimenta",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "278997",
-          "name": "Juan Hernández"
+          "name": "Juan Hernández",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "302457",
-          "name": "Francesco Celeste"
+          "name": "Francesco Celeste",
+          "position": "Right Midfield",
+          "minutes": 2579
+        },
+        {
+          "id": "58183",
+          "name": "Daniel Barbosa",
+          "position": "Defensive Midfield",
+          "minutes": 843
+        },
+        {
+          "id": "69466",
+          "name": "Iván Pérez",
+          "position": "Central Midfield",
+          "minutes": 1732
         },
         {
           "id": "128029",
-          "name": "Robson"
+          "name": "Robson",
+          "position": "Attacking Midfield",
+          "minutes": 3628
         },
         {
-          "id": "355495",
-          "name": "Anderson Dim"
+          "id": "156965",
+          "name": "Paulo Grilo",
+          "position": "Defensive Midfield",
+          "minutes": 2456
         },
         {
           "id": "57962",
-          "name": "Ivan Santos"
-        },
-        {
-          "id": "86750",
-          "name": "Fausto Lourenço"
-        },
-        {
-          "id": "56798",
-          "name": "Pedro Pereira"
-        },
-        {
-          "id": "379557",
-          "name": "Jianpeng Feng"
-        },
-        {
-          "id": "58260",
-          "name": "Diogo Ramos"
-        },
-        {
-          "id": "332258",
-          "name": "Mauro Dalla Costa"
+          "name": "Ivan Santos",
+          "position": "Left Winger",
+          "minutes": 88
         },
         {
           "id": "296435",
-          "name": "Ansumane Faty"
+          "name": "Ansumane Faty",
+          "position": "Centre-Forward",
+          "minutes": 738
+        },
+        {
+          "id": "332258",
+          "name": "Mauro Dalla Costa",
+          "position": "Centre-Forward",
+          "minutes": 1284
+        },
+        {
+          "id": "58260",
+          "name": "Diogo Ramos",
+          "position": "Centre-Forward",
+          "minutes": 2295
+        },
+        {
+          "id": "86750",
+          "name": "Fausto Lourenço",
+          "position": "Right Winger",
+          "minutes": 3222
         },
         {
           "id": "13172",
-          "name": "Cafú"
+          "name": "Cafú",
+          "position": "Centre-Forward",
+          "minutes": 897
+        },
+        {
+          "id": "379557",
+          "name": "Jianpeng Feng",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "56798",
+          "name": "Pedro Pereira",
+          "position": "Right Winger",
+          "minutes": 958
+        },
+        {
+          "id": "355495",
+          "name": "Anderson Dim",
+          "position": "Left Winger",
+          "minutes": 620
         }
       ]
     },
@@ -1895,136 +2767,202 @@
       "name": "Atlético CP",
       "players": [
         {
-          "id": "197610",
-          "name": "Mickaël Meira"
-        },
-        {
           "id": "76707",
-          "name": "Danilo Lerda"
+          "name": "Danilo Lerda",
+          "position": "Goalkeeper",
+          "minutes": 2280
         },
         {
           "id": "337139",
-          "name": "Bernardo Francisco"
+          "name": "Bernardo Francisco",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
+          "id": "197610",
+          "name": "Mickaël Meira",
+          "position": "Goalkeeper",
+          "minutes": 2160
         },
         {
           "id": "143794",
-          "name": "Lucão"
-        },
-        {
-          "id": "89215",
-          "name": "Grenddy Perozo"
-        },
-        {
-          "id": "34864",
-          "name": "Pieter Mbemba"
+          "name": "Lucão",
+          "position": "Centre-Back",
+          "minutes": 1107
         },
         {
           "id": "168477",
-          "name": "Jefferson Formigão"
-        },
-        {
-          "id": "62233",
-          "name": "Javier Cohene"
-        },
-        {
-          "id": "230102",
-          "name": "Rui Maurício"
-        },
-        {
-          "id": "17286",
-          "name": "Jorge Ribeiro"
-        },
-        {
-          "id": "48902",
-          "name": "Bruno Simão"
-        },
-        {
-          "id": "149653",
-          "name": "Pedro Almeida"
+          "name": "Jefferson Formigão",
+          "position": "Centre-Back",
+          "minutes": 2361
         },
         {
           "id": "45357",
-          "name": "Duarte Machado"
+          "name": "Duarte Machado",
+          "position": "Right-Back",
+          "minutes": 3360
+        },
+        {
+          "id": "62233",
+          "name": "Javier Cohene",
+          "position": "Centre-Back",
+          "minutes": 144
+        },
+        {
+          "id": "17286",
+          "name": "Jorge Ribeiro",
+          "position": "Left-Back",
+          "minutes": 3496
         },
         {
           "id": "413674",
-          "name": "Luís Veloso"
+          "name": "Luís Veloso",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "78555",
-          "name": "Mamadou Djikiné"
+          "id": "34864",
+          "name": "Pieter Mbemba",
+          "position": "Centre-Back",
+          "minutes": 2510
         },
         {
-          "id": "45371",
-          "name": "Celestino"
+          "id": "149653",
+          "name": "Pedro Almeida",
+          "position": "Right-Back",
+          "minutes": 1202
         },
         {
-          "id": "99512",
-          "name": "Júlio César"
+          "id": "230102",
+          "name": "Rui Maurício",
+          "position": "Centre-Back",
+          "minutes": 895
         },
         {
-          "id": "332594",
-          "name": "Hélio Cruz"
+          "id": "89215",
+          "name": "Grenddy Perozo",
+          "position": "Centre-Back",
+          "minutes": 1300
+        },
+        {
+          "id": "48902",
+          "name": "Bruno Simão",
+          "position": "Left-Back",
+          "minutes": 1233
         },
         {
           "id": "197877",
-          "name": "Gianmarco Gerevini"
-        },
-        {
-          "id": "234986",
-          "name": "Diogo Pires"
-        },
-        {
-          "id": "95244",
-          "name": "Manuel Curto"
-        },
-        {
-          "id": "317506",
-          "name": "Vladimir Forbs"
-        },
-        {
-          "id": "100089",
-          "name": "Paulo Regula"
-        },
-        {
-          "id": "120772",
-          "name": "Edmund Hottor"
+          "name": "Gianmarco Gerevini",
+          "position": "Defensive Midfield",
+          "minutes": 2952
         },
         {
           "id": "69582",
-          "name": "Au Chung"
+          "name": "Yiu-Chung Au Yeung",
+          "position": "Attacking Midfield",
+          "minutes": 4
         },
         {
-          "id": "138638",
-          "name": "Quinaz"
+          "id": "99512",
+          "name": "Júlio César",
+          "position": "Defensive Midfield",
+          "minutes": 55
         },
         {
-          "id": "242552",
-          "name": "Manuel Palacios"
+          "id": "234986",
+          "name": "Diogo Pires",
+          "position": "Defensive Midfield",
+          "minutes": 434
         },
         {
-          "id": "317668",
-          "name": "Joazimar Stehb"
+          "id": "317506",
+          "name": "Vladimir Forbs",
+          "position": "Defensive Midfield",
+          "minutes": 201
         },
         {
-          "id": "111046",
-          "name": "Chris Gadi"
+          "id": "78555",
+          "name": "Mamadou Djikiné",
+          "position": "Defensive Midfield",
+          "minutes": 3201
         },
         {
-          "id": "58692",
-          "name": "Patrick Vouho"
+          "id": "45371",
+          "name": "Celestino",
+          "position": "Defensive Midfield",
+          "minutes": 3089
+        },
+        {
+          "id": "332594",
+          "name": "Hélio Cruz",
+          "position": "Defensive Midfield",
+          "minutes": 2873
+        },
+        {
+          "id": "100089",
+          "name": "Paulo Regula",
+          "position": "Central Midfield",
+          "minutes": 2443
+        },
+        {
+          "id": "120772",
+          "name": "Edmund Hottor",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "95244",
+          "name": "Manuel Curto",
+          "position": "Defensive Midfield",
+          "minutes": 875
         },
         {
           "id": "22686",
-          "name": "Cephas Malele"
+          "name": "Cephas Malele",
+          "position": "Centre-Forward",
+          "minutes": 2461
+        },
+        {
+          "id": "242552",
+          "name": "Manuel Palacios",
+          "position": "Right Winger",
+          "minutes": 877
+        },
+        {
+          "id": "58692",
+          "name": "Patrick Vouho",
+          "position": "Centre-Forward",
+          "minutes": 2029
+        },
+        {
+          "id": "138638",
+          "name": "Quinaz",
+          "position": "Left Winger",
+          "minutes": 375
+        },
+        {
+          "id": "317668",
+          "name": "Joazimar Stehb",
+          "position": "Right Winger",
+          "minutes": 1572
         },
         {
           "id": "82496",
-          "name": "Minor López"
+          "name": "Minor López",
+          "position": "Centre-Forward",
+          "minutes": 1823
         },
         {
           "id": "336079",
-          "name": "Nádson"
+          "name": "Nádson",
+          "position": "Centre-Forward",
+          "minutes": 1059
+        },
+        {
+          "id": "111046",
+          "name": "Chris Gadi",
+          "position": "Right Winger",
+          "minutes": 120
         }
       ]
     },
@@ -2034,127 +2972,189 @@
       "players": [
         {
           "id": "139335",
-          "name": "Tiago Maia"
-        },
-        {
-          "id": "13216",
-          "name": "José Moreira"
+          "name": "Tiago Maia",
+          "position": "Goalkeeper",
+          "minutes": 630
         },
         {
           "id": "386487",
-          "name": "Léo Santos"
+          "name": "Léo Santos",
+          "position": "Goalkeeper",
+          "minutes": 150
         },
         {
-          "id": "386274",
-          "name": "Federico Virga"
-        },
-        {
-          "id": "182721",
-          "name": "Tiago Duque"
-        },
-        {
-          "id": "258739",
-          "name": "Fábio Marinheiro"
-        },
-        {
-          "id": "172877",
-          "name": "Materazzi"
+          "id": "13216",
+          "name": "José Moreira",
+          "position": "Goalkeeper",
+          "minutes": 3538
         },
         {
           "id": "410212",
-          "name": "Sori Mané"
-        },
-        {
-          "id": "232582",
-          "name": "Balla Faye"
-        },
-        {
-          "id": "422851",
-          "name": "Stanley Amuzie"
-        },
-        {
-          "id": "299063",
-          "name": "Gui Ferreira"
-        },
-        {
-          "id": "385365",
-          "name": "Rodolfo Lourenço"
-        },
-        {
-          "id": "111042",
-          "name": "Jean-Christophe Coubronne"
+          "name": "Sori Mané",
+          "position": "Centre-Back",
+          "minutes": 181
         },
         {
           "id": "390523",
-          "name": "Pedro Albino"
+          "name": "Pedro Albino",
+          "position": "Right-Back",
+          "minutes": 3
+        },
+        {
+          "id": "385365",
+          "name": "Rodolfo Lourenço",
+          "position": "Right-Back",
+          "minutes": 3895
+        },
+        {
+          "id": "258739",
+          "name": "Fábio Marinheiro",
+          "position": "Centre-Back",
+          "minutes": 2121
+        },
+        {
+          "id": "299063",
+          "name": "Gui Ferreira",
+          "position": "Left-Back",
+          "minutes": 1082
+        },
+        {
+          "id": "172877",
+          "name": "Materazzi",
+          "position": "Centre-Back",
+          "minutes": 3939
+        },
+        {
+          "id": "386274",
+          "name": "Federico Virga",
+          "position": "Centre-Back",
+          "minutes": 2909
+        },
+        {
+          "id": "182721",
+          "name": "Tiago Duque",
+          "position": "Centre-Back",
+          "minutes": 3380
+        },
+        {
+          "id": "232582",
+          "name": "Balla Faye",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "422851",
+          "name": "Stanley Amuzie",
+          "position": "Centre-Back",
+          "minutes": 589
+        },
+        {
+          "id": "111042",
+          "name": "Jean-Christophe Coubronne",
+          "position": "Right-Back",
+          "minutes": 2784
         },
         {
           "id": "185246",
-          "name": "Daniel Giraldo"
-        },
-        {
-          "id": "276496",
-          "name": "João Oliveira"
-        },
-        {
-          "id": "164899",
-          "name": "Ousmane Baldé"
+          "name": "Daniel Giraldo",
+          "position": "Defensive Midfield",
+          "minutes": 889
         },
         {
           "id": "368638",
-          "name": "Morelatto"
-        },
-        {
-          "id": "380988",
-          "name": "Mickaël Pereira"
-        },
-        {
-          "id": "385367",
-          "name": "Douglas Cordeiro"
-        },
-        {
-          "id": "99233",
-          "name": "Lorenzo Galassi"
+          "name": "Morelatto",
+          "position": "Central Midfield",
+          "minutes": 789
         },
         {
           "id": "45258",
-          "name": "José Coelho"
+          "name": "José Coelho",
+          "position": "Attacking Midfield",
+          "minutes": 945
         },
         {
-          "id": "293941",
-          "name": "Murilo"
+          "id": "164899",
+          "name": "Ousmane Baldé",
+          "position": "Defensive Midfield",
+          "minutes": 2245
         },
         {
-          "id": "227685",
-          "name": "Leandro Borges"
+          "id": "385367",
+          "name": "Douglas Cordeiro",
+          "position": "Central Midfield",
+          "minutes": 92
         },
         {
-          "id": "334504",
-          "name": "Jorge González"
+          "id": "276496",
+          "name": "João Oliveira",
+          "position": "Defensive Midfield",
+          "minutes": 3423
         },
         {
-          "id": "258585",
-          "name": "Zé Miguel"
+          "id": "380988",
+          "name": "Mickaël Pereira",
+          "position": "Central Midfield",
+          "minutes": 282
         },
         {
-          "id": "92050",
-          "name": "Januário"
+          "id": "99233",
+          "name": "Lorenzo Galassi",
+          "position": "Attacking Midfield",
+          "minutes": 2982
         },
         {
           "id": "308256",
-          "name": "Andrés Ponce"
+          "name": "Andrés Ponce",
+          "position": "Centre-Forward",
+          "minutes": 118
         },
         {
-          "id": "45529",
-          "name": "Said Ahmed Said"
+          "id": "293941",
+          "name": "Murilo",
+          "position": "Left Winger",
+          "minutes": 2305
         },
         {
           "id": "175788",
-          "name": "Andrea Magrassi"
+          "name": "Andrea Magrassi",
+          "position": "Centre-Forward",
+          "minutes": 111
+        },
+        {
+          "id": "45529",
+          "name": "Said Ahmed Said",
+          "position": "Centre-Forward",
+          "minutes": 2518
+        },
+        {
+          "id": "258585",
+          "name": "Zé Miguel",
+          "position": "Left Winger",
+          "minutes": 12
+        },
+        {
+          "id": "334504",
+          "name": "Jorge González",
+          "position": "Left Winger",
+          "minutes": 1006
+        },
+        {
+          "id": "227685",
+          "name": "Leandro Borges",
+          "position": "Left Winger",
+          "minutes": 3046
+        },
+        {
+          "id": "92050",
+          "name": "Januário",
+          "position": "Right Winger",
+          "minutes": 1090
         },
         {
           "id": "397790",
-          "name": "João Falque"
+          "name": "João Falque",
+          "position": "Centre-Forward",
+          "minutes": 261
         }
       ]
     },
@@ -2164,127 +3164,189 @@
       "players": [
         {
           "id": "154919",
-          "name": "Ricardo Janota"
+          "name": "Ricardo Janota",
+          "position": "Goalkeeper",
+          "minutes": 4320
         },
         {
           "id": "58932",
-          "name": "Ruca"
+          "name": "Ruca",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "192991",
-          "name": "Rafa"
-        },
-        {
-          "id": "58957",
-          "name": "Bura"
-        },
-        {
-          "id": "202271",
-          "name": "Tiago Gonçalves"
-        },
-        {
-          "id": "380301",
-          "name": "Mathaus"
-        },
-        {
-          "id": "340186",
-          "name": "Vini"
-        },
-        {
-          "id": "24182",
-          "name": "Lameirão"
+          "name": "Rafa",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "212713",
-          "name": "Kiko"
+          "name": "Kiko",
+          "position": "Left-Back",
+          "minutes": 1973
         },
         {
-          "id": "270425",
-          "name": "Belly Vumbi"
+          "id": "58957",
+          "name": "Bura",
+          "position": "Centre-Back",
+          "minutes": 3586
         },
         {
-          "id": "131776",
-          "name": "Ricardo Ferreira"
+          "id": "380301",
+          "name": "Mathaus",
+          "position": "Centre-Back",
+          "minutes": 2085
         },
         {
-          "id": "194873",
-          "name": "Tomé"
+          "id": "340186",
+          "name": "Vini",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "202271",
+          "name": "Tiago Gonçalves",
+          "position": "Centre-Back",
+          "minutes": 2666
         },
         {
           "id": "42960",
-          "name": "Tiago Costa"
+          "name": "Tiago Costa",
+          "position": "Right-Back",
+          "minutes": 2475
         },
         {
-          "id": "57831",
-          "name": "Romeu Ribeiro"
+          "id": "194873",
+          "name": "Tomé",
+          "position": "Right-Back",
+          "minutes": 2851
         },
         {
-          "id": "197114",
-          "name": "João Ricardo"
+          "id": "270425",
+          "name": "Belly Vumbi",
+          "position": "Left-Back",
+          "minutes": 180
         },
         {
-          "id": "192599",
-          "name": "Capela"
+          "id": "131776",
+          "name": "Ricardo Ferreira",
+          "position": "Left-Back",
+          "minutes": 1327
         },
         {
-          "id": "340015",
-          "name": "Alex Porto"
-        },
-        {
-          "id": "72767",
-          "name": "Saná Camará"
-        },
-        {
-          "id": "258635",
-          "name": "Bruno Loureiro"
-        },
-        {
-          "id": "238043",
-          "name": "Clayton"
+          "id": "24182",
+          "name": "Lameirão",
+          "position": "Centre-Back",
+          "minutes": 963
         },
         {
           "id": "379122",
-          "name": "Gradíssimo"
+          "name": "Gradíssimo",
+          "position": "Attacking Midfield",
+          "minutes": 930
         },
         {
-          "id": "168998",
-          "name": "Tiago Borges"
+          "id": "238043",
+          "name": "Clayton",
+          "position": "Attacking Midfield",
+          "minutes": 2152
         },
         {
-          "id": "237092",
-          "name": "Carlos Eduardo"
+          "id": "197114",
+          "name": "João Ricardo",
+          "position": "Defensive Midfield",
+          "minutes": 1172
         },
         {
-          "id": "194217",
-          "name": "Bruno Carvalho"
+          "id": "340015",
+          "name": "Alex Porto",
+          "position": "Central Midfield",
+          "minutes": 1884
+        },
+        {
+          "id": "57831",
+          "name": "Romeu Ribeiro",
+          "position": "Defensive Midfield",
+          "minutes": 3337
+        },
+        {
+          "id": "72767",
+          "name": "Saná Camará",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "258635",
+          "name": "Bruno Loureiro",
+          "position": "Central Midfield",
+          "minutes": 974
+        },
+        {
+          "id": "192599",
+          "name": "Capela",
+          "position": "Defensive Midfield",
+          "minutes": 2510
         },
         {
           "id": "391887",
-          "name": "Yuri Araújo"
-        },
-        {
-          "id": "419702",
-          "name": "Moses Phiri"
+          "name": "Yuri Araújo",
+          "position": "Right Winger",
+          "minutes": 1848
         },
         {
           "id": "168683",
-          "name": "Forbes"
+          "name": "Forbes",
+          "position": "Centre-Forward",
+          "minutes": 1479
+        },
+        {
+          "id": "168998",
+          "name": "Tiago Borges",
+          "position": "Left Winger",
+          "minutes": 2711
+        },
+        {
+          "id": "237092",
+          "name": "Carlos Eduardo",
+          "position": "Left Winger",
+          "minutes": 2487
         },
         {
           "id": "25509",
-          "name": "Diogo Fonseca"
+          "name": "Diogo Fonseca",
+          "position": "Centre-Forward",
+          "minutes": 986
         },
         {
-          "id": "379680",
-          "name": "Zé Pedro"
+          "id": "194217",
+          "name": "Bruno Carvalho",
+          "position": "Left Winger",
+          "minutes": 1360
         },
         {
-          "id": "99913",
-          "name": "Fábio Martins"
+          "id": "419702",
+          "name": "Moses Phiri",
+          "position": "Second Striker",
+          "minutes": 828
         },
         {
           "id": "347331",
-          "name": "Steve Ekedi"
+          "name": "Steve Ekedi",
+          "position": "Centre-Forward",
+          "minutes": 426
+        },
+        {
+          "id": "99913",
+          "name": "Fábio Martins",
+          "position": "Centre-Forward",
+          "minutes": 788
+        },
+        {
+          "id": "379680",
+          "name": "Zé Pedro",
+          "position": "Centre-Forward",
+          "minutes": 916
         }
       ]
     },
@@ -2293,136 +3355,202 @@
       "name": "SC Covilhã",
       "players": [
         {
+          "id": "419624",
+          "name": "Igor Rodrigues",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
           "id": "78559",
-          "name": "Igor Araújo"
+          "name": "Igor Araújo",
+          "position": "Goalkeeper",
+          "minutes": 1620
         },
         {
           "id": "24175",
-          "name": "Pedro Taborda"
-        },
-        {
-          "id": "419624",
-          "name": "Igor Rodrigues"
-        },
-        {
-          "id": "86803",
-          "name": "Zé Pedro"
-        },
-        {
-          "id": "292353",
-          "name": "Victor Massaia"
-        },
-        {
-          "id": "130626",
-          "name": "Joel"
-        },
-        {
-          "id": "167226",
-          "name": "Nana Kouamou"
-        },
-        {
-          "id": "24739",
-          "name": "Edgar Sá"
+          "name": "Pedro Taborda",
+          "position": "Goalkeeper",
+          "minutes": 2610
         },
         {
           "id": "381365",
-          "name": "Vítor Carvalho"
+          "name": "Vítor Carvalho",
+          "position": "Centre-Back",
+          "minutes": 450
         },
         {
-          "id": "305424",
-          "name": "Agostinho Soares"
+          "id": "86803",
+          "name": "Zé Pedro",
+          "position": "Centre-Back",
+          "minutes": 2392
         },
         {
-          "id": "130521",
-          "name": "Tiago Moreira"
+          "id": "292353",
+          "name": "Victor Massaia",
+          "position": "Centre-Back",
+          "minutes": 2759
+        },
+        {
+          "id": "167226",
+          "name": "Nana Kouamou",
+          "position": "Centre-Back",
+          "minutes": 422
+        },
+        {
+          "id": "130626",
+          "name": "Joel",
+          "position": "Centre-Back",
+          "minutes": 2748
+        },
+        {
+          "id": "24739",
+          "name": "Edgar Sá",
+          "position": "Centre-Back",
+          "minutes": 2250
         },
         {
           "id": "149156",
-          "name": "Ryan Hirooka"
+          "name": "Ryan Hirooka",
+          "position": "Right-Back",
+          "minutes": null
         },
         {
-          "id": "163556",
-          "name": "Boubakary Diarra"
+          "id": "130521",
+          "name": "Tiago Moreira",
+          "position": "Right-Back",
+          "minutes": 4037
         },
         {
-          "id": "171065",
-          "name": "Fabinho"
-        },
-        {
-          "id": "56922",
-          "name": "Gilberto"
+          "id": "305424",
+          "name": "Agostinho Soares",
+          "position": "Left-Back",
+          "minutes": 2905
         },
         {
           "id": "290256",
-          "name": "Xeka"
+          "name": "Xeka",
+          "position": "Central Midfield",
+          "minutes": 1836
         },
         {
-          "id": "292342",
-          "name": "Samu"
-        },
-        {
-          "id": "206382",
-          "name": "Zé Tiago"
+          "id": "163556",
+          "name": "Boubakary Diarra",
+          "position": "Defensive Midfield",
+          "minutes": 2539
         },
         {
           "id": "156535",
-          "name": "Flávio Paulino"
+          "name": "Flávio Paulino",
+          "position": "Attacking Midfield",
+          "minutes": 458
+        },
+        {
+          "id": "292342",
+          "name": "Samu",
+          "position": "Central Midfield",
+          "minutes": 95
         },
         {
           "id": "312744",
-          "name": "Kevin Oliveira"
+          "name": "Kevin Oliveira",
+          "position": "Attacking Midfield",
+          "minutes": 383
         },
         {
-          "id": "290530",
-          "name": "Bilel Aouacheria"
+          "id": "56922",
+          "name": "Gilberto",
+          "position": "Central Midfield",
+          "minutes": 3187
         },
         {
-          "id": "397090",
-          "name": "Davidson"
+          "id": "206382",
+          "name": "Zé Tiago",
+          "position": "Attacking Midfield",
+          "minutes": 3157
         },
         {
-          "id": "340330",
-          "name": "Elenilson Garcia"
-        },
-        {
-          "id": "116390",
-          "name": "Traquina"
-        },
-        {
-          "id": "340331",
-          "name": "Tatuí"
-        },
-        {
-          "id": "171420",
-          "name": "Elton Boketsu"
-        },
-        {
-          "id": "397091",
-          "name": "Henry Medarious"
-        },
-        {
-          "id": "340332",
-          "name": "Tiago Mendes"
-        },
-        {
-          "id": "92049",
-          "name": "Diogo Ribeiro"
-        },
-        {
-          "id": "241900",
-          "name": "Mailó"
-        },
-        {
-          "id": "71557",
-          "name": "Eder Díez"
-        },
-        {
-          "id": "397094",
-          "name": "Mateus Guerreiro"
+          "id": "171065",
+          "name": "Fabinho",
+          "position": "Defensive Midfield",
+          "minutes": 496
         },
         {
           "id": "356450",
-          "name": "Flávio Silva"
+          "name": "Flávio Silva",
+          "position": "Centre-Forward",
+          "minutes": null
+        },
+        {
+          "id": "290530",
+          "name": "Bilel Aouacheria",
+          "position": "Left Winger",
+          "minutes": 1184
+        },
+        {
+          "id": "397090",
+          "name": "Davidson",
+          "position": "Left Winger",
+          "minutes": 2990
+        },
+        {
+          "id": "241900",
+          "name": "Mailó",
+          "position": "Centre-Forward",
+          "minutes": 1791
+        },
+        {
+          "id": "340331",
+          "name": "Tatuí",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "171420",
+          "name": "Elton Boketsu",
+          "position": "Right Winger",
+          "minutes": 677
+        },
+        {
+          "id": "340330",
+          "name": "Elenilson Garcia",
+          "position": "Left Winger",
+          "minutes": 448
+        },
+        {
+          "id": "397091",
+          "name": "Henry Medarious",
+          "position": "Right Winger",
+          "minutes": 163
+        },
+        {
+          "id": "71557",
+          "name": "Eder Díez",
+          "position": "Centre-Forward",
+          "minutes": 1501
+        },
+        {
+          "id": "340332",
+          "name": "Tiago Mendes",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "397094",
+          "name": "Mateus Guerreiro",
+          "position": "Centre-Forward",
+          "minutes": 429
+        },
+        {
+          "id": "116390",
+          "name": "Traquina",
+          "position": "Right Winger",
+          "minutes": 1601
+        },
+        {
+          "id": "92049",
+          "name": "Diogo Ribeiro",
+          "position": "Centre-Forward",
+          "minutes": 1229
         }
       ]
     },
@@ -2432,159 +3560,237 @@
       "players": [
         {
           "id": "134400",
-          "name": "Kadú"
-        },
-        {
-          "id": "25397",
-          "name": "Pedro Soares"
-        },
-        {
-          "id": "25160",
-          "name": "Ricardo Silva"
-        },
-        {
-          "id": "357809",
-          "name": "Daniel Marinho"
+          "name": "Kadú",
+          "position": "Goalkeeper",
+          "minutes": 720
         },
         {
           "id": "419120",
-          "name": "Paulo Vítor"
+          "name": "Paulo Vítor",
+          "position": "Goalkeeper",
+          "minutes": 315
         },
         {
-          "id": "72833",
-          "name": "Abel Pereira"
+          "id": "25397",
+          "name": "Pedro Soares",
+          "position": "Goalkeeper",
+          "minutes": 1890
         },
         {
-          "id": "164044",
-          "name": "Nélson Agra"
+          "id": "357809",
+          "name": "Daniel Marinho",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
-          "id": "59368",
-          "name": "Sandro"
-        },
-        {
-          "id": "22779",
-          "name": "Pedro Santos"
-        },
-        {
-          "id": "361253",
-          "name": "Hernâni Ramos"
-        },
-        {
-          "id": "359435",
-          "name": "Roberto Flores"
-        },
-        {
-          "id": "139342",
-          "name": "Rui Coentrão"
-        },
-        {
-          "id": "172880",
-          "name": "Raúl Martins"
-        },
-        {
-          "id": "259275",
-          "name": "Anthony de Freitas"
-        },
-        {
-          "id": "22764",
-          "name": "Telmo"
-        },
-        {
-          "id": "240220",
-          "name": "Adilson"
-        },
-        {
-          "id": "22778",
-          "name": "Tiago Lopes"
+          "id": "25160",
+          "name": "Ricardo Silva",
+          "position": "Goalkeeper",
+          "minutes": 1485
         },
         {
           "id": "257388",
-          "name": "Wilson Manafá"
+          "name": "Wilson Manafá",
+          "position": "Right-Back",
+          "minutes": 1740
+        },
+        {
+          "id": "22764",
+          "name": "Telmo",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "22778",
+          "name": "Tiago Lopes",
+          "position": "Right-Back",
+          "minutes": 764
+        },
+        {
+          "id": "72833",
+          "name": "Abel Pereira",
+          "position": "Centre-Back",
+          "minutes": 737
         },
         {
           "id": "359434",
-          "name": "João Paulo"
+          "name": "João Paulo",
+          "position": "Right-Back",
+          "minutes": 233
         },
         {
-          "id": "74196",
-          "name": "Rodrigo Dantas"
+          "id": "361253",
+          "name": "Hernâni Ramos",
+          "position": "Centre-Back",
+          "minutes": 85
+        },
+        {
+          "id": "59368",
+          "name": "Sandro",
+          "position": "Centre-Back",
+          "minutes": 3779
+        },
+        {
+          "id": "240220",
+          "name": "Adilson",
+          "position": "Right-Back",
+          "minutes": 3172
+        },
+        {
+          "id": "172880",
+          "name": "Raúl Martins",
+          "position": "Left-Back",
+          "minutes": 2300
+        },
+        {
+          "id": "22779",
+          "name": "Pedro Santos",
+          "position": "Centre-Back",
+          "minutes": 1529
+        },
+        {
+          "id": "359435",
+          "name": "Roberto Flores",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "164044",
+          "name": "Nélson Agra",
+          "position": "Centre-Back",
+          "minutes": 3585
+        },
+        {
+          "id": "259275",
+          "name": "Anthony de Freitas",
+          "position": "Left-Back",
+          "minutes": 763
+        },
+        {
+          "id": "139342",
+          "name": "Rui Coentrão",
+          "position": "Left-Back",
+          "minutes": 2581
         },
         {
           "id": "299400",
-          "name": "Pedro Sá"
-        },
-        {
-          "id": "44961",
-          "name": "Bijou"
-        },
-        {
-          "id": "25502",
-          "name": "Sérgio Organista"
-        },
-        {
-          "id": "316766",
-          "name": "João Carneiro"
-        },
-        {
-          "id": "299422",
-          "name": "Mário Cunha"
+          "name": "Pedro Sá",
+          "position": "Defensive Midfield",
+          "minutes": 3820
         },
         {
           "id": "24698",
-          "name": "Pedro Cervantes"
+          "name": "Pedro Cervantes",
+          "position": "Attacking Midfield",
+          "minutes": 277
+        },
+        {
+          "id": "44961",
+          "name": "Bijou",
+          "position": "Defensive Midfield",
+          "minutes": 476
+        },
+        {
+          "id": "299422",
+          "name": "Mário Cunha",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "316766",
+          "name": "João Carneiro",
+          "position": "Central Midfield",
+          "minutes": 2237
         },
         {
           "id": "24892",
-          "name": "Nelsinho"
+          "name": "Nelsinho",
+          "position": "Attacking Midfield",
+          "minutes": 3912
+        },
+        {
+          "id": "74196",
+          "name": "Rodrigo Dantas",
+          "position": "Defensive Midfield",
+          "minutes": 1002
         },
         {
           "id": "359438",
-          "name": "Lucho"
+          "name": "Lucho",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "290935",
-          "name": "Tafsir Chérif"
-        },
-        {
-          "id": "130553",
-          "name": "Elísio"
+          "id": "25502",
+          "name": "Sérgio Organista",
+          "position": "Defensive Midfield",
+          "minutes": 585
         },
         {
           "id": "329723",
-          "name": "Gil Dias"
+          "name": "Gil Dias",
+          "position": "Right Winger",
+          "minutes": 1253
         },
         {
           "id": "35660",
-          "name": "Hernâni Borges"
-        },
-        {
-          "id": "359461",
-          "name": "Stanley Awurum"
-        },
-        {
-          "id": "9814",
-          "name": "Bruno Moraes"
-        },
-        {
-          "id": "225143",
-          "name": "José Postiga"
-        },
-        {
-          "id": "59614",
-          "name": "Diego Mourão"
+          "name": "Hernâni Borges",
+          "position": "Right Winger",
+          "minutes": 919
         },
         {
           "id": "130668",
-          "name": "Vítor Hugo"
+          "name": "Vítor Hugo",
+          "position": "Centre-Forward",
+          "minutes": 229
         },
         {
           "id": "175011",
-          "name": "Tanela"
+          "name": "Tanela",
+          "position": "Centre-Forward",
+          "minutes": 18
+        },
+        {
+          "id": "130553",
+          "name": "Elísio",
+          "position": "Left Winger",
+          "minutes": 828
+        },
+        {
+          "id": "9814",
+          "name": "Bruno Moraes",
+          "position": "Centre-Forward",
+          "minutes": 971
+        },
+        {
+          "id": "59614",
+          "name": "Diego Mourão",
+          "position": "Centre-Forward",
+          "minutes": 1073
         },
         {
           "id": "359444",
-          "name": "Fidel Andrade"
+          "name": "Fidel Andrade",
+          "position": "Centre-Forward",
+          "minutes": 33
+        },
+        {
+          "id": "225143",
+          "name": "José Postiga",
+          "position": "Centre-Forward",
+          "minutes": 231
+        },
+        {
+          "id": "359461",
+          "name": "Stanley Awurum",
+          "position": "Centre-Forward",
+          "minutes": 3477
+        },
+        {
+          "id": "290935",
+          "name": "Tafsir Chérif",
+          "position": "Left Winger",
+          "minutes": 1402
         }
       ]
     },
@@ -2593,148 +3799,220 @@
       "name": "SC Farense",
       "players": [
         {
-          "id": "276474",
-          "name": "Vítor São Bento"
+          "id": "71689",
+          "name": "Ricardo Neves",
+          "position": "Goalkeeper",
+          "minutes": 450
         },
         {
-          "id": "71689",
-          "name": "Ricardo Neves"
+          "id": "276474",
+          "name": "Vítor São Bento",
+          "position": "Goalkeeper",
+          "minutes": 3960
         },
         {
           "id": "352015",
-          "name": "Miguel Carvalho"
+          "name": "Miguel Carvalho",
+          "position": "Goalkeeper",
+          "minutes": 34
         },
         {
           "id": "341516",
-          "name": "Ponck"
-        },
-        {
-          "id": "311486",
-          "name": "Felipe Barros"
-        },
-        {
-          "id": "291325",
-          "name": "Delmiro"
-        },
-        {
-          "id": "45244",
-          "name": "Diogo Silva"
-        },
-        {
-          "id": "182036",
-          "name": "Ubay Luzardo"
-        },
-        {
-          "id": "377006",
-          "name": "Rony"
-        },
-        {
-          "id": "243935",
-          "name": "Diogo Coelho"
-        },
-        {
-          "id": "377237",
-          "name": "Celsinho"
-        },
-        {
-          "id": "130938",
-          "name": "Hugo Ventosa"
+          "name": "Ponck",
+          "position": "Centre-Back",
+          "minutes": 2099
         },
         {
           "id": "250826",
-          "name": "Saeed Al-Mowalad"
+          "name": "Saeed Al-Mowalad",
+          "position": "Right-Back",
+          "minutes": 1465
+        },
+        {
+          "id": "377006",
+          "name": "Rony",
+          "position": "Centre-Back",
+          "minutes": 2074
+        },
+        {
+          "id": "45244",
+          "name": "Diogo Silva",
+          "position": "Centre-Back",
+          "minutes": 1696
+        },
+        {
+          "id": "377237",
+          "name": "Celsinho",
+          "position": "Left-Back",
+          "minutes": 472
+        },
+        {
+          "id": "291325",
+          "name": "Delmiro",
+          "position": "Centre-Back",
+          "minutes": 2698
+        },
+        {
+          "id": "311486",
+          "name": "Felipe Barros",
+          "position": "Centre-Back",
+          "minutes": 2003
+        },
+        {
+          "id": "243935",
+          "name": "Diogo Coelho",
+          "position": "Left-Back",
+          "minutes": 2793
+        },
+        {
+          "id": "130938",
+          "name": "Hugo Ventosa",
+          "position": "Right-Back",
+          "minutes": 2746
+        },
+        {
+          "id": "182036",
+          "name": "Ubay Luzardo",
+          "position": "Centre-Back",
+          "minutes": 1697
         },
         {
           "id": "95429",
-          "name": "Osama Rashid"
-        },
-        {
-          "id": "258388",
-          "name": "Gualter Bilro"
-        },
-        {
-          "id": "402743",
-          "name": "Mohamed Coulibaly"
-        },
-        {
-          "id": "239850",
-          "name": "Tiago Jogo"
-        },
-        {
-          "id": "241546",
-          "name": "Thomas Agyiri"
-        },
-        {
-          "id": "258635",
-          "name": "Bruno Loureiro"
-        },
-        {
-          "id": "272215",
-          "name": "Jota"
-        },
-        {
-          "id": "385114",
-          "name": "André Afonso"
+          "name": "Osama Rashid",
+          "position": "Defensive Midfield",
+          "minutes": 3025
         },
         {
           "id": "210711",
-          "name": "Julián Montenegro"
-        },
-        {
-          "id": "103877",
-          "name": "Márcio Sousa"
-        },
-        {
-          "id": "212923",
-          "name": "Paulo Henrique"
+          "name": "Julián Montenegro",
+          "position": "Attacking Midfield",
+          "minutes": 3
         },
         {
           "id": "256704",
-          "name": "Matthew Silva"
+          "name": "Matthew Silva",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "250682",
-          "name": "Femi Balogun"
+          "id": "258635",
+          "name": "Bruno Loureiro",
+          "position": "Central Midfield",
+          "minutes": 761
         },
         {
-          "id": "194217",
-          "name": "Bruno Carvalho"
+          "id": "402743",
+          "name": "Mohamed Coulibaly",
+          "position": "Defensive Midfield",
+          "minutes": 295
         },
         {
-          "id": "280410",
-          "name": "Harramiz"
+          "id": "241546",
+          "name": "Thomas Agyiri",
+          "position": "Central Midfield",
+          "minutes": 1367
         },
         {
-          "id": "353843",
-          "name": "Iuri Gomes"
+          "id": "385114",
+          "name": "André Afonso",
+          "position": "Left Midfield",
+          "minutes": 389
         },
         {
-          "id": "157884",
-          "name": "Rambé"
+          "id": "258388",
+          "name": "Gualter Bilro",
+          "position": "Defensive Midfield",
+          "minutes": 2136
         },
         {
-          "id": "292348",
-          "name": "Tiago Leonço"
+          "id": "103877",
+          "name": "Márcio Sousa",
+          "position": "Attacking Midfield",
+          "minutes": 1244
         },
         {
-          "id": "213351",
-          "name": "Christian Irobiso"
+          "id": "272215",
+          "name": "Jota",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "50610",
-          "name": "Ramiz Pasiov"
+          "id": "239850",
+          "name": "Tiago Jogo",
+          "position": "Central Midfield",
+          "minutes": 1055
         },
         {
-          "id": "131140",
-          "name": "Edinho Júnior"
-        },
-        {
-          "id": "263120",
-          "name": "Johan Castaño"
+          "id": "212923",
+          "name": "Paulo Henrique",
+          "position": "Attacking Midfield",
+          "minutes": 1229
         },
         {
           "id": "415455",
-          "name": "Sunday Akinbule"
+          "name": "Sunday Akinbule",
+          "position": "Centre-Forward",
+          "minutes": 274
+        },
+        {
+          "id": "213351",
+          "name": "Christian Irobiso",
+          "position": "Centre-Forward",
+          "minutes": 2613
+        },
+        {
+          "id": "292348",
+          "name": "Tiago Leonço",
+          "position": "Centre-Forward",
+          "minutes": 1194
+        },
+        {
+          "id": "50610",
+          "name": "Ramiz Pasiov",
+          "position": "Centre-Forward",
+          "minutes": 470
+        },
+        {
+          "id": "131140",
+          "name": "Edinho Júnior",
+          "position": "Centre-Forward",
+          "minutes": 313
+        },
+        {
+          "id": "263120",
+          "name": "Johan Castaño",
+          "position": "Centre-Forward",
+          "minutes": 106
+        },
+        {
+          "id": "280410",
+          "name": "Harramiz",
+          "position": "Right Winger",
+          "minutes": 3318
+        },
+        {
+          "id": "353843",
+          "name": "Iuri Gomes",
+          "position": "Right Winger",
+          "minutes": 219
+        },
+        {
+          "id": "250682",
+          "name": "Femi Balogun",
+          "position": "Left Winger",
+          "minutes": 874
+        },
+        {
+          "id": "157884",
+          "name": "Rambé",
+          "position": "Centre-Forward",
+          "minutes": 2766
+        },
+        {
+          "id": "194217",
+          "name": "Bruno Carvalho",
+          "position": "Left Winger",
+          "minutes": 526
         }
       ]
     },
@@ -2743,112 +4021,166 @@
       "name": "FC Famalicão",
       "players": [
         {
-          "id": "193304",
-          "name": "José Chastre"
-        },
-        {
           "id": "352934",
-          "name": "Emanuel Novo"
+          "name": "Emanuel Novo",
+          "position": "Goalkeeper",
+          "minutes": 1530
         },
         {
           "id": "35241",
-          "name": "Vítor Murta"
+          "name": "Vítor Murta",
+          "position": "Goalkeeper",
+          "minutes": 1350
         },
         {
-          "id": "34576",
-          "name": "João Pedro"
-        },
-        {
-          "id": "102002",
-          "name": "Luiz Alberto"
+          "id": "193304",
+          "name": "José Chastre",
+          "position": "Goalkeeper",
+          "minutes": 1800
         },
         {
           "id": "321934",
-          "name": "Silvério"
-        },
-        {
-          "id": "134123",
-          "name": "Vilaça"
+          "name": "Silvério",
+          "position": "Centre-Back",
+          "minutes": 2417
         },
         {
           "id": "352100",
-          "name": "João Pedro"
+          "name": "João Pedro",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "134123",
+          "name": "Vilaça",
+          "position": "Centre-Back",
+          "minutes": 1826
         },
         {
           "id": "205122",
-          "name": "Palheiras"
+          "name": "Palheiras",
+          "position": "Centre-Back",
+          "minutes": 38
         },
         {
           "id": "31109",
-          "name": "Vítor Vinha"
-        },
-        {
-          "id": "205120",
-          "name": "Jorge Miguel"
+          "name": "Vítor Vinha",
+          "position": "Left-Back",
+          "minutes": 1853
         },
         {
           "id": "314320",
-          "name": "Daniel Marques"
+          "name": "Daniel Marques",
+          "position": "Right-Back",
+          "minutes": 3222
+        },
+        {
+          "id": "205120",
+          "name": "Jorge Miguel",
+          "position": "Left-Back",
+          "minutes": 2758
+        },
+        {
+          "id": "102002",
+          "name": "Luiz Alberto",
+          "position": "Centre-Back",
+          "minutes": 2104
         },
         {
           "id": "248983",
-          "name": "Joel Monteiro"
+          "name": "Joel Monteiro",
+          "position": "Right-Back",
+          "minutes": 1319
+        },
+        {
+          "id": "34576",
+          "name": "João Pedro",
+          "position": "Centre-Back",
+          "minutes": 2654
         },
         {
           "id": "85861",
-          "name": "Diogo Santos"
-        },
-        {
-          "id": "210871",
-          "name": "Ibraima Só"
-        },
-        {
-          "id": "36631",
-          "name": "Vítor Lima"
+          "name": "Diogo Santos",
+          "position": "Defensive Midfield",
+          "minutes": 2753
         },
         {
           "id": "25173",
-          "name": "Mércio"
-        },
-        {
-          "id": "312848",
-          "name": "Diego Medeiros"
-        },
-        {
-          "id": "159959",
-          "name": "Mauro Alonso"
+          "name": "Mércio",
+          "position": "Central Midfield",
+          "minutes": 3321
         },
         {
           "id": "124382",
-          "name": "Éder Diego"
+          "name": "Éder Diego",
+          "position": "Attacking Midfield",
+          "minutes": 1000
         },
         {
-          "id": "139668",
-          "name": "Amessan"
+          "id": "312848",
+          "name": "Diego Medeiros",
+          "position": "Left Midfield",
+          "minutes": 2632
         },
         {
-          "id": "124688",
-          "name": "João Mendes"
+          "id": "36631",
+          "name": "Vítor Lima",
+          "position": "Defensive Midfield",
+          "minutes": 3537
         },
         {
-          "id": "168672",
-          "name": "Feliz"
+          "id": "159959",
+          "name": "Mauro Alonso",
+          "position": "Attacking Midfield",
+          "minutes": 1280
         },
         {
-          "id": "257139",
-          "name": "Leandro Souza"
-        },
-        {
-          "id": "134125",
-          "name": "Pedro Correia"
+          "id": "210871",
+          "name": "Ibraima Só",
+          "position": "Defensive Midfield",
+          "minutes": 1234
         },
         {
           "id": "45359",
-          "name": "Chico"
+          "name": "Chico",
+          "position": "Centre-Forward",
+          "minutes": 1716
+        },
+        {
+          "id": "124688",
+          "name": "João Mendes",
+          "position": "Right Winger",
+          "minutes": 2549
+        },
+        {
+          "id": "134125",
+          "name": "Pedro Correia",
+          "position": "Centre-Forward",
+          "minutes": 2048
         },
         {
           "id": "210075",
-          "name": "Johan Lengoualama"
+          "name": "Johan Lengoualama",
+          "position": "Centre-Forward",
+          "minutes": 267
+        },
+        {
+          "id": "139668",
+          "name": "Amessan",
+          "position": "Left Winger",
+          "minutes": 728
+        },
+        {
+          "id": "257139",
+          "name": "Leandro Souza",
+          "position": "Centre-Forward",
+          "minutes": 2319
+        },
+        {
+          "id": "168672",
+          "name": "Feliz",
+          "position": "Right Winger",
+          "minutes": 3106
         }
       ]
     },
@@ -2858,151 +4190,225 @@
       "players": [
         {
           "id": "206364",
-          "name": "Ricardo Moura"
+          "name": "Ricardo Moura",
+          "position": "Goalkeeper",
+          "minutes": 4320
         },
         {
           "id": "311064",
-          "name": "Taha Zarei"
+          "name": "Taha Zarei",
+          "position": "Goalkeeper",
+          "minutes": 334
         },
         {
           "id": "361846",
-          "name": "Nuno Pereira"
-        },
-        {
-          "id": "235840",
-          "name": "Pedro Pinto"
-        },
-        {
-          "id": "363778",
-          "name": "Diogo Nunes"
-        },
-        {
-          "id": "269730",
-          "name": "Ximing Pan"
-        },
-        {
-          "id": "34086",
-          "name": "Banjai"
-        },
-        {
-          "id": "353807",
-          "name": "Wellington Nascimento"
-        },
-        {
-          "id": "391192",
-          "name": "Jean-Claude Billong"
-        },
-        {
-          "id": "379718",
-          "name": "Flávio Crista"
-        },
-        {
-          "id": "131126",
-          "name": "João Pedro"
-        },
-        {
-          "id": "123215",
-          "name": "Maksym Lapushenko"
-        },
-        {
-          "id": "296648",
-          "name": "Pedro Tavares"
+          "name": "Nuno Pereira",
+          "position": "Goalkeeper",
+          "minutes": 146
         },
         {
           "id": "256695",
-          "name": "Alemão"
+          "name": "Alemão",
+          "position": "Right-Back",
+          "minutes": 2609
         },
         {
-          "id": "349902",
-          "name": "Caio"
+          "id": "353807",
+          "name": "Wellington Nascimento",
+          "position": "Centre-Back",
+          "minutes": 1177
+        },
+        {
+          "id": "269730",
+          "name": "Ximing Pan",
+          "position": "Centre-Back",
+          "minutes": 311
+        },
+        {
+          "id": "363778",
+          "name": "Diogo Nunes",
+          "position": "Centre-Back",
+          "minutes": 3166
+        },
+        {
+          "id": "131126",
+          "name": "João Pedro",
+          "position": "Left-Back",
+          "minutes": 2943
+        },
+        {
+          "id": "235840",
+          "name": "Pedro Pinto",
+          "position": "Centre-Back",
+          "minutes": 4540
+        },
+        {
+          "id": "123215",
+          "name": "Maksym Lapushenko",
+          "position": "Left-Back",
+          "minutes": 1940
         },
         {
           "id": "149156",
-          "name": "Ryan Hirooka"
+          "name": "Ryan Hirooka",
+          "position": "Right-Back",
+          "minutes": 10
         },
         {
-          "id": "336891",
-          "name": "Sunday Abalo"
+          "id": "34086",
+          "name": "Banjai",
+          "position": "Centre-Back",
+          "minutes": 416
         },
         {
-          "id": "154652",
-          "name": "Merlin Tandjigora"
+          "id": "349902",
+          "name": "Caio",
+          "position": "Right-Back",
+          "minutes": 1517
         },
         {
-          "id": "23307",
-          "name": "Bruno China"
+          "id": "379718",
+          "name": "Flávio Crista",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
-          "id": "265712",
-          "name": "Yuanyi Li"
+          "id": "296648",
+          "name": "Pedro Tavares",
+          "position": "Left-Back",
+          "minutes": 161
         },
         {
-          "id": "235284",
-          "name": "Rui Cardoso"
-        },
-        {
-          "id": "337266",
-          "name": "Rui André"
-        },
-        {
-          "id": "25404",
-          "name": "Malafaia"
-        },
-        {
-          "id": "349903",
-          "name": "Bruno Lamas"
-        },
-        {
-          "id": "23209",
-          "name": "Cadinha"
+          "id": "391192",
+          "name": "Jean-Claude Billong",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "334557",
-          "name": "Chiquinho"
+          "name": "Chiquinho",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "223319",
-          "name": "Mohamed Slim Ben Othman"
+          "id": "349903",
+          "name": "Bruno Lamas",
+          "position": "Attacking Midfield",
+          "minutes": 3718
         },
         {
-          "id": "131122",
-          "name": "André Rateira"
+          "id": "265712",
+          "name": "Yuanyi Li",
+          "position": "Central Midfield",
+          "minutes": 1264
+        },
+        {
+          "id": "23307",
+          "name": "Bruno China",
+          "position": "Central Midfield",
+          "minutes": 1839
+        },
+        {
+          "id": "337266",
+          "name": "Rui André",
+          "position": "Central Midfield",
+          "minutes": 612
+        },
+        {
+          "id": "23209",
+          "name": "Cadinha",
+          "position": "Attacking Midfield",
+          "minutes": 1032
+        },
+        {
+          "id": "25404",
+          "name": "Malafaia",
+          "position": "Central Midfield",
+          "minutes": 2062
+        },
+        {
+          "id": "336891",
+          "name": "Sunday Abalo",
+          "position": "Defensive Midfield",
+          "minutes": 1073
+        },
+        {
+          "id": "154652",
+          "name": "Merlin Tandjigora",
+          "position": "Defensive Midfield",
+          "minutes": 1704
+        },
+        {
+          "id": "235284",
+          "name": "Rui Cardoso",
+          "position": "Central Midfield",
+          "minutes": 789
         },
         {
           "id": "267556",
-          "name": "Shihao Wei"
-        },
-        {
-          "id": "254084",
-          "name": "Yi Guo"
+          "name": "Shihao Wei",
+          "position": "Left Winger",
+          "minutes": 133
         },
         {
           "id": "124170",
-          "name": "Gonçalo Graça"
-        },
-        {
-          "id": "112985",
-          "name": "Jorginho"
-        },
-        {
-          "id": "353615",
-          "name": "Miguel Ângelo"
-        },
-        {
-          "id": "167951",
-          "name": "Ricardo Barros"
-        },
-        {
-          "id": "34953",
-          "name": "Cássio"
+          "name": "Gonçalo Graça",
+          "position": "Right Winger",
+          "minutes": 2972
         },
         {
           "id": "25170",
-          "name": "Pedras"
+          "name": "Pedras",
+          "position": "Centre-Forward",
+          "minutes": 2055
+        },
+        {
+          "id": "353615",
+          "name": "Miguel Ângelo",
+          "position": "Right Winger",
+          "minutes": 585
+        },
+        {
+          "id": "223319",
+          "name": "Mohamed Slim Ben Othman",
+          "position": "Left Winger",
+          "minutes": 631
+        },
+        {
+          "id": "112985",
+          "name": "Jorginho",
+          "position": "Right Winger",
+          "minutes": 394
+        },
+        {
+          "id": "254084",
+          "name": "Yi Guo",
+          "position": "Left Winger",
+          "minutes": 716
+        },
+        {
+          "id": "167951",
+          "name": "Ricardo Barros",
+          "position": "Centre-Forward",
+          "minutes": 3608
+        },
+        {
+          "id": "131122",
+          "name": "André Rateira",
+          "position": "Left Winger",
+          "minutes": 2794
         },
         {
           "id": "366102",
-          "name": "Thierno Niang"
+          "name": "Thierno Niang",
+          "position": "Centre-Forward",
+          "minutes": 378
+        },
+        {
+          "id": "34953",
+          "name": "Cássio",
+          "position": "Centre-Forward",
+          "minutes": 564
         }
       ]
     },
@@ -3011,144 +4417,214 @@
       "name": "CD Santa Clara",
       "players": [
         {
+          "id": "427107",
+          "name": "Rodolfo Cardoso",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
           "id": "13145",
-          "name": "Pedro Freitas"
+          "name": "Pedro Freitas",
+          "position": "Goalkeeper",
+          "minutes": 2790
         },
         {
           "id": "25505",
-          "name": "João Botelho"
+          "name": "João Botelho",
+          "position": "Goalkeeper",
+          "minutes": 1620
         },
         {
           "id": "249958",
-          "name": "Hugo Viveiros"
-        },
-        {
-          "id": "427107",
-          "name": "Rodolfo Cardoso"
-        },
-        {
-          "id": "179025",
-          "name": "Gustavo Carbonieri"
-        },
-        {
-          "id": "198562",
-          "name": "Roberto"
-        },
-        {
-          "id": "56054",
-          "name": "Accioly"
-        },
-        {
-          "id": "393793",
-          "name": "Raoul Delgado"
-        },
-        {
-          "id": "52376",
-          "name": "Igor Rocha"
-        },
-        {
-          "id": "112189",
-          "name": "André Pires"
-        },
-        {
-          "id": "168414",
-          "name": "Gil Barros"
-        },
-        {
-          "id": "85766",
-          "name": "João Dias"
+          "name": "Hugo Viveiros",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "291941",
-          "name": "Carraça"
+          "name": "Carraça",
+          "position": "Right-Back",
+          "minutes": 3050
+        },
+        {
+          "id": "393793",
+          "name": "Raoul Delgado",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "85766",
+          "name": "João Dias",
+          "position": "Right-Back",
+          "minutes": 3845
+        },
+        {
+          "id": "179025",
+          "name": "Gustavo Carbonieri",
+          "position": "Centre-Back",
+          "minutes": 2059
+        },
+        {
+          "id": "56054",
+          "name": "Accioly",
+          "position": "Centre-Back",
+          "minutes": 3813
+        },
+        {
+          "id": "168414",
+          "name": "Gil Barros",
+          "position": "Left-Back",
+          "minutes": 904
+        },
+        {
+          "id": "52376",
+          "name": "Igor Rocha",
+          "position": "Left-Back",
+          "minutes": 3165
         },
         {
           "id": "290290",
-          "name": "Rui Silva"
+          "name": "Rui Silva",
+          "position": "Right-Back",
+          "minutes": 1692
         },
         {
-          "id": "291324",
-          "name": "Jimmy"
+          "id": "198562",
+          "name": "Roberto",
+          "position": "Centre-Back",
+          "minutes": 1784
         },
         {
-          "id": "377606",
-          "name": "Mohamed Al-Shebli"
-        },
-        {
-          "id": "295129",
-          "name": "Patas"
-        },
-        {
-          "id": "69360",
-          "name": "Tiago Ronaldo"
-        },
-        {
-          "id": "25506",
-          "name": "Pedro Pacheco"
-        },
-        {
-          "id": "203037",
-          "name": "Nikola Zugic"
-        },
-        {
-          "id": "248887",
-          "name": "Hugo Rego"
-        },
-        {
-          "id": "124670",
-          "name": "Rúben Saldanha"
-        },
-        {
-          "id": "264980",
-          "name": "Cédric Sanches"
+          "id": "112189",
+          "name": "André Pires",
+          "position": "Left-Back",
+          "minutes": 90
         },
         {
           "id": "377605",
-          "name": "Hamdou El Houni"
+          "name": "Hamdou El Houni",
+          "position": "Attacking Midfield",
+          "minutes": 955
+        },
+        {
+          "id": "291324",
+          "name": "Jimmy",
+          "position": "Defensive Midfield",
+          "minutes": 1381
+        },
+        {
+          "id": "377606",
+          "name": "Mohamed Al-Shebli",
+          "position": "Defensive Midfield",
+          "minutes": 124
+        },
+        {
+          "id": "264980",
+          "name": "Cédric Sanches",
+          "position": "Attacking Midfield",
+          "minutes": 245
         },
         {
           "id": "334972",
-          "name": "Vitinha"
+          "name": "Vitinha",
+          "position": "Attacking Midfield",
+          "minutes": null
         },
         {
-          "id": "239033",
-          "name": "Rafael Batatinha"
+          "id": "25506",
+          "name": "Pedro Pacheco",
+          "position": "Central Midfield",
+          "minutes": 3494
         },
         {
-          "id": "25490",
-          "name": "Hugo Santos"
+          "id": "248887",
+          "name": "Hugo Rego",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "381767",
-          "name": "Lucas Silva"
+          "id": "203037",
+          "name": "Nikola Zugic",
+          "position": "Central Midfield",
+          "minutes": 208
+        },
+        {
+          "id": "124670",
+          "name": "Rúben Saldanha",
+          "position": "Attacking Midfield",
+          "minutes": 1173
+        },
+        {
+          "id": "295129",
+          "name": "Patas",
+          "position": "Defensive Midfield",
+          "minutes": 26
+        },
+        {
+          "id": "69360",
+          "name": "Tiago Ronaldo",
+          "position": "Central Midfield",
+          "minutes": 3619
         },
         {
           "id": "377607",
-          "name": "Muaid Ellafi"
+          "name": "Muaid Ellafi",
+          "position": "Left Winger",
+          "minutes": 219
         },
         {
           "id": "13199",
-          "name": "Davide"
-        },
-        {
-          "id": "249957",
-          "name": "João Ventura"
-        },
-        {
-          "id": "221799",
-          "name": "Reginaldo"
-        },
-        {
-          "id": "59372",
-          "name": "Clemente"
+          "name": "Davide",
+          "position": "Right Winger",
+          "minutes": 493
         },
         {
           "id": "295168",
-          "name": "Marocas"
+          "name": "Marocas",
+          "position": "Centre-Forward",
+          "minutes": 22
         },
         {
           "id": "333601",
-          "name": "Erik Mendes"
+          "name": "Erik Mendes",
+          "position": "Centre-Forward",
+          "minutes": 159
+        },
+        {
+          "id": "59372",
+          "name": "Clemente",
+          "position": "Centre-Forward",
+          "minutes": 3174
+        },
+        {
+          "id": "25490",
+          "name": "Hugo Santos",
+          "position": "Left Winger",
+          "minutes": 2154
+        },
+        {
+          "id": "381767",
+          "name": "Lucas Silva",
+          "position": "Left Winger",
+          "minutes": 1050
+        },
+        {
+          "id": "239033",
+          "name": "Rafael Batatinha",
+          "position": "Left Winger",
+          "minutes": 3470
+        },
+        {
+          "id": "249957",
+          "name": "João Ventura",
+          "position": "Right Winger",
+          "minutes": null
+        },
+        {
+          "id": "221799",
+          "name": "Reginaldo",
+          "position": "Centre-Forward",
+          "minutes": 1557
         }
       ]
     },
@@ -3158,131 +4634,195 @@
       "players": [
         {
           "id": "149650",
-          "name": "Rafael Veloso"
+          "name": "Rafael Veloso",
+          "position": "Goalkeeper",
+          "minutes": 2099
         },
         {
           "id": "131713",
-          "name": "Tiago Mota"
+          "name": "Tiago Mota",
+          "position": "Goalkeeper",
+          "minutes": 2250
         },
         {
           "id": "380558",
-          "name": "Rafael Marques"
-        },
-        {
-          "id": "205052",
-          "name": "Hugo Grilo"
+          "name": "Rafael Marques",
+          "position": "Goalkeeper",
+          "minutes": 450
         },
         {
           "id": "358718",
-          "name": "André Almeida"
-        },
-        {
-          "id": "125515",
-          "name": "Diego Tavares"
-        },
-        {
-          "id": "172938",
-          "name": "Daniel Almeida"
-        },
-        {
-          "id": "124364",
-          "name": "João Pedro"
-        },
-        {
-          "id": "391358",
-          "name": "João Varudo"
-        },
-        {
-          "id": "149722",
-          "name": "Rodolfo Castro"
-        },
-        {
-          "id": "205050",
-          "name": "João Amorim"
-        },
-        {
-          "id": "172919",
-          "name": "Tiago Mota"
+          "name": "André Almeida",
+          "position": "Centre-Back",
+          "minutes": 2633
         },
         {
           "id": "142402",
-          "name": "Édson Silva"
+          "name": "Édson Silva",
+          "position": "Right-Back",
+          "minutes": 180
+        },
+        {
+          "id": "172919",
+          "name": "Tiago Mota",
+          "position": "Right-Back",
+          "minutes": 3203
+        },
+        {
+          "id": "391358",
+          "name": "João Varudo",
+          "position": "Left-Back",
+          "minutes": 711
+        },
+        {
+          "id": "149722",
+          "name": "Rodolfo Castro",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "205050",
+          "name": "João Amorim",
+          "position": "Right-Back",
+          "minutes": 3429
+        },
+        {
+          "id": "172938",
+          "name": "Daniel Almeida",
+          "position": "Centre-Back",
+          "minutes": 873
+        },
+        {
+          "id": "124364",
+          "name": "João Pedro",
+          "position": "Left-Back",
+          "minutes": 3602
+        },
+        {
+          "id": "125515",
+          "name": "Diego Tavares",
+          "position": "Centre-Back",
+          "minutes": 2678
+        },
+        {
+          "id": "205052",
+          "name": "Hugo Grilo",
+          "position": "Centre-Back",
+          "minutes": 4228
         },
         {
           "id": "70415",
-          "name": "Cajú"
-        },
-        {
-          "id": "234773",
-          "name": "Sérgio Duarte"
-        },
-        {
-          "id": "45376",
-          "name": "Júlio César"
-        },
-        {
-          "id": "346471",
-          "name": "Alexandre Rita"
-        },
-        {
-          "id": "14272",
-          "name": "Bruno Aguiar"
+          "name": "Cajú",
+          "position": "Right-Back",
+          "minutes": 630
         },
         {
           "id": "334980",
-          "name": "Tom"
+          "name": "Tom",
+          "position": "Attacking Midfield",
+          "minutes": 3560
+        },
+        {
+          "id": "234773",
+          "name": "Sérgio Duarte",
+          "position": "Defensive Midfield",
+          "minutes": 1186
+        },
+        {
+          "id": "14272",
+          "name": "Bruno Aguiar",
+          "position": "Central Midfield",
+          "minutes": 2148
         },
         {
           "id": "333360",
-          "name": "Valdo Alhinho"
+          "name": "Valdo Alhinho",
+          "position": "Attacking Midfield",
+          "minutes": 2238
+        },
+        {
+          "id": "346471",
+          "name": "Alexandre Rita",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "352851",
-          "name": "Pedro Mendes"
+          "name": "Pedro Mendes",
+          "position": "Attacking Midfield",
+          "minutes": 1117
         },
         {
           "id": "108344",
-          "name": "Thiago Freitas"
+          "name": "Thiago Freitas",
+          "position": "Attacking Midfield",
+          "minutes": 329
+        },
+        {
+          "id": "45376",
+          "name": "Júlio César",
+          "position": "Defensive Midfield",
+          "minutes": 774
         },
         {
           "id": "236537",
-          "name": "Fernando Andrade"
-        },
-        {
-          "id": "118307",
-          "name": "Henrique Gomes"
+          "name": "Fernando Andrade",
+          "position": "Left Winger",
+          "minutes": 2580
         },
         {
           "id": "288696",
-          "name": "Leo Alves"
+          "name": "Leo Alves",
+          "position": "Right Winger",
+          "minutes": 1075
         },
         {
           "id": "316131",
-          "name": "Figo"
-        },
-        {
-          "id": "383618",
-          "name": "Hugo Firmino"
-        },
-        {
-          "id": "118311",
-          "name": "Peter Caraballo"
-        },
-        {
-          "id": "45368",
-          "name": "Carlos Saleiro"
-        },
-        {
-          "id": "22748",
-          "name": "Bernardo Vasconcelos"
-        },
-        {
-          "id": "422742",
-          "name": "João Olavo"
+          "name": "Figo",
+          "position": "Right Winger",
+          "minutes": 457
         },
         {
           "id": "380062",
-          "name": "Gilson Varela"
+          "name": "Gilson Varela",
+          "position": "Centre-Forward",
+          "minutes": 514
+        },
+        {
+          "id": "22748",
+          "name": "Bernardo Vasconcelos",
+          "position": "Centre-Forward",
+          "minutes": 266
+        },
+        {
+          "id": "45368",
+          "name": "Carlos Saleiro",
+          "position": "Centre-Forward",
+          "minutes": 1036
+        },
+        {
+          "id": "383618",
+          "name": "Hugo Firmino",
+          "position": "Centre-Forward",
+          "minutes": 3350
+        },
+        {
+          "id": "118311",
+          "name": "Peter Caraballo",
+          "position": "Centre-Forward",
+          "minutes": 2244
+        },
+        {
+          "id": "118307",
+          "name": "Henrique Gomes",
+          "position": "Right Winger",
+          "minutes": 1884
+        },
+        {
+          "id": "422742",
+          "name": "João Olavo",
+          "position": "Centre-Forward",
+          "minutes": 639
         }
       ]
     },
@@ -3292,135 +4832,201 @@
       "players": [
         {
           "id": "164904",
-          "name": "Mory Diaw"
-        },
-        {
-          "id": "13180",
-          "name": "Filipe Leão"
+          "name": "Mory Diaw",
+          "position": "Goalkeeper",
+          "minutes": 1519
         },
         {
           "id": "276561",
-          "name": "João Godinho"
+          "name": "João Godinho",
+          "position": "Goalkeeper",
+          "minutes": 752
+        },
+        {
+          "id": "13180",
+          "name": "Filipe Leão",
+          "position": "Goalkeeper",
+          "minutes": 2013
         },
         {
           "id": "149724",
-          "name": "André Teixeira"
-        },
-        {
-          "id": "101482",
-          "name": "Rafael Goiano"
-        },
-        {
-          "id": "339475",
-          "name": "Kiki Ballack"
-        },
-        {
-          "id": "79133",
-          "name": "Sandro Silva"
+          "name": "André Teixeira",
+          "position": "Centre-Back",
+          "minutes": 3960
         },
         {
           "id": "276523",
-          "name": "Pengfei Han"
-        },
-        {
-          "id": "138642",
-          "name": "João Afonso"
-        },
-        {
-          "id": "170889",
-          "name": "Jules Diouf"
-        },
-        {
-          "id": "376851",
-          "name": "Bruno Sales"
-        },
-        {
-          "id": "380698",
-          "name": "Mauro Pereira"
-        },
-        {
-          "id": "255238",
-          "name": "Joel Ferreira"
-        },
-        {
-          "id": "127978",
-          "name": "Hugo Costa"
+          "name": "Pengfei Han",
+          "position": "Centre-Back",
+          "minutes": 516
         },
         {
           "id": "140153",
-          "name": "Pedro Caipiro"
+          "name": "Pedro Caipiro",
+          "position": "Right-Back",
+          "minutes": 1095
+        },
+        {
+          "id": "79133",
+          "name": "Sandro Silva",
+          "position": "Centre-Back",
+          "minutes": 2176
+        },
+        {
+          "id": "255238",
+          "name": "Joel Ferreira",
+          "position": "Left-Back",
+          "minutes": 3225
+        },
+        {
+          "id": "339475",
+          "name": "Kiki Ballack",
+          "position": "Centre-Back",
+          "minutes": 2748
+        },
+        {
+          "id": "101482",
+          "name": "Rafael Goiano",
+          "position": "Centre-Back",
+          "minutes": 2802
+        },
+        {
+          "id": "138642",
+          "name": "João Afonso",
+          "position": "Centre-Back",
+          "minutes": 1620
         },
         {
           "id": "276769",
-          "name": "Hugo Monteiro"
+          "name": "Hugo Monteiro",
+          "position": "Right-Back",
+          "minutes": 181
+        },
+        {
+          "id": "376851",
+          "name": "Bruno Sales",
+          "position": "Centre-Back",
+          "minutes": null
+        },
+        {
+          "id": "380698",
+          "name": "Mauro Pereira",
+          "position": "Centre-Back",
+          "minutes": 3
+        },
+        {
+          "id": "127978",
+          "name": "Hugo Costa",
+          "position": "Left-Back",
+          "minutes": 90
+        },
+        {
+          "id": "170889",
+          "name": "Jules Diouf",
+          "position": "Centre-Back",
+          "minutes": 1260
         },
         {
           "id": "167920",
-          "name": "Tiago Costa"
-        },
-        {
-          "id": "345053",
-          "name": "Gouveia"
-        },
-        {
-          "id": "379343",
-          "name": "Fred Lopes"
-        },
-        {
-          "id": "174625",
-          "name": "Leo Tomé"
-        },
-        {
-          "id": "45366",
-          "name": "Laurindo"
-        },
-        {
-          "id": "124464",
-          "name": "Vasco Varão"
+          "name": "Tiago Costa",
+          "position": "Defensive Midfield",
+          "minutes": 1621
         },
         {
           "id": "380696",
-          "name": "Kaká"
+          "name": "Kaká",
+          "position": "Attacking Midfield",
+          "minutes": 1916
+        },
+        {
+          "id": "379343",
+          "name": "Fred Lopes",
+          "position": "Defensive Midfield",
+          "minutes": null
+        },
+        {
+          "id": "174625",
+          "name": "Leo Tomé",
+          "position": "Central Midfield",
+          "minutes": 3322
+        },
+        {
+          "id": "45366",
+          "name": "Laurindo",
+          "position": "Central Midfield",
+          "minutes": 2619
+        },
+        {
+          "id": "124464",
+          "name": "Vasco Varão",
+          "position": "Central Midfield",
+          "minutes": 1819
+        },
+        {
+          "id": "345053",
+          "name": "Gouveia",
+          "position": "Defensive Midfield",
+          "minutes": 72
         },
         {
           "id": "271697",
-          "name": "Érico Júnior"
-        },
-        {
-          "id": "44781",
-          "name": "Luís Carlos"
-        },
-        {
-          "id": "418022",
-          "name": "Abou Touré"
+          "name": "Érico Júnior",
+          "position": "Left Winger",
+          "minutes": 223
         },
         {
           "id": "251986",
-          "name": "Ivan Fidalgo"
-        },
-        {
-          "id": "276770",
-          "name": "Alisson Patrício"
+          "name": "Ivan Fidalgo",
+          "position": "Second Striker",
+          "minutes": 1701
         },
         {
           "id": "92049",
-          "name": "Diogo Ribeiro"
+          "name": "Diogo Ribeiro",
+          "position": "Centre-Forward",
+          "minutes": 508
         },
         {
           "id": "241900",
-          "name": "Mailó"
+          "name": "Mailó",
+          "position": "Centre-Forward",
+          "minutes": 896
+        },
+        {
+          "id": "44781",
+          "name": "Luís Carlos",
+          "position": "Left Winger",
+          "minutes": 1296
         },
         {
           "id": "292293",
-          "name": "Abraham Adelaja"
+          "name": "Abraham Adelaja",
+          "position": "Centre-Forward",
+          "minutes": 1811
         },
         {
-          "id": "333948",
-          "name": "Reza Karamollachaab"
+          "id": "418022",
+          "name": "Abou Touré",
+          "position": "Left Winger",
+          "minutes": 1177
         },
         {
           "id": "373078",
-          "name": "Jorginho"
+          "name": "Jorginho",
+          "position": "Centre-Forward",
+          "minutes": 696
+        },
+        {
+          "id": "276770",
+          "name": "Alisson Patrício",
+          "position": "Second Striker",
+          "minutes": 2713
+        },
+        {
+          "id": "333948",
+          "name": "Reza Karamollachaab",
+          "position": "Centre-Forward",
+          "minutes": null
         }
       ]
     },
@@ -3429,128 +5035,190 @@
       "name": "UD Oliveirense",
       "players": [
         {
-          "id": "164208",
-          "name": "João Pinho"
-        },
-        {
           "id": "24945",
-          "name": "Hélder Godinho"
+          "name": "Hélder Godinho",
+          "position": "Goalkeeper",
+          "minutes": 270
         },
         {
           "id": "394317",
-          "name": "Raphael Mello"
+          "name": "Raphael Mello",
+          "position": "Goalkeeper",
+          "minutes": 270
         },
         {
-          "id": "292489",
-          "name": "Sérgio Silva"
-        },
-        {
-          "id": "205566",
-          "name": "Stéphane Madeira"
-        },
-        {
-          "id": "197759",
-          "name": "Luís Martins"
-        },
-        {
-          "id": "185147",
-          "name": "Nick"
-        },
-        {
-          "id": "235610",
-          "name": "Káká"
-        },
-        {
-          "id": "201713",
-          "name": "Mário Mendonça"
-        },
-        {
-          "id": "59350",
-          "name": "Zé Pedro"
+          "id": "164208",
+          "name": "João Pinho",
+          "position": "Goalkeeper",
+          "minutes": 3865
         },
         {
           "id": "337359",
-          "name": "Ricardo Fazenda"
+          "name": "Ricardo Fazenda",
+          "position": "Right-Back",
+          "minutes": 257
         },
         {
-          "id": "385794",
-          "name": "Bruno Sousa"
+          "id": "292489",
+          "name": "Sérgio Silva",
+          "position": "Centre-Back",
+          "minutes": 3710
         },
         {
           "id": "258242",
-          "name": "Carela"
+          "name": "Carela",
+          "position": "Right-Back",
+          "minutes": 208
+        },
+        {
+          "id": "185147",
+          "name": "Nick",
+          "position": "Centre-Back",
+          "minutes": 90
+        },
+        {
+          "id": "205566",
+          "name": "Stéphane Madeira",
+          "position": "Centre-Back",
+          "minutes": 2219
+        },
+        {
+          "id": "59350",
+          "name": "Zé Pedro",
+          "position": "Right-Back",
+          "minutes": 3960
+        },
+        {
+          "id": "201713",
+          "name": "Mário Mendonça",
+          "position": "Left-Back",
+          "minutes": 2703
+        },
+        {
+          "id": "235610",
+          "name": "Káká",
+          "position": "Left-Back",
+          "minutes": 3005
+        },
+        {
+          "id": "197759",
+          "name": "Luís Martins",
+          "position": "Centre-Back",
+          "minutes": 2394
+        },
+        {
+          "id": "385794",
+          "name": "Bruno Sousa",
+          "position": "Right-Back",
+          "minutes": 405
         },
         {
           "id": "305425",
-          "name": "Guima"
-        },
-        {
-          "id": "82488",
-          "name": "Manuel Godinho"
-        },
-        {
-          "id": "194881",
-          "name": "Micael Babo"
-        },
-        {
-          "id": "352865",
-          "name": "Léléco"
+          "name": "Guima",
+          "position": "Defensive Midfield",
+          "minutes": 2778
         },
         {
           "id": "228943",
-          "name": "Moedas"
+          "name": "Moedas",
+          "position": "Central Midfield",
+          "minutes": 855
+        },
+        {
+          "id": "194881",
+          "name": "Micael Babo",
+          "position": "Central Midfield",
+          "minutes": 2351
         },
         {
           "id": "139476",
-          "name": "Zé Sousa"
-        },
-        {
-          "id": "255292",
-          "name": "João Paulo"
+          "name": "Zé Sousa",
+          "position": "Central Midfield",
+          "minutes": 14
         },
         {
           "id": "258291",
-          "name": "Renan"
+          "name": "Renan",
+          "position": "Attacking Midfield",
+          "minutes": 3381
         },
         {
-          "id": "411450",
-          "name": "Sèrge Brou"
+          "id": "255292",
+          "name": "João Paulo",
+          "position": "Central Midfield",
+          "minutes": 25
         },
         {
-          "id": "388528",
-          "name": "Léo Gama"
+          "id": "352865",
+          "name": "Léléco",
+          "position": "Central Midfield",
+          "minutes": 2511
         },
         {
-          "id": "292491",
-          "name": "Pedro Oliveira"
+          "id": "82488",
+          "name": "Manuel Godinho",
+          "position": "Defensive Midfield",
+          "minutes": 2324
         },
         {
           "id": "406160",
-          "name": "Serginho"
-        },
-        {
-          "id": "414103",
-          "name": "Bruno Amorim"
-        },
-        {
-          "id": "296435",
-          "name": "Ansumane Faty"
-        },
-        {
-          "id": "130913",
-          "name": "Carlitos"
-        },
-        {
-          "id": "197775",
-          "name": "Rafa"
+          "name": "Serginho",
+          "position": "Right Winger",
+          "minutes": 1482
         },
         {
           "id": "295168",
-          "name": "Marocas"
+          "name": "Marocas",
+          "position": "Centre-Forward",
+          "minutes": 1125
+        },
+        {
+          "id": "130913",
+          "name": "Carlitos",
+          "position": "Centre-Forward",
+          "minutes": 1283
+        },
+        {
+          "id": "296435",
+          "name": "Ansumane Faty",
+          "position": "Centre-Forward",
+          "minutes": 977
+        },
+        {
+          "id": "414103",
+          "name": "Bruno Amorim",
+          "position": "Right Winger",
+          "minutes": 140
+        },
+        {
+          "id": "292491",
+          "name": "Pedro Oliveira",
+          "position": "Right Winger",
+          "minutes": 1195
+        },
+        {
+          "id": "411450",
+          "name": "Sèrge Brou",
+          "position": "Left Winger",
+          "minutes": 850
         },
         {
           "id": "388526",
-          "name": "Rodrigo Thompson"
+          "name": "Rodrigo Thompson",
+          "position": "Centre-Forward",
+          "minutes": 1701
+        },
+        {
+          "id": "197775",
+          "name": "Rafa",
+          "position": "Centre-Forward",
+          "minutes": 1984
+        },
+        {
+          "id": "388528",
+          "name": "Léo Gama",
+          "position": "Left Winger",
+          "minutes": 19
         }
       ]
     }

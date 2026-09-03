@@ -8,119 +8,177 @@
       "players": [
         {
           "id": "28293",
-          "name": "Eric Allibert"
+          "name": "Eric Allibert",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "152792",
-          "name": "Stanislaw Karwat"
-        },
-        {
-          "id": "152717",
-          "name": "Brice Barrandon"
-        },
-        {
-          "id": "151418",
-          "name": "Laurent Strzelczak"
-        },
-        {
-          "id": "173762",
-          "name": "Yann Daniélou"
+          "name": "Stanislaw Karwat",
+          "position": "Goalkeeper",
+          "minutes": 3440
         },
         {
           "id": "31467",
-          "name": "Anthony Vosahlo"
+          "name": "Anthony Vosahlo",
+          "position": "Centre-Back",
+          "minutes": 3262
         },
         {
           "id": "5312",
-          "name": "Johnny Ecker"
+          "name": "Johnny Ecker",
+          "position": "Centre-Back",
+          "minutes": 3057
         },
         {
           "id": "23905",
-          "name": "Johann Charpenet"
+          "name": "Johann Charpenet",
+          "position": "Centre-Back",
+          "minutes": 3440
         },
         {
           "id": "111372",
-          "name": "Julien Vellas"
+          "name": "Julien Vellas",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "152717",
+          "name": "Brice Barrandon",
+          "position": "Defender",
+          "minutes": null
         },
         {
           "id": "168515",
-          "name": "Jean-François Soucasse"
+          "name": "Jean-François Soucasse",
+          "position": "Left-Back",
+          "minutes": 1650
+        },
+        {
+          "id": "173762",
+          "name": "Yann Daniélou",
+          "position": "Centre-Back",
+          "minutes": 947
+        },
+        {
+          "id": "151418",
+          "name": "Laurent Strzelczak",
+          "position": "Defender",
+          "minutes": 3484
         },
         {
           "id": "74020",
-          "name": "Mohamed Benyachou"
-        },
-        {
-          "id": "160107",
-          "name": "Julien Leccese"
+          "name": "Mohamed Benyachou",
+          "position": "Right-Back",
+          "minutes": 535
         },
         {
           "id": "20966",
-          "name": "David Friio"
-        },
-        {
-          "id": "152884",
-          "name": "Christophe Zugna"
-        },
-        {
-          "id": "155703",
-          "name": "Omar Belbey"
-        },
-        {
-          "id": "173752",
-          "name": "Fouzi Alidra"
-        },
-        {
-          "id": "168514",
-          "name": "Rémy Loret"
-        },
-        {
-          "id": "160026",
-          "name": "David Darmon"
-        },
-        {
-          "id": "51544",
-          "name": "Laurent de Palmas"
+          "name": "David Friio",
+          "position": "Defensive Midfield",
+          "minutes": 2145
         },
         {
           "id": "3063",
-          "name": "Alain Masudi"
+          "name": "Alain Masudi",
+          "position": "Attacking Midfield",
+          "minutes": 1558
         },
         {
-          "id": "152814",
-          "name": "Nicolas Marx"
+          "id": "51544",
+          "name": "Laurent de Palmas",
+          "position": "Defensive Midfield",
+          "minutes": 442
         },
         {
-          "id": "8318",
-          "name": "Lamine Sakho"
+          "id": "160107",
+          "name": "Julien Leccese",
+          "position": "Midfield",
+          "minutes": null
         },
         {
-          "id": "106852",
-          "name": "Jérôme Lempereur"
+          "id": "152884",
+          "name": "Christophe Zugna",
+          "position": "Defensive Midfield",
+          "minutes": 2023
         },
         {
-          "id": "143715",
-          "name": "Jean-Max Discolle"
+          "id": "155703",
+          "name": "Omar Belbey",
+          "position": "Defensive Midfield",
+          "minutes": 2414
         },
         {
-          "id": "152722",
-          "name": "Karim Benkouar"
+          "id": "173752",
+          "name": "Fouzi Alidra",
+          "position": "Midfield",
+          "minutes": 567
         },
         {
-          "id": "173670",
-          "name": "Franck Bonora"
+          "id": "168514",
+          "name": "Rémy Loret",
+          "position": "Midfield",
+          "minutes": 2041
         },
         {
-          "id": "173704",
-          "name": "Étienne Mendy"
-        },
-        {
-          "id": "151402",
-          "name": "Sébastien Fidani"
+          "id": "160026",
+          "name": "David Darmon",
+          "position": "Midfield",
+          "minutes": 2324
         },
         {
           "id": "13735",
-          "name": "Eric Sabin"
+          "name": "Eric Sabin",
+          "position": "Centre-Forward",
+          "minutes": 1722
+        },
+        {
+          "id": "8318",
+          "name": "Lamine Sakho",
+          "position": "Left Winger",
+          "minutes": 2937
+        },
+        {
+          "id": "106852",
+          "name": "Jérôme Lempereur",
+          "position": "Centre-Forward",
+          "minutes": 1647
+        },
+        {
+          "id": "143715",
+          "name": "Jean-Max Discolle",
+          "position": "Attack",
+          "minutes": null
+        },
+        {
+          "id": "152722",
+          "name": "Karim Benkouar",
+          "position": "Attack",
+          "minutes": null
+        },
+        {
+          "id": "152814",
+          "name": "Nicolas Marx",
+          "position": "Left Winger",
+          "minutes": 1326
+        },
+        {
+          "id": "173670",
+          "name": "Franck Bonora",
+          "position": "Centre-Forward",
+          "minutes": 90
+        },
+        {
+          "id": "173704",
+          "name": "Étienne Mendy",
+          "position": "Centre-Forward",
+          "minutes": 1881
+        },
+        {
+          "id": "151402",
+          "name": "Sébastien Fidani",
+          "position": "Attack",
+          "minutes": 272
         }
       ]
     },
@@ -130,107 +188,159 @@
       "players": [
         {
           "id": "168036",
-          "name": "Xavier Poitrinal"
+          "name": "Xavier Poitrinal",
+          "position": "Goalkeeper",
+          "minutes": 2358
         },
         {
           "id": "173787",
-          "name": "William Levet"
-        },
-        {
-          "id": "173776",
-          "name": "David Gérez"
-        },
-        {
-          "id": "151409",
-          "name": "Mickaël Marolany"
-        },
-        {
-          "id": "149392",
-          "name": "Olivier Frapolli"
-        },
-        {
-          "id": "168037",
-          "name": "Christophe Raymond"
-        },
-        {
-          "id": "173801",
-          "name": "Sébastien Tambouret"
-        },
-        {
-          "id": "151340",
-          "name": "Cyrille Courtin"
-        },
-        {
-          "id": "148227",
-          "name": "Yohan Bouzin"
-        },
-        {
-          "id": "149299",
-          "name": "Franck Haise"
+          "name": "William Levet",
+          "position": "Goalkeeper",
+          "minutes": 1170
         },
         {
           "id": "5721",
-          "name": "Yohan Démont"
+          "name": "Yohan Démont",
+          "position": "Right-Back",
+          "minutes": 447
         },
         {
           "id": "151393",
-          "name": "Fabrice Correia"
+          "name": "Fabrice Correia",
+          "position": "Right-Back",
+          "minutes": 357
         },
         {
-          "id": "173758",
-          "name": "Abdelaziz Boussaïd"
+          "id": "173776",
+          "name": "David Gérez",
+          "position": "Defender",
+          "minutes": 280
         },
         {
-          "id": "173771",
-          "name": "Michel Engel"
+          "id": "148227",
+          "name": "Yohan Bouzin",
+          "position": "Left-Back",
+          "minutes": 2673
         },
         {
-          "id": "138011",
-          "name": "Laurent David"
+          "id": "173801",
+          "name": "Sébastien Tambouret",
+          "position": "Centre-Back",
+          "minutes": 426
         },
         {
-          "id": "168138",
-          "name": "David Ferrère"
+          "id": "151409",
+          "name": "Mickaël Marolany",
+          "position": "Defender",
+          "minutes": 767
+        },
+        {
+          "id": "149392",
+          "name": "Olivier Frapolli",
+          "position": "Defender",
+          "minutes": 2946
+        },
+        {
+          "id": "168037",
+          "name": "Christophe Raymond",
+          "position": "Defender",
+          "minutes": 2360
+        },
+        {
+          "id": "151340",
+          "name": "Cyrille Courtin",
+          "position": "Centre-Back",
+          "minutes": 2533
+        },
+        {
+          "id": "149299",
+          "name": "Franck Haise",
+          "position": "Left-Back",
+          "minutes": 1560
         },
         {
           "id": "45156",
-          "name": "David De Freitas"
+          "name": "David De Freitas",
+          "position": "Defensive Midfield",
+          "minutes": 1568
         },
         {
-          "id": "173765",
-          "name": "Jean-Philippe Delpech"
+          "id": "173758",
+          "name": "Abdelaziz Boussaïd",
+          "position": "Defensive Midfield",
+          "minutes": 222
+        },
+        {
+          "id": "173771",
+          "name": "Michel Engel",
+          "position": "Midfield",
+          "minutes": 1970
+        },
+        {
+          "id": "138011",
+          "name": "Laurent David",
+          "position": "Midfield",
+          "minutes": 3247
+        },
+        {
+          "id": "168138",
+          "name": "David Ferrère",
+          "position": "Midfield",
+          "minutes": 1349
         },
         {
           "id": "159993",
-          "name": "Hervé Hagard"
+          "name": "Hervé Hagard",
+          "position": "Central Midfield",
+          "minutes": 1495
+        },
+        {
+          "id": "173765",
+          "name": "Jean-Philippe Delpech",
+          "position": "Defensive Midfield",
+          "minutes": 2740
         },
         {
           "id": "151403",
-          "name": "Nicolas Girard"
-        },
-        {
-          "id": "167999",
-          "name": "Éric Assadourian"
-        },
-        {
-          "id": "17164",
-          "name": "Eric Groeleken"
+          "name": "Nicolas Girard",
+          "position": "Attacking Midfield",
+          "minutes": 531
         },
         {
           "id": "22641",
-          "name": "Kor Sarr"
+          "name": "Kor Sarr",
+          "position": "Attack",
+          "minutes": 32
+        },
+        {
+          "id": "17164",
+          "name": "Eric Groeleken",
+          "position": "Centre-Forward",
+          "minutes": 848
+        },
+        {
+          "id": "167999",
+          "name": "Éric Assadourian",
+          "position": "Right Winger",
+          "minutes": 3073
         },
         {
           "id": "160091",
-          "name": "Olivier Vandevoorde"
+          "name": "Olivier Vandevoorde",
+          "position": "Attack",
+          "minutes": 1533
         },
         {
           "id": "173766",
-          "name": "Stéphane Demoulin"
+          "name": "Stéphane Demoulin",
+          "position": "Attack",
+          "minutes": 1284
         },
         {
           "id": "173797",
-          "name": "Bruno Roux"
+          "name": "Bruno Roux",
+          "position": "Centre-Forward",
+          "minutes": 1584
         }
       ]
     },
@@ -240,99 +350,147 @@
       "players": [
         {
           "id": "151390",
-          "name": "Eric Bourgois"
+          "name": "Eric Bourgois",
+          "position": "Goalkeeper",
+          "minutes": 45
         },
         {
           "id": "151417",
-          "name": "Jean-Marc Sibille"
-        },
-        {
-          "id": "159990",
-          "name": "Stéphane Dufour"
-        },
-        {
-          "id": "173820",
-          "name": "Fabrice Asencio"
-        },
-        {
-          "id": "152804",
-          "name": "Paul Leroy"
-        },
-        {
-          "id": "168510",
-          "name": "Patrice Scrimenti"
+          "name": "Jean-Marc Sibille",
+          "position": "Goalkeeper",
+          "minutes": 3600
         },
         {
           "id": "29284",
-          "name": "Thierry Cygan"
-        },
-        {
-          "id": "152747",
-          "name": "Sébastien Dailly"
+          "name": "Thierry Cygan",
+          "position": "Centre-Back",
+          "minutes": 1927
         },
         {
           "id": "31059",
-          "name": "Guillaume Benon"
+          "name": "Guillaume Benon",
+          "position": "Centre-Back",
+          "minutes": 3472
+        },
+        {
+          "id": "159990",
+          "name": "Stéphane Dufour",
+          "position": "Defender",
+          "minutes": null
+        },
+        {
+          "id": "173820",
+          "name": "Fabrice Asencio",
+          "position": "Defender",
+          "minutes": 104
+        },
+        {
+          "id": "152804",
+          "name": "Paul Leroy",
+          "position": "Defender",
+          "minutes": 1243
+        },
+        {
+          "id": "152747",
+          "name": "Sébastien Dailly",
+          "position": "Centre-Back",
+          "minutes": 3301
+        },
+        {
+          "id": "168510",
+          "name": "Patrice Scrimenti",
+          "position": "Defender",
+          "minutes": 2722
         },
         {
           "id": "168502",
-          "name": "József Keller"
+          "name": "József Keller",
+          "position": "Left-Back",
+          "minutes": 3168
         },
         {
           "id": "151386",
-          "name": "Jean Antunes"
+          "name": "Jean Antunes",
+          "position": "Midfield",
+          "minutes": 2818
         },
         {
           "id": "168508",
-          "name": "Bruno Rohart"
+          "name": "Bruno Rohart",
+          "position": "Midfield",
+          "minutes": 246
         },
         {
           "id": "151395",
-          "name": "Reynald Debaets"
+          "name": "Reynald Debaets",
+          "position": "Defensive Midfield",
+          "minutes": 2320
         },
         {
           "id": "168495",
-          "name": "Frédéric Cadiou"
+          "name": "Frédéric Cadiou",
+          "position": "Midfield",
+          "minutes": 1967
         },
         {
           "id": "151389",
-          "name": "Laurent Bonadei"
+          "name": "Laurent Bonadei",
+          "position": "Midfield",
+          "minutes": 1923
         },
         {
           "id": "173822",
-          "name": "Léandre Chouya"
+          "name": "Léandre Chouya",
+          "position": "Midfield",
+          "minutes": 695
         },
         {
           "id": "152728",
-          "name": "Steve Bizasène"
+          "name": "Steve Bizasène",
+          "position": "Right Midfield",
+          "minutes": 2650
         },
         {
           "id": "173661",
-          "name": "Denis Abed"
+          "name": "Denis Abed",
+          "position": "Attacking Midfield",
+          "minutes": 1578
         },
         {
           "id": "159999",
-          "name": "Sheriff N'Gom"
+          "name": "Sheriff N'Gom",
+          "position": "Attack",
+          "minutes": null
         },
         {
           "id": "168505",
-          "name": "David Merdy"
+          "name": "David Merdy",
+          "position": "Attack",
+          "minutes": 49
         },
         {
           "id": "173819",
-          "name": "Jean-Jacques Allais"
+          "name": "Jean-Jacques Allais",
+          "position": "Attack",
+          "minutes": 2326
         },
         {
           "id": "152746",
-          "name": "Xavier Dablemont"
+          "name": "Xavier Dablemont",
+          "position": "Attack",
+          "minutes": 1643
         },
         {
           "id": "168496",
-          "name": "Emmanuel Clément-Demange"
+          "name": "Emmanuel Clément-Demange",
+          "position": "Centre-Forward",
+          "minutes": 1504
         },
         {
           "id": "173824",
-          "name": "Chérif Oudjani"
+          "name": "Chérif Oudjani",
+          "position": "Centre-Forward",
+          "minutes": 1170
         }
       ]
     },
@@ -342,95 +500,141 @@
       "players": [
         {
           "id": "5605",
-          "name": "Christophe Eggimann"
+          "name": "Christophe Eggimann",
+          "position": "Goalkeeper",
+          "minutes": 2280
         },
         {
           "id": "167995",
-          "name": "Fabrice Bruneau"
-        },
-        {
-          "id": "174021",
-          "name": "Sébastien Chanal"
-        },
-        {
-          "id": "168028",
-          "name": "Luciano Sergi"
-        },
-        {
-          "id": "174149",
-          "name": "Johan Monnier"
-        },
-        {
-          "id": "168648",
-          "name": "Nicolas Forge"
-        },
-        {
-          "id": "174030",
-          "name": "Denis Valour"
-        },
-        {
-          "id": "174025",
-          "name": "Guillaume Manent"
-        },
-        {
-          "id": "149278",
-          "name": "Benjamin Fabra"
+          "name": "Fabrice Bruneau",
+          "position": "Goalkeeper",
+          "minutes": 1187
         },
         {
           "id": "14957",
-          "name": "Cyril Ramond"
+          "name": "Cyril Ramond",
+          "position": "Left-Back",
+          "minutes": 2111
         },
         {
-          "id": "173620",
-          "name": "Loïc Lambert"
+          "id": "174021",
+          "name": "Sébastien Chanal",
+          "position": "Defender",
+          "minutes": 867
+        },
+        {
+          "id": "168028",
+          "name": "Luciano Sergi",
+          "position": "Defender",
+          "minutes": 2629
+        },
+        {
+          "id": "174149",
+          "name": "Johan Monnier",
+          "position": "Defender",
+          "minutes": 2776
+        },
+        {
+          "id": "168648",
+          "name": "Nicolas Forge",
+          "position": "Defender",
+          "minutes": 2585
+        },
+        {
+          "id": "174030",
+          "name": "Denis Valour",
+          "position": "Defender",
+          "minutes": 988
+        },
+        {
+          "id": "149278",
+          "name": "Benjamin Fabra",
+          "position": "Centre-Back",
+          "minutes": 1154
+        },
+        {
+          "id": "174025",
+          "name": "Guillaume Manent",
+          "position": "Defender",
+          "minutes": 1
         },
         {
           "id": "5676",
-          "name": "Olivier Sorlin"
-        },
-        {
-          "id": "148615",
-          "name": "Cédric Chabert"
+          "name": "Olivier Sorlin",
+          "position": "Defensive Midfield",
+          "minutes": 2904
         },
         {
           "id": "57461",
-          "name": "Mickaël Stéphan"
+          "name": "Mickaël Stéphan",
+          "position": "Defensive Midfield",
+          "minutes": 2093
         },
         {
-          "id": "149259",
-          "name": "Jean-Cyril Bouquet"
-        },
-        {
-          "id": "152882",
-          "name": "Mohamed Zouaoui"
+          "id": "173620",
+          "name": "Loïc Lambert",
+          "position": "Defensive Midfield",
+          "minutes": 1353
         },
         {
           "id": "149329",
-          "name": "Frédéric Machado"
+          "name": "Frédéric Machado",
+          "position": "Attacking Midfield",
+          "minutes": 1349
+        },
+        {
+          "id": "148615",
+          "name": "Cédric Chabert",
+          "position": "Midfield",
+          "minutes": 2874
+        },
+        {
+          "id": "149259",
+          "name": "Jean-Cyril Bouquet",
+          "position": "Midfield",
+          "minutes": 752
+        },
+        {
+          "id": "152882",
+          "name": "Mohamed Zouaoui",
+          "position": "Midfield",
+          "minutes": 293
         },
         {
           "id": "5737",
-          "name": "Romain Angeletti"
+          "name": "Romain Angeletti",
+          "position": "Attack",
+          "minutes": 982
         },
         {
           "id": "16232",
-          "name": "Elie Kroupi"
+          "name": "Elie Kroupi",
+          "position": "Centre-Forward",
+          "minutes": 1054
         },
         {
           "id": "174022",
-          "name": "Laurent Delamontagne"
+          "name": "Laurent Delamontagne",
+          "position": "Centre-Forward",
+          "minutes": 3429
         },
         {
           "id": "174026",
-          "name": "Yves Mangione"
+          "name": "Yves Mangione",
+          "position": "Attack",
+          "minutes": 2021
         },
         {
           "id": "174027",
-          "name": "Marc Maufroy"
+          "name": "Marc Maufroy",
+          "position": "Attack",
+          "minutes": 1845
         },
         {
           "id": "174031",
-          "name": "Michel Wangu"
+          "name": "Michel Wangu",
+          "position": "Centre-Forward",
+          "minutes": 1264
         }
       ]
     },
@@ -440,99 +644,147 @@
       "players": [
         {
           "id": "29301",
-          "name": "Julien Lachuer"
+          "name": "Julien Lachuer",
+          "position": "Goalkeeper",
+          "minutes": 1020
         },
         {
           "id": "168035",
-          "name": "Philippe Poil"
-        },
-        {
-          "id": "174040",
-          "name": "Mamadou Kane"
-        },
-        {
-          "id": "151398",
-          "name": "Jérôme Erceau"
-        },
-        {
-          "id": "151311",
-          "name": "Benoît Maurice"
-        },
-        {
-          "id": "17347",
-          "name": "Alexandre Clément"
-        },
-        {
-          "id": "40008",
-          "name": "Jean-Paul Abalo"
-        },
-        {
-          "id": "5720",
-          "name": "Xavier Collin"
-        },
-        {
-          "id": "168039",
-          "name": "William Rosset"
+          "name": "Philippe Poil",
+          "position": "Goalkeeper",
+          "minutes": 3000
         },
         {
           "id": "57428",
-          "name": "Arnaud Lebrun"
+          "name": "Arnaud Lebrun",
+          "position": "Right-Back",
+          "minutes": 1067
         },
         {
-          "id": "174045",
-          "name": "Samuel Meilley"
+          "id": "17347",
+          "name": "Alexandre Clément",
+          "position": "Centre-Back",
+          "minutes": 740
         },
         {
-          "id": "151436",
-          "name": "David François"
+          "id": "40008",
+          "name": "Jean-Paul Abalo",
+          "position": "Centre-Back",
+          "minutes": 852
         },
         {
-          "id": "148722",
-          "name": "Jérôme Frétard"
+          "id": "5720",
+          "name": "Xavier Collin",
+          "position": "Left-Back",
+          "minutes": 1627
         },
         {
-          "id": "174039",
-          "name": "Ludovic Jumel"
+          "id": "151398",
+          "name": "Jérôme Erceau",
+          "position": "Centre-Back",
+          "minutes": 3686
         },
         {
-          "id": "28321",
-          "name": "Emmanuel Duchemin"
+          "id": "174040",
+          "name": "Mamadou Kane",
+          "position": "Defender",
+          "minutes": 303
         },
         {
-          "id": "174037",
-          "name": "Keffing Dioubaté"
+          "id": "168039",
+          "name": "William Rosset",
+          "position": "Right-Back",
+          "minutes": 1827
         },
         {
-          "id": "168034",
-          "name": "Carlos Pinho"
+          "id": "151311",
+          "name": "Benoît Maurice",
+          "position": "Centre-Back",
+          "minutes": 3647
         },
         {
           "id": "43906",
-          "name": "Oscar Ewolo"
+          "name": "Oscar Ewolo",
+          "position": "Central Midfield",
+          "minutes": 1130
         },
         {
-          "id": "29313",
-          "name": "Allan Petitjean"
+          "id": "28321",
+          "name": "Emmanuel Duchemin",
+          "position": "Defensive Midfield",
+          "minutes": 1274
         },
         {
-          "id": "168033",
-          "name": "Jean-Noël Cabezas"
+          "id": "174045",
+          "name": "Samuel Meilley",
+          "position": "Midfield",
+          "minutes": 2044
+        },
+        {
+          "id": "168034",
+          "name": "Carlos Pinho",
+          "position": "Central Midfield",
+          "minutes": 3402
+        },
+        {
+          "id": "151436",
+          "name": "David François",
+          "position": "Midfield",
+          "minutes": 2876
+        },
+        {
+          "id": "148722",
+          "name": "Jérôme Frétard",
+          "position": "Midfield",
+          "minutes": 2873
+        },
+        {
+          "id": "174039",
+          "name": "Ludovic Jumel",
+          "position": "Defensive Midfield",
+          "minutes": 3503
+        },
+        {
+          "id": "174037",
+          "name": "Keffing Dioubaté",
+          "position": "Midfield",
+          "minutes": 317
         },
         {
           "id": "20237",
-          "name": "Emmanuel Coquelet"
+          "name": "Emmanuel Coquelet",
+          "position": "Centre-Forward",
+          "minutes": 341
+        },
+        {
+          "id": "29313",
+          "name": "Allan Petitjean",
+          "position": "Left Winger",
+          "minutes": 1694
+        },
+        {
+          "id": "168033",
+          "name": "Jean-Noël Cabezas",
+          "position": "Centre-Forward",
+          "minutes": 932
         },
         {
           "id": "151397",
-          "name": "Emmanuel Desgeorges"
+          "name": "Emmanuel Desgeorges",
+          "position": "Centre-Forward",
+          "minutes": 2890
         },
         {
           "id": "102665",
-          "name": "Stéphane Lecocq"
+          "name": "Stéphane Lecocq",
+          "position": "Centre-Forward",
+          "minutes": 400
         },
         {
           "id": "151391",
-          "name": "Xavier Chalier"
+          "name": "Xavier Chalier",
+          "position": "Attack",
+          "minutes": 2637
         }
       ]
     },
@@ -542,111 +794,165 @@
       "players": [
         {
           "id": "25922",
-          "name": "Richard Trivino"
+          "name": "Richard Trivino",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "158109",
-          "name": "Philippe Montanier"
-        },
-        {
-          "id": "173818",
-          "name": "Jean Acédo"
-        },
-        {
-          "id": "12770",
-          "name": "Eric Deloumeaux"
-        },
-        {
-          "id": "173826",
-          "name": "Thierry Saxemard"
-        },
-        {
-          "id": "149368",
-          "name": "Eric Vrielynck"
+          "name": "Philippe Montanier",
+          "position": "Goalkeeper",
+          "minutes": 3360
         },
         {
           "id": "6277",
-          "name": "Steven Pelé"
+          "name": "Steven Pelé",
+          "position": "Centre-Back",
+          "minutes": 60
         },
         {
-          "id": "151424",
-          "name": "Eric Boniface"
-        },
-        {
-          "id": "149411",
-          "name": "Fabien Safanjon"
-        },
-        {
-          "id": "160096",
-          "name": "Mickaël Wolski"
+          "id": "12770",
+          "name": "Eric Deloumeaux",
+          "position": "Defender",
+          "minutes": 2700
         },
         {
           "id": "6275",
-          "name": "Philippe Correia"
+          "name": "Philippe Correia",
+          "position": "Right-Back",
+          "minutes": 2147
+        },
+        {
+          "id": "151424",
+          "name": "Eric Boniface",
+          "position": "Centre-Back",
+          "minutes": 662
+        },
+        {
+          "id": "173818",
+          "name": "Jean Acédo",
+          "position": "Defender",
+          "minutes": 3180
+        },
+        {
+          "id": "149411",
+          "name": "Fabien Safanjon",
+          "position": "Centre-Back",
+          "minutes": 3180
+        },
+        {
+          "id": "173826",
+          "name": "Thierry Saxemard",
+          "position": "Defender",
+          "minutes": 2140
+        },
+        {
+          "id": "149368",
+          "name": "Eric Vrielynck",
+          "position": "Defender",
+          "minutes": 1272
+        },
+        {
+          "id": "160096",
+          "name": "Mickaël Wolski",
+          "position": "Centre-Back",
+          "minutes": 13
         },
         {
           "id": "151393",
-          "name": "Fabrice Correia"
-        },
-        {
-          "id": "160097",
-          "name": "Mohamed Zaoui"
-        },
-        {
-          "id": "173825",
-          "name": "Florian Rossin"
-        },
-        {
-          "id": "160095",
-          "name": "Fabien Weber"
-        },
-        {
-          "id": "149344",
-          "name": "Sylvain Poinçon"
-        },
-        {
-          "id": "168354",
-          "name": "Yannick Chandioux"
-        },
-        {
-          "id": "5625",
-          "name": "Stéphane Roda"
-        },
-        {
-          "id": "142562",
-          "name": "Alain Bettagno"
+          "name": "Fabrice Correia",
+          "position": "Right-Back",
+          "minutes": 263
         },
         {
           "id": "22754",
-          "name": "Karim Kerkar"
+          "name": "Karim Kerkar",
+          "position": "Attacking Midfield",
+          "minutes": 1564
+        },
+        {
+          "id": "5625",
+          "name": "Stéphane Roda",
+          "position": "Midfield",
+          "minutes": 1811
+        },
+        {
+          "id": "160097",
+          "name": "Mohamed Zaoui",
+          "position": "Midfield",
+          "minutes": 24
+        },
+        {
+          "id": "173825",
+          "name": "Florian Rossin",
+          "position": "Defensive Midfield",
+          "minutes": 93
+        },
+        {
+          "id": "160095",
+          "name": "Fabien Weber",
+          "position": "Defensive Midfield",
+          "minutes": 2671
+        },
+        {
+          "id": "149344",
+          "name": "Sylvain Poinçon",
+          "position": "Defensive Midfield",
+          "minutes": 1695
+        },
+        {
+          "id": "168354",
+          "name": "Yannick Chandioux",
+          "position": "Midfield",
+          "minutes": 1314
+        },
+        {
+          "id": "142562",
+          "name": "Alain Bettagno",
+          "position": "Right Midfield",
+          "minutes": 2000
         },
         {
           "id": "168499",
-          "name": "Guy G'Badié"
-        },
-        {
-          "id": "129839",
-          "name": "Nicolas Esceth-N'Zi"
-        },
-        {
-          "id": "151355",
-          "name": "Amara Traoré"
-        },
-        {
-          "id": "160023",
-          "name": "Kamar Cherrad"
-        },
-        {
-          "id": "168353",
-          "name": "Youssef Chaddi"
+          "name": "Guy G'Badié",
+          "position": "Attacking Midfield",
+          "minutes": 1298
         },
         {
           "id": "23901",
-          "name": "Mansour Boutabout"
+          "name": "Mansour Boutabout",
+          "position": "Centre-Forward",
+          "minutes": 267
+        },
+        {
+          "id": "151355",
+          "name": "Amara Traoré",
+          "position": "Centre-Forward",
+          "minutes": 897
+        },
+        {
+          "id": "160023",
+          "name": "Kamar Cherrad",
+          "position": "Attack",
+          "minutes": 1748
+        },
+        {
+          "id": "129839",
+          "name": "Nicolas Esceth-N'Zi",
+          "position": "Right Winger",
+          "minutes": 1496
+        },
+        {
+          "id": "168353",
+          "name": "Youssef Chaddi",
+          "position": "Attack",
+          "minutes": 270
         },
         {
           "id": "152771",
-          "name": "Sylvain Flauto"
+          "name": "Sylvain Flauto",
+          "position": "Attack",
+          "minutes": 1636
         }
       ]
     },
@@ -656,115 +962,171 @@
       "players": [
         {
           "id": "6269",
-          "name": "Olivier Pédémas"
+          "name": "Olivier Pédémas",
+          "position": "Goalkeeper",
+          "minutes": 255
         },
         {
           "id": "21178",
-          "name": "Rodolphe Roche"
+          "name": "Rodolphe Roche",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "149298",
-          "name": "Frédéric Gueguen"
-        },
-        {
-          "id": "160066",
-          "name": "Franck Moulin"
-        },
-        {
-          "id": "168001",
-          "name": "Karim El-Khebir"
-        },
-        {
-          "id": "17436",
-          "name": "Laurent Morestin"
-        },
-        {
-          "id": "3931",
-          "name": "Olivier Tébily"
+          "name": "Frédéric Gueguen",
+          "position": "Goalkeeper",
+          "minutes": 3525
         },
         {
           "id": "21171",
-          "name": "Marc Giraudon"
+          "name": "Marc Giraudon",
+          "position": "Left-Back",
+          "minutes": 97
         },
         {
-          "id": "6804",
-          "name": "Ludovic Clément"
-        },
-        {
-          "id": "12095",
-          "name": "Schumann Bah"
+          "id": "17436",
+          "name": "Laurent Morestin",
+          "position": "Centre-Back",
+          "minutes": 3510
         },
         {
           "id": "3794",
-          "name": "Ferdinand Coly"
+          "name": "Ferdinand Coly",
+          "position": "Right-Back",
+          "minutes": 3186
         },
         {
-          "id": "151341",
-          "name": "Laurent Debrosse"
+          "id": "6804",
+          "name": "Ludovic Clément",
+          "position": "Left-Back",
+          "minutes": 2503
         },
         {
-          "id": "124816",
-          "name": "Fabrice Garin"
+          "id": "12095",
+          "name": "Schumann Bah",
+          "position": "Left-Back",
+          "minutes": 1830
         },
         {
-          "id": "13757",
-          "name": "Mathieu Verschuère"
+          "id": "3931",
+          "name": "Olivier Tébily",
+          "position": "Centre-Back",
+          "minutes": 346
         },
         {
-          "id": "160022",
-          "name": "Pierre Chavrondier"
+          "id": "160066",
+          "name": "Franck Moulin",
+          "position": "Defender",
+          "minutes": 2203
         },
         {
-          "id": "160094",
-          "name": "David Voisin"
-        },
-        {
-          "id": "20221",
-          "name": "Alain Behi"
-        },
-        {
-          "id": "160027",
-          "name": "Cédric Daury"
-        },
-        {
-          "id": "167997",
-          "name": "Raphaël Guerreiro"
-        },
-        {
-          "id": "132589",
-          "name": "Jérôme Brocard"
+          "id": "168001",
+          "name": "Karim El-Khebir",
+          "position": "Defender",
+          "minutes": 1015
         },
         {
           "id": "17693",
-          "name": "Sébastien Roudet"
+          "name": "Sébastien Roudet",
+          "position": "Attacking Midfield",
+          "minutes": 173
+        },
+        {
+          "id": "13757",
+          "name": "Matthieu Verschuère",
+          "position": "Defensive Midfield",
+          "minutes": 3104
         },
         {
           "id": "10299",
-          "name": "Damir Cakar"
+          "name": "Damir Cakar",
+          "position": "Attacking Midfield",
+          "minutes": 285
         },
         {
-          "id": "5461",
-          "name": "Florent Malouda"
+          "id": "160027",
+          "name": "Cédric Daury",
+          "position": "Central Midfield",
+          "minutes": 2301
         },
         {
-          "id": "173652",
-          "name": "Jason Mayélé"
+          "id": "20221",
+          "name": "Alain Behi",
+          "position": "Defensive Midfield",
+          "minutes": 1932
         },
         {
-          "id": "152836",
-          "name": "Réginald Ray"
+          "id": "151341",
+          "name": "Laurent Debrosse",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "167997",
+          "name": "Raphaël Guerreiro",
+          "position": "Central Midfield",
+          "minutes": 1504
+        },
+        {
+          "id": "124816",
+          "name": "Fabrice Garin",
+          "position": "Defensive Midfield",
+          "minutes": 1389
+        },
+        {
+          "id": "160022",
+          "name": "Pierre Chavrondier",
+          "position": "Midfield",
+          "minutes": 879
+        },
+        {
+          "id": "160094",
+          "name": "David Voisin",
+          "position": "Midfield",
+          "minutes": 119
+        },
+        {
+          "id": "132589",
+          "name": "Jérôme Brocard",
+          "position": "Right Midfield",
+          "minutes": 1049
         },
         {
           "id": "28323",
-          "name": "Laurent Dufresne"
+          "name": "Laurent Dufresne",
+          "position": "Centre-Forward",
+          "minutes": 2484
         },
         {
           "id": "57523",
-          "name": "Frédéric Fouret"
+          "name": "Frédéric Fouret",
+          "position": "Centre-Forward",
+          "minutes": 1124
         },
         {
           "id": "17420",
-          "name": "Lilian Compan"
+          "name": "Lilian Compan",
+          "position": "Centre-Forward",
+          "minutes": 2067
+        },
+        {
+          "id": "173652",
+          "name": "Jason Mayélé",
+          "position": "Second Striker",
+          "minutes": 1862
+        },
+        {
+          "id": "5461",
+          "name": "Florent Malouda",
+          "position": "Left Winger",
+          "minutes": 1798
+        },
+        {
+          "id": "152836",
+          "name": "Réginald Ray",
+          "position": "Centre-Forward",
+          "minutes": 804
         }
       ]
     },
@@ -774,135 +1136,201 @@
       "players": [
         {
           "id": "15896",
-          "name": "Willy Guéret"
+          "name": "Willy Guéret",
+          "position": "Goalkeeper",
+          "minutes": 810
         },
         {
           "id": "23969",
-          "name": "Patrick Regnault"
-        },
-        {
-          "id": "173796",
-          "name": "Frédéric Rivière"
-        },
-        {
-          "id": "173793",
-          "name": "Christian Penaud"
-        },
-        {
-          "id": "6272",
-          "name": "Willy Bolivard"
-        },
-        {
-          "id": "6278",
-          "name": "Yoann Poulard"
-        },
-        {
-          "id": "21961",
-          "name": "Jules Tchimbakala"
-        },
-        {
-          "id": "57537",
-          "name": "Sébastien Mazeyrat"
-        },
-        {
-          "id": "6271",
-          "name": "Denis Arnaud"
+          "name": "Patrick Regnault",
+          "position": "Goalkeeper",
+          "minutes": 3180
         },
         {
           "id": "23898",
-          "name": "Laurent Bonnart"
+          "name": "Laurent Bonnart",
+          "position": "Right-Back",
+          "minutes": null
+        },
+        {
+          "id": "57537",
+          "name": "Sébastien Mazeyrat",
+          "position": "Left-Back",
+          "minutes": 90
+        },
+        {
+          "id": "6271",
+          "name": "Denis Arnaud",
+          "position": "Left-Back",
+          "minutes": 3772
+        },
+        {
+          "id": "6272",
+          "name": "Willy Bolivard",
+          "position": "Centre-Back",
+          "minutes": 2968
+        },
+        {
+          "id": "6278",
+          "name": "Yoann Poulard",
+          "position": "Centre-Back",
+          "minutes": 1148
+        },
+        {
+          "id": "21961",
+          "name": "Jules Tchimbakala",
+          "position": "Left-Back",
+          "minutes": 797
+        },
+        {
+          "id": "173796",
+          "name": "Frédéric Rivière",
+          "position": "Defender",
+          "minutes": 10
+        },
+        {
+          "id": "173793",
+          "name": "Christian Penaud",
+          "position": "Defender",
+          "minutes": 2804
         },
         {
           "id": "168358",
-          "name": "David Fanzel"
-        },
-        {
-          "id": "23927",
-          "name": "Christophe Freitas"
-        },
-        {
-          "id": "31093",
-          "name": "Maxime Poisson"
-        },
-        {
-          "id": "159989",
-          "name": "Nicolas Dordevic"
-        },
-        {
-          "id": "173775",
-          "name": "Éric Garcin"
-        },
-        {
-          "id": "173756",
-          "name": "Régis Beunardeau"
-        },
-        {
-          "id": "151399",
-          "name": "Jean-Luc Escayol"
-        },
-        {
-          "id": "152838",
-          "name": "Cyril Revillet"
-        },
-        {
-          "id": "173757",
-          "name": "Vincent Bordot"
-        },
-        {
-          "id": "18712",
-          "name": "David Camara"
+          "name": "David Fanzel",
+          "position": "Right-Back",
+          "minutes": 3608
         },
         {
           "id": "16989",
-          "name": "Yohan Hautcoeur"
+          "name": "Yohan Hautcoeur",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "23927",
+          "name": "Christophe Freitas",
+          "position": "Midfield",
+          "minutes": 10
         },
         {
           "id": "23979",
-          "name": "Frédéric Thomas"
+          "name": "Frédéric Thomas",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
-          "id": "6259",
-          "name": "Jérôme Drouin"
-        },
-        {
-          "id": "29294",
-          "name": "Mohamed Haddadou"
+          "id": "31093",
+          "name": "Maxime Poisson",
+          "position": "Defensive Midfield",
+          "minutes": 435
         },
         {
           "id": "28315",
-          "name": "Émerick Darbelet"
+          "name": "Émerick Darbelet",
+          "position": "Left Midfield",
+          "minutes": 2238
         },
         {
-          "id": "23924",
-          "name": "James Fanchone"
+          "id": "18712",
+          "name": "David Camara",
+          "position": "Midfield",
+          "minutes": 2102
+        },
+        {
+          "id": "29294",
+          "name": "Mohamed Haddadou",
+          "position": "Right Midfield",
+          "minutes": 2711
+        },
+        {
+          "id": "159989",
+          "name": "Nicolas Dordevic",
+          "position": "Defensive Midfield",
+          "minutes": 197
+        },
+        {
+          "id": "173775",
+          "name": "Éric Garcin",
+          "position": "Defensive Midfield",
+          "minutes": 259
+        },
+        {
+          "id": "6259",
+          "name": "Jérôme Drouin",
+          "position": "Central Midfield",
+          "minutes": 2435
+        },
+        {
+          "id": "173756",
+          "name": "Régis Beunardeau",
+          "position": "Midfield",
+          "minutes": 2401
+        },
+        {
+          "id": "151399",
+          "name": "Jean-Luc Escayol",
+          "position": "Defensive Midfield",
+          "minutes": 2006
+        },
+        {
+          "id": "152838",
+          "name": "Cyril Revillet",
+          "position": "Midfield",
+          "minutes": 3287
+        },
+        {
+          "id": "173757",
+          "name": "Vincent Bordot",
+          "position": "Midfield",
+          "minutes": 60
         },
         {
           "id": "3924",
-          "name": "Didier Drogba"
+          "name": "Didier Drogba",
+          "position": "Centre-Forward",
+          "minutes": 45
         },
         {
-          "id": "152836",
-          "name": "Réginald Ray"
+          "id": "23924",
+          "name": "James Fanchone",
+          "position": "Right Winger",
+          "minutes": 60
         },
         {
           "id": "3905",
-          "name": "Dagui Bakari"
+          "name": "Dagui Bakari",
+          "position": "Centre-Forward",
+          "minutes": 2826
+        },
+        {
+          "id": "152836",
+          "name": "Réginald Ray",
+          "position": "Centre-Forward",
+          "minutes": 1540
         },
         {
           "id": "173761",
-          "name": "Benoît Chagnaud"
+          "name": "Benoît Chagnaud",
+          "position": "Attack",
+          "minutes": 1393
         },
         {
           "id": "173777",
-          "name": "David Giguel"
+          "name": "David Giguel",
+          "position": "Attack",
+          "minutes": 220
         },
         {
           "id": "173774",
-          "name": "Thomas Forest"
+          "name": "Thomas Forest",
+          "position": "Attack",
+          "minutes": 345
         },
         {
           "id": "109733",
-          "name": "Gilles Fabien"
+          "name": "Gilles Fabien",
+          "position": "Centre-Forward",
+          "minutes": 17
         }
       ]
     },
@@ -912,103 +1340,153 @@
       "players": [
         {
           "id": "111489",
-          "name": "Jérôme Hiaumet"
+          "name": "Jérôme Hiaumet",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "45125",
-          "name": "Fabrice Catherine"
-        },
-        {
-          "id": "159997",
-          "name": "Richard Lecour"
-        },
-        {
-          "id": "168511",
-          "name": "Yoann Terrien"
-        },
-        {
-          "id": "20675",
-          "name": "Jean-Philippe Caillet"
-        },
-        {
-          "id": "22631",
-          "name": "Jimmy Hébert"
-        },
-        {
-          "id": "92359",
-          "name": "Milos Glonek"
-        },
-        {
-          "id": "5641",
-          "name": "Grégory Tafforeau"
-        },
-        {
-          "id": "149263",
-          "name": "David Charrièras"
-        },
-        {
-          "id": "152720",
-          "name": "Olivier Bellisi"
-        },
-        {
-          "id": "168501",
-          "name": "Salem Harchèche"
+          "name": "Fabrice Catherine",
+          "position": "Goalkeeper",
+          "minutes": 3630
         },
         {
           "id": "3707",
-          "name": "Bernard Mendy"
+          "name": "Bernard Mendy",
+          "position": "Right-Back",
+          "minutes": 186
         },
         {
-          "id": "109603",
-          "name": "Stéphane Tanguy"
+          "id": "5641",
+          "name": "Grégory Tafforeau",
+          "position": "Left-Back",
+          "minutes": 1387
         },
         {
-          "id": "111776",
-          "name": "Arnaud Tanguy"
+          "id": "20675",
+          "name": "Jean-Philippe Caillet",
+          "position": "Centre-Back",
+          "minutes": 3283
         },
         {
-          "id": "23928",
-          "name": "Johan Gallon"
+          "id": "22631",
+          "name": "Jimmy Hébert",
+          "position": "Centre-Back",
+          "minutes": 2427
         },
         {
-          "id": "5300",
-          "name": "Jérôme Rothen"
+          "id": "149263",
+          "name": "David Charrièras",
+          "position": "Left-Back",
+          "minutes": 397
         },
         {
-          "id": "91396",
-          "name": "Tarik Kharif"
+          "id": "159997",
+          "name": "Richard Lecour",
+          "position": "Defender",
+          "minutes": 2987
         },
         {
-          "id": "160100",
-          "name": "Régis Brouard"
+          "id": "152720",
+          "name": "Olivier Bellisi",
+          "position": "Left-Back",
+          "minutes": 1696
+        },
+        {
+          "id": "92359",
+          "name": "Milos Glonek",
+          "position": "Centre-Back",
+          "minutes": 3022
+        },
+        {
+          "id": "168511",
+          "name": "Yoann Terrien",
+          "position": "Defender",
+          "minutes": 52
+        },
+        {
+          "id": "168501",
+          "name": "Salem Harchèche",
+          "position": "Left-Back",
+          "minutes": 835
         },
         {
           "id": "22629",
-          "name": "Anthony Deroin"
+          "name": "Anthony Deroin",
+          "position": "Attacking Midfield",
+          "minutes": 1773
+        },
+        {
+          "id": "23928",
+          "name": "Johan Gallon",
+          "position": "Central Midfield",
+          "minutes": 2878
+        },
+        {
+          "id": "5300",
+          "name": "Jérôme Rothen",
+          "position": "Left Midfield",
+          "minutes": 3166
+        },
+        {
+          "id": "160100",
+          "name": "Régis Brouard",
+          "position": "Attacking Midfield",
+          "minutes": 2636
+        },
+        {
+          "id": "109603",
+          "name": "Stéphane Tanguy",
+          "position": "Defensive Midfield",
+          "minutes": 2071
+        },
+        {
+          "id": "111776",
+          "name": "Arnaud Tanguy",
+          "position": "Midfield",
+          "minutes": 206
         },
         {
           "id": "8813",
-          "name": "Kamel Ouejdide"
-        },
-        {
-          "id": "168763",
-          "name": "Roland Guéla"
+          "name": "Kamel Ouejdide",
+          "position": "Centre-Forward",
+          "minutes": 58
         },
         {
           "id": "29282",
-          "name": "Samuel Boutal"
+          "name": "Samuel Boutal",
+          "position": "Centre-Forward",
+          "minutes": 2999
+        },
+        {
+          "id": "91396",
+          "name": "Tarik Kharif",
+          "position": "Left Winger",
+          "minutes": 583
+        },
+        {
+          "id": "168763",
+          "name": "Roland Guéla",
+          "position": "Centre-Forward",
+          "minutes": 92
         },
         {
           "id": "160004",
-          "name": "Faride Soudani"
+          "name": "Faride Soudani",
+          "position": "Centre-Forward",
+          "minutes": 300
         },
         {
           "id": "152806",
-          "name": "William Loko"
+          "name": "William Loko",
+          "position": "Attack",
+          "minutes": 1400
         },
         {
           "id": "168140",
-          "name": "Stéphane Lemarchand"
+          "name": "Stéphane Lemarchand",
+          "position": "Attack",
+          "minutes": 1730
         }
       ]
     },
@@ -1017,112 +1495,166 @@
       "name": "Chamois Niortais FC",
       "players": [
         {
-          "id": "149401",
-          "name": "Pascal Landais"
-        },
-        {
           "id": "5632",
-          "name": "Grégory Malicki"
+          "name": "Grégory Malicki",
+          "position": "Goalkeeper",
+          "minutes": 3540
         },
         {
-          "id": "28338",
-          "name": "Mickaël Lauret"
-        },
-        {
-          "id": "151388",
-          "name": "Eric Berberian"
-        },
-        {
-          "id": "173754",
-          "name": "Benoît Beaumet"
-        },
-        {
-          "id": "151302",
-          "name": "Arnaud Bertheux"
-        },
-        {
-          "id": "173755",
-          "name": "Bastien Bernard"
+          "id": "149401",
+          "name": "Pascal Landais",
+          "position": "Goalkeeper",
+          "minutes": 180
         },
         {
           "id": "28350",
-          "name": "Mathieu Texier"
-        },
-        {
-          "id": "149409",
-          "name": "Bertrand Piton"
+          "name": "Mathieu Texier",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "31063",
-          "name": "Pascal Braud"
+          "name": "Pascal Braud",
+          "position": "Centre-Back",
+          "minutes": 3177
         },
         {
-          "id": "168021",
-          "name": "Hervé Lhommedet"
+          "id": "28338",
+          "name": "Mickaël Lauret",
+          "position": "Defender",
+          "minutes": 670
         },
         {
           "id": "6273",
-          "name": "Damien Bridonneau"
+          "name": "Damien Bridonneau",
+          "position": "Right-Back",
+          "minutes": 1262
         },
         {
-          "id": "45089",
-          "name": "David Le Frapper"
+          "id": "151388",
+          "name": "Eric Berberian",
+          "position": "Defender",
+          "minutes": null
         },
         {
-          "id": "28296",
-          "name": "Franck Azzopardi"
+          "id": "173754",
+          "name": "Benoît Beaumet",
+          "position": "Sweeper",
+          "minutes": 2795
         },
         {
-          "id": "173779",
-          "name": "Paulo Gomes"
+          "id": "151302",
+          "name": "Arnaud Bertheux",
+          "position": "Defender",
+          "minutes": 54
         },
         {
-          "id": "151341",
-          "name": "Laurent Debrosse"
+          "id": "149409",
+          "name": "Bertrand Piton",
+          "position": "Centre-Back",
+          "minutes": 3046
         },
         {
-          "id": "173798",
-          "name": "Hervé Schreiner"
+          "id": "173755",
+          "name": "Bastien Bernard",
+          "position": "Defender",
+          "minutes": 116
         },
         {
-          "id": "21169",
-          "name": "Armindo Ferreira"
+          "id": "168021",
+          "name": "Hervé Lhommedet",
+          "position": "Centre-Back",
+          "minutes": 2019
         },
         {
           "id": "16083",
-          "name": "Alberto Queiros"
+          "name": "Alberto Queiros",
+          "position": "Right Midfield",
+          "minutes": 34
         },
         {
-          "id": "152730",
-          "name": "Joël Bossis"
+          "id": "45089",
+          "name": "David Le Frapper",
+          "position": "Midfield",
+          "minutes": 3411
         },
         {
-          "id": "21608",
-          "name": "Ousmane Bangoura"
+          "id": "21169",
+          "name": "Armindo Ferreira",
+          "position": "Right Midfield",
+          "minutes": 3542
+        },
+        {
+          "id": "28296",
+          "name": "Franck Azzopardi",
+          "position": "Defensive Midfield",
+          "minutes": 1456
+        },
+        {
+          "id": "173779",
+          "name": "Paulo Gomes",
+          "position": "Midfield",
+          "minutes": 848
+        },
+        {
+          "id": "151341",
+          "name": "Laurent Debrosse",
+          "position": "Midfield",
+          "minutes": 2612
+        },
+        {
+          "id": "173798",
+          "name": "Hervé Schreiner",
+          "position": "Defensive Midfield",
+          "minutes": 1091
         },
         {
           "id": "5329",
-          "name": "Cyril Chapuis"
+          "name": "Cyril Chapuis",
+          "position": "Centre-Forward",
+          "minutes": 78
         },
         {
           "id": "6261",
-          "name": "Daniel Cousin"
-        },
-        {
-          "id": "149262",
-          "name": "Philippe Chanlot"
-        },
-        {
-          "id": "173759",
-          "name": "Cyril Cassèse"
-        },
-        {
-          "id": "173782",
-          "name": "Mickaël James"
+          "name": "Daniel Cousin",
+          "position": "Centre-Forward",
+          "minutes": 1417
         },
         {
           "id": "12587",
-          "name": "Mark de Vries"
+          "name": "Mark de Vries",
+          "position": "Centre-Forward",
+          "minutes": 682
+        },
+        {
+          "id": "21608",
+          "name": "Ousmane Bangoura",
+          "position": "Right Winger",
+          "minutes": 1776
+        },
+        {
+          "id": "152730",
+          "name": "Joël Bossis",
+          "position": "Left Winger",
+          "minutes": 3499
+        },
+        {
+          "id": "149262",
+          "name": "Philippe Chanlot",
+          "position": "Centre-Forward",
+          "minutes": 2702
+        },
+        {
+          "id": "173759",
+          "name": "Cyril Cassèse",
+          "position": "Attack",
+          "minutes": 619
+        },
+        {
+          "id": "173782",
+          "name": "Mickaël James",
+          "position": "Attack",
+          "minutes": 105
         }
       ]
     },
@@ -1132,127 +1664,189 @@
       "players": [
         {
           "id": "5525",
-          "name": "Bruno Valencony"
+          "name": "Bruno Valencony",
+          "position": "Goalkeeper",
+          "minutes": 2146
         },
         {
           "id": "5309",
-          "name": "Damien Grégorini"
-        },
-        {
-          "id": "111299",
-          "name": "Mickaël Rol"
-        },
-        {
-          "id": "152864",
-          "name": "Frédéric Tatarian"
-        },
-        {
-          "id": "173714",
-          "name": "Youssef Salimi"
-        },
-        {
-          "id": "3052",
-          "name": "Didier Angan"
-        },
-        {
-          "id": "23930",
-          "name": "Antony Gauvin"
-        },
-        {
-          "id": "132590",
-          "name": "Cédric Carrez"
-        },
-        {
-          "id": "5527",
-          "name": "Kelly Berville"
-        },
-        {
-          "id": "3004",
-          "name": "Bill Tchato"
+          "name": "Damien Grégorini",
+          "position": "Goalkeeper",
+          "minutes": 1800
         },
         {
           "id": "5284",
-          "name": "Éric Cubilier"
+          "name": "Éric Cubilier",
+          "position": "Right-Back",
+          "minutes": 37
         },
         {
-          "id": "173672",
-          "name": "Bruno Calégari"
+          "id": "5527",
+          "name": "Kelly Berville",
+          "position": "Left-Back",
+          "minutes": 615
+        },
+        {
+          "id": "3052",
+          "name": "Didier Angan",
+          "position": "Centre-Back",
+          "minutes": 1837
+        },
+        {
+          "id": "23930",
+          "name": "Antony Gauvin",
+          "position": "Centre-Back",
+          "minutes": 1200
+        },
+        {
+          "id": "3004",
+          "name": "Bill Tchato",
+          "position": "Left-Back",
+          "minutes": 3395
         },
         {
           "id": "5541",
-          "name": "Thibault Scotto"
+          "name": "Thibault Scotto",
+          "position": "Right-Back",
+          "minutes": 635
         },
         {
-          "id": "5538",
-          "name": "Manuel Nogueira"
+          "id": "173714",
+          "name": "Youssef Salimi",
+          "position": "Centre-Back",
+          "minutes": 446
         },
         {
-          "id": "168241",
-          "name": "Frédéric Gioria"
+          "id": "173672",
+          "name": "Bruno Calégari",
+          "position": "Right-Back",
+          "minutes": 1618
         },
         {
-          "id": "168252",
-          "name": "Henri Savini"
+          "id": "111299",
+          "name": "Mickaël Rol",
+          "position": "Defender",
+          "minutes": 1517
         },
         {
-          "id": "5534",
-          "name": "Madjid Ben Haddou"
+          "id": "152864",
+          "name": "Frédéric Tatarian",
+          "position": "Defender",
+          "minutes": 3769
         },
         {
-          "id": "21170",
-          "name": "Karim Fradin"
-        },
-        {
-          "id": "174020",
-          "name": "Patrice Alberganti"
-        },
-        {
-          "id": "168249",
-          "name": "Stéphane Roche"
+          "id": "132590",
+          "name": "Cédric Carrez",
+          "position": "Centre-Back",
+          "minutes": 2349
         },
         {
           "id": "5540",
-          "name": "Pablo Rodríguez"
+          "name": "Pablo Rodríguez",
+          "position": "Attacking Midfield",
+          "minutes": 1224
+        },
+        {
+          "id": "5538",
+          "name": "Manuel Nogueira",
+          "position": "Midfield",
+          "minutes": 2797
         },
         {
           "id": "5533",
-          "name": "Dominique Aulanier"
+          "name": "Dominique Aulanier",
+          "position": "Attacking Midfield",
+          "minutes": 3449
+        },
+        {
+          "id": "21170",
+          "name": "Karim Fradin",
+          "position": "Defensive Midfield",
+          "minutes": 973
+        },
+        {
+          "id": "168241",
+          "name": "Frédéric Gioria",
+          "position": "Midfield",
+          "minutes": 1790
+        },
+        {
+          "id": "168252",
+          "name": "Henri Savini",
+          "position": "Midfield",
+          "minutes": 924
+        },
+        {
+          "id": "5534",
+          "name": "Madjid Ben Haddou",
+          "position": "Defensive Midfield",
+          "minutes": 655
+        },
+        {
+          "id": "174020",
+          "name": "Patrice Alberganti",
+          "position": "Midfield",
+          "minutes": 279
+        },
+        {
+          "id": "168249",
+          "name": "Stéphane Roche",
+          "position": "Central Midfield",
+          "minutes": 1638
         },
         {
           "id": "5546",
-          "name": "Abdelmalek Cherrad"
-        },
-        {
-          "id": "149345",
-          "name": "Lionel Prat"
-        },
-        {
-          "id": "168243",
-          "name": "Alon Mizrahi"
-        },
-        {
-          "id": "168248",
-          "name": "Franck Pottier"
-        },
-        {
-          "id": "13769",
-          "name": "Stefan Kohn"
-        },
-        {
-          "id": "160009",
-          "name": "David Andréani"
-        },
-        {
-          "id": "173625",
-          "name": "Laurent Sachy"
+          "name": "Abdelmalek Cherrad",
+          "position": "Centre-Forward",
+          "minutes": 120
         },
         {
           "id": "5547",
-          "name": "Amadou Mané"
+          "name": "Amadou Mané",
+          "position": "Centre-Forward",
+          "minutes": 1943
+        },
+        {
+          "id": "149345",
+          "name": "Lionel Prat",
+          "position": "Centre-Forward",
+          "minutes": 1760
+        },
+        {
+          "id": "168243",
+          "name": "Alon Mizrahi",
+          "position": "Centre-Forward",
+          "minutes": 1112
+        },
+        {
+          "id": "168248",
+          "name": "Franck Pottier",
+          "position": "Attack",
+          "minutes": 314
+        },
+        {
+          "id": "13769",
+          "name": "Stefan Kohn",
+          "position": "Centre-Forward",
+          "minutes": 495
+        },
+        {
+          "id": "160009",
+          "name": "David Andréani",
+          "position": "Attack",
+          "minutes": 1700
+        },
+        {
+          "id": "173625",
+          "name": "Laurent Sachy",
+          "position": "Centre-Forward",
+          "minutes": 343
         },
         {
           "id": "173724",
-          "name": "Franco Vignola"
+          "name": "Franco Vignola",
+          "position": "Attack",
+          "minutes": 459
         }
       ]
     },
@@ -1261,140 +1855,208 @@
       "name": "AS Red Star 93",
       "players": [
         {
-          "id": "173823",
-          "name": "Jean-Philippe Forêt"
-        },
-        {
           "id": "5470",
-          "name": "Charles Itandje"
+          "name": "Charles Itandje",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "129796",
-          "name": "Gilbert Bayiha"
+          "name": "Gilbert Bayiha",
+          "position": "Goalkeeper",
+          "minutes": null
+        },
+        {
+          "id": "173823",
+          "name": "Jean-Philippe Forêt",
+          "position": "Goalkeeper",
+          "minutes": 1200
         },
         {
           "id": "173712",
-          "name": "Sébastien Renaud"
+          "name": "Sébastien Renaud",
+          "position": "Goalkeeper",
+          "minutes": 450
         },
         {
           "id": "111212",
-          "name": "Stéphane Lucas"
-        },
-        {
-          "id": "173817",
-          "name": "David Guion"
-        },
-        {
-          "id": "61555",
-          "name": "Camille Oponga"
-        },
-        {
-          "id": "149343",
-          "name": "Mickaël Pizzo"
+          "name": "Stéphane Lucas",
+          "position": "Goalkeeper",
+          "minutes": 2070
         },
         {
           "id": "5315",
-          "name": "Abdoulaye Méïté"
-        },
-        {
-          "id": "26189",
-          "name": "Samba Diawara"
-        },
-        {
-          "id": "173815",
-          "name": "David Giraudo"
-        },
-        {
-          "id": "155968",
-          "name": "Michaël Natchimie"
-        },
-        {
-          "id": "156908",
-          "name": "Guillaume Bouisset"
-        },
-        {
-          "id": "173692",
-          "name": "Kwami Hodouto"
-        },
-        {
-          "id": "173813",
-          "name": "Frédéric Darras"
+          "name": "Abdoulaye Méïté",
+          "position": "Centre-Back",
+          "minutes": 360
         },
         {
           "id": "17422",
-          "name": "Fousseni Diawara"
+          "name": "Fousseni Diawara",
+          "position": "Right-Back",
+          "minutes": null
+        },
+        {
+          "id": "26189",
+          "name": "Samba Diawara",
+          "position": "Centre-Back",
+          "minutes": 1140
+        },
+        {
+          "id": "155968",
+          "name": "Michaël Natchimie",
+          "position": "Left-Back",
+          "minutes": null
+        },
+        {
+          "id": "173692",
+          "name": "Kwami Hodouto",
+          "position": "Right-Back",
+          "minutes": 773
+        },
+        {
+          "id": "173817",
+          "name": "David Guion",
+          "position": "Defender",
+          "minutes": 2829
+        },
+        {
+          "id": "156908",
+          "name": "Guillaume Bouisset",
+          "position": "Left-Back",
+          "minutes": 3172
+        },
+        {
+          "id": "61555",
+          "name": "Camille Oponga",
+          "position": "Defender",
+          "minutes": 2888
+        },
+        {
+          "id": "173813",
+          "name": "Frédéric Darras",
+          "position": "Right-Back",
+          "minutes": 2680
+        },
+        {
+          "id": "173815",
+          "name": "David Giraudo",
+          "position": "Centre-Back",
+          "minutes": 941
+        },
+        {
+          "id": "149343",
+          "name": "Mickaël Pizzo",
+          "position": "Defender",
+          "minutes": 92
         },
         {
           "id": "17421",
-          "name": "Damien Deom"
-        },
-        {
-          "id": "149246",
-          "name": "Walid Aïchour"
-        },
-        {
-          "id": "173812",
-          "name": "Franck Busuttil"
-        },
-        {
-          "id": "151335",
-          "name": "Joël André"
-        },
-        {
-          "id": "152748",
-          "name": "Jean-Yves De Blasiis"
-        },
-        {
-          "id": "5611",
-          "name": "Vincent Doukantie"
-        },
-        {
-          "id": "22446",
-          "name": "Karim Fellahi"
-        },
-        {
-          "id": "111215",
-          "name": "Fabien Valeri"
+          "name": "Damien Deom",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "5401",
-          "name": "Stéphane Crucet"
+          "name": "Stéphane Crucet",
+          "position": "Left Midfield",
+          "minutes": 2288
+        },
+        {
+          "id": "22446",
+          "name": "Karim Fellahi",
+          "position": "Right Midfield",
+          "minutes": 995
+        },
+        {
+          "id": "5611",
+          "name": "Vincent Doukantie",
+          "position": "Defensive Midfield",
+          "minutes": 53
+        },
+        {
+          "id": "149246",
+          "name": "Walid Aïchour",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "173812",
+          "name": "Franck Busuttil",
+          "position": "Midfield",
+          "minutes": 567
+        },
+        {
+          "id": "151335",
+          "name": "Joël André",
+          "position": "Midfield",
+          "minutes": 2957
+        },
+        {
+          "id": "152748",
+          "name": "Jean-Yves De Blasiis",
+          "position": "Defensive Midfield",
+          "minutes": 2893
+        },
+        {
+          "id": "111215",
+          "name": "Fabien Valeri",
+          "position": "Left Midfield",
+          "minutes": 2224
         },
         {
           "id": "152703",
-          "name": "Ted Agasson"
+          "name": "Ted Agasson",
+          "position": "Attacking Midfield",
+          "minutes": 2609
         },
         {
           "id": "173810",
-          "name": "Flórián Albert Jr."
-        },
-        {
-          "id": "6053",
-          "name": "Diomansy Kamara"
-        },
-        {
-          "id": "28342",
-          "name": "Samuel Michel"
+          "name": "Flórián Albert Jr.",
+          "position": "Attacking Midfield",
+          "minutes": 344
         },
         {
           "id": "5463",
-          "name": "Hakim Saci"
+          "name": "Hakim Saci",
+          "position": "Centre-Forward",
+          "minutes": 810
         },
         {
-          "id": "160004",
-          "name": "Faride Soudani"
+          "id": "6053",
+          "name": "Diomansy Kamara",
+          "position": "Right Winger",
+          "minutes": null
         },
         {
-          "id": "173811",
-          "name": "Aziz Belissaoui"
+          "id": "28342",
+          "name": "Samuel Michel",
+          "position": "Centre-Forward",
+          "minutes": 1677
         },
         {
           "id": "25116",
-          "name": "Guilherme Mauricio"
+          "name": "Guilherme Mauricio",
+          "position": "Centre-Forward",
+          "minutes": 2783
+        },
+        {
+          "id": "160004",
+          "name": "Faride Soudani",
+          "position": "Centre-Forward",
+          "minutes": 173
+        },
+        {
+          "id": "173811",
+          "name": "Aziz Belissaoui",
+          "position": "Attack",
+          "minutes": 127
         },
         {
           "id": "173670",
-          "name": "Franck Bonora"
+          "name": "Franck Bonora",
+          "position": "Centre-Forward",
+          "minutes": 1752
         }
       ]
     },
@@ -1404,87 +2066,129 @@
       "players": [
         {
           "id": "45105",
-          "name": "David Klein"
+          "name": "David Klein",
+          "position": "Goalkeeper",
+          "minutes": 2970
         },
         {
           "id": "153002",
-          "name": "Thibault Maqua"
-        },
-        {
-          "id": "174034",
-          "name": "Abdelhalim Bibi"
-        },
-        {
-          "id": "167965",
-          "name": "Olivier Féron"
-        },
-        {
-          "id": "167964",
-          "name": "Pierre Maroselli"
-        },
-        {
-          "id": "152742",
-          "name": "Eric Colling"
+          "name": "Thibault Maqua",
+          "position": "Goalkeeper",
+          "minutes": 540
         },
         {
           "id": "57363",
-          "name": "Philippe Burle"
+          "name": "Philippe Burle",
+          "position": "Centre-Back",
+          "minutes": 2989
+        },
+        {
+          "id": "174034",
+          "name": "Abdelhalim Bibi",
+          "position": "Defender",
+          "minutes": 1179
+        },
+        {
+          "id": "167965",
+          "name": "Olivier Féron",
+          "position": "Defender",
+          "minutes": 2793
+        },
+        {
+          "id": "167964",
+          "name": "Pierre Maroselli",
+          "position": "Defender",
+          "minutes": 2324
+        },
+        {
+          "id": "152742",
+          "name": "Eric Colling",
+          "position": "Defender",
+          "minutes": 2997
         },
         {
           "id": "69775",
-          "name": "Sacha Opinel"
-        },
-        {
-          "id": "173676",
-          "name": "Olivier De Luca"
-        },
-        {
-          "id": "167966",
-          "name": "Didier Lelong"
-        },
-        {
-          "id": "167967",
-          "name": "Olivier Pantaloni"
-        },
-        {
-          "id": "174032",
-          "name": "Ernst Atis-Clotaire"
-        },
-        {
-          "id": "160006",
-          "name": "Yohan Toursel"
-        },
-        {
-          "id": "5727",
-          "name": "Cyril Granon"
+          "name": "Sacha Opinel",
+          "position": "Left-Back",
+          "minutes": 726
         },
         {
           "id": "22403",
-          "name": "Laurent Courtois"
+          "name": "Laurent Courtois",
+          "position": "Left Midfield",
+          "minutes": 1867
         },
         {
           "id": "5642",
-          "name": "Nicolas Bonnal"
+          "name": "Nicolas Bonnal",
+          "position": "Left Midfield",
+          "minutes": 2260
         },
         {
-          "id": "174036",
-          "name": "Fabrice Deiana"
+          "id": "5727",
+          "name": "Cyril Granon",
+          "position": "Defensive Midfield",
+          "minutes": 2497
+        },
+        {
+          "id": "173676",
+          "name": "Olivier De Luca",
+          "position": "Defensive Midfield",
+          "minutes": 1762
+        },
+        {
+          "id": "167966",
+          "name": "Didier Lelong",
+          "position": "Midfield",
+          "minutes": 645
+        },
+        {
+          "id": "167967",
+          "name": "Olivier Pantaloni",
+          "position": "Midfield",
+          "minutes": 1697
+        },
+        {
+          "id": "174032",
+          "name": "Ernst Atis-Clotaire",
+          "position": "Midfield",
+          "minutes": 547
+        },
+        {
+          "id": "160006",
+          "name": "Yohan Toursel",
+          "position": "Midfield",
+          "minutes": 2576
         },
         {
           "id": "5738",
-          "name": "David Faderne"
-        },
-        {
-          "id": "160000",
-          "name": "Vincent Petit"
+          "name": "David Faderne",
+          "position": "Centre-Forward",
+          "minutes": 3124
         },
         {
           "id": "4178",
-          "name": "Dado Prso"
+          "name": "Dado Prso",
+          "position": "Centre-Forward",
+          "minutes": 2514
+        },
+        {
+          "id": "174036",
+          "name": "Fabrice Deiana",
+          "position": "Attack",
+          "minutes": 20
+        },
+        {
+          "id": "160000",
+          "name": "Vincent Petit",
+          "position": "Centre-Forward",
+          "minutes": 2351
         },
         {
           "id": "174047",
-          "name": "Jean-Roch Testa"
+          "name": "Jean-Roch Testa",
+          "position": "Attack",
+          "minutes": 102
         }
       ]
     },
@@ -1493,112 +2197,166 @@
       "name": "Association Troyes Aube Champagne",
       "players": [
         {
-          "id": "158087",
-          "name": "Nicolas Dehon"
+          "id": "22400",
+          "name": "Laurent Weber",
+          "position": "Goalkeeper",
+          "minutes": 3840
         },
         {
-          "id": "22400",
-          "name": "Laurent Weber"
+          "id": "158087",
+          "name": "Nicolas Dehon",
+          "position": "Goalkeeper",
+          "minutes": 360
         },
         {
           "id": "23937",
-          "name": "Richard Jezierski"
-        },
-        {
-          "id": "158097",
-          "name": "Yannick Lalisse"
-        },
-        {
-          "id": "173794",
-          "name": "Cyril De Barros"
-        },
-        {
-          "id": "155695",
-          "name": "Édouard Thomas"
-        },
-        {
-          "id": "173679",
-          "name": "Olivier Deso"
-        },
-        {
-          "id": "138313",
-          "name": "Mohamed Bradja"
-        },
-        {
-          "id": "47904",
-          "name": "Alexandre Jeannin"
+          "name": "Richard Jezierski",
+          "position": "Defender",
+          "minutes": 3732
         },
         {
           "id": "22404",
-          "name": "David Hamed"
+          "name": "David Hamed",
+          "position": "Right-Back",
+          "minutes": 3069
         },
         {
-          "id": "173789",
-          "name": "Loutfi Mahdaoui"
+          "id": "47904",
+          "name": "Alexandre Jeannin",
+          "position": "Left-Back",
+          "minutes": 90
+        },
+        {
+          "id": "158097",
+          "name": "Yannick Lalisse",
+          "position": "Defender",
+          "minutes": 1026
+        },
+        {
+          "id": "173794",
+          "name": "Cyril De Barros",
+          "position": "Defender",
+          "minutes": 113
+        },
+        {
+          "id": "155695",
+          "name": "Édouard Thomas",
+          "position": "Defender",
+          "minutes": 3844
+        },
+        {
+          "id": "138313",
+          "name": "Mohamed Bradja",
+          "position": "Centre-Back",
+          "minutes": 1903
+        },
+        {
+          "id": "173679",
+          "name": "Olivier Deso",
+          "position": "Defender",
+          "minutes": 48
         },
         {
           "id": "6256",
-          "name": "Jacques-Désiré Périatambée"
+          "name": "Jacques-Désiré Périatambée",
+          "position": "Defensive Midfield",
+          "minutes": 1008
         },
         {
           "id": "12100",
-          "name": "Stéphane Morisot"
-        },
-        {
-          "id": "158090",
-          "name": "Olivier Fugen"
+          "name": "Stéphane Morisot",
+          "position": "Defensive Midfield",
+          "minutes": 3944
         },
         {
           "id": "33908",
-          "name": "Frédéric Adam"
-        },
-        {
-          "id": "151411",
-          "name": "Jérôme Monier"
-        },
-        {
-          "id": "152840",
-          "name": "Emmanuel Rival"
+          "name": "Frédéric Adam",
+          "position": "Defensive Midfield",
+          "minutes": 3130
         },
         {
           "id": "12984",
-          "name": "Claude-Arnaud Rivenet"
+          "name": "Claude-Arnaud Rivenet",
+          "position": "Right Midfield",
+          "minutes": 3075
+        },
+        {
+          "id": "173789",
+          "name": "Loutfi Mahdaoui",
+          "position": "Midfield",
+          "minutes": 10
+        },
+        {
+          "id": "158090",
+          "name": "Olivier Fugen",
+          "position": "Defensive Midfield",
+          "minutes": 1493
         },
         {
           "id": "173768",
-          "name": "Alain Durand"
+          "name": "Alain Durand",
+          "position": "Attacking Midfield",
+          "minutes": 175
         },
         {
           "id": "173764",
-          "name": "Nicolas De la Quintinie"
+          "name": "Nicolas De la Quintinie",
+          "position": "Attacking Midfield",
+          "minutes": 377
         },
         {
-          "id": "152756",
-          "name": "Sladjan Djukic"
+          "id": "151411",
+          "name": "Jérôme Monier",
+          "position": "Midfield",
+          "minutes": 2557
+        },
+        {
+          "id": "152840",
+          "name": "Emmanuel Rival",
+          "position": "Defensive Midfield",
+          "minutes": 3595
         },
         {
           "id": "45654",
-          "name": "Djima Oyawolé"
+          "name": "Djima Oyawolé",
+          "position": "Centre-Forward",
+          "minutes": 486
         },
         {
           "id": "158101",
-          "name": "Samuel Lobé"
+          "name": "Samuel Lobé",
+          "position": "Centre-Forward",
+          "minutes": 1088
         },
         {
           "id": "173786",
-          "name": "Cédric Lamotte"
+          "name": "Cédric Lamotte",
+          "position": "Attack",
+          "minutes": 127
         },
         {
           "id": "160088",
-          "name": "Laurent Tomczyk"
+          "name": "Laurent Tomczyk",
+          "position": "Attack",
+          "minutes": 2218
+        },
+        {
+          "id": "152756",
+          "name": "Sladjan Djukic",
+          "position": "Second Striker",
+          "minutes": 2745
         },
         {
           "id": "152708",
-          "name": "Richard Akiana"
+          "name": "Richard Akiana",
+          "position": "Centre-Forward",
+          "minutes": 919
         },
         {
           "id": "168033",
-          "name": "Jean-Noël Cabezas"
+          "name": "Jean-Noël Cabezas",
+          "position": "Centre-Forward",
+          "minutes": 1186
         }
       ]
     },
@@ -1607,120 +2365,178 @@
       "name": "LOSC Lille",
       "players": [
         {
-          "id": "167996",
-          "name": "Bruno Clément"
-        },
-        {
           "id": "5634",
-          "name": "Grégory Wimbée"
+          "name": "Grégory Wimbée",
+          "position": "Goalkeeper",
+          "minutes": 3150
         },
         {
-          "id": "155746",
-          "name": "Riad Hammadou"
+          "id": "167996",
+          "name": "Bruno Clément",
+          "position": "Goalkeeper",
+          "minutes": 630
         },
         {
           "id": "3193",
-          "name": "Pascal Cygan"
-        },
-        {
-          "id": "129828",
-          "name": "Fabien Leclercq"
-        },
-        {
-          "id": "33930",
-          "name": "Gaël Sanz"
-        },
-        {
-          "id": "12728",
-          "name": "Frédéric Dindeleux"
-        },
-        {
-          "id": "150531",
-          "name": "Adick Koot"
-        },
-        {
-          "id": "33933",
-          "name": "Carl Tourenne"
+          "name": "Pascal Cygan",
+          "position": "Centre-Back",
+          "minutes": 1980
         },
         {
           "id": "4236",
-          "name": "Mohamed Camara"
+          "name": "Mohamed Camara",
+          "position": "Left-Back",
+          "minutes": 3329
         },
         {
-          "id": "160007",
-          "name": "Frédéric Viseux"
+          "id": "33930",
+          "name": "Gaël Sanz",
+          "position": "Centre-Back",
+          "minutes": 1296
+        },
+        {
+          "id": "12728",
+          "name": "Frédéric Dindeleux",
+          "position": "Centre-Back",
+          "minutes": 1037
+        },
+        {
+          "id": "33933",
+          "name": "Carl Tourenne",
+          "position": "Centre-Back",
+          "minutes": 2957
         },
         {
           "id": "12877",
-          "name": "Alain Raguel"
+          "name": "Alain Raguel",
+          "position": "Right-Back",
+          "minutes": 857
         },
         {
-          "id": "168005",
-          "name": "Bob Sénoussi"
+          "id": "160007",
+          "name": "Frédéric Viseux",
+          "position": "Right-Back",
+          "minutes": 394
+        },
+        {
+          "id": "129828",
+          "name": "Fabien Leclercq",
+          "position": "Centre-Back",
+          "minutes": 1433
+        },
+        {
+          "id": "155746",
+          "name": "Riad Hammadou",
+          "position": "Defender",
+          "minutes": 952
+        },
+        {
+          "id": "150531",
+          "name": "Adick Koot",
+          "position": "Centre-Back",
+          "minutes": 2306
         },
         {
           "id": "28313",
-          "name": "David Coulibaly"
-        },
-        {
-          "id": "18415",
-          "name": "Mehdi Makhloufi"
-        },
-        {
-          "id": "173851",
-          "name": "Neném"
-        },
-        {
-          "id": "173691",
-          "name": "Roger Hitoto"
-        },
-        {
-          "id": "151204",
-          "name": "Patrick Collot"
+          "name": "David Coulibaly",
+          "position": "Defensive Midfield",
+          "minutes": 538
         },
         {
           "id": "3602",
-          "name": "Bruno Cheyrou"
+          "name": "Bruno Cheyrou",
+          "position": "Central Midfield",
+          "minutes": 2039
         },
         {
           "id": "5647",
-          "name": "Christophe Landrin"
-        },
-        {
-          "id": "173567",
-          "name": "Franck Renou"
+          "name": "Christophe Landrin",
+          "position": "Central Midfield",
+          "minutes": 947
         },
         {
           "id": "15988",
-          "name": "Stéphane Noro"
+          "name": "Stéphane Noro",
+          "position": "Attacking Midfield",
+          "minutes": 230
         },
         {
-          "id": "15275",
-          "name": "Geoffrey Dernis"
+          "id": "18415",
+          "name": "Mehdi Makhloufi",
+          "position": "Defensive Midfield",
+          "minutes": 19
         },
         {
-          "id": "12608",
-          "name": "Jean-Louis Valois"
+          "id": "173691",
+          "name": "Roger Hitoto",
+          "position": "Central Midfield",
+          "minutes": 1973
+        },
+        {
+          "id": "168005",
+          "name": "Bob Sénoussi",
+          "position": "Defensive Midfield",
+          "minutes": 1679
+        },
+        {
+          "id": "151204",
+          "name": "Patrick Collot",
+          "position": "Central Midfield",
+          "minutes": 1850
+        },
+        {
+          "id": "173567",
+          "name": "Franck Renou",
+          "position": "Attacking Midfield",
+          "minutes": 704
+        },
+        {
+          "id": "173851",
+          "name": "Neném",
+          "position": "Midfield",
+          "minutes": 420
         },
         {
           "id": "23968",
-          "name": "Laurent Peyrelade"
+          "name": "Laurent Peyrelade",
+          "position": "Centre-Forward",
+          "minutes": 2459
         },
         {
-          "id": "158101",
-          "name": "Samuel Lobé"
+          "id": "12608",
+          "name": "Jean-Louis Valois",
+          "position": "Right Winger",
+          "minutes": 2416
         },
         {
-          "id": "151459",
-          "name": "Olivier Pickeu"
+          "id": "15275",
+          "name": "Geoffrey Dernis",
+          "position": "Left Winger",
+          "minutes": 127
         },
         {
           "id": "5651",
-          "name": "Djezon Boutoille"
+          "name": "Djezon Boutoille",
+          "position": "Centre-Forward",
+          "minutes": 2819
+        },
+        {
+          "id": "158101",
+          "name": "Samuel Lobé",
+          "position": "Centre-Forward",
+          "minutes": 374
+        },
+        {
+          "id": "151459",
+          "name": "Olivier Pickeu",
+          "position": "Centre-Forward",
+          "minutes": 2375
         },
         {
           "id": "160035",
-          "name": "Rudy Giublesi"
+          "name": "Rudy Giublesi",
+          "position": "Attack",
+          "minutes": 228
         }
       ]
     },
@@ -1730,91 +2546,135 @@
       "players": [
         {
           "id": "155598",
-          "name": "Nicolas Sachy"
-        },
-        {
-          "id": "156996",
-          "name": "Christophe Jouault"
-        },
-        {
-          "id": "149413",
-          "name": "Luis Satorra"
-        },
-        {
-          "id": "174014",
-          "name": "Jean-Michel Luciani"
+          "name": "Nicolas Sachy",
+          "position": "Goalkeeper",
+          "minutes": 4020
         },
         {
           "id": "14109",
-          "name": "Eduardo Oliveira"
-        },
-        {
-          "id": "79913",
-          "name": "Christophe Borbiconi"
+          "name": "Eduardo Oliveira",
+          "position": "Centre-Back",
+          "minutes": 3482
         },
         {
           "id": "45265",
-          "name": "Cédric Elzéard"
+          "name": "Cédric Elzéard",
+          "position": "Right-Back",
+          "minutes": 2734
+        },
+        {
+          "id": "79913",
+          "name": "Christophe Borbiconi",
+          "position": "Centre-Back",
+          "minutes": 2081
+        },
+        {
+          "id": "156996",
+          "name": "Christophe Jouault",
+          "position": "Defender",
+          "minutes": 371
+        },
+        {
+          "id": "149413",
+          "name": "Luis Satorra",
+          "position": "Defender",
+          "minutes": 3632
+        },
+        {
+          "id": "174014",
+          "name": "Jean-Michel Luciani",
+          "position": "Defender",
+          "minutes": 788
         },
         {
           "id": "174012",
-          "name": "Hippolyte Dangbeto"
-        },
-        {
-          "id": "20235",
-          "name": "Fabien Brandes"
+          "name": "Hippolite Dangbeto",
+          "position": "Right-Back",
+          "minutes": 1762
         },
         {
           "id": "43935",
-          "name": "Freddy Bourgeois"
+          "name": "Freddy Bourgeois",
+          "position": "Defensive Midfield",
+          "minutes": 23
         },
         {
-          "id": "158134",
-          "name": "Jean-Philippe Faure"
-        },
-        {
-          "id": "174016",
-          "name": "Bruno Pabois"
-        },
-        {
-          "id": "152744",
-          "name": "Eric Crosnier"
-        },
-        {
-          "id": "151445",
-          "name": "Stéphane Laquait"
-        },
-        {
-          "id": "174018",
-          "name": "Flavio Rodrigues"
-        },
-        {
-          "id": "13712",
-          "name": "Madjid Adjaoud"
+          "id": "20235",
+          "name": "Fabien Brandes",
+          "position": "Midfield",
+          "minutes": 567
         },
         {
           "id": "5427",
-          "name": "Pierre Deblock"
+          "name": "Pierre Deblock",
+          "position": "Right Midfield",
+          "minutes": 3439
         },
         {
           "id": "5511",
-          "name": "Olivier Quint"
+          "name": "Olivier Quint",
+          "position": "Left Midfield",
+          "minutes": 3534
         },
         {
-          "id": "14443",
-          "name": "Cedric Mionnet"
+          "id": "13712",
+          "name": "Madjid Adjaoud",
+          "position": "Central Midfield",
+          "minutes": 1747
+        },
+        {
+          "id": "158134",
+          "name": "Jean-Philippe Faure",
+          "position": "Defensive Midfield",
+          "minutes": 1518
+        },
+        {
+          "id": "174016",
+          "name": "Bruno Pabois",
+          "position": "Defensive Midfield",
+          "minutes": 1937
+        },
+        {
+          "id": "174018",
+          "name": "Flavio Rodrigues",
+          "position": "Central Midfield",
+          "minutes": 810
+        },
+        {
+          "id": "152744",
+          "name": "Eric Crosnier",
+          "position": "Defensive Midfield",
+          "minutes": 2043
+        },
+        {
+          "id": "151445",
+          "name": "Stéphane Laquait",
+          "position": "Defensive Midfield",
+          "minutes": 926
         },
         {
           "id": "27446",
-          "name": "Pius N'Diefi"
+          "name": "Pius N'Diefi",
+          "position": "Centre-Forward",
+          "minutes": 3122
         },
         {
-          "id": "149390",
-          "name": "Alex Di Rocco"
+          "id": "14443",
+          "name": "Cedric Mionnet",
+          "position": "Right Winger",
+          "minutes": 2934
         },
         {
           "id": "18286",
-          "name": "Alexandre Lecomte"
+          "name": "Alexandre Lecomte",
+          "position": "Centre-Forward",
+          "minutes": 104
+        },
+        {
+          "id": "149390",
+          "name": "Alex Di Rocco",
+          "position": "Centre-Forward",
+          "minutes": 2468
         }
       ]
     },
@@ -1824,111 +2684,165 @@
       "players": [
         {
           "id": "45068",
-          "name": "Christian Potel"
+          "name": "Christian Potel",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "152775",
-          "name": "Christophe Gardié"
-        },
-        {
-          "id": "151312",
-          "name": "Stéphane Moreau"
+          "name": "Christophe Gardié",
+          "position": "Goalkeeper",
+          "minutes": 3900
         },
         {
           "id": "3598",
-          "name": "Djimi Traoré"
-        },
-        {
-          "id": "148155",
-          "name": "Christophe Ferron"
-        },
-        {
-          "id": "17346",
-          "name": "Aziz Ben Askar"
-        },
-        {
-          "id": "29315",
-          "name": "Jean-Marie Stephanopoli"
+          "name": "Djimi Traoré",
+          "position": "Centre-Back",
+          "minutes": 235
         },
         {
           "id": "111515",
-          "name": "Mickaël Buzaré"
+          "name": "Mickaël Buzaré",
+          "position": "Right-Back",
+          "minutes": 3318
+        },
+        {
+          "id": "29315",
+          "name": "Jean-Marie Stephanopoli",
+          "position": "Left-Back",
+          "minutes": 3540
         },
         {
           "id": "5638",
-          "name": "Stéphane Pichot"
+          "name": "Stéphane Pichot",
+          "position": "Right-Back",
+          "minutes": 3630
         },
         {
-          "id": "102959",
-          "name": "Guillaume Mulak"
+          "id": "17346",
+          "name": "Aziz Ben Askar",
+          "position": "Centre-Back",
+          "minutes": 1559
         },
         {
-          "id": "151378",
-          "name": "Julien Mulak"
+          "id": "151312",
+          "name": "Stéphane Moreau",
+          "position": "Defender",
+          "minutes": 2667
         },
         {
-          "id": "160040",
-          "name": "Jean-Jacques Houzé"
-        },
-        {
-          "id": "173680",
-          "name": "Farid Diaf"
-        },
-        {
-          "id": "174125",
-          "name": "Guy-Noël Tapoko"
-        },
-        {
-          "id": "149260",
-          "name": "Roméo Calenda"
+          "id": "148155",
+          "name": "Christophe Ferron",
+          "position": "Centre-Back",
+          "minutes": 3035
         },
         {
           "id": "42353",
-          "name": "Moussa Dabo"
-        },
-        {
-          "id": "129837",
-          "name": "Christophe Cazarelly"
-        },
-        {
-          "id": "13244",
-          "name": "Ulrich Le Pen"
-        },
-        {
-          "id": "152736",
-          "name": "Stéphane Capiaux"
+          "name": "Moussa Dabo",
+          "position": "Central Midfield",
+          "minutes": null
         },
         {
           "id": "26180",
-          "name": "Aziz El Khanchaf"
+          "name": "Aziz El Khanchaf",
+          "position": "Attacking Midfield",
+          "minutes": 915
         },
         {
-          "id": "57455",
-          "name": "Eric Sitruk"
+          "id": "13244",
+          "name": "Ulrich Le Pen",
+          "position": "Left Midfield",
+          "minutes": 851
+        },
+        {
+          "id": "102959",
+          "name": "Guillaume Mulak",
+          "position": "Midfield",
+          "minutes": 188
+        },
+        {
+          "id": "151378",
+          "name": "Julien Mulak",
+          "position": "Midfield",
+          "minutes": 43
+        },
+        {
+          "id": "160040",
+          "name": "Jean-Jacques Houzé",
+          "position": "Midfield",
+          "minutes": 2584
+        },
+        {
+          "id": "173680",
+          "name": "Farid Diaf",
+          "position": "Midfield",
+          "minutes": 632
+        },
+        {
+          "id": "152736",
+          "name": "Stéphane Capiaux",
+          "position": "Attacking Midfield",
+          "minutes": 815
+        },
+        {
+          "id": "129837",
+          "name": "Christophe Cazarelly",
+          "position": "Central Midfield",
+          "minutes": 1648
+        },
+        {
+          "id": "174125",
+          "name": "Guy-Noël Tapoko",
+          "position": "Midfield",
+          "minutes": 150
+        },
+        {
+          "id": "149260",
+          "name": "Roméo Calenda",
+          "position": "Midfield",
+          "minutes": 2549
         },
         {
           "id": "28345",
-          "name": "Jean-François Rivière"
+          "name": "Jean-François Rivière",
+          "position": "Centre-Forward",
+          "minutes": 442
         },
         {
-          "id": "168003",
-          "name": "Pierre Gabzdyl"
-        },
-        {
-          "id": "101886",
-          "name": "Mohamed Chaouch"
+          "id": "57455",
+          "name": "Eric Sitruk",
+          "position": "Right Winger",
+          "minutes": 958
         },
         {
           "id": "104536",
-          "name": "Hamed Diallo"
+          "name": "Hamed Diallo",
+          "position": "Centre-Forward",
+          "minutes": 3596
         },
         {
           "id": "29044",
-          "name": "Karim Mouzaoui"
+          "name": "Karim Mouzaoui",
+          "position": "Centre-Forward",
+          "minutes": 1871
+        },
+        {
+          "id": "168003",
+          "name": "Pierre Gabzdyl",
+          "position": "Attack",
+          "minutes": 247
+        },
+        {
+          "id": "101886",
+          "name": "Mohamed Chaouch",
+          "position": "Centre-Forward",
+          "minutes": 3109
         },
         {
           "id": "174043",
-          "name": "Stéphane Maubert"
+          "name": "Stéphane Maubert",
+          "position": "Attack",
+          "minutes": 322
         }
       ]
     },
@@ -1937,148 +2851,220 @@
       "name": "AS Cannes",
       "players": [
         {
-          "id": "152820",
-          "name": "Cédric Mignani"
-        },
-        {
           "id": "5469",
-          "name": "Sébastien Chabbert"
+          "name": "Sébastien Chabbert",
+          "position": "Goalkeeper",
+          "minutes": 2261
         },
         {
           "id": "14360",
-          "name": "Yannick Quesnel"
+          "name": "Yannick Quesnel",
+          "position": "Goalkeeper",
+          "minutes": 1167
         },
         {
-          "id": "160090",
-          "name": "Nicolas Van Vynckt"
-        },
-        {
-          "id": "152872",
-          "name": "Jean-Luc Vannuchi"
-        },
-        {
-          "id": "103037",
-          "name": "Christophe Ettori"
+          "id": "152820",
+          "name": "Cédric Mignani",
+          "position": "Goalkeeper",
+          "minutes": 90
         },
         {
           "id": "5367",
-          "name": "Mathieu Beda"
+          "name": "Mathieu Beda",
+          "position": "Centre-Back",
+          "minutes": null
         },
         {
           "id": "13728",
-          "name": "Arthur Gnohéré"
+          "name": "Arthur Gnohéré",
+          "position": "Centre-Back",
+          "minutes": 123
         },
         {
           "id": "23936",
-          "name": "Ludovic Jeannel"
-        },
-        {
-          "id": "168149",
-          "name": "Mark Blake"
+          "name": "Ludovic Jeannel",
+          "position": "Centre-Back",
+          "minutes": 2433
         },
         {
           "id": "9488",
-          "name": "Bobo Baldé"
-        },
-        {
-          "id": "3573",
-          "name": "Julien Escudé"
+          "name": "Bobo Baldé",
+          "position": "Centre-Back",
+          "minutes": 2634
         },
         {
           "id": "5473",
-          "name": "Patrick Barul"
+          "name": "Patrick Barul",
+          "position": "Right-Back",
+          "minutes": 1879
+        },
+        {
+          "id": "3573",
+          "name": "Julien Escudé",
+          "position": "Centre-Back",
+          "minutes": 1532
+        },
+        {
+          "id": "160090",
+          "name": "Nicolas Van Vynckt",
+          "position": "Defender",
+          "minutes": 270
+        },
+        {
+          "id": "152872",
+          "name": "Jean-Luc Vannuchi",
+          "position": "Defender",
+          "minutes": 2626
+        },
+        {
+          "id": "168149",
+          "name": "Mark Blake",
+          "position": "Centre-Back",
+          "minutes": 3260
+        },
+        {
+          "id": "103037",
+          "name": "Christophe Ettori",
+          "position": "Defender",
+          "minutes": 20
         },
         {
           "id": "160010",
-          "name": "Ghislain Bagnon"
-        },
-        {
-          "id": "160033",
-          "name": "Stéphane Floiras"
-        },
-        {
-          "id": "160070",
-          "name": "Fabrice Muller"
-        },
-        {
-          "id": "160019",
-          "name": "Adel Boutobba"
-        },
-        {
-          "id": "12905",
-          "name": "Sebastien Chabaud"
-        },
-        {
-          "id": "5324",
-          "name": "Brahim Hemdani"
-        },
-        {
-          "id": "152714",
-          "name": "Komlan Assignon"
-        },
-        {
-          "id": "109608",
-          "name": "Jean-Michel Capoue"
+          "name": "Ghislain Bagnon",
+          "position": "Right-Back",
+          "minutes": 1902
         },
         {
           "id": "12961",
-          "name": "Laurent Macquet"
-        },
-        {
-          "id": "134090",
-          "name": "Didier Frenay"
-        },
-        {
-          "id": "173778",
-          "name": "Salvatore Giunta"
-        },
-        {
-          "id": "5325",
-          "name": "Mickaël Marsiglia"
+          "name": "Laurent Macquet",
+          "position": "Central Midfield",
+          "minutes": 408
         },
         {
           "id": "37786",
-          "name": "Frédéric Daquin"
+          "name": "Frédéric Daquin",
+          "position": "Right Midfield",
+          "minutes": 23
         },
         {
-          "id": "142983",
-          "name": "Gianluca Sordo"
+          "id": "12905",
+          "name": "Sebastien Chabaud",
+          "position": "Defensive Midfield",
+          "minutes": 2057
         },
         {
-          "id": "173805",
-          "name": "Wennedy"
+          "id": "5325",
+          "name": "Mickaël Marsiglia",
+          "position": "Central Midfield",
+          "minutes": 1144
+        },
+        {
+          "id": "5324",
+          "name": "Brahim Hemdani",
+          "position": "Defensive Midfield",
+          "minutes": 436
         },
         {
           "id": "3639",
-          "name": "Djamel Belmadi"
+          "name": "Djamel Belmadi",
+          "position": "Right Midfield",
+          "minutes": 2271
+        },
+        {
+          "id": "134090",
+          "name": "Didier Frenay",
+          "position": "Central Midfield",
+          "minutes": null
+        },
+        {
+          "id": "142983",
+          "name": "Gianluca Sordo",
+          "position": "Right Midfield",
+          "minutes": 587
+        },
+        {
+          "id": "160033",
+          "name": "Stéphane Floiras",
+          "position": "Midfield",
+          "minutes": null
+        },
+        {
+          "id": "160070",
+          "name": "Fabrice Muller",
+          "position": "Midfield",
+          "minutes": 4
+        },
+        {
+          "id": "173778",
+          "name": "Salvatore Giunta",
+          "position": "Central Midfield",
+          "minutes": 394
+        },
+        {
+          "id": "160019",
+          "name": "Adel Boutobba",
+          "position": "Midfield",
+          "minutes": 762
+        },
+        {
+          "id": "152714",
+          "name": "Komlan Assignon",
+          "position": "Midfield",
+          "minutes": 1943
+        },
+        {
+          "id": "173805",
+          "name": "Wennedy",
+          "position": "Right Midfield",
+          "minutes": 502
+        },
+        {
+          "id": "109608",
+          "name": "Jean-Michel Capoue",
+          "position": "Defensive Midfield",
+          "minutes": 2545
         },
         {
           "id": "5677",
-          "name": "Mickaël Citony"
-        },
-        {
-          "id": "160037",
-          "name": "Wilfrid Gohel"
-        },
-        {
-          "id": "160023",
-          "name": "Kamar Cherrad"
-        },
-        {
-          "id": "160059",
-          "name": "Vital Lucian"
+          "name": "Mickaël Citony",
+          "position": "Right Winger",
+          "minutes": 112
         },
         {
           "id": "5599",
-          "name": "Cyril Eboki-Poh"
+          "name": "Cyril Eboki-Poh",
+          "position": "Attack",
+          "minutes": 170
         },
         {
           "id": "21321",
-          "name": "Marc Libbra"
+          "name": "Marc Libbra",
+          "position": "Centre-Forward",
+          "minutes": 2444
+        },
+        {
+          "id": "160023",
+          "name": "Kamar Cherrad",
+          "position": "Attack",
+          "minutes": 1170
+        },
+        {
+          "id": "160059",
+          "name": "Vital Lucian",
+          "position": "Attack",
+          "minutes": 222
+        },
+        {
+          "id": "160037",
+          "name": "Wilfrid Gohel",
+          "position": "Right Winger",
+          "minutes": 2253
         },
         {
           "id": "173780",
-          "name": "Chérif Hamlaoui"
+          "name": "Chérif Hamlaoui",
+          "position": "Attack",
+          "minutes": 45
         }
       ]
     },
@@ -2087,132 +3073,196 @@
       "name": "EA Guingamp",
       "players": [
         {
+          "id": "5716",
+          "name": "Stéphane Trévisan",
+          "position": "Goalkeeper",
+          "minutes": 1080
+        },
+        {
           "id": "173653",
-          "name": "Jean-Claude Nadon"
+          "name": "Jean-Claude Nadon",
+          "position": "Goalkeeper",
+          "minutes": null
         },
         {
           "id": "152866",
-          "name": "Ronald Thomas"
-        },
-        {
-          "id": "5716",
-          "name": "Stéphane Trévisan"
-        },
-        {
-          "id": "174005",
-          "name": "David Habasque"
-        },
-        {
-          "id": "174010",
-          "name": "Aurélien Robic"
-        },
-        {
-          "id": "168031",
-          "name": "Rudy Perron"
-        },
-        {
-          "id": "23900",
-          "name": "Pierre-Emmanuel Bourdeau"
-        },
-        {
-          "id": "15226",
-          "name": "Marek Jozwiak"
-        },
-        {
-          "id": "102021",
-          "name": "Gheorghe Mihali"
-        },
-        {
-          "id": "152712",
-          "name": "Ghislain Anselmini"
-        },
-        {
-          "id": "5719",
-          "name": "Nicolas Baudoin"
+          "name": "Ronald Thomas",
+          "position": "Goalkeeper",
+          "minutes": 2885
         },
         {
           "id": "28329",
-          "name": "Jérôme Foulon"
+          "name": "Jérôme Foulon",
+          "position": "Right-Back",
+          "minutes": 2170
+        },
+        {
+          "id": "15226",
+          "name": "Marek Jozwiak",
+          "position": "Centre-Back",
+          "minutes": 3651
+        },
+        {
+          "id": "5719",
+          "name": "Nicolas Baudoin",
+          "position": "Left-Back",
+          "minutes": 2344
+        },
+        {
+          "id": "23900",
+          "name": "Pierre-Emmanuel Bourdeau",
+          "position": "Centre-Back",
+          "minutes": 2797
+        },
+        {
+          "id": "174005",
+          "name": "David Habasque",
+          "position": "Defender",
+          "minutes": 1
+        },
+        {
+          "id": "174010",
+          "name": "Aurélien Robic",
+          "position": "Defender",
+          "minutes": 9
+        },
+        {
+          "id": "152712",
+          "name": "Ghislain Anselmini",
+          "position": "Left-Back",
+          "minutes": 2456
+        },
+        {
+          "id": "102021",
+          "name": "Gheorghe Mihali",
+          "position": "Centre-Back",
+          "minutes": 450
+        },
+        {
+          "id": "168031",
+          "name": "Rudy Perron",
+          "position": "Defender",
+          "minutes": 160
         },
         {
           "id": "5456",
-          "name": "Fabrice Colleau"
-        },
-        {
-          "id": "169171",
-          "name": "David Romo"
-        },
-        {
-          "id": "174007",
-          "name": "Julien Le Pape"
+          "name": "Fabrice Colleau",
+          "position": "Defensive Midfield",
+          "minutes": null
         },
         {
           "id": "5462",
-          "name": "Claude Michel"
-        },
-        {
-          "id": "5454",
-          "name": "Yannick Baret"
-        },
-        {
-          "id": "149339",
-          "name": "Frédéric Patouillard"
-        },
-        {
-          "id": "5542",
-          "name": "Janick Tamazout"
-        },
-        {
-          "id": "154058",
-          "name": "Sylvain Deplace"
-        },
-        {
-          "id": "5458",
-          "name": "Laurent Hervé"
-        },
-        {
-          "id": "28310",
-          "name": "Philippe Celdran"
-        },
-        {
-          "id": "155601",
-          "name": "Abdelhafid Tasfaout"
+          "name": "Claude Michel",
+          "position": "Defensive Midfield",
+          "minutes": 2710
         },
         {
           "id": "5484",
-          "name": "Charles-Edouard Coridon"
+          "name": "Charles-Edouard Coridon",
+          "position": "Attacking Midfield",
+          "minutes": 2799
+        },
+        {
+          "id": "5458",
+          "name": "Laurent Hervé",
+          "position": "Right Midfield",
+          "minutes": 687
+        },
+        {
+          "id": "5542",
+          "name": "Janick Tamazout",
+          "position": "Midfield",
+          "minutes": 1814
+        },
+        {
+          "id": "28310",
+          "name": "Philippe Celdran",
+          "position": "Left Midfield",
+          "minutes": 1623
+        },
+        {
+          "id": "169171",
+          "name": "David Romo",
+          "position": "Midfield",
+          "minutes": 13
+        },
+        {
+          "id": "174007",
+          "name": "Julien Le Pape",
+          "position": "Midfield",
+          "minutes": 3
+        },
+        {
+          "id": "155601",
+          "name": "Abdelhafid Tasfaout",
+          "position": "Attacking Midfield",
+          "minutes": 2062
+        },
+        {
+          "id": "5454",
+          "name": "Yannick Baret",
+          "position": "Defensive Midfield",
+          "minutes": 2870
+        },
+        {
+          "id": "149339",
+          "name": "Frédéric Patouillard",
+          "position": "Midfield",
+          "minutes": 2401
         },
         {
           "id": "151307",
-          "name": "David Garcion"
+          "name": "David Garcion",
+          "position": "Attacking Midfield",
+          "minutes": 265
         },
         {
           "id": "174004",
-          "name": "Jovan Bosancic"
+          "name": "Jovan Bosancic",
+          "position": "Attacking Midfield",
+          "minutes": 128
+        },
+        {
+          "id": "154058",
+          "name": "Sylvain Deplace",
+          "position": "Defensive Midfield",
+          "minutes": 2693
         },
         {
           "id": "168032",
-          "name": "Sylvain Prat"
-        },
-        {
-          "id": "5572",
-          "name": "Fabrice Fiorèse"
+          "name": "Sylvain Prat",
+          "position": "Attacking Midfield",
+          "minutes": 1433
         },
         {
           "id": "28342",
-          "name": "Samuel Michel"
+          "name": "Samuel Michel",
+          "position": "Centre-Forward",
+          "minutes": 983
         },
         {
           "id": "17168",
-          "name": "Jean-Pierre Papin"
+          "name": "Jean-Pierre Papin",
+          "position": "Centre-Forward",
+          "minutes": 810
+        },
+        {
+          "id": "5572",
+          "name": "Fabrice Fiorèse",
+          "position": "Right Winger",
+          "minutes": 2366
         },
         {
           "id": "151266",
-          "name": "Anthony Bancarel"
+          "name": "Anthony Bancarel",
+          "position": "Centre-Forward",
+          "minutes": null
         },
         {
           "id": "174019",
-          "name": "Jérémy Toutain"
+          "name": "Jérémy Toutain",
+          "position": "Attack",
+          "minutes": 52
         }
       ]
     },
@@ -2222,123 +3272,183 @@
       "players": [
         {
           "id": "5548",
-          "name": "Jérôme Alonzo"
+          "name": "Jérôme Alonzo",
+          "position": "Goalkeeper",
+          "minutes": 2867
         },
         {
           "id": "17433",
-          "name": "Jérémie Janot"
+          "name": "Jérémie Janot",
+          "position": "Goalkeeper",
+          "minutes": 930
         },
         {
           "id": "17430",
-          "name": "Stéphane Hernandez"
+          "name": "Stéphane Hernandez",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
           "id": "17435",
-          "name": "Sylvain Meslien"
+          "name": "Sylvain Meslien",
+          "position": "Centre-Back",
+          "minutes": 120
         },
         {
           "id": "17437",
-          "name": "Mickaël Pontal"
-        },
-        {
-          "id": "152801",
-          "name": "Gilles Leclerc"
-        },
-        {
-          "id": "145267",
-          "name": "Claude Fichaux"
-        },
-        {
-          "id": "3808",
-          "name": "Lucién Mettomo"
-        },
-        {
-          "id": "152725",
-          "name": "Romarin Billong"
-        },
-        {
-          "id": "84022",
-          "name": "Patrick Guillou"
+          "name": "Mickaël Pontal",
+          "position": "Centre-Back",
+          "minutes": 90
         },
         {
           "id": "5559",
-          "name": "Lionel Potillon"
+          "name": "Lionel Potillon",
+          "position": "Left-Back",
+          "minutes": 2936
+        },
+        {
+          "id": "3808",
+          "name": "Lucién Mettomo",
+          "position": "Centre-Back",
+          "minutes": 3093
+        },
+        {
+          "id": "152725",
+          "name": "Romarin Billong",
+          "position": "Left-Back",
+          "minutes": 2142
+        },
+        {
+          "id": "84022",
+          "name": "Patrick Guillou",
+          "position": "Left-Back",
+          "minutes": 2159
+        },
+        {
+          "id": "152801",
+          "name": "Gilles Leclerc",
+          "position": "Centre-Back",
+          "minutes": 2858
+        },
+        {
+          "id": "145267",
+          "name": "Claude Fichaux",
+          "position": "Centre-Back",
+          "minutes": 2360
         },
         {
           "id": "149263",
-          "name": "David Charrièras"
+          "name": "David Charrièras",
+          "position": "Left-Back",
+          "minutes": 749
         },
         {
           "id": "80183",
-          "name": "Cédric Horjak"
-        },
-        {
-          "id": "174017",
-          "name": "Sébastien Riou"
+          "name": "Cédric Horjak",
+          "position": "Defensive Midfield",
+          "minutes": 229
         },
         {
           "id": "5398",
-          "name": "Fabien Boudarène"
-        },
-        {
-          "id": "17441",
-          "name": "Julien Sablé"
+          "name": "Fabien Boudarène",
+          "position": "Defensive Midfield",
+          "minutes": 1429
         },
         {
           "id": "3906",
-          "name": "Pape Sarr"
+          "name": "Pape Sarr",
+          "position": "Central Midfield",
+          "minutes": 3115
         },
         {
-          "id": "155582",
-          "name": "Baptiste Lafleuriel"
+          "id": "17441",
+          "name": "Julien Sablé",
+          "position": "Defensive Midfield",
+          "minutes": 2243
         },
         {
           "id": "151321",
-          "name": "Marc Zanotti"
+          "name": "Marc Zanotti",
+          "position": "Left Midfield",
+          "minutes": 935
+        },
+        {
+          "id": "174017",
+          "name": "Sébastien Riou",
+          "position": "Midfield",
+          "minutes": 19
         },
         {
           "id": "158089",
-          "name": "Kader Ferhaoui"
+          "name": "Kader Ferhaoui",
+          "position": "Left Midfield",
+          "minutes": 3353
         },
         {
-          "id": "173713",
-          "name": "Christophe Robert"
-        },
-        {
-          "id": "158100",
-          "name": "Fabrice Lepaul"
+          "id": "155582",
+          "name": "Baptiste Lafleuriel",
+          "position": "Central Midfield",
+          "minutes": 59
         },
         {
           "id": "1551",
-          "name": "Blaise Mamoum"
+          "name": "Blaise Mamoum",
+          "position": "Centre-Forward",
+          "minutes": 66
         },
         {
           "id": "3919",
-          "name": "Pape Thiaw"
+          "name": "Pape Thiaw",
+          "position": "Centre-Forward",
+          "minutes": 85
         },
         {
           "id": "6323",
-          "name": "Eric Obinna"
-        },
-        {
-          "id": "152825",
-          "name": "Samba N'Diaye"
-        },
-        {
-          "id": "101909",
-          "name": "Nestor Subiat"
-        },
-        {
-          "id": "158114",
-          "name": "Patrick Revelles"
-        },
-        {
-          "id": "160079",
-          "name": "Adrien Ponsard"
+          "name": "Eric Obinna",
+          "position": "Centre-Forward",
+          "minutes": 292
         },
         {
           "id": "28327",
-          "name": "Bertrand Fayolle"
+          "name": "Bertrand Fayolle",
+          "position": "Centre-Forward",
+          "minutes": 1493
+        },
+        {
+          "id": "152825",
+          "name": "Samba N'Diaye",
+          "position": "Centre-Forward",
+          "minutes": 210
+        },
+        {
+          "id": "101909",
+          "name": "Nestor Subiat",
+          "position": "Centre-Forward",
+          "minutes": 1350
+        },
+        {
+          "id": "173713",
+          "name": "Christophe Robert",
+          "position": "Left Winger",
+          "minutes": 1239
+        },
+        {
+          "id": "158114",
+          "name": "Patrick Revelles",
+          "position": "Centre-Forward",
+          "minutes": 3500
+        },
+        {
+          "id": "158100",
+          "name": "Fabrice Lepaul",
+          "position": "Left Winger",
+          "minutes": 416
+        },
+        {
+          "id": "160079",
+          "name": "Adrien Ponsard",
+          "position": "Centre-Forward",
+          "minutes": 1265
         }
       ]
     }

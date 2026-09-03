@@ -1,16 +1,6 @@
 const fs = require("fs/promises");
 const { load } = require("cheerio");
 
-// Order is load-bearing: import.ts keeps the first tier that claims a shared
-// club-season, so every first tier must precede every second tier.
-//
-// England is split across three codes because Transfermarkt models its two
-// rebrands as separate competitions, and asking GB1/GB2 for a season before
-// theirs silently serves the current one:
-//   tier 1:  GB1 1992-  (Premier League)   EFD1 -1991  (First Division)
-//   tier 2:  GB2 2004-  (Championship)     EFD2 1992-2003 (First Division)
-// ENSD (Second Division, -2003) would add the pre-1992 second tier, but it is
-// also the 1992-2003 THIRD tier, which this dataset doesn't otherwise cover.
 const COMPETITIONS = [
     "GB1",
     "EFD1",
@@ -24,26 +14,16 @@ const COMPETITIONS = [
     "ES2",
     "IT2",
     "L2",
+    "L2N",
+    "L2S",
     "FR2",
     "PO2"
 ];
 
 const START_SEASON = 2026;
 
-// The season loop counts down and stops when Transfermarkt no longer serves a
-// competition, but it tolerates this many consecutive misses first. Breaking on
-// the very first one is all-or-nothing: a single missing year in the middle of a
-// competition's history would silently truncate every season beneath it, and the
-// log would look like a legitimate start date rather than a hole.
 const MAX_MISSING_SEASONS = 3;
 
-// Scraped straight from Transfermarkt rather than through the
-// transfermarkt-api wrapper this used to call. The wrapper's public instance
-// has returned 500 on every endpoint since July 2026 (its issue #121), it rate
-// limits itself to 2 requests per 3 seconds, and — decisively — its squad
-// endpoint carries no minutes at all. Minutes only exist on the club's season
-// performance page, so going through the wrapper would have meant writing new
-// Python to reach a page we can parse directly.
 const BASE_URL = "https://www.transfermarkt.com";
 
 function sleep(ms) {
@@ -121,15 +101,7 @@ async function getClubs(competitionId, seasonId) {
         }
     });
 
-    // Transfermarkt serves the CURRENT season when asked for one that never
-    // existed — GB1 with saison_id=1946 returns the 26/27 table, twenty clubs
-    // and all — where the old API wrapper returned a clean 404. Without this
-    // check the season loop below would never terminate, and every year before
-    // a competition began would be written to disk full of present-day squads.
-    // The season echoed back inside each club link is the reliable tell, so a
-    // mismatch is raised as the same 404-shaped error the loop already breaks
-    // on.
-    if (
+   if (
         found.length === 0 ||
         found[0].servedSeason !== String(seasonId)
     ) {
@@ -154,11 +126,6 @@ async function getClubs(competitionId, seasonId) {
 }
 
 async function getPlayers(clubId, seasonId) {
-    // The season performance page, not the squad page: it lists everyone who
-    // was at the club that season (rather than only the present squad) and
-    // carries position and minutes in the same table, so membership, the
-    // goalkeeper debuff and the "seasons as a regular" metric all come from
-    // one request per club-season.
     const url =
         `${BASE_URL}/x/leistungsdaten/verein/${clubId}/saison_id/${seasonId}/plus/1`;
 
@@ -168,11 +135,6 @@ async function getPlayers(clubId, seasonId) {
 
     $("table.items tr").each((_, tr) => {
         const row = $(tr);
-
-        // Player rows are the ones with a posrela cell as a *direct* child.
-        // The filter matters: each player's name and position live in an
-        // inline table nested inside that cell, so an unfiltered `tr` sweep
-        // returns 88 rows for a 29-player squad.
         if (row.children("td.posrela").length === 0) {
             return;
         }
@@ -230,6 +192,7 @@ async function processCompetition(
     );
 
     let missing = 0;
+    let seenData = false;
 
     for (
         let season = START_SEASON;
@@ -248,6 +211,9 @@ async function processCompetition(
                 `Skipping ${competitionId}-${season}, already exists`
             );
 
+            seenData = true;
+            missing = 0;
+
             continue;
         } catch {}
         let clubs;
@@ -259,6 +225,19 @@ async function processCompetition(
             );
         } catch (err) {
             if (err.status === 404) {
+                // Misses only count once the competition has been seen to have
+                // data. A defunct one has none near the top of the range —
+                // EFD1 ended in 1992, L2N/L2S ran for a single season — so
+                // counting down from START_SEASON would break decades before
+                // reaching its actual seasons.
+                if (!seenData) {
+                    console.log(
+                        `No data for ${competitionId}-${season} (before this competition existed)`
+                    );
+
+                    continue;
+                }
+
                 missing++;
 
                 if (missing >= MAX_MISSING_SEASONS) {
@@ -284,6 +263,7 @@ async function processCompetition(
             continue;
         }
 
+        seenData = true;
         missing = 0;
 
         const seasonData = {

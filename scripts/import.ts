@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const Database = require("better-sqlite3");
 
-const COMPETITIONS = ["GB1","EFD1","ES1","IT1","L1","FR1","PO1","GB2","EFD2","ES2","IT2","L2","FR2","PO2"];
+const COMPETITIONS = ["GB1","EFD1","ES1","IT1","L1","FR1","PO1","GB2","EFD2","ES2","IT2","L2","L2N","L2S","FR2","PO2"];
 
 const db = new Database("../database/football.db");
 
