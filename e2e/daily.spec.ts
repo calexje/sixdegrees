@@ -19,6 +19,9 @@ test("solves a pinned Daily along its optimal path", async ({
     // and players as you move, so acting before the re-render looks for a
     // label that is not there yet.
     await expect(page.getByTestId("path").locator("li")).toHaveCount(i);
+    await expect(
+      page.getByText(/Fetching (clubs|players)/)
+    ).toHaveCount(0);
 
     const step = solutionPath[i];
 
