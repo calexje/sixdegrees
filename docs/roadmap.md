@@ -50,18 +50,57 @@ Fixed thresholds on top-flight seasons were the only thing that buckets cleanly
 | 2 | 1–2 | 15,826 |
 | 1 | 0 (lower-league / cup only) | 27,551 |
 
-- **Daily gate:** both endpoints must be prominence ≥ 3 (≥3 top-flight seasons).
+### Superseded, September 2026 — obscurity rank
+
+The table above is history. Career length was never fame, and the limitation
+this section used to concede — "Mikel Aranburu lands near the top, he's
+Sociedad's Gerrard" — is now fixed: Aranburu is rank 5, Gerrard rank 1.
+
+The replacement is a 1-5 **obscurity rank** built offline by
+`scripts/build-obscurity.ts` into a `player_obscurity` table, where 1 is the
+most recognisable:
+
+- **Fame does the ranking.** Wikipedia language editions per player
+  (`scripts/fetch-fame.ts`), taken as a percentile within the player's *era*
+  cohort. Coverage grew enormously after 2005 and active players attract
+  continuous editing, so an absolute count would rank Rashford above Shearer —
+  comparing coverage, not renown. Era cohorts remove that.
+- **Regularity only caps it.** Season-equivalents (minutes / 1800, capped at 1
+  per season) over seasons present, i.e. the *share* of a career spent
+  actually playing. This is a filter, not a second ranking dimension: nearly
+  every real player is a regular 80-100% of the time, so ranking on it
+  amplifies noise. Below 0.75 it caps a player at rank 3, below 0.5 at rank 4.
+  Scott Carson at 0.60 is what it exists to catch.
+- **Qualification:** ≥3 top-flight seasons. Everyone else is rank 5, because
+  ranking all 62,713 players together puts anonymous ones in the top band.
+- **Pyramid:** 383 / 500 / 1,874 / 3,068 / 8,718 qualified, plus 48,170
+  unqualified at rank 5.
+- **Daily gate:** asymmetric — target ≤ rank 2, origin ≤ rank 4. The target is
+  what the hints reveal and must be gettable; the origin is deliberately
+  looser, since a less famous origin is what sits a genuine 3-4 jumps away.
   Expert stays ungated — that's the point of Expert.
-- **Known limitation (accepted):** this is top-flight career length, not
-  audience-specific fame. It can't know Nemanja Gudelj is well known to
-  Spanish/Dutch/Portuguese fans but obscure to an English one, and it ranks
-  one-club greats by longevity (Mikel Aranburu lands near the top — he's
-  Sociedad's Gerrard). The honest fix was labelling the buckets by what they
-  measure rather than claiming "fame".
-- **Implementation:** a memoised `getProminentPlayerNames(minSeasons)` query in
-  `lib/db.ts` (no import-time column needed); thresholds, labels and the Daily
-  gate live in `lib/prominence.ts`; gating filters the name-keyed graph in
+- **Implementation:** `getPlayerIdsByMaxRank(maxRank)` in `lib/db.ts`; the
+  slider level *is* the rank ceiling, so `OBSCURITY_MAX_RANK` in
+  `lib/prominence.ts` is an identity map; gating filters the graph in
   `lib/puzzle.tsx`.
+
+Still true, and not fixable from football data: it cannot know Nemanja Gudelj
+is well known to Spanish, Dutch and Portuguese fans but obscure to an English
+one. Wikipedia editions are a global average, not an audience-specific one.
+
+Two things to know about the inputs:
+
+- Minutes are only 86-92% complete for 1990-2001 and missing values count as
+  zero, so pre-2002 players' regularity is understated and they sit closer to
+  the cap than they should.
+- The position cohort does not currently affect the rank. Regularity became a
+  cap rather than a ranked percentile, so `positionGroupOf` and `minutes_pct`
+  are computed and stored but nothing reads them. Kept deliberately: the
+  original justification (a 47.8% vs 41.9% full-season rate) came from one
+  competition-season and does not hold — across the full dataset the gap is
+  41.1% vs 39.4%, 1.7 points rather than 6 — but the question that matters is
+  how many players at each position are well known, which has not been measured
+  either way. The stored percentile is what that analysis would start from.
 
 ## 3. Practice → fully configurable generator ✅
 
