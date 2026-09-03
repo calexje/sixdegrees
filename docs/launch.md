@@ -72,8 +72,14 @@ state), not on page load.
 
 - New: `scripts/precompute-puzzles.ts` (`npx tsx scripts/precompute-puzzles.ts
   [days]`), invoked automatically at the tail of `scripts/import.ts`.
-- Generation cost is ~3s/puzzle (~18 min for 365), paid offline twice a year
-  alongside the database reimport, not at deploy or request time.
+- Generation cost is ~9s/puzzle (~55 min for 365), paid offline twice a year
+  alongside the database reimport, not at deploy or request time. It was ~3s
+  (~18 min) when this was written; the September 2026 reimport grew the dataset
+  from 277,897 appearance rows over 8,347 club-seasons to 290,384 over 8,654,
+  and Expert's search for a pair exactly `EXPERT_DISTANCE` apart scales with the
+  graph. Expect this to keep rising as seasons are added — it is worth checking
+  against the clock rather than assuming the old figure, since a run that looks
+  hung at minute 40 is usually just working.
 - Result: cold Expert page load drops from ~4.25s to ~0.35s (matches Daily).
 
 Re-stock the horizon whenever the database is reimported (the import script does
