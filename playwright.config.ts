@@ -48,7 +48,12 @@ export default defineConfig({
     baseURL,
     trace: "on-first-retry",
     screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    // CI only. `retain-on-failure` screencasts every test and discards the
+    // passes, and locally that made the Daily journey fail 4 runs in 7 — the
+    // win transition stopped stabilising and context teardown timed out, both
+    // clearing up entirely with video off (8 for 8). Failure videos are worth
+    // that on CI, where nobody watched the run; locally the page is right there.
+    video: isLocal ? "off" : "retain-on-failure",
     navigationTimeout: 30_000,
     actionTimeout: 15_000,
   },
