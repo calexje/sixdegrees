@@ -83,6 +83,38 @@ second-division files with identical squads).
 - `lib/{leagues,format,difficulty,stats,rate-limit}.ts` – small helpers
 - `docs/challenge-mode.md` – challenge mode spec
 
+## Tests
+
+```bash
+npm test                              # Vitest, unit, no database needed for most
+npx playwright test                   # E2E against production
+E2E_BASE_URL=http://localhost:3000 \
+  npx playwright test                 # E2E against a dev server (starts it for you)
+```
+
+The E2E suite targets **production by default**. Every journey is read-only, so
+running against the live app is safe, and it makes the claim an honest one:
+these specs test the deployed product, not a local approximation.
+
+**Selectors, in order of preference.** `getByRole` / `getByLabel` / `getByText`
+first, because they assert what a user can perceive — a spec that breaks when
+the accessible name breaks is a feature. `data-testid` only where the DOM offers
+no accessible handle: `path`, `budget`, `options`, `end-modal`. Adding a testid
+to the app is allowed; reaching for a CSS class or an nth-child path is not.
+
+**Spec names decide which project runs them.** `*.api.spec.ts` runs once in the
+browserless `api` project; `*.mobile.spec.ts` runs in the iPhone 13 project;
+anything else runs in both Chromium and WebKit. A misnamed spec matches no
+project and passes silently, so the filename is load-bearing.
+
+**Flake policy.** `retries: 1` in CI, `0` locally. A spec that only passes on
+retry is a bug to investigate, not a result to bank. Two known traps, both
+already handled: the tutorial and cookie overlays cover the board on a clean
+profile, so `e2e/fixtures.ts` seeds their storage keys before first paint; and a
+click that ends the puzzle unmounts the panel holding it, so those clicks pass
+`noWaitAfter` rather than have Playwright verify an element that is gone by
+design.
+
 ## Deployment
 
 Deploys on Vercel from `main`. Two things matter for the SQLite file on
