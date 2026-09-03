@@ -68,24 +68,23 @@ export const FIXTURES = {
     ],
   },
 
-  // A dead end reachable in one move, pinned through Challenge mode's existing
-  // from/to params — no test-only seam needed.
+  // A dead end two moves in, pinned through Challenge mode's existing from/to
+  // params — no test-only seam needed.
   //
-  // Ken DeMange has exactly two clubs in the dataset: Hull City (1990), with 30
-  // teammates, and Cardiff City (1991), where he is the *only* player on record
-  // for that season. Picking Cardiff therefore yields zero onward options,
-  // which is precisely the `atDeadEnd` condition, and the board offers the
-  // "← Back (dead end)" escape hatch.
+  // Aled Rowlands' only row is Manchester City 1995, so arriving at him from
+  // that club offers no year it did not already offer: the option is filtered
+  // as a guaranteed loop, he has no onward move at all, and the board shows
+  // "← Back (dead end)". Quinn was there 1990-1996, so he reaches Rowlands.
   //
-  // This depends on the dataset: a squad re-pull that adds any 1991 Cardiff
-  // player kills the fixture. Worth a unit test in tests/ asserting that
-  // getClubTeammates("175864", "603") still returns only DeMange himself, so
-  // that change fails in milliseconds rather than as a puzzling E2E flake.
+  // Worth a unit test in tests/ asserting player 774252 still has exactly one
+  // appearance row, so a squad re-pull fails in milliseconds rather than as a
+  // puzzling E2E flake. It replaced Ken DeMange, whose dead-end club-season
+  // left the dataset when the crawl's competition codes changed.
   deadEnd: {
-    url: "/?mode=challenge&from=175864&to=206780",
-    origin: "Ken DeMange",
+    url: "/?mode=challenge&from=104110&to=206780",
+    origin: "Niall Quinn",
     target: "Tommy Wright",
-    deadEndClub: "Cardiff City",
-    playableClub: "Hull City",
+    playableClub: "Manchester City",
+    deadEndPlayer: "Aled Rowlands",
   },
 } as const;
