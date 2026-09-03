@@ -21,6 +21,13 @@ test("ends the puzzle when the move budget is spent", async ({
     // previous node sends the walk somewhere else entirely.
     await expect(path.locator("li")).toHaveCount(i + 1);
 
+    // The path updates from client state the instant a selection lands, but the
+    // next options are still being fetched - so wait for the board to stop
+    // fetching, or we read a stale list and click a name that has gone.
+    await expect(
+      page.getByText(/Fetching (clubs|players)/)
+    ).toHaveCount(0);
+
     const buttons = options.getByRole("button");
     await expect(buttons.first()).toBeVisible();
 
@@ -34,12 +41,15 @@ test("ends the puzzle when the move budget is spent", async ({
     const choice = usable[Math.min(1, usable.length - 1)];
     expect(choice, `no legal move at selection ${i + 1}`).toBeTruthy();
 
-    // The selection that spends the budget unmounts this panel, so Playwright
-    // must not verify the element afterwards - it is gone by design.
+    // Every selection replaces this whole list, and the budget-spending one
+    // unmounts the panel outright, so a normal click detaches its own target
+    // mid-action and Playwright retries a button that has gone by design.
+    // Dispatching does the same thing to the app without asking Playwright to
+    // re-verify an element it can no longer find.
     await options
       .getByRole("button", { name: choice, exact: true })
       .first()
-      .click({ noWaitAfter: true });
+      .dispatchEvent("click");
   }
 
   const modal = page.getByTestId("end-modal");
