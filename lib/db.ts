@@ -167,21 +167,36 @@ export function getCompetitions(): string[] {
 // list measures career substance.
 const TOP_FLIGHT = ["GB1", "EFD1", "ES1", "IT1", "L1", "FR1"];
 
-// Player ids with at least `minSeasons` distinct top-flight seasons. Keyed by
-// id, so distinct players who share a name are counted separately.
-export function getProminentPlayerIds(
-  minSeasons: number
+// Player ids at or above a given obscurity rank, i.e. rank <= maxRank, where
+// rank 1 is the most recognisable. Built by scripts/build-obscurity.ts from two
+// signals — Wikipedia language editions per era cohort, capped by the share of
+// a career spent as a regular — replacing the old count of top-flight seasons,
+// which measured how long a career lasted rather than who has heard of it.
+//
+// Players absent from the table failed qualification and are rank 5, so a
+// maxRank of 5 means "everyone" and the caller should skip gating entirely
+// rather than calling this.
+export function getPlayerIdsByMaxRank(
+  maxRank: number
 ): Set<string> {
-  const placeholders = TOP_FLIGHT.map(() => "?").join(", ");
+  const built = db
+    .prepare(
+      `SELECT name FROM sqlite_master
+       WHERE type = 'table' AND name = 'player_obscurity'`
+    )
+    .get();
+
+  if (!built) {
+    throw new Error(
+      "player_obscurity is missing - run: npx tsx scripts/build-obscurity.ts --write"
+    );
+  }
+
   const rows = db
-    .prepare(`
-      SELECT player_id AS id
-      FROM appearances
-      WHERE competition IN (${placeholders})
-      GROUP BY player_id
-      HAVING COUNT(DISTINCT season) >= ?
-    `)
-    .all(...TOP_FLIGHT, minSeasons) as { id: string }[];
+    .prepare(
+      `SELECT player_id AS id FROM player_obscurity WHERE rank <= ?`
+    )
+    .all(maxRank) as { id: string }[];
 
   return new Set(rows.map((row) => row.id));
 }

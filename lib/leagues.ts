@@ -12,6 +12,8 @@ export const LEAGUE_NAMES: Record<string, string> = {
   IT2: "Serie B",
   L1: "Bundesliga",
   L2: "2. Bundesliga",
+  L2N: "2. Bundesliga Nord (1991–92)",
+  L2S: "2. Bundesliga Süd (1991–92)",
   FR1: "Ligue 1",
   FR2: "Ligue 2",
   PO1: "Primeira Liga",

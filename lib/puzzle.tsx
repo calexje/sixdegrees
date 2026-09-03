@@ -14,13 +14,13 @@ import {
 import {
   getPlayerById,
   getCompetitions,
-  getProminentPlayerIds,
+  getPlayerIdsByMaxRank,
   getRecentPlayerIds,
 } from "./db";
 import {
-  OBSCURITY_MIN_SEASONS,
-  DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS,
-  DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS,
+  OBSCURITY_MAX_RANK,
+  DAILY_ORIGIN_MAX_RANK,
+  DAILY_TARGET_MAX_RANK,
 } from "./prominence";
 
 // Expert mode uses every competition in the dataset; the daily puzzle is
@@ -65,15 +65,14 @@ const PRACTICE_MAX_MOVES = 10;
 // trivial; 2+ jumps forces a link through an intermediate player.
 const MIN_JUMPS = 2;
 
-// Prominence gating: the set of player nodes with at least `minSeasons`
-// top-flight seasons. Memoised per threshold (it's a GROUP BY over every
-// appearance, so we don't want to repeat it on each Practice generation).
+// Obscurity gating: the set of player nodes at or above a rank ceiling.
+// Memoised per ceiling, since Practice regenerates on every request.
 const prominentIdsCache = new Map<number, Set<string>>();
-function prominentPlayerNodes(minSeasons: number): Set<string> {
-  let ids = prominentIdsCache.get(minSeasons);
+function prominentPlayerNodes(maxRank: number): Set<string> {
+  let ids = prominentIdsCache.get(maxRank);
   if (!ids) {
-    ids = getProminentPlayerIds(minSeasons);
-    prominentIdsCache.set(minSeasons, ids);
+    ids = getPlayerIdsByMaxRank(maxRank);
+    prominentIdsCache.set(maxRank, ids);
   }
   return new Set(Array.from(ids, (id) => `player:${id}`));
 }
@@ -316,11 +315,11 @@ export function generatePracticePuzzle(
   );
 
   const obscurity = filters.obscurity ?? 5;
-  const minSeasons = OBSCURITY_MIN_SEASONS[obscurity];
+  const maxRank = OBSCURITY_MAX_RANK[obscurity];
   const allowed =
-    minSeasons === undefined
+    maxRank === undefined
       ? undefined
-      : prominentPlayerNodes(minSeasons);
+      : prominentPlayerNodes(maxRank);
 
   // Difficulty in moves; clamp to [floor, max] then convert to jumps (2 moves
   // per hop) for generation.
@@ -428,14 +427,14 @@ function dailyAllowedSets(refYear: number) {
       originAllowed: intersect(
         intersect(
           pl,
-          prominentPlayerNodes(DAILY_ORIGIN_MIN_TOP_FLIGHT_SEASONS)
+          prominentPlayerNodes(DAILY_ORIGIN_MAX_RANK)
         ),
         recentPlayerNodes(refYear - DAILY_ORIGIN_RECENT_YEARS)
       ),
       targetAllowed: intersect(
         intersect(
           pl,
-          prominentPlayerNodes(DAILY_TARGET_MIN_TOP_FLIGHT_SEASONS)
+          prominentPlayerNodes(DAILY_TARGET_MAX_RANK)
         ),
         recentPlayerNodes(refYear - DAILY_TARGET_RECENT_YEARS)
       ),
