@@ -1,45 +1,6 @@
-// Builds the 1-5 obscurity rank for every player, from two independent signals.
-//
-// The rank this replaces was distinct seasons in the Big-5 top flights, which
-// measures how long a career lasted rather than who has heard of the player.
-// It put Scott Carson (13 top-flight seasons) and Stéphane Dalmat (14, the same
-// as Alan Shearer) in the top bucket, and docs/roadmap.md concedes that Mikel
-// Aranburu scores near Gerrard.
-//
-// Two bars, and the WORSE one governs. Each catches a dud the other cannot:
-//
-//   fame    - Wikipedia language editions (scripts/fetch-fame.ts). Catches the
-//             long-but-unknown: Gerrard 96 vs Aranburu 18, Shearer 75 vs
-//             Dalmat 17. Career length cannot separate those pairs.
-//   minutes - the SHARE of a career spent as a regular, not the count of such
-//             seasons. Catches the famous-by-association: a bench player at a
-//             big club accumulates seasons and reflected glory without ever
-//             being the player anyone watched.
-//
-//             The count is a longevity measure wearing a disguise, and using it
-//             put Amedeo Carboni (31 editions, 16 seasons) above Neymar (155
-//             editions, 10 seasons) — because the weaker signal governs, a long
-//             ordinary career vetoed a short brilliant one. A rate has no such
-//             bias: Neymar 1.00, Giggs 0.95, Carboni 0.94, and Scott Carson
-//             0.60, which is the bench-time this signal exists to find.
-//
-// Both are percentiles within a COHORT rather than absolute thresholds, because
-// each signal has a structural bias that a fixed cutoff would bake in:
-//
-//   fame    - by era. Wikipedia grew after 2005 and active players attract
-//             continuous editing, so Rashford (86) outranks Shearer (75) and
-//             Saka (71) outranks Zola (52). Comparing a 1990s player against
-//             today's is comparing coverage, not renown — and sinking retired
-//             legends is the exact failure docs/roadmap.md rejected recency for.
-//   minutes - by position. Goalkeepers are rarely substituted, so they cross a
-//             "regular season" bar more often than outfielders (47.8% vs 41.9%
-//             in a sample season). Left alone that promotes keepers as a class
-//             and pushes puzzles toward goalkeeper-to-goalkeeper chains.
-//
-// Ranking every player together does not work: most of the 60,000 in the
-// dataset are anonymous, so "top 15%" still reaches players nobody has heard of
-// (Ryan Gauld and Stéphane Dalmat both land inside it). Everyone is therefore
-// gated first, and only those who clear it are ranked; the rest are rank 5.
+// Builds the 1-5 obscurity rank for every player: fame does the ranking,
+// regularity only caps it. Design, rationale and known caveats in
+// docs/roadmap.md.
 //
 // Run from the PROJECT ROOT, after import.ts:
 //   npx tsx scripts/build-obscurity.ts          report only
@@ -47,48 +8,27 @@
 import Database from "better-sqlite3";
 import path from "path";
 
-// Top flights whose seasons count toward qualification. EFD1 is the pre-1992
-// English First Division — the same competition the Premier League replaced.
+// EFD1 is the pre-1992 English First Division.
 const TOP_FLIGHT = ["GB1", "EFD1", "ES1", "IT1", "L1", "FR1"];
 
-// Qualification: enough top-flight seasons to have had a real career. This is
-// the population the percentile bands are taken over, and the thresholds below
-// were calibrated against it, so changing it invalidates them.
+// The population the bands are taken over; changing it invalidates them.
 const QUALIFY_MIN_TOP_FLIGHT_SEASONS = 3;
 
-// Minutes constituting a full season as a regular, across all competitions.
-// Roughly twenty full matches.
-//
-// A DENOMINATOR, not a threshold. Counting seasons that cross a cutoff is
-// knife-edged: Zenden played 1774, 1717 and 1657 minutes in three seasons and
-// scored nothing for any of them, dropping a decade at Barcelona, Chelsea and
-// Liverpool to the bottom rank. Each season instead contributes
-// min(1, minutes / this), so a near-miss is worth 0.98 rather than 0, while a
-// bench player still accrues almost nothing and pure longevity — the bug this
-// signal exists to catch — earns no credit.
+// A denominator, not a threshold: each season contributes min(1, mins/this),
+// so a near-miss counts as a near-miss rather than a zero.
 const FULL_SEASON_MINUTES = 1800;
 
-// Cumulative share of the qualified population per rank: rank 1 is the top 3%,
-// ranks 1-2 the top 8%, and so on. Geometric rather than even fifths, because
-// recognisability has a long tail and even bands put anonymous players top.
-//
-// Applied ONCE, to the combined percentile. Banding each signal separately and
-// taking the worse rank compounds — a player had to be top-3% on both, and the
-// intersection is far smaller than either, so "top 3%" yielded 157 players
-// instead of 436. Taking the worse PERCENTILE first and banding that keeps the
-// same "weaker signal governs" rule while making band sizes mean what they say.
-// Regularity caps. The minutes signal is a FILTER, not a second ranking
-// dimension: nearly every real player is a regular 80-100% of the time, so
-// percentile-ranking it amplifies noise — Henry at 0.9 landed 16 percentile
-// points behind Zidane at 1.0 and lost two ranks for it. As a cap it does only
-// the job it exists for: pull down someone who was demonstrably not playing,
-// like Scott Carson at 0.60, and leave everyone else to be ranked on fame.
+// Regularity is a filter, not a ranking dimension - almost every real player is
+// a regular 80-100% of the time, so ranking on it amplifies noise. It only
+// pulls down someone who was demonstrably not playing.
 const REGULARITY_CAPS: { min: number; cap: number }[] = [
   { min: 0.75, cap: 1 },
   { min: 0.5, cap: 3 },
   { min: 0, cap: 4 },
 ];
 
+// Cumulative share of the qualified population per rank. Geometric, not even
+// fifths: recognisability has a long tail. Applied once, to the percentile.
 const BANDS: { rank: number; topShare: number }[] = [
   { rank: 1, topShare: 0.03 },
   { rank: 2, topShare: 0.08 },
@@ -121,8 +61,7 @@ type Ranked = PlayerRow & {
   rank: number;
 };
 
-// Era cohorts. Coarse on purpose: finer slices would compare a player against
-// too few peers, and the bias being corrected is generational, not annual.
+// Coarse on purpose: the bias is generational, not annual.
 function eraOf(midSeason: number): string {
   if (midSeason < 2000) return "1990s";
   if (midSeason < 2010) return "2000s";
@@ -130,9 +69,8 @@ function eraOf(midSeason: number): string {
   return "2020s";
 }
 
-// Only goalkeepers are split out. The measured bias is specific to them —
-// outfield positions differ from each other far less than any of them differ
-// from a keeper who plays every minute of every game.
+// Only keepers are split out; outfield positions differ from each other far
+// less than any of them differs from a keeper.
 function positionGroupOf(position: string | null): string {
   return position === "Goalkeeper" ? "Goalkeeper" : "Outfield";
 }
@@ -210,9 +148,7 @@ function loadQualified(db: Database.Database): PlayerRow[] {
     ) as PlayerRow[];
 }
 
-// Percentile within a cohort, 0 = best. Ties share their group's best
-// percentile: players level on a signal must not be separated by the arbitrary
-// order the database returned them in.
+// Percentile within a cohort, 0 = best. Ties share their group's best.
 function percentileWithinCohort(
   members: { id: string; score: number }[]
 ): Map<string, number> {
@@ -239,9 +175,7 @@ function percentileWithinCohort(
   return percentiles;
 }
 
-// Bands the combined percentile in a single pass, so each rank's share of the
-// population is what BANDS says it is. Ties are kept together for the same
-// reason as above.
+// Bands in one pass, so each rank's share is what BANDS says it is.
 function bandByPercentile(
   members: { id: string; percentile: number }[]
 ): Map<string, number> {

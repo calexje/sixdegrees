@@ -108,3 +108,24 @@ modes.
 - Toggle placement and whether switching mid-puzzle is allowed, or only at load.
 - Whether Hard-as-Expert keeps its own streak, or the daily streak spans
   whatever difficulty you played that day.
+
+## Revisiting clubs, and the loop filter
+
+Clubs stay revisitable. The board is club-collapsed, so an era relay passes back
+through the same club and reaches different teammates each time: Berger →
+Liverpool → Fowler → Liverpool → Aurélio → Liverpool → Henderson → Liverpool →
+Salah. Four visits, four eras. A club is still never a wormhole — Berger →
+Liverpool → Salah, who never overlapped, is not offered — because teammates are
+keyed on the arriving player's tenure.
+
+The one club not offered is the one just arrived from, when it offers no year
+that was not already on offer. Every teammate it could reach was reachable a
+move ago, so the two moves bought nothing. A player whose only row is that
+club-season is the pure case: from them the club is a guaranteed loop, it is
+filtered, and they have no onward move at all — which is what `atDeadEnd`
+detects.
+
+History: filtered on exact club-seasons when the dead-end control was added
+(f6e9cb5); the club-collapse rewrite (8b3f6e8) dropped it to free the relay and
+left nothing in its place, making `atDeadEnd` unreachable and letting a player
+loop until the budget ran out.

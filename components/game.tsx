@@ -68,6 +68,12 @@ type PathNode =
       clubId: string;
       club: string;
       season?: string;
+      // The seasons the player who stepped into this club had there. Kept so a
+      // later hop can tell a genuine era relay from a loop: re-entering the
+      // same club only reaches someone new if the next player's tenure extends
+      // beyond this one. Raw seasons, not the `season` label, which is a lossy
+      // min-max range built for display.
+      enteredYears?: number[];
     };
 
 // An option is a path node, plus (for a teammate) the seasons shared with the
@@ -76,7 +82,13 @@ type PathNode =
 // anchor the era when choosing which of the player's clubs to route through.
 type Option =
   | { type: "player"; id: string; name: string; seasons?: string[] }
-  | { type: "club"; clubId: string; club: string; range?: string };
+  | {
+      type: "club";
+      clubId: string;
+      club: string;
+      range?: string;
+      years: number[];
+    };
 
 // Graph node key for a path node, matching the server's keying. Club nodes are
 // collapsed (no season), so they have no graph node and never carry a distance.
@@ -340,6 +352,7 @@ export default function Game({
               clubId: c.clubId,
               club: c.club,
               range: formatTenure(c.years),
+              years: c.years,
             }))
           );
         } else {
@@ -482,6 +495,19 @@ export default function Game({
       setPath([...path.slice(0, -1), stampedClub, nextPlayer]);
       return;
     }
+    if (option.type === "club") {
+      setPath([
+        ...path,
+        {
+          type: "club",
+          clubId: option.clubId,
+          club: option.club,
+          enteredYears: option.years,
+        },
+      ]);
+      return;
+    }
+
     setPath([...path, option]);
   }
 
@@ -583,10 +609,28 @@ export default function Game({
     }
   }
 
-  // Revisiting nodes is allowed: a club is not a wormhole (a long-serving player
-  // legitimately relays across eras), and a loop simply burns moves from the
-  // budget. So every fetched option is offered; the search box narrows them.
-  const availableOptions = options;
+  // Clubs stay revisitable, except the one just arrived from when it offers no
+  // new years - those teammates were already on offer, and a player whose only
+  // row is that club-season is therefore at a dead end. See docs/easy-mode.md.
+  const enteredFrom =
+    current.type === "player" && path.length >= 2
+      ? path[path.length - 2]
+      : null;
+
+  const availableOptions = options.filter((option) => {
+    if (
+      option.type !== "club" ||
+      !enteredFrom ||
+      enteredFrom.type !== "club" ||
+      enteredFrom.clubId !== option.clubId ||
+      !enteredFrom.enteredYears
+    ) {
+      return true;
+    }
+
+    const already = new Set(enteredFrom.enteredYears);
+    return option.years.some((year) => !already.has(year));
+  });
 
   const filteredOptions = availableOptions.filter(
     (option) =>
