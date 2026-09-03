@@ -179,6 +179,7 @@ export default function PracticeConfig({
         </div>
         <input
           type="range"
+          aria-label="Difficulty"
           min={MIN_MOVES}
           max={MAX_MOVES}
           step={2}
@@ -199,6 +200,7 @@ export default function PracticeConfig({
         </div>
         <input
           type="range"
+          aria-label="Obscurity"
           min={1}
           max={5}
           step={1}
