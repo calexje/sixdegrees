@@ -870,6 +870,20 @@ export default function Game({
                 Close
               </button>
             </div>
+
+            {won && (
+              <p className="mt-4 text-sm text-muted">
+                Enjoying the daily?{" "}
+                <a
+                  href="https://ko-fi.com/sixdegreesgames"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground"
+                >
+                  Support us
+                </a>
+              </p>
+            )}
           </div>
         </div>
       )}

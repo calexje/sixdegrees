@@ -21,6 +21,14 @@ export default function Footer() {
           <Link href="/terms" className="hover:text-foreground">
             Terms
           </Link>
+          <a
+            href="https://ko-fi.com/sixdegreesgames"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground"
+          >
+            Support us
+          </a>
           <CookiePreferencesButton />
         </nav>
         © Calex Digital 2026
